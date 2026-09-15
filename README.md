@@ -17,32 +17,87 @@
 
 国ごとに行政階層、法定の計画主体、言語、指標、統計年、地図、図表、資料形式が違うため、画面を一律に複製しません。共通化するのはページの役割、地域選択の意味、欠測と出典の扱い、取得・検証手順です。
 
-## AIへの最短依頼
+## AIで作る手順
 
-以下の`COUNTRY`を国名に替えて、そのままAIへ渡せます。
+### ① 準備・設定
+
+Antigravity、Codex、Claude Codeのいずれかにログイン済みで、アプリを使える状態から始めます。ここではインストール方法は説明しません。
+
+1. 国別成果を保存する**空の作業フォルダー**を一つ用意します。既存の業務リポジトリやこのキットの原本を直接編集する場所は避けます。
+2. 使用するAIで、そのフォルダーをローカルのプロジェクトまたはワークスペースとして開きます。
+3. 下表の権限を設定します。このリポジトリはPublicなので、読むだけならGitHub連携やGitHubの有料契約は不要です。作成物を自分のGitHubへpushする段階では、その利用者のGitHub認証が必要です。
+4. ②のプロンプトで`［国名］`だけを変更し、AIのチャット欄へ貼り付けます。
+
+| AI | 開始時の設定 |
+|---|---|
+| **Google Antigravity** | 空フォルダーを`Local`プロジェクトとして開きます。Agentがプロジェクト内ファイルを読み書きできるようにし、Terminal Command Auto Executionは`Always Proceed`、または実行ごとに承認する設定にします。Web・Chrome操作の接続要求が出たら許可します。PC全体の`Full machine`権限は必須ではありません。 |
+| **Codex** | 新しいローカルタスクを作り、空フォルダーまたは保存済みプロジェクトを作業場所に指定します。作業フォルダーの読み書き、ターミナル、ネット接続、ブラウザー確認を許可します。クラウドの会話だけではなく、ローカルファイルとコマンドを扱える実行環境を使います。 |
+| **Claude Code** | 空フォルダーを作業ディレクトリとして開き、そのフォルダーを信頼します。プロジェクト内のRead・Edit、コマンド実行、Web検索・取得を許可します。確認を省略したい場合は許可済み操作の自動承認を使えますが、PC全体を無制限に許可する設定は必須ではありません。 |
+
+3製品とも、必要なのは**Public GitHubの読取、作業フォルダーへの書込、ターミナル、ネット接続、生成サイトを確認するブラウザー**です。プロンプトへ「フルアクセス」と書くだけでは権限は変わらないため、実際の許可画面で設定してください。秘密情報や再配布できない資料をPublic GitHubへ保存する権限は含みません。
+
+### ② コピペするプロンプト
+
+`［国名］`だけを、ウガンダ、ケニア、ネパールなどの対象国へ変更してください。
 
 ```text
-Read https://github.com/mnakagaw/Census-Dashboard-Kit and create a complete COUNTRY census and local-planning dashboard.
+［国名］の地域情報・開発計画ダッシュボードを作ってください。
+私はプログラミング初心者です。調査、データ取得、制作、動作確認まで進めてください。
 
-Start with START_HERE.md and follow AGENTS.md and docs/COUNTRY_AGENT_WORKFLOW.md. Treat the country name as sufficient input. Use a new output directory and do not rewrite the kit for one country.
+使用するPublicテンプレート：
+https://github.com/mnakagaw/Census-Dashboard-Kit
 
-You may use the terminal, network, browser, and local files needed for this task. If Node.js 22+, Git, or a document/data reader is missing and your environment permits installation, install only what is needed. Do not ask me to fill a long questionnaire; record reasonable defaults and ask only if the country itself is ambiguous or a decision would materially change the result.
+最初にテンプレートを取得し、README.md、START_HERE.md、AGENTS.md、
+docs/COUNTRY_AGENT_WORKFLOW.mdを読んでください。
+国名を十分な開始情報として扱い、開始票とTask Contractはあなたが作成してください。
+この作業フォルダー内に新しい国別ディレクトリを作り、テンプレート本体を一国用に書き換えないでください。
+通常の実装判断は進め、国の同定や成果を大きく変える不明点だけ質問してください。
 
-Run the bootstrap, then continue beyond it: find and verify the country's official census catalogue, detailed subnational tables, official geographic codes and boundaries, planning law, planning guidance, local plans, and relevant budget/implementation/evaluation sources. Inventory the actual source tables and numeric columns. Build reusable source adapters, integrate verified local data, and keep unavailable, restricted, failed, missing, zero, and not-applicable states distinct.
+初期生成を実行した後、そこで終了せず、次を調査・取得・確認してください。
+・指定国の公式な国勢調査の所在、詳細表、全テーマ・項目と数値列
+・公式な行政地域コード、地域階層、境界データと統計表の対応
+・地方開発計画に関する法律、法定の計画策定単位、策定手順と計画書の内容
+・地方計画、予算、実施報告、評価資料、および地域別データを持つ国際・複数国source
 
-Deliver working Territorial Diagnostic, Thematic Diagnostic, and Development Plan Materials pages. Verify representative areas with complete data, sparse data, and special administrative types. Test the selected area across maps, headings, indicators, documents, URLs, and exports. In particular, after selecting a lower area, explicitly reselecting its current parent must clear the lower selection and immediately analyze the parent while keeping the selected indicator and period.
+リンクの発見、原資料の取得、内容確認、地理照合、指標採用を別々に記録してください。
+全国値を地方値として流用せず、欠測、ゼロ、非該当、未確認、取得失敗、利用制限を区別してください。
+取得した原資料の全表・数値列を棚卸しし、採用・不採用と理由を残してください。
 
-Run npm run check, npm test, and node scripts/validate-country.mjs --project <project-directory>. Test the actual site and downloaded outputs. Record sources, hashes, geographic matching, adopted/rejected indicators, unfinished work, and reproducible commands in the project evidence and HANDOFF.md. A running bootstrap or a list of links is not completion.
+次の3ページを、テンプレートの操作契約を使って完成させてください。
+① Territorial Diagnostic
+② Thematic Diagnostic
+③ Development Plan Materials
+
+行政階層、言語、指標、統計年、地図、図表、計画制度と出力形式は、その国の根拠に合わせてください。
+データが少ないことを理由に、3ページの目的や地域選択の意味を独自に変更しないでください。
+
+地域選択は、地図、見出し、全指標、資料、URL、保存内容と出力へ即時に反映してください。
+特に、下位地域を選んだ後、その現在の所属先と同じ上位地域をドロップダウンから明示的に選び直した場合も、
+下位選択を解除し、上位全体へ切り替えてください。その際、選択中の指標と期間は保持してください。
+親地域自身の値がない場合は、以前の下位地域の値を残さず、親地域の欠測を表示してください。
+
+完全な地域、データの少ない地域、特殊な行政区分を代表例として、実際のブラウザーで確認してください。
+画面だけでなく、CSV、印刷、作業文書など採用した出力の地域、期間、値、単位、出典も照合してください。
+
+npm run check、npm test、
+node scripts/validate-country.mjs --project <国別プロジェクトのパス>
+を実行してください。通常の不具合は修正し、再検証してください。
+
+原資料、取得日時、hash、地域対応、採用・不採用、未取得、未検証、再実行コマンドを証拠として保存し、
+中断・再開方法を国別プロジェクトのHANDOFF.mdへ残してください。
+全国値だけの初期画面、リンク一覧、またはGitHub Actionsのsuccessを完成扱いしないでください。
+
+最後に、完成したローカルサイトをブラウザーで開き、
+できたこと、利用できる地域・データ・資料、残る不足、未検証事項を日本語で報告してください。
+外部公開や有料サービスの追加契約は、私が別途依頼した場合だけ行ってください。
 ```
 
-日本語の短い依頼でも開始できます。
+途中で止まった場合は、同じ作業フォルダーで次を貼り付けます。
 
 ```text
-https://github.com/mnakagaw/Census-Dashboard-Kit を読んで、ウガンダ版を作って。
-START_HERE.mdから始め、公式の地方統計と計画資料を実際に収集・統合し、3ページと出力を検証するところまで進めて。
+この国別案件のHANDOFF.mdと保存済み成果を読み、続きから再開してください。
+取得済み原資料と実装を再利用し、残る公式地方データの統合、3ページ、実画面と出力の検証を完了してください。
 ```
-
-AIへ「フルアクセス」と書くだけで、そのAIサービスの権限設定が変わるわけではありません。利用するアプリ側で、リポジトリ読取、作業フォルダへの書込、ターミナル、ネット接続を許可してください。秘密情報や再配布不可データをGitへ保存する許可は含みません。
 
 ## 人が手元で開始する場合
 
