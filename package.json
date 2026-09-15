@@ -1,6 +1,6 @@
 {
   "name": "census-dashboard-kit",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "private": true,
   "description": "Public AI-ready kit for building evidence-based country census and planning dashboards",
   "type": "module",

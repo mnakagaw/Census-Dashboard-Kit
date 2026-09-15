@@ -4,7 +4,7 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,latestObservedPeriod,nationalOnly,comparisonScope,comparisonAreas,preferredThematicLevel,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,pyramidBands,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,latestObservedPeriod,nationalOnly,comparisonScope,comparisonAreas,preferredThematicLevel,comparisonLevelsForScope,normalizeThematicState,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,adjustedMapZoom,mapGeometry,seriesGeometry,pyramidBands,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
 function fixture() {
@@ -121,7 +121,16 @@ test('thematic comparison keeps the selected parent as scope and shows only its 
   const data=hierarchyFixture();
   const region=initialState(data,'?territory=north&metric=population&period=2024&level=city');
   assert.equal(comparisonScope(data,region).id,'north');
-  assert.equal(preferredThematicLevel(data,'north','population','region'),'subregion','nearest observed lower level is preferred when entering thematic view');
+  assert.equal(preferredThematicLevel(data,'north','population','region'),'subregion','the immediate lower level is preferred when entering thematic view');
+  const sparse=structuredClone(data);sparse.observations=sparse.observations.filter(row=>row.territory_id==='north');
+  assert.equal(preferredThematicLevel(sparse,'north','population','region'),'subregion','the selected parent keeps its immediate lower level even when the indicator has no child observations');
+  const changed=selectTerritory(sparse,initialState(sparse,'?metric=population&period=2024'),'north');
+  changed.level=preferredThematicLevel(sparse,changed.selected,changed.metric,changed.level);
+  assert.equal(changed.level,'subregion');assert.equal(comparisonScope(sparse,changed).id,'north','changing the comparison area does not fall back to the country');
+  assert.deepEqual(comparisonLevelsForScope(sparse,changed),['subregion','district','city'],'structural lower levels remain selectable even with zero observations for the indicator');
+  assert.equal(normalizeThematicState(sparse,changed).level,'subregion','normalization does not replace a valid all-missing lower geography');
+  const invalid={...changed,level:'missing-level'};
+  assert.equal(normalizeThematicState(sparse,invalid).level,'subregion','an invalid comparison level falls back to the nearest structural child');
   const cityAreas=comparisonAreas(data,region);
   assert.ok(cityAreas.length>20);
   assert.ok(cityAreas.every(area=>territoryLineage(data,area.id).some(parent=>parent.id==='north')));
@@ -129,6 +138,15 @@ test('thematic comparison keeps the selected parent as scope and shows only its 
   const inspected={...region,selected:'city'};
   assert.equal(comparisonScope(data,inspected).id,'nile','an inspected member remains within its parent cohort');
   assert.ok(comparisonRows(data,inspected).every(row=>row.area.parent_id==='nile'));
+});
+
+test('map zoom supports context outside the initially fitted extent',()=>{
+  assert.equal(adjustedMapZoom(1,'out'),.75);
+  assert.equal(adjustedMapZoom(.75,'out'),.5);
+  assert.equal(adjustedMapZoom(.5,'out'),.5);
+  assert.equal(adjustedMapZoom(.5,'in'),.75);
+  assert.equal(adjustedMapZoom(2,'reset'),1);
+  assert.equal(adjustedMapZoom(4,'in'),4);
 });
 
 test('map-selected ranking row is revealed by clearing only a masking search; missing remains unranked',()=>{

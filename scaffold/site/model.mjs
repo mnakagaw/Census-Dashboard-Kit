@@ -226,15 +226,30 @@ export function comparisonAreas(dataset,state) {
 export function preferredThematicLevel(dataset,selectedId,indicatorId,fallback='') {
   const selected=dataset.territories.find(area=>area.id===selectedId) || dataset.territories.find(area=>area.id===dataset.country.national_territory_id);
   if(!selected)return fallback || localLevels(dataset)[0] || '';
-  const observedIds=new Set(dataset.observations.filter(row=>row.indicator_id===indicatorId&&observedValue(row)!==null).map(row=>row.territory_id));
-  const descendants=dataset.territories.map(area=>({area,lineage:territoryLineage(dataset,area.id)})).filter(item=>item.area.id!==selected.id&&item.lineage.slice(0,-1).some(parent=>parent.id===selected.id)&&observedIds.has(item.area.id));
-  if(descendants.length) {
-    const depth=Math.min(...descendants.map(item=>item.lineage.length));
-    return descendants.find(item=>item.lineage.length===depth)?.area.level || fallback;
-  }
-  if(selected.level!=='national'&&observedIds.has(selected.id))return selected.level;
   const levels=localLevels(dataset);
-  return levels.includes(fallback)?fallback:levels.find(level=>dataset.territories.some(area=>area.level===level&&observedIds.has(area.id))) || levels[0] || '';
+  // The comparison area selects its immediate internal geography. Data coverage
+  // may be empty for the current indicator, but that must not silently move the
+  // scope back to the parent level or the whole country.
+  const childLevels=new Set(dataset.territories.filter(area=>area.parent_id===selected.id).map(area=>area.level));
+  const childLevel=levels.find(level=>childLevels.has(level));
+  if(childLevel)return childLevel;
+  if(selected.level!=='national')return selected.level;
+  return levels.includes(fallback)?fallback:levels[0] || '';
+}
+export function comparisonLevelsForScope(dataset,state) {
+  const scope=comparisonScope(dataset,state) || dataset.territories.find(area=>area.id===dataset.country.national_territory_id);
+  return localLevels(dataset).filter(level=>dataset.territories.some(area=>area.level===level&&(scope?.level==='national'||territoryLineage(dataset,area.id).slice(0,-1).some(parent=>parent.id===scope?.id))));
+}
+export function normalizeThematicState(dataset,state) {
+  if(comparisonAreas(dataset,state).length)return state;
+  return {...state,level:preferredThematicLevel(dataset,state.selected,state.metric,state.level)};
+}
+export function adjustedMapZoom(current,direction) {
+  const value=finite(current)?current:1,step=.25;
+  if(direction==='reset')return 1;
+  if(direction==='in')return Math.min(4,Math.round((value+step)*4)/4);
+  if(direction==='out')return Math.max(.5,Math.round((value-step)*4)/4);
+  return Math.min(4,Math.max(.5,value));
 }
 export function comparisonCompatibility(dataset, state) {
   const areas = comparisonAreas(dataset,state);
