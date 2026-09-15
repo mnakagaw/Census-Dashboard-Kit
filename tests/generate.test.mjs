@@ -63,6 +63,11 @@ test('last explicit parent choice wins even when city belongs to the SAME subreg
   const city=initialState(data,'?territory=city&metric=water&period=2024');
   assert.deepEqual(territoryLineage(data,city.selected).map(area=>area.id),['TST','north','nile','city']);
   const cityControls=hierarchyControls(data,city.selected);
+  const countryControl=cityControls.find(item=>item.parent.id==='TST');
+  const subregionControl=cityControls.find(item=>item.parent.id==='nile');
+  assert.match(countryControl.options.find(option=>option.targetId==='north').label,/^Whole /,'An area with a selectable lower tier may use Whole');
+  assert.equal(subregionControl.options.find(option=>option.targetId==='city').label,'River Test City','A terminal place name must not be prefixed with Whole');
+  assert.equal(subregionControl.options.find(option=>option.targetId==='district').label,'River Test District','Every terminal administrative area uses its plain name');
   for(const [parentId,targetId] of [['north','nile'],['TST','north']]) {
     const control=cityControls.find(item=>item.parent.id===parentId);
     const wholeParent=control.options.find(option=>option.targetId===targetId);

@@ -37,6 +37,9 @@ const COPY={
   'No matching areas.':['No hay áreas coincidentes.','一致する地域がありません。'],
   'Return to world view':['Volver a la vista mundial','世界表示へ戻る'],
   'Return to national view':['Volver a la vista nacional','全国表示へ戻る'],
+  'Select the area to diagnose':['Seleccione el área que desea diagnosticar','診断する地域を選択'],
+  'Choose the broad area first. The next list is limited to places inside it. To return from a lower area, select the upper area again.':['Primero elija el área amplia. La lista siguiente se limita a los lugares que contiene. Para volver desde un área inferior, seleccione de nuevo el área superior.','まず上位地域を選びます。次の選択欄には、その地域内の下位地域だけが表示されます。下位地域から戻るときは、上位地域をもう一度選びます。'],
+  'Search or jump to another area':['Buscar o ir directamente a otra área','別の地域を検索・直接選択'],
   'Area hierarchy':['Jerarquía territorial','地域階層'],
   'Area identity and boundary edition':['Identidad del área y edición de límites','地域IDと境界版'],
   'Code system:':['Sistema de códigos:','コード体系：'],
@@ -87,6 +90,11 @@ const COPY={
   'Costa Rica':['Costa Rica','コスタリカ'],
   'Panama':['Panamá','パナマ'],
   'National':['Nacional','全国'],
+  'Province':['Provincia','県'],
+  'District':['Distrito','郡'],
+  'Capital':['Capital','首都行政区'],
+  'Region':['Región','地域'],
+  'Municipality':['Municipio','市'],
   'country':['país','国'],
   'people':['personas','人'],
   'years':['años','年'],
@@ -94,7 +102,13 @@ const COPY={
   'Location':['Ubicación','位置'],
   'Fit selected area':['Ajustar al área seleccionada','選択地域に合わせる'],
   'Fit comparison area':['Ajustar al área de comparación','比較対象エリアに合わせる'],
+  'Show parent area':['Mostrar el área administrativa superior','上位行政区を表示'],
   'Show whole country':['Mostrar todo el país','国全体を表示'],
+  'Map extent':['Extensión del mapa','地図の表示範囲'],
+  'Map zoom':['Zoom del mapa','地図の拡大・縮小'],
+  'Zoom in':['Acercar','拡大'],
+  'Zoom out':['Alejar','縮小'],
+  'Reset map zoom':['Restablecer zoom','拡大率をリセット'],
   'Sources and gaps':['Fuentes y vacíos','出典と不足'],
   'Sources, definitions and acquisition gaps':['Fuentes, definiciones y vacíos de adquisición','出典・定義・取得上の不足'],
   'Source register':['Registro de fuentes','出典台帳'],
@@ -253,6 +267,10 @@ const patternTranslations=[
   [/^(.+) · (.+) · (Dashboard calculated|Source reported|No data|Not available)$/,(m,l)=>`${translateText(m[1],l)} · ${m[2]} · ${translateText(m[3],l)}`],
   [/^people · (.+)$/,(m,l)=>l==='es'?`personas · ${m[1]}`:`人・${m[1]}`],
   [/^Code (.+)$/,(m,l)=>l==='es'?`Código ${m[1]}`:`コード ${m[1]}`]
+  ,[/^(.+) — national view$/,(m,l)=>l==='es'?`${m[1]} — vista nacional`:`${m[1]} — 全国表示`]
+  ,[/^No (.+) selected — use (.+)$/,(m,l)=>l==='es'?`Sin seleccionar ${m[1]} — usar todo ${m[2]}`:`${m[1]}を選択しない — ${m[2]}全体を表示`]
+  ,[/^(.+) — select this (.+)$/,(m,l)=>{const type=translateText(m[2].charAt(0).toUpperCase()+m[2].slice(1),l);return l==='es'?`${m[1]} — seleccionar esta área de ${type}`:`${m[1]} — この${type}全体を選択`; }]
+  ,[/^(.+) · a lower area is currently selected$/,(m,l)=>l==='es'?`${m[1]} · hay un área inferior seleccionada`:`${m[1]}・下位地域を選択中`]
 ];
 
 export function translateText(value,language){

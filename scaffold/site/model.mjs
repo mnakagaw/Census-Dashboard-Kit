@@ -160,12 +160,13 @@ export function territoryLineage(dataset, selectedId) {
   return [];
 }
 // An ancestor shown as context is NOT the active geographic choice. Its selectable
-// "Whole …" option has a different value, so selecting the SAME ancestor fires change.
+// parent-area option has a different value, so selecting the SAME ancestor fires change.
 export function territoryOptionLabel(dataset,area) {
   return dataset.territories.filter(row=>row.name===area.name).length>1?`${area.name} · ${area.type} · ${area.official_code || area.id}${area.boundary_version?` · ${area.boundary_version}`:''}`:area.name;
 }
 export function hierarchyControls(dataset, selectedId) {
   const byId=new Map(dataset.territories.map(area=>[area.id,area]));
+  const hasChildren=id=>dataset.territories.some(area=>area.parent_id===id);
   const hasMultipleTiers=dataset.territories.some(area=>area.parent_id && area.parent_id!==dataset.country.national_territory_id && byId.has(area.parent_id));
   const lineage=territoryLineage(dataset,selectedId);
   if(!hasMultipleTiers || !lineage.length)return [];
@@ -178,7 +179,13 @@ export function hierarchyControls(dataset, selectedId) {
     const context=descendantSelected?{value:'context',label:`Belongs to ${child.name} · a lower area is selected`}:null;
     return [{parent,levels:[...new Set(children.map(area=>area.level))],context,
       value:context?'context':child?`area:${child.id}`:'',
-      options:[{value:'',targetId:parent.id,label:`Whole ${territoryOptionLabel(dataset,parent)} · no lower area selected`},...children.map(area=>({value:`area:${area.id}`,targetId:area.id,label:`Whole ${territoryOptionLabel(dataset,area)}`}))]}];
+      options:[{value:'',targetId:parent.id,label:`Whole ${territoryOptionLabel(dataset,parent)} · no lower area selected`},...children.map(area=>({
+        value:`area:${area.id}`,
+        targetId:area.id,
+        // "Whole" is meaningful only when the area contains another selectable tier.
+        // A terminal locality is already the complete analytical area, so show its name alone.
+        label:hasChildren(area.id)?`Whole ${territoryOptionLabel(dataset,area)}`:territoryOptionLabel(dataset,area)
+      }))]}];
   });
 }
 export function selectHierarchyOption(dataset,state,parentId,value) {

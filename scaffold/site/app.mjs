@@ -19,7 +19,7 @@ const pageNames = {home:'Territorial diagnostic',territorial:'Territorial diagno
 const storedLanguage=()=>{try{return localStorage.getItem('census-dashboard-language')||'';}catch{return '';}};
 let language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});
 let dataset, state, updateStatus;
-let areaSearch='', rankSearch='', rankOrder='desc', wholeMap=false, allAreaOpen=false;
+let areaSearch='', rankSearch='', rankOrder='desc', mapExtent='selected', mapZoom=1, allAreaOpen=false;
 const fmt = (value,indicator=currentMetric()) => displayValue(value,languageLocale(language),indicator?.display_decimals ?? 2);
 const areaFor = id => dataset.territories.find(area => area.id === id);
 const metricFor = id => dataset.indicators.find(indicator => indicator.id === id);
@@ -58,9 +58,23 @@ function areaControls() {
   const hits=areaSearch ? areas.filter(area=>[area.name,area.id,area.official_code].some(value=>String(value||'').toLocaleLowerCase().includes(areaSearch.toLocaleLowerCase()))) : [];
   const hierarchy=(['territorial','planning'].includes(page)||worldMode())?hierarchyControls(dataset,state.selected).filter(control=>!comparisonSet(dataset,control.parent.id).terminal):[];
   const flatSelector=`<label class="field" for="area-select"><span>Selected area${hierarchy.length?' · all records':''}</span><select id="area-select" data-control="area">${groups.map(level=>`<optgroup label="${e(levelLabel(level))}">${areas.filter(area=>area.level===level).map(area=>`<option value="${e(area.id)}" ${area.id===state.selected?'selected':''}>${e(territoryOptionLabel(dataset,area))}${area.level==='national'?(worldMode()?' · world':' · national'):''}</option>`).join('')}</optgroup>`).join('')}</select></label>`;
-  return `<div class="area-controls">${hierarchy.length?`<div class="hierarchy-controls"><p class="small-note">Showing <strong>${e(currentArea().name)}</strong>. Choose “Whole …” to make that parent the selected area and clear its lower-area selection.</p>${hierarchy.map((control,index)=>`<label class="field" for="hierarchy-${index}"><span>${e(control.levels.map(levelLabel).join(' / '))} · within ${e(control.parent.name)}</span><select id="hierarchy-${index}" data-control="hierarchy" data-parent="${e(control.parent.id)}">${control.context?`<option value="context" selected disabled>${e(control.context.label)}</option>`:''}${control.options.map(option=>`<option value="${e(option.value)}" ${option.value===control.value?'selected':''}>${e(option.label)}</option>`).join('')}</select></label>`).join('')}</div><details class="micro-details all-area-selector" data-all-area-selector ${allAreaOpen?'open':''}><summary>Choose from all areas</summary>${flatSelector}</details>`:flatSelector}
-  <div class="area-support-row"><label class="field" for="area-search"><span>Find an area by name or code</span><input id="area-search" type="search" data-control="area-search" value="${e(areaSearch)}" autocomplete="off" placeholder="Name or code"></label>${state.selected!==dataset.country.national_territory_id?button('national',worldMode()?'Return to world view':'Return to national view','','text-button'):''}</div>
-  ${areaSearch?`<div class="search-results" aria-label="Area search results">${hits.length?hits.slice(0,50).map(area=>button('select',`${e(area.name)}<small>${e(levelLabel(area.level))} · ${e(area.official_code || area.id)}</small>`,`data-id="${e(area.id)}"`,'result-button')).join(''):'<p>No matching areas.</p>'}${hits.length>50?`<p>${hits.length} matches; narrow your search to see more.</p>`:''}</div>`:''}</div>`;
+  const search=`<label class="field" for="area-search"><span>Find an area by name or code</span><input id="area-search" type="search" data-control="area-search" value="${e(areaSearch)}" autocomplete="off" placeholder="Name or code"></label>${areaSearch?`<div class="search-results" aria-label="Area search results">${hits.length?hits.slice(0,50).map(area=>button('select',`${e(area.name)}<small>${e(levelLabel(area.level))} · ${e(area.official_code || area.id)}</small>`,`data-id="${e(area.id)}"`,'result-button')).join(''):'<p>No matching areas.</p>'}${hits.length>50?`<p>${hits.length} matches; narrow your search to see more.</p>`:''}</div>`:''}`;
+  if(!hierarchy)return `<div class="area-controls simple-area-controls">${flatSelector}<div class="area-support-row">${search}${state.selected!==dataset.country.national_territory_id?button('national',worldMode()?'Return to world view':'Return to national view','','text-button'):''}</div></div>`;
+  const selectedLineage=territoryLineage(dataset,state.selected);
+  const hierarchyFields=hierarchy.map((control,index)=>{
+    const types=[...new Set(control.options.slice(1).map(option=>areaFor(option.targetId)?.type).filter(Boolean))];
+    const level=control.levels.map(levelLabel).join(' / '),typeLabel=types.length?types.map(value=>value.charAt(0).toUpperCase()+value.slice(1).replaceAll('_',' ')).join(' / '):level;
+    const pathArea=selectedLineage[index+1];
+    const optionLabel=option=>{
+      const target=areaFor(option.targetId);
+      if(!option.value)return control.parent.level==='national'?`${control.parent.name} — national view`:`No ${typeLabel.toLowerCase()} selected — use ${control.parent.name}`;
+      if(target&&control.context&&pathArea?.id===target.id)return `${territoryOptionLabel(dataset,target)} — select this ${target.type || target.level}`;
+      return target?territoryOptionLabel(dataset,target):option.label;
+    };
+    const contextLabel=control.context?`${pathArea?.name||control.parent.name} · a lower area is currently selected`:'';
+    return `<label class="field hierarchy-step" for="hierarchy-${index}"><span><b>${index+1}</b><em>${e(typeLabel)}</em><small>${e(level)}</small></span><select id="hierarchy-${index}" data-control="hierarchy" data-parent="${e(control.parent.id)}">${control.context?`<option value="context" selected disabled>${e(contextLabel)}</option>`:''}${control.options.map(option=>`<option value="${e(option.value)}" ${option.value===control.value?'selected':''}>${e(optionLabel(option))}</option>`).join('')}</select></label>`;
+  }).join('');
+  return `<div class="area-controls guided-area-controls"><div class="area-picker-intro"><strong>Select the area to diagnose</strong><span>Choose the broad area first. The next list is limited to places inside it. To return from a lower area, select the upper area again.</span></div><div class="hierarchy-controls">${hierarchyFields}</div><div class="area-quick-actions">${state.selected!==dataset.country.national_territory_id?button('national',worldMode()?'Return to world view':'Return to national view','','text-button'):''}<details class="micro-details all-area-selector" data-all-area-selector ${allAreaOpen?'open':''}><summary>Search or jump to another area</summary><div class="all-area-tools">${flatSelector}${search}</div></details></div></div>`;
 }
 function thematicScopeControl() {
   const scope=comparisonScope(dataset,state) || currentArea();
@@ -69,8 +83,8 @@ function thematicScopeControl() {
   return `<label class="field thematic-scope-field" for="thematic-scope"><span>Area to compare within</span><select id="thematic-scope" data-control="thematic-scope">${groups.map(level=>`<optgroup label="${e(levelLabel(level))}">${areas.filter(area=>area.level===level).map(area=>`<option value="${e(area.id)}" ${area.id===scope.id?'selected':''}>${e(territoryOptionLabel(dataset,area))}${area.level==='national'?' · national':''}</option>`).join('')}</optgroup>`).join('')}</select><small>${scope.level==='national'?`Comparing ${e(levelLabel(state.level).toLowerCase())} areas across ${e(dataset.country.name)}.`:`Comparing ${e(levelLabel(state.level).toLowerCase())} areas inside ${e(scope.name)}.`}</small></label>`;
 }
 function hierarchyNavigation() {
-  const lineage=territoryLineage(dataset,state.selected),children=comparisonSet(dataset,state.selected).terminal?[]:dataset.territories.filter(area=>area.parent_id===state.selected);
-  return `<nav class="hierarchy-navigation" aria-label="Area hierarchy">${lineage.map(area=>area.id===state.selected?`<span aria-current="location">${e(area.name)}</span>`:button('select',e(area.name),`data-id="${e(area.id)}"`,'text-button')).join('<span aria-hidden="true"> › </span>')}</nav>${children.length?`<details class="child-navigation"><summary>Explore lower areas (${children.length})</summary><div>${children.map(area=>button('select',e(territoryOptionLabel(dataset,area)),`data-id="${e(area.id)}"`,'text-button')).join('')}</div></details>`:''}`;
+  const lineage=territoryLineage(dataset,state.selected);
+  return `<nav class="hierarchy-navigation" aria-label="Area hierarchy">${lineage.map(area=>area.id===state.selected?`<span aria-current="location">${e(area.name)}</span>`:button('select',e(area.name),`data-id="${e(area.id)}"`,'text-button')).join('<span aria-hidden="true"> › </span>')}</nav>`;
 }
 function countryDetailLink() {
   const target=countryDiagnosticUrl(dataset,state,base);
@@ -112,11 +126,15 @@ function mapPanel({thematic=false,planning=false}={}) {
   const targetLevel = worldLocation&&childIds.size?areaFor([...childIds][0])?.level:thematic ? state.level : selected.level==='national' ? localLevels(dataset)[0] : selected.level;
   const rows=thematic?comparisonRows(dataset,state):[];
   const scope=thematic?comparisonScope(dataset,state):selected;
+  const parent=areaFor(selected.parent_id);
   const scopedIds=new Set(thematic?comparisonAreas(dataset,state).map(area=>area.id):[]);
-  const levelFeatures=allFeatures.filter(feature=>worldLocation&&childIds.size?childIds.has(feature.properties?.territory_id):areaFor(feature.properties?.territory_id)?.level===targetLevel&&(!thematic||wholeMap||scopedIds.has(feature.properties?.territory_id)));
+  const levelFeatures=allFeatures.filter(feature=>worldLocation&&childIds.size?childIds.has(feature.properties?.territory_id):areaFor(feature.properties?.territory_id)?.level===targetLevel&&(!thematic||mapExtent==='country'||scopedIds.has(feature.properties?.territory_id)));
   const scopeFeature=thematic&&scope?.level!==targetLevel?allFeatures.find(feature=>feature.properties?.territory_id===scope?.id):null;
-  const features=scopeFeature?[...levelFeatures,scopeFeature]:levelFeatures;
-  const fitId = wholeMap || scope?.level==='national' || worldLocation&&childIds.size ? '' : scope?.id;
+  const parentFeature=mapExtent==='parent'&&parent?.level!=='national'?allFeatures.find(feature=>feature.properties?.territory_id===parent.id):null;
+  const outlineFeatures=[scopeFeature,parentFeature].filter((feature,index,list)=>feature&&list.findIndex(item=>item?.properties?.territory_id===feature.properties?.territory_id)===index);
+  const features=[...levelFeatures,...outlineFeatures.filter(feature=>!levelFeatures.includes(feature))];
+  const defaultFitId=scope?.level==='national'||worldLocation&&childIds.size?'':scope?.id;
+  const fitId=mapExtent==='country'?'':mapExtent==='parent'&&parentFeature?parent.id:defaultFitId;
   const geometry=mapGeometry(features,fitId);
   const stats=distribution(rows);
   const values=new Map(rows.map(row=>[row.area.id,row.value]));
@@ -134,10 +152,15 @@ function mapPanel({thematic=false,planning=false}={}) {
   const title=planning?(mapSettings.mode==='official_status'?`Documented institutional states · ${categoryLabels[mapSettings.category]} · ${mapSettings.period}`:'Material references by area'+(mapSettings.category?' · '+categoryLabels[mapSettings.category]:'')+(mapSettings.period?' · '+mapSettings.period:'')):thematic?`${currentMetric()?.name || 'Indicator'} · ${state.period || 'No period'}`:'Location';
   const sourceIds=[...new Set(features.map(feature=>feature.properties?.source_id).filter(Boolean))];
   const boundarySources=dataset.sources.filter(source=>sourceIds.includes(source.id) || /boundary|boundaries/i.test(source.id+' '+source.name));
-  const interactivePaths=geometry.paths.filter(path=>!scopeFeature||path.id!==scope?.id);
+  const outlineIds=new Set(outlineFeatures.map(feature=>feature.properties?.territory_id));
+  const interactivePaths=geometry.paths.filter(path=>!outlineIds.has(path.id));
   const chosenTab=interactivePaths.find(path=>path.id===state.selected)?.id || interactivePaths[0]?.id;
-  return `<section class="panel map-panel" aria-labelledby="map-title"><div class="panel-heading"><div><p class="eyebrow">${e(levelLabel(targetLevel))} reference boundaries</p><h2 id="map-title">${e(title)}</h2></div>${selected.level!=='national'&&geometry.paths.length?button('map-extent',wholeMap?(thematic?'Fit comparison area':'Fit selected area'):'Show whole country','','text-button'):''}</div>
-  ${geometry.paths.length ? `<svg class="geographic-map" viewBox="0 0 760 400" role="group" aria-label="${e(title)}. Select an area with Enter. Arrow keys move between boundaries."><title>${e(title)} — ${e(dataset.country.name)}; ${fitId&&geometry.selectedHasGeometry?`view fitted to ${e(scope?.name || selected.name)}`:'whole available boundary layer'}</title><rect width="760" height="400" fill="#f4f8f7"/>${geometry.paths.filter(path=>!scopeFeature||path.id!==scope?.id).map(path=>{const area=areaFor(path.id),value=values.get(path.id),comparisonRow=comparisonById.get(path.id);const label=`${area?.name || path.id}${thematic?`: ${finite(value)?fmt(value)+' '+currentMetric().unit:'No data'} for ${comparisonRow?.period || state.period}`:''}`;return `<path d="${path.d}" fill="${colour(path.id)}" fill-rule="evenodd" class="map-area ${path.id===state.selected?'selected':''}" role="button" aria-label="${e(label)}" aria-pressed="${path.id===state.selected}" tabindex="${path.id===chosenTab?'0':'-1'}" data-action="select" data-id="${e(path.id)}" data-map-id="${e(path.id)}"><title>${e(label)}</title></path>`;}).join('')}${scopeFeature?geometry.paths.filter(path=>path.id===scope?.id).map(path=>`<path d="${path.d}" fill="none" fill-rule="evenodd" class="map-scope-outline" aria-hidden="true" pointer-events="none"/>`).join(''):''}</svg>` : '<div class="map-unavailable"><strong>No joined boundaries available for this level.</strong><p>Use the area selector and search. Acquired statistics and documents remain accessible.</p></div>'}
+  const parentExtentAvailable=parent?.level!=='national'&&(!thematic||scope?.id!==parent.id)&&allFeatures.some(feature=>feature.properties?.territory_id===parent.id);
+  const extentActions=selected.level!=='national'&&geometry.paths.length?`<div class="map-view-actions" aria-label="Map extent">${mapExtent!=='selected'?button('map-extent',thematic?'Fit comparison area':'Fit selected area','data-extent="selected"','text-button'):''}${parentExtentAvailable&&mapExtent!=='parent'?button('map-extent','Show parent area',`data-extent="parent" title="${e(parent.name)}"`,'text-button'):''}${mapExtent!=='country'?button('map-extent','Show whole country','data-extent="country"','text-button'):''}</div>`:'';
+  const zoomWidth=760/mapZoom,zoomHeight=400/mapZoom,zoomX=(760-zoomWidth)/2,zoomY=(400-zoomHeight)/2;
+  const zoomLabel=`${Math.round(mapZoom*100)}%`;
+  return `<section class="panel map-panel" aria-labelledby="map-title"><div class="panel-heading"><div><p class="eyebrow">${e(levelLabel(targetLevel))} reference boundaries</p><h2 id="map-title">${e(title)}</h2></div>${extentActions}</div>
+  ${geometry.paths.length ? `<div class="map-canvas"><div class="map-zoom-controls" role="group" aria-label="Map zoom"><button type="button" data-action="map-zoom-out" aria-label="Zoom out" ${mapZoom<=1?'disabled':''}>−</button><button type="button" data-action="map-zoom-reset" aria-label="Reset map zoom">${e(zoomLabel)}</button><button type="button" data-action="map-zoom-in" aria-label="Zoom in" ${mapZoom>=4?'disabled':''}>+</button></div><svg class="geographic-map" data-map-svg viewBox="${zoomX.toFixed(2)} ${zoomY.toFixed(2)} ${zoomWidth.toFixed(2)} ${zoomHeight.toFixed(2)}" role="group" aria-label="${e(title)}. Select an area with Enter. Arrow keys move between boundaries."><title>${e(title)} — ${e(dataset.country.name)}; ${fitId&&geometry.selectedHasGeometry?`view fitted to ${e(mapExtent==='parent'?parent?.name:scope?.name || selected.name)}`:'whole available boundary layer'}</title><rect width="760" height="400" fill="#f4f8f7"/>${interactivePaths.map(path=>{const area=areaFor(path.id),value=values.get(path.id),comparisonRow=comparisonById.get(path.id);const label=`${area?.name || path.id}${thematic?`: ${finite(value)?fmt(value)+' '+currentMetric().unit:'No data'} for ${comparisonRow?.period || state.period}`:''}`;return `<path d="${path.d}" fill="${colour(path.id)}" fill-rule="evenodd" class="map-area ${path.id===state.selected?'selected':''}" role="button" aria-label="${e(label)}" aria-pressed="${path.id===state.selected}" tabindex="${path.id===chosenTab?'0':'-1'}" data-action="select" data-id="${e(path.id)}" data-map-id="${e(path.id)}"><title>${e(label)}</title></path>`;}).join('')}${outlineIds.size?geometry.paths.filter(path=>outlineIds.has(path.id)).map(path=>`<path d="${path.d}" fill="none" fill-rule="evenodd" class="map-scope-outline" aria-hidden="true" pointer-events="none"/>`).join(''):''}</svg></div>` : '<div class="map-unavailable"><strong>No joined boundaries available for this level.</strong><p>Use the area selector and search. Acquired statistics and documents remain accessible.</p></div>'}
   ${selected.level!=='national'&&!childIds.size&&!features.some(feature=>feature.properties?.territory_id===selected.id)&&!scopeFeature?`<p class="missing-note">No boundary is joined to ${e(selected.name)} at this map level. No nearby polygon is substituted.</p>`:''}
   <p class="map-legend">${planning?(mapSettings.mode==='official_status'?`${mapSettings.statuses.map(status=>`<span class="legend-item"><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" fill="${e(status.color)}"/></svg> ${e(status.label)}</span>`).join(' · ')}. Gray = no matched evidence; amber = conflicting evidence. States apply only to ${e(mapSettings.period)} and this document category. Select an area to inspect the cited evidence.`:`Green = a source-checked material reference is available; gray = no reference collected. ${mapSettings.period?'Applies only to '+e(mapSettings.period)+'.':'Includes different document periods.'}${mapSettings.category?' Category: '+e(categoryLabels[mapSettings.category])+'.':''} These are collection states, not counts of approved plans.`):thematic?`Colors use five equal value intervals across ${e(scope?.level==='national'?dataset.country.name:scope?.name || dataset.country.name)} at ${e(levelLabel(state.level).toLowerCase())} for this indicator and period; search does not change the scale. Gray = No data. High values are not automatically better.`:'A location map. Fill colors do not represent population or service levels.'} <span class="legend-selected">Gold outline</span> = ${thematic&&scopeFeature?'comparison area; selected lower area is also outlined':'selected area'}.</p>
   <p class="source-note">Boundary source: ${boundarySources.length?boundarySources.map(source=>link(source.url,source.name)).join(' · '):'See the source register; boundary authority and edition must be verified.'} Reference boundaries are not a legal boundary certification. Keyboard: arrows / Home / End, then Enter or Space.</p>${dataset.country.geography_note?`<p class="source-note"><strong>Geographic scope:</strong> ${e(dataset.country.geography_note)}</p>`:''}</section>`;
@@ -349,7 +372,7 @@ function revealRankingSelection({focus=false}={}) {
   return true;
 }
 function choose(id,{fromMap=false}={}) {
-  wholeMap=false;areaSearch='';
+  mapExtent='selected';mapZoom=1;areaSearch='';
   const next=selectTerritory(dataset,state,id);
   if(fromMap && page==='thematic') {
     // Map highlighting does not redefine the comparison cohort.
@@ -396,15 +419,15 @@ app.addEventListener('change',event=>{
   const control=event.target.dataset.control;
   if(control==='area')choose(event.target.value);
   if(control==='thematic-scope') {
-    wholeMap=false;areaSearch='';rankSearch='';
+    mapExtent='selected';mapZoom=1;areaSearch='';rankSearch='';
     const next=selectTerritory(dataset,state,event.target.value);
     next.level=preferredThematicLevel(dataset,next.selected,next.metric,next.level);
     commit(next);
   }
-  if(control==='hierarchy') {wholeMap=false;areaSearch='';commit(selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value));}
+  if(control==='hierarchy') {mapExtent='selected';mapZoom=1;areaSearch='';commit(selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value));}
   if(control==='metric') {const metric=event.target.value;commit({...state,metric,requestedMetric:undefined,sourceDataset:undefined,notices:[]});}
   if(control==='period'&&!latestMode())commit({...state,period:event.target.value,notices:[]});
-  if(control==='level'){wholeMap=false;commit({...state,level:event.target.value,notices:[]});}
+  if(control==='level'){mapExtent='selected';mapZoom=1;commit({...state,level:event.target.value,notices:[]});}
   if(control==='rank-order'){rankOrder=event.target.value;render();}
 });
 app.addEventListener('input',event=>{
@@ -431,7 +454,10 @@ app.addEventListener('click',async event=>{
     if(action==='inspect-internal')inspectInternal(target);
     else if(action==='select')choose(target.dataset.id,{fromMap:!!target.dataset.mapId});
     else if(action==='national')choose(dataset.country.national_territory_id);
-    else if(action==='map-extent'){wholeMap=!wholeMap;render();}
+    else if(action==='map-extent'){mapExtent=['selected','parent','country'].includes(target.dataset.extent)?target.dataset.extent:'selected';mapZoom=1;render();}
+    else if(action==='map-zoom-in'){mapZoom=Math.min(4,Math.round((mapZoom+.5)*2)/2);render();}
+    else if(action==='map-zoom-out'){mapZoom=Math.max(1,Math.round((mapZoom-.5)*2)/2);render();}
+    else if(action==='map-zoom-reset'){mapZoom=1;render();}
     else if(action==='use-period'&&!latestMode())commit({...state,period:target.dataset.period,metric:target.dataset.metric||state.metric,notices:[]});
     else if(action==='compare'){state={...state,metric:target.dataset.id};location.href=pageUrl('thematic');}
     else if(action==='show-selected'){
@@ -472,7 +498,7 @@ document.querySelectorAll('[data-language]').forEach(control=>control.addEventLi
   const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState({},'',url);if(dataset&&state)render();else translateInterface(document,language);
 }));
 
-window.addEventListener('popstate',()=>{language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});state=normalizeLatestState(initialState(dataset,location.search));wholeMap=false;areaSearch='';rankSearch='';render();});
+window.addEventListener('popstate',()=>{language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});state=normalizeLatestState(initialState(dataset,location.search));mapExtent='selected';mapZoom=1;areaSearch='';rankSearch='';render();});
 
 translateInterface(document,language);
 try {

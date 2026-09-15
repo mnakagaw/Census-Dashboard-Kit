@@ -19,6 +19,10 @@ test('core interface and source-series labels have all three display languages',
   assert.equal(translateText('Territorial diagnostic','es'),'Diagnóstico territorial');
   assert.equal(translateText('Territorial diagnostic','ja'),'地域診断');
   assert.equal(translateText('Download law-aligned Word','ja'),'法規に沿ったWordをダウンロード');
+  assert.equal(translateText('Show parent area','ja'),'上位行政区を表示');
+  assert.equal(translateText('Zoom in','ja'),'拡大');
+  assert.equal(translateText('Louangnamtha · a lower area is currently selected','ja'),'Louangnamtha・下位地域を選択中');
+  assert.equal(translateText('Louangnamtha — select this province','ja'),'Louangnamtha — この県全体を選択');
   assert.equal(translateText('Census and national statistics','es'),'Censo y estadísticas nacionales');
   assert.equal(translateText('International institution data sources','ja'),'国際機関データソース');
   assert.equal(translateText('Planning materials and links','ja'),'計画資料・リンク');
