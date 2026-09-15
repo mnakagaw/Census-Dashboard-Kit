@@ -183,12 +183,16 @@ npm run sources:plan -- --country UGA
 
 `config/country-source-registry.json`にはラテンアメリカ20か国とウガンダの出発点、`config/common-subnational-sources.json`には地域粒度を持ち得る10の国際・複数国source候補を収録しています。すべて案件時点で再確認が必要です。登録だけで、その国のデータ取得や採用が完了したとは扱いません。
 
-## GitHub Actions
+## GitHub Actions（通常の利用者には不要）
 
-- **Validate kit** — pushとpull requestでWindows/Linux、Node.js 22/24の構文検査とテストを実行します。
-- **Build country baseline** — Actions画面から国名またはISOコードを入力し、初期収集結果を7日間のArtifactとして保存します。
+Antigravity、Codex、Claude CodeへこのPublicリポジトリのURLを渡し、PC内に国別ダッシュボードを作るだけなら、**GitHubアカウントは不要**です。この節は、リポジトリを管理する人や、GitHub上で初期生成を試したい人向けです。
 
-Actionsの`success`は、キットのテストまたは初期生成が成功したという意味です。AIによる国内公式資料の調査・統合、実利用者テスト、外部公開まで完了したという意味ではありません。
+- **Validate kit** — リポジトリ管理者が変更をpushしたとき、またはpull requestを作ったときに、Windows/Linux、Node.js 22/24でキットの構文検査とテストを自動実行します。一般利用者が押すボタンではありません。
+- **Build country baseline** — GitHubへログインし、このリポジトリのActionsを実行できる人が、国名またはISOコードを入力して初期生成を試す任意機能です。結果は7日間のArtifactとして保存されます。同じ初期生成は、通常のAI制作手順でもPC内で実行できます。
+
+GitHubアカウントが必要になるのは、自分のGitHubへリポジトリを作る、`Use this template`を使う、fork・push・pull requestを行う、またはGitHub Actionsを手動実行する場合です。完成したサイトをPC内だけで使う場合は必要ありません。
+
+Actionsの`success`は、キットのテストまたは全国統計中心の初期生成が成功したという意味です。AIによる国内公式資料の調査・統合、実利用者テスト、完成サイトの外部公開まで完了したという意味ではありません。
 
 ## 主な構成
 
