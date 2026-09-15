@@ -15,8 +15,16 @@ test('plan, fiscal and assessment evidence keeps its own periods, definitions an
   assert.match(html,/<strong>0<\/strong> test currency thousands/);
   assert.match(md,/Cumulative expenditure: 0 test currency thousands/);
   assert.match(csv,/"expenditure","Cumulative expenditure","0","observed"/);
-  assert.match(md,/Requested evidence period: 2024/);assert.match(md,/generic planning aid/);
+  assert.match(md,/Statistical display policy: Selected source period 2024/);assert.match(md,/generic planning aid/);
   assert.doesNotMatch(html,/Synthetic district plan/);
+});
+test('planning exports use each indicator latest year when no historical period is requested',()=>{
+  const data=planningFixture('A');
+  data.observations.find(row=>row.territory_id==='city'&&row.indicator_id==='water').period='2022';
+  const md=planningMarkdown(data,'city',null);
+  assert.match(md,/Latest confirmed value for each indicator/);
+  assert.match(md,/Test population \| 100 \| people \| 2024/);
+  assert.match(md,/Test water \| 55 \| % \| 2022/);
 });
 test('all adopted and extra material categories remain reachable without imposing separate pages',()=>{
   const data=planningFixture('B'),groups=documentGroups(data,'city');

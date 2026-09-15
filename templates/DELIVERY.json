@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.2",
+  "schema_version": "0.3",
   "status": "ready",
   "country_id": "REPLACE_WITH_ISO3",
   "completed_at": "REPLACE_WITH_ISO_DATETIME",
@@ -35,7 +35,9 @@
   },
   "period_and_language_review": {
     "status": "passed",
-    "different_year_data_discoverable": true,
+    "latest_value_per_indicator": true,
+    "source_year_shown_per_value": true,
+    "historical_period_controls_absent": true,
     "national_context_separated_on_local_views": true,
     "mixed_language_reviewed": true,
     "evidence_file": "evidence/ACCEPTANCE.md"

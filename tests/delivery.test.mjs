@@ -6,7 +6,7 @@ import { mkdtemp, mkdir, writeFile, readFile } from 'node:fs/promises';
 import { verifyDelivery } from '../scripts/verify-delivery.mjs';
 import { fixture } from './fixture.mjs';
 import {planningFixture} from './planning-fixture.mjs';
-import { initialState, observedPeriodsForArea, themePeriodCoverage } from '../scaffold/site/model.mjs';
+import { initialState, observedPeriodsForArea, themePeriodCoverage, themeLatestCoverage, latestDisplayPeriod, latestComparisonPeriod, evidenceRows } from '../scaffold/site/model.mjs';
 import { renderInternalComparison } from '../scaffold/site/diagnostic.mjs';
 import {planDocxBytes} from '../scaffold/site/docx.mjs';
 
@@ -32,7 +32,7 @@ async function readyProject() {
   ];
   await writeFile(path.join(root,'evidence/THEME_COVERAGE.json'),JSON.stringify({schema_version:'0.1',completed_at:'2026-09-15T00:00:00Z',themes}));
   const levelRows=[...new Set(data.territories.filter(area=>area.level!=='national').map(area=>area.level))].map(level=>{const ids=new Set(data.territories.filter(area=>area.level===level).map(area=>area.id)),boundaryIds=new Set(data.boundaries.features.map(feature=>feature.properties.territory_id).filter(id=>ids.has(id)));return {level,territory_count:ids.size,boundary_count:boundaryIds.size,status:boundaryIds.size===0?'none':boundaryIds.size===ids.size?'complete':'partial',unjoined_ids_recorded:true};});
-  const delivery={schema_version:'0.2',status:'ready',country_id:'TST',completed_at:'2026-09-15T00:00:00Z',research,default_view:{territory_id:'TST',indicator_id:'population',period:'2024'},empty_comparisons:{collapsed_or_suppressed:true},coverage_claims:{qualified_by_indicator_period_level:true},source_table_inventory:{status:'passed',file:'evidence/SOURCE_TABLE_INVENTORY.json',all_adopted_indicators_traced:true,all_numeric_fields_decided:true},theme_coverage:{status:'passed',file:'evidence/THEME_COVERAGE.json',candidates_integrated_or_constrained:true},geography_review:{status:'passed',stable_url_identity_checked:true,no_geometry_layout_checked:true,selectable_levels:levelRows,evidence_file:'evidence/GEOGRAPHY_REVIEW.md'},period_and_language_review:{status:'passed',different_year_data_discoverable:true,national_context_separated_on_local_views:true,mixed_language_reviewed:true,evidence_file:'evidence/ACCEPTANCE.md'},word_plan:{status:'passed',outline_checked_against_law:true,sample_file:'evidence/WORD_SAMPLE.docx',render_evidence_file:'evidence/WORD_RENDER_CHECK.md'},validation,artifacts:['site/index.html','site/territorial/index.html','site/thematic/index.html','site/planning/index.html','data/dashboard.json','evidence/WORD_SAMPLE.docx','HANDOFF.md'],limitations:[]};
+  const delivery={schema_version:'0.3',status:'ready',country_id:'TST',completed_at:'2026-09-15T00:00:00Z',research,default_view:{territory_id:'TST',indicator_id:'population',period:'2024'},empty_comparisons:{collapsed_or_suppressed:true},coverage_claims:{qualified_by_indicator_period_level:true},source_table_inventory:{status:'passed',file:'evidence/SOURCE_TABLE_INVENTORY.json',all_adopted_indicators_traced:true,all_numeric_fields_decided:true},theme_coverage:{status:'passed',file:'evidence/THEME_COVERAGE.json',candidates_integrated_or_constrained:true},geography_review:{status:'passed',stable_url_identity_checked:true,no_geometry_layout_checked:true,selectable_levels:levelRows,evidence_file:'evidence/GEOGRAPHY_REVIEW.md'},period_and_language_review:{status:'passed',latest_value_per_indicator:true,source_year_shown_per_value:true,historical_period_controls_absent:true,national_context_separated_on_local_views:true,mixed_language_reviewed:true,evidence_file:'evidence/ACCEPTANCE.md'},word_plan:{status:'passed',outline_checked_against_law:true,sample_file:'evidence/WORD_SAMPLE.docx',render_evidence_file:'evidence/WORD_RENDER_CHECK.md'},validation,artifacts:['site/index.html','site/territorial/index.html','site/thematic/index.html','site/planning/index.html','data/dashboard.json','evidence/WORD_SAMPLE.docx','HANDOFF.md'],limitations:[]};
   await writeFile(path.join(root,'evidence/DELIVERY.json'),JSON.stringify(delivery));
   return {root,data,delivery};
 }
@@ -81,6 +81,14 @@ test('delivery gate rejects a shallow source scan, unfinished theme candidates a
   assert.equal(result.ready,false);assert.match(text,/does not trace adopted indicator: water/);assert.match(text,/needs final meaning metadata/);assert.match(text,/needs a final redistribution review/);assert.match(text,/education is unfinished/);assert.match(text,/city counts do not match/);
 });
 
+test('delivery gate requires latest-per-indicator presentation evidence',async()=>{
+  const {root,delivery}=await readyProject();
+  delivery.period_and_language_review.source_year_shown_per_value=false;
+  await writeFile(path.join(root,'evidence/DELIVERY.json'),JSON.stringify(delivery));
+  const result=await verifyDelivery(root);
+  assert.equal(result.ready,false);assert.match(result.errors.join('\n'),/source_year_shown_per_value must be true/);
+});
+
 test('initial state prefers the best-covered local indicator and period',()=>{
   const data=fixture();
   data.indicators.unshift({id:'national-latest',name:'National latest',theme:'Context',unit:'x',definition:'National only',source_id:'test',aggregation:'none',measurement_method:'source_reported'});
@@ -94,6 +102,18 @@ test('territorial themes distinguish exact-period absence from data acquired in 
   data.observations.push({territory_id:'TST-A',indicator_id:'poverty',period:'2017',value:23,status:'observed',source_id:'test'});
   assert.deepEqual(observedPeriodsForArea(data,'TST-A','poverty'),['2017']);
   assert.deepEqual(themePeriodCoverage(data,'TST-A',[data.indicators.at(-1)],'2024'),{total:1,exact:0,otherPeriods:['2017']});
+});
+
+test('country display selects the latest confirmed year independently for every indicator',()=>{
+  const data=fixture();
+  data.indicators.push({id:'poverty',name:'Poverty',theme:'Living standards',unit:'%',definition:'Synthetic historical rate',source_id:'test',aggregation:'none',measurement_method:'source_reported'});
+  data.observations.push({territory_id:'TST-A',indicator_id:'poverty',period:'2017',value:23,status:'observed',source_id:'test'});
+  assert.equal(latestDisplayPeriod(data,'TST-A','people'),'2024');
+  assert.equal(latestDisplayPeriod(data,'TST-A','poverty'),'2017');
+  assert.equal(latestComparisonPeriod(data,'poverty','city'),'2017');
+  assert.deepEqual(themeLatestCoverage(data,'TST-A',[data.indicators.find(row=>row.id==='poverty')]),{total:1,available:1});
+  const periods=new Map(evidenceRows(data,'TST-A',null).map(row=>[row.indicator.id,row.period]));
+  assert.equal(periods.get('people'),'2024');assert.equal(periods.get('poverty'),'2017');
 });
 
 test('all-missing internal comparisons are concise on screen while exports retain their separate contract',()=>{

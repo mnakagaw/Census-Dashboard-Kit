@@ -52,6 +52,16 @@ test('same-parent selection exports its own missing value and its own direct chi
   assert.equal(rows[0].Value,'');assert.equal(rows[0].Status,'not_collected');assert.equal(rows[1].Value,'400');assert.equal(rows[2].Status,'missing');
   assert.ok(csv.every(row=>row['Analysis area ID']==='north'));assert.doesNotMatch(html,/data-internal-row="city"/);
 });
+test('country diagnostic exports latest value and year per indicator without history sections',()=>{
+  const data=analysisFixture();
+  const second=data.indicators.find(row=>row.id!=='people');
+  if(second){for(const row of data.observations.filter(row=>row.indicator_id===second.id))row.period='2022';}
+  const html=diagnosticHtml(data,'city',null),markdown=diagnosticMarkdown(data,'city',null),csv=csvRecords(diagnosticCsv(data,'city',null));
+  assert.match(html,/Latest confirmed value for each indicator/);assert.doesNotMatch(html,/<h3>Acquired history|<svg[^>]*class="diagnostic-history"/);
+  assert.match(markdown,/Display policy: latest confirmed value for each indicator/);assert.doesNotMatch(markdown,/### Acquired history/);
+  assert.equal(csv.find(row=>row['Indicator ID']==='people').Period,'2024');
+  if(second)assert.equal(csv.find(row=>row['Indicator ID']===second.id).Period,'2022');
+});
 test('base city and explicitly terminal country export their own evidence without false lower-area diagnosis',()=>{
   const data=analysisFixture();
   for(const id of ['city','TST']) {

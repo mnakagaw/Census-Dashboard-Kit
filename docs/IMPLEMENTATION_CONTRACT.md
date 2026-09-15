@@ -2,12 +2,12 @@
 
 This contract defines what an AI must preserve when it turns a country name into a country dashboard. The public kit supplies the initial collector, a data contract, three main page roles, reusable source research, and tests. Each country project supplies the verified local evidence and adaptations.
 
-Kit version 1.3.0 keeps `dataset.schema_version = "0.2"` for compatibility. Optional `analysis` and `planning` objects extend the schema without making old country datasets invalid. Version 1.1.0 added a one-shot delivery gate; version 1.2.0 added a verified country planning outline, DOCX output and classified source links. Version 1.3.0 adds full acquired-table inventory, six-theme evidence coverage, selectable-level geography checks, alternative-period discovery and language review to the completed-country gate.
+Kit version 1.4.0 keeps `dataset.schema_version = "0.2"` for compatibility. Optional `analysis` and `planning` objects extend the schema without making old country datasets invalid. Version 1.1.0 added a one-shot delivery gate; version 1.2.0 added a verified country planning outline, DOCX output and classified source links. Version 1.3.0 added full acquired-table inventory, six-theme evidence coverage, selectable-level geography checks and language review. Version 1.4.0 makes country pages show the latest confirmed value and source year for each indicator, removes historical-period controls from those pages, and keeps thematic comparisons on one automatically selected common year.
 
 ## Required page roles
 
 1. **Territorial Diagnostic** reads one selected area across all acquired themes.
-2. **Thematic Diagnostic** compares compatible areas for one indicator and source period.
+2. **Thematic Diagnostic** compares compatible areas for one indicator at its automatically selected newest common source period.
 3. **Development Plan Materials** connects the same selected area to applicable planning rules, official materials, statistical evidence, gaps, and adopted working outputs.
 
 The generated home page routes users to these roles. A supporting Data Register may expose the indicator dictionary, territory register, observations, and source records. It is not a substitute for the three main roles.
@@ -33,7 +33,7 @@ The AI continues without returning the working site to the user. A country is co
 
 - The last area explicitly selected in the top hierarchy is the analysis target.
 - Selecting a lower area updates the heading, location map, all indicators, documents, URL, saved context, and every generated output without a separate zoom/apply action.
-- After a child is selected, explicitly selecting its current parent again clears the child and immediately selects the whole parent. The indicator, source period, and unrelated user notes remain.
+- After a child is selected, explicitly selecting its current parent again clears the child and immediately selects the whole parent. The indicator and unrelated user notes remain; displayed values update to each indicator’s latest confirmed year for the parent.
 - The UI must distinguish a parent shown as lineage or filter context from an action that selects the parent itself. Implement and test a same-option reselection path because a native `change` event may not fire.
 - Parent selection must not leave a former child's values, map, documents, or exports on screen.
 - A focus action inside one indicator's comparison map or table changes only that indicator's focus. It does not change the top analysis area, other indicators, documents, URL, or output target.
@@ -51,7 +51,7 @@ The AI continues without returning the working site to the user. A country is co
 | Observation meaning | Optional definition ID, definition, unit, population, method, measurement method, and boundary version preserve differences from the indicator default. Incompatible records remain visible but are excluded from common colors and numeric comparison. |
 | `analysis.aggregation` | Only `exact_then_complete_cover` rules for declared indicators may calculate parents. The output retains components, periods, missing IDs, and provenance. |
 
-The full requirements are in [ANALYSIS_DATA_CONTRACT.md](ANALYSIS_DATA_CONTRACT.md). Diagnostic Markdown, print-ready HTML, and full CSV must include every selected-period indicator and every internal-comparison row, including missing or unmapped areas. Print output must not depend on the screen's search, collapse, or scroll state.
+The full requirements are in [ANALYSIS_DATA_CONTRACT.md](ANALYSIS_DATA_CONTRACT.md) and [LATEST_VALUE_POLICY.md](LATEST_VALUE_POLICY.md). For country editions, diagnostic Markdown, print-ready HTML, and full CSV must include every indicator at its latest confirmed source period, with that period recorded, plus every internal-comparison row for the indicator’s displayed year, including missing or unmapped areas. Print output must not depend on the screen's search, collapse, or scroll state. Country pages do not expose historical-period selection, time-series charts or history CSV actions; historical observations remain available in the supporting data register.
 
 ## Optional planning contract
 
@@ -152,6 +152,6 @@ For the adopted scope, record:
 - representative complete, sparse, and special-type areas tested through selection, diagnostics, materials, URLs, reload, back/forward, and downloads;
 - `npm run check`, `npm test`, country validation, actual browser checks, output-content checks, environment, dataset edition, commit, and anything not performed;
 - a `HANDOFF.md` with completed work, exact replay commands, the last successful build, current gaps, and the next concrete action.
-- an `evidence/DELIVERY.json` grounded in the above records and a passing delivery-gate result. If local observations exist, its default indicator and period must actually support local comparison. All-missing maps, legends and tables are suppressed or collapsed on screen while full audit rows remain in exports.
+- an `evidence/DELIVERY.json` grounded in the above records and a passing delivery-gate result. If local observations exist, its default indicator and automatically selected comparison period must actually support local comparison. It must record that every country-page indicator uses its latest value with a visible year and that historical controls are absent. All-missing maps, legends and tables are suppressed or collapsed on screen while full audit rows remain in exports.
 
 Use the applicable cases in [the 42-scenario acceptance sheet](../templates/ACCEPTANCE.md). The existence of a scenario is not a passing result. A list of source links, a prepared workspace, or a green CI run does not by itself prove that the country dashboard is complete.

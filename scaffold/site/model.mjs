@@ -31,12 +31,33 @@ export function observedPeriodsForArea(dataset, territoryId, indicatorId) {
     .map(row => String(row.period)))]
     .sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
 }
+export function latestDisplayPeriod(dataset, territoryId, indicatorId) {
+  const periods=periodsFor(dataset,indicatorId).filter(period=>period!==LATEST_AVAILABLE_PERIOD);
+  for(const period of periods)if(areaObservationState(dataset,territoryId,indicatorId,period).value!==null)return period;
+  const childIds=new Set(dataset.territories.filter(area=>area.parent_id===territoryId).map(area=>area.id));
+  for(const period of periods)if(dataset.observations.some(row=>childIds.has(row.territory_id)&&row.indicator_id===indicatorId&&String(row.period)===period&&observedValue(row)!==null))return period;
+  return observedPeriodsForArea(dataset,territoryId,indicatorId)[0] || periods[0] || '';
+}
+export function latestComparisonPeriod(dataset, indicatorId, level) {
+  const ids=new Set(dataset.territories.filter(area=>area.level===level).map(area=>area.id));
+  const periods=[...new Set(dataset.observations.filter(row=>ids.has(row.territory_id)&&row.indicator_id===indicatorId&&observedValue(row)!==null).map(row=>String(row.period)))]
+    .sort((a,b)=>b.localeCompare(a,'en',{numeric:true}));
+  return periods[0] || latestObservedPeriod(dataset,indicatorId);
+}
+export function latestDisplayMode(dataset) { return !['world','regional'].includes(dataset.analysis?.kind); }
 export function themePeriodCoverage(dataset, territoryId, indicators, period) {
   const exact = indicators.filter(indicator => observationState(dataset, territoryId, indicator.id, period).value !== null);
   const otherPeriods = [...new Set(indicators.flatMap(indicator => observedPeriodsForArea(dataset, territoryId, indicator.id)))]
     .filter(value => value !== String(period))
     .sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
   return {total:indicators.length, exact:exact.length, otherPeriods};
+}
+export function themeLatestCoverage(dataset, territoryId, indicators) {
+  const available=indicators.filter(indicator=>{
+    const period=latestDisplayPeriod(dataset,territoryId,indicator.id);
+    return period && areaObservationState(dataset,territoryId,indicator.id,period).value!==null;
+  });
+  return {total:indicators.length,available:available.length};
 }
 export function latestObservedPeriod(dataset, indicatorId) {
   return [...new Set(dataset.observations.filter(row => row.indicator_id === indicatorId && observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
@@ -230,8 +251,9 @@ export function makeCsv(rows) { return '\uFEFF' + rows.map(row => row.map(csvCel
 export function evidenceRows(dataset, territoryId, period, indicatorIds = dataset.indicators.map(row => row.id)) {
   const area = dataset.territories.find(row => row.id === territoryId);
   return dataset.indicators.filter(indicator => indicatorIds.includes(indicator.id)).map(indicator => {
-    const current = areaObservationState(dataset, territoryId, indicator.id, period), source = sourceFor(dataset, indicator, current.row);
-    return {area, indicator, ...current, source, period};
+    const displayPeriod=period==null?latestDisplayPeriod(dataset,territoryId,indicator.id):period;
+    const current = areaObservationState(dataset, territoryId, indicator.id, displayPeriod), source = sourceFor(dataset, indicator, current.row);
+    return {area, indicator, ...current, source, period:current.row?.period || displayPeriod};
   });
 }
 export function evidenceCsv(dataset, territoryId, period, indicatorIds) {
@@ -240,10 +262,10 @@ export function evidenceCsv(dataset, territoryId, period, indicatorIds) {
   const aggregation=!!dataset.analysis?.aggregation;
   return makeCsv([
     ['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status',...(aggregation?['Value provenance','Aggregation note','Component IDs','Component periods','Missing area IDs','Covered subtotal']:[]),'Definition','Source','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Population','Measurement method','Comparable concept','Comparison note']:[])],
-    ...rows.map(({area, indicator, row, value, status, source}) => {
+    ...rows.map(({area, indicator, row, value, status, source,period:displayPeriod}) => {
       const meaning=observationContext(dataset,area,indicator,row);
-      const aggregate=areaObservationState(dataset,area.id,indicator.id,period);
-      return [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, period, value, meaning.unit, status,...(aggregation?[aggregate.provenance, aggregate.note, aggregate.components.map(item=>item.territory_id).join('; '), aggregate.components.map(item=>`${item.territory_id}@${item.period}`).join('; '), aggregate.missing_ids.join('; '), aggregate.covered_value]:[]), meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,meaning.population,meaning.method,meaning.comparable,meaning.reason]:[])];
+      const aggregate=areaObservationState(dataset,area.id,indicator.id,displayPeriod);
+      return [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, displayPeriod, value, meaning.unit, status,...(aggregation?[aggregate.provenance, aggregate.note, aggregate.components.map(item=>item.territory_id).join('; '), aggregate.components.map(item=>`${item.territory_id}@${item.period}`).join('; '), aggregate.missing_ids.join('; '), aggregate.covered_value]:[]), meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,meaning.population,meaning.method,meaning.comparable,meaning.reason]:[])];
     })
   ]);
 }
@@ -290,14 +312,14 @@ export function planningMarkdown(dataset, territoryId, period) {
     `- Area: ${markdownText(area.name)}; ID: ${markdownText(area.id)}; level: ${markdownText(area.level)}; type: ${markdownText(area.type)}`,
     `- Code: ${markdownText(area.official_code || 'Not verified')}; code system: ${markdownText(area.code_system || 'Not specified')}`,
     `- Boundary edition: ${markdownText(area.boundary_version || 'Not verified')}`,
-    `- Requested evidence period: ${markdownText(period || 'No source period available')}`,
+    `- Statistical display policy: ${period==null?'Latest confirmed value for each indicator; source year shown in every row':`Selected source period ${markdownText(period)}`}`,
     `- Data edition: ${markdownText(dataset.generated_at)}`, '',
     ...(settings.system?[`- Planning framework: ${markdownText(settings.system.label)}; scope: ${markdownText(settings.system.scope)}; cycle: ${markdownText(settings.system.cycle)}.`,...settings.system.source_ids.map(id=>{const source=dataset.sources.find(row=>row.id===id);return `- Framework source: ${markdownText(source?.name)} <${safeUrl(source?.url)}>`;}),'']:[]),
     ...(settings.update?.status==='stopped'?[`- SOURCE UPDATE STOPPED: ${markdownText(settings.update.message)}. Last success: ${markdownText(settings.update.last_success_at||'Not recorded')}; checked ${markdownText(settings.update.checked_at)}.`,'']:[]),
     '## 2. Acquired statistical evidence', '',
-    'Only observations for this area and period appear below. National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.', '',
-    '| Indicator | Value | Unit | Status | Source |', '|---|---:|---|---|---|',
-    ...evidence.map(({indicator, row, value, status, source}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(row?.unit || indicator.unit)} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
+    `${period==null?'The latest confirmed observation for each indicator appears below, with its own source year.':'Only observations for this area and selected period appear below.'} National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.`, '',
+    '| Indicator | Value | Unit | Year / period | Status | Source |', '|---|---:|---|---|---|---|',
+    ...evidence.map(({indicator, row, value, status, source,period:displayPeriod}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(row?.unit || indicator.unit)} | ${markdownText(row?.period || displayPeriod || 'Not recorded')} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
     ...evidence.map(({indicator, row, source}) => `- ${markdownText(indicator.name)}: ${markdownText(row?.definition || indicator.definition || 'Definition not acquired')}. ${safeUrl(source?.url) ? `Source: <${safeUrl(source.url)}>.` : 'No verified source link.'} Retrieved: ${markdownText(source?.retrieved_at || 'Not recorded')}.`), '',
     ...evidence.flatMap(({indicator,row})=>{
       const meaning=observationContext(dataset,area,indicator,row);
@@ -321,7 +343,7 @@ export function planningMarkdown(dataset, territoryId, period) {
     '- Record indicator definitions, update frequency, data owner and review dates.', '',
     '## 8. Remaining evidence gaps', '',
     ...selectedGaps(dataset,territoryId).map(gap => `- ${markdownText(gap.category)} — ${markdownText(statusLabel(gap.status))}: ${markdownText(gap.detail)} Next: ${markdownText(gap.next_action)}`), '',
-    'Prepared from the same dataset and selected area/period used by the dashboard. This editable Markdown is a generic planning aid, not a DOCX file or an official country form.', ''
+    `Prepared from the same dataset and selected area used by the dashboard. ${period==null?'Each indicator uses its latest confirmed source period.':'The selected statistical period is retained.'} This editable Markdown is a generic planning aid, not a DOCX file or an official country form.`, ''
   ];
   return lines.join('\n');
 }

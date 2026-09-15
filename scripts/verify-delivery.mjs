@@ -53,7 +53,7 @@ export async function verifyDelivery(project) {
   errors.push(...datasetValidation.errors.map(message => `dataset: ${message}`));
   warnings.push(...datasetValidation.warnings.map(message => `dataset: ${message}`));
 
-  if (delivery.schema_version !== '0.2') errors.push('DELIVERY schema_version must be 0.2');
+  if (delivery.schema_version !== '0.3') errors.push('DELIVERY schema_version must be 0.3');
   if (delivery.status !== 'ready') errors.push('DELIVERY status must be ready');
   if (delivery.country_id !== data.country?.id) errors.push('DELIVERY country_id must match data/dashboard.json');
   if (!/^\d{4}-\d{2}-\d{2}T/.test(delivery.completed_at || '')) errors.push('DELIVERY completed_at must be an ISO datetime');
@@ -180,7 +180,7 @@ export async function verifyDelivery(project) {
 
   const presentation=delivery.period_and_language_review;
   if(presentation?.status!=='passed')errors.push('period_and_language_review.status must be passed');
-  for(const key of ['different_year_data_discoverable','national_context_separated_on_local_views','mixed_language_reviewed'])if(presentation?.[key]!==true)errors.push(`period_and_language_review.${key} must be true`);
+  for(const key of ['latest_value_per_indicator','source_year_shown_per_value','historical_period_controls_absent','national_context_separated_on_local_views','mixed_language_reviewed'])if(presentation?.[key]!==true)errors.push(`period_and_language_review.${key} must be true`);
   const presentationEvidence=safeProjectPath(projectDir,presentation?.evidence_file);
   if(!presentationEvidence||!await exists(presentationEvidence))errors.push(`period_and_language_review.evidence_file is missing or outside the project: ${presentation?.evidence_file||''}`);
 
