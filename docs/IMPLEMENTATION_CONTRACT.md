@@ -8,9 +8,9 @@ Kit version 1.4.0 keeps `dataset.schema_version = "0.2"` for compatibility. Opti
 
 1. **Territorial Diagnostic** reads one selected area across all acquired themes.
 2. **Thematic Diagnostic** compares compatible areas for one indicator at its automatically selected newest common source period.
-3. **Development Plan Materials** connects the same selected area to applicable planning rules, official materials, statistical evidence, gaps, and adopted working outputs.
+3. **Planning Materials and Links** connects the same selected area to applicable planning rules, published materials, statistical evidence, gaps, and adopted working outputs.
 
-The generated home page routes users to these roles. A supporting Data Register may expose the indicator dictionary, territory register, observations, and source records. It is not a substitute for the three main roles.
+For a country dashboard, `/` is the national **Territorial Diagnostic** rather than an empty routing page. The header brand returns to that national diagnostic and preserves the selected indicator. Use generic menu labels and do not present the dashboard itself as an official government site or its Word output as an official plan. A supporting Data Register may expose the indicator dictionary, territory register, observations, and source records. It is not a substitute for the three main roles.
 
 Country-specific evidence controls the administrative hierarchy, legal planning level, internal-analysis level, language, indicator set, periods, map depth, charts, document types, and outputs. Do not freeze one country's institutions, cycle, headings, or available data as the global format.
 
@@ -27,7 +27,7 @@ Country-specific evidence controls the administrative hierarchy, legal planning 
 - `lib/generate.mjs` exports `generateSite({dataset, outDir})`.
 - `lib/validate.mjs` exports `validateDataset(dataset)` and returns `{errors, warnings}`.
 
-The AI continues without returning the working site to the user. A country is complete only after it has inspected the country's official census catalogue and detailed tables, every table and numeric field in acquired sources, official codes and boundaries at each selectable level, planning law and guidance, representative local plans, and relevant sector, budget, implementation, evaluation and international sources; completed the six-theme search record; integrated every usable adopted candidate; adapted all three pages; tested the actual site and outputs; recorded `evidence/SOURCE_TABLE_INVENTORY.json`, `evidence/THEME_COVERAGE.json` and `evidence/DELIVERY.json`; and passed `scripts/verify-delivery.mjs`. Source constraints may produce a constrained complete product only when the investigation evidence and usable fallback are both complete.
+The AI continues without returning the working site to the user. A country is complete only after it has inspected the country's official census catalogue and detailed tables, enumerated every resource on acquired dataset pages, inspected every table and numeric field in acquired sources, official codes and boundaries at each selectable level, planning law and guidance, representative local plans, and relevant sector, budget, implementation, evaluation and international sources; completed the six-theme search record; integrated every usable adopted candidate; adapted all three pages; tested the actual site and outputs; recorded `evidence/SOURCE_TABLE_INVENTORY.json`, `evidence/THEME_COVERAGE.json` and `evidence/DELIVERY.json`; and passed `scripts/verify-delivery.mjs`. ADM0, ADM1, ADM2, explanatory and age-sex resources are separate candidates and must not be skipped after the first usable CSV. If regional age-sex data exist, the corresponding areas require population pyramids. Source constraints may produce a constrained complete product only when the investigation evidence and usable fallback are both complete.
 
 ## Region-selection contract
 
@@ -53,6 +53,8 @@ The AI continues without returning the working site to the user. A country is co
 
 The full requirements are in [ANALYSIS_DATA_CONTRACT.md](ANALYSIS_DATA_CONTRACT.md) and [LATEST_VALUE_POLICY.md](LATEST_VALUE_POLICY.md). For country editions, diagnostic Markdown, print-ready HTML, and full CSV must include every indicator at its latest confirmed source period, with that period recorded, plus every internal-comparison row for the indicator’s displayed year, including missing or unmapped areas. Print output must not depend on the screen's search, collapse, or scroll state. Country pages do not expose historical-period selection, time-series charts or history CSV actions; historical observations remain available in the supporting data register.
 
+Thematic level choices contain only levels with observed values for the selected indicator. A parent's direct missing value and an available child-area comparison are separate facts and must be labelled separately. A child comparison map never substitutes for the parent's value. Values calculated by the dashboard rather than published in the cited source are labelled **Dashboard calculated** on screen, CSV and Word.
+
 ## Optional planning contract
 
 `dataset.planning` and extended document records are optional. [PLANNING_DATA_CONTRACT.md](PLANNING_DATA_CONTRACT.md) is authoritative for their fields and validation.
@@ -62,6 +64,8 @@ Planning displays and outputs keep statistical periods, multi-year plan periods,
 The legal planning unit and its internal-analysis geography must be recorded separately. A District plan may require Subcounty distributions without making Subcounties the legal plan owner.
 
 An old dataset without `planning` keeps default labels and legacy working outputs. It remains readable but cannot pass the country delivery gate until it has a verified `planning.document_template`, the three `planning.source_groups`, adopted `docx` output and rendered sample evidence. Existing unverified free text cannot be promoted to verified evidence during migration.
+
+The adopted Word output uses the title **Diagnóstico para el Plan de Desarrollo Municipal** and includes at least the Territorial Diagnostic, a population pyramid when age-sex data are available, latest acquired theme values with source years, the law/guidance-aligned index, and separate law, census/national-statistics and international-source lists. It is a diagnostic input and does not call itself an official plan or government form.
 
 ## Update failure and recovery
 

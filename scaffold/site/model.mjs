@@ -17,6 +17,10 @@ export function displayValue(value, locale = 'en', maximumFractionDigits = 2) {
 export function statusLabel(status) {
   return ({observed:'Source reported', calculated:'Dashboard calculated', incomplete:'Incomplete coverage', missing:'No data', not_collected:'Not collected', not_available:'Not available', unavailable:'Unavailable', not_applicable:'Not applicable', incomparable:'Comparison not established', unverified:'Unverified', failed:'Acquisition failed', error:'Acquisition failed', ready:'Acquired', link_verified:'Link verified', downloaded:'Body acquired', body_acquired:'Body acquired', content_extracted:'Content extracted; not cross-checked', content_verified:'Content cross-checked', extracted:'Extracted', pending:'Pending'})[status] || String(status || 'Not collected').replaceAll('_', ' ');
 }
+export function evidenceStatus(indicator, observation, status) {
+  const method=observation?.measurement_method || observation?.method || indicator?.measurement_method || indicator?.method;
+  return status==='observed' && method && method!=='source_reported' ? 'Dashboard calculated' : statusLabel(status);
+}
 export function sourceFor(dataset, indicator, observation) {
   return dataset.sources.find(source => source.id === (observation?.source_id || indicator?.source_id));
 }

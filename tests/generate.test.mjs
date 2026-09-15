@@ -226,7 +226,7 @@ test('generator writes five independent portable pages, same data and local-only
     assert.deepEqual(JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8')),data);
     assert.equal(await readFile(path.join(directory,'data','dashboard.json'),'utf8'),'canonical sentinel');
     assert.equal(await readFile(path.join(result.siteDir,'unrelated.txt'),'utf8'),'preserve');
-    for(const page of ['home','territorial','thematic','database','planning']) {
+    for(const page of ['territorial','thematic','database','planning']) {
       const html=await readFile(path.join(result.siteDir,page==='home'?'':page,'index.html'),'utf8');
       assert.match(html,new RegExp(`data-page="${page}"`));assert.match(html,/Content-Security-Policy/);
       assert.match(html,/data-language="en"/);assert.match(html,/data-language="es"/);assert.match(html,/data-language="ja"/);
@@ -237,7 +237,7 @@ test('generator writes five independent portable pages, same data and local-only
     }
     const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
     assert.match(app,/new URL\('data\/dashboard.json',base\)/);assert.match(app,/no local observations are integrated/i);
-    assert.match(app,/Download law-aligned Word/);assert.match(app,/Official sources used for planning work/);
+    assert.match(app,/Download municipal planning diagnostic/);assert.match(app,/Sources used for planning work/);
     assert.match(await readFile(path.join(result.siteDir,'assets','docx.mjs'),'utf8'),/planDocxBytes/);
     assert.match(await readFile(path.join(result.siteDir,'assets','i18n.mjs'),'utf8'),/resolveLanguage/);
     assert.match(await readFile(result.handoffPath,'utf8'),/national observations only/);
@@ -254,7 +254,7 @@ test('static shell escapes external country names and never loads third-party sc
   assert.throws(()=>pageShell({country:{name:'x'},page:'unknown'}),/Unknown generated page/);
   const brand=html.match(/<a class="brand"[^>]*>/)[0];
   assert.match(brand,/data-brand-link/);assert.doesNotMatch(brand,/data-page-link/);assert.match(brand,/href="\.\.\/"/);
-  assert.match(html,/<a href="\.\.\/" data-page-link="home"[^>]*>/,'Ordinary home navigation remains separate from the brand reset');
+  assert.doesNotMatch(html,/data-page-link="home"/,'The national territorial diagnostic is the single entry page');
   const data=hierarchyFixture(),fresh=initialState(data);
   assert.equal(fresh.selected,'TST');assert.equal(fresh.metric,'population');assert.equal(fresh.period,'2024');
 });

@@ -9,7 +9,7 @@ export async function buildPlanDocx({project,territory,period,out}) {
   const validation=validateDataset(data);if(validation.errors.length)throw new Error(`Country dataset is invalid:\n${validation.errors.join('\n')}`);
   const territoryId=territory||data.country.national_territory_id;
   const selectedPeriod=period==null?null:String(period);
-  const filename=path.resolve(out||path.join(projectDir,'evidence',`${data.country.id}-${territoryId}-development-plan.docx`));
+  const filename=path.resolve(out||path.join(projectDir,'evidence',`${data.country.id}-${territoryId}-diagnostico-plan-desarrollo-municipal.docx`));
   await writeFile(filename,planDocxBytes(data,territoryId,selectedPeriod));
   return {filename,territory_id:territoryId,display_policy:selectedPeriod==null?'latest_per_indicator':'selected_period',period:selectedPeriod};
 }

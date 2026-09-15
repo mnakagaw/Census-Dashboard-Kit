@@ -16,6 +16,7 @@ async function readyProject() {
   await writeFile(path.join(root,'data/dashboard.json'),JSON.stringify(data));
   for(const file of ['SOURCES.md','INDICATOR_INVENTORY.csv','CODE_CROSSWALK.csv','PLANNING_CENSUS_AUDIT.md','VALIDATION.md','ACCEPTANCE.md','validation.json','WORD_RENDER_CHECK.md','GEOGRAPHY_REVIEW.md'])await writeFile(path.join(root,'evidence',file),'verified test evidence');
   await writeFile(path.join(root,'raw','test-fixture'),'synthetic source fields');
+  await writeFile(path.join(root,'raw','international-data.pdf'),'synthetic international fields');
   await writeFile(path.join(root,'evidence','WORD_SAMPLE.docx'),planDocxBytes(data,'city','2024'));
   for(const file of ['site/index.html','site/territorial/index.html','site/thematic/index.html','site/planning/index.html','HANDOFF.md'])await writeFile(path.join(root,file),'test artifact');
   const research={};

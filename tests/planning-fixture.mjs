@@ -12,7 +12,7 @@ export function planningFixture(scenario='integrated') {
     area.name='River Local Government';area.valid_from='2020-01-01';area.valid_to='2030-12-31';
   }
   const source=(id,name,status='ready')=>({id,name,publisher:'Synthetic test authority',url:`https://example.org/planning/${id}`,retrieved_at:'2026-09-13T00:00:00Z',reference_period:'2025/26',status,raw_path:`raw/${id}.pdf`,sha256:'3'.repeat(64),license:'Synthetic fixture only'});
-  data.sources.push(source('identity-register','Synthetic historical identity register'),source('plan-body','Synthetic adopted plan'),source('budget-body','Synthetic budget report'),source('results-body','Synthetic implementation report'),source('evaluation-body','Synthetic official evaluation'),source('guidance','Synthetic country guidance'));
+  data.sources.push(source('identity-register','Synthetic historical identity register'),source('plan-body','Synthetic adopted plan'),source('budget-body','Synthetic budget report'),source('results-body','Synthetic implementation report'),source('evaluation-body','Synthetic published evaluation'),source('guidance','Synthetic country guidance'),{...source('international-data','Synthetic international comparison source'),sha256:'4'.repeat(64)});
   const evidence=(source_id,locator='PDF page 4, table 2')=>({source_id,locator,checked_at:'2026-09-13T00:00:00Z'});
   const match=id=>{
     const area=data.territories.find(row=>row.id===id);
@@ -41,14 +41,14 @@ export function planningFixture(scenario='integrated') {
     system:{label:'Synthetic planning system',scope:'Fictional city and district authorities',cycle:'Synthetic 2025/26–2029/30 cycle',source_ids:['guidance']},
     outputs:['docx','markdown','html','evidence_csv','documents_csv'],
     document_template:{status:'verified_prescribed_index',title:'Synthetic official development plan index',authority:'Synthetic Planning Authority',document_type:'Development Plan',verified_at:'2026-09-13T00:00:00Z',source_ids:['guidance'],rationale:'The synthetic guidance prescribes this fictional index for test purposes.',sections:[
-      {id:'context',number:'1',title:'Territorial context',required:true,guidance:'Describe the area, population and service conditions.',legal_basis:evidence('guidance','Synthetic guidance section 1')},
-      {id:'priorities',number:'2',title:'Priorities and objectives',required:true,guidance:'Record evidence-based priorities and objectives.',legal_basis:evidence('guidance','Synthetic guidance section 2')},
-      {id:'implementation',number:'3',title:'Implementation and monitoring',required:true,guidance:'Set out actions, responsibilities, resources and monitoring.',legal_basis:evidence('guidance','Synthetic guidance section 3')}
+      {id:'context',number:'1',title:'Territorial context',required:true,guidance:'Describe the area, population and service conditions.',indicator_ids:['population','water'],legal_basis:evidence('guidance','Synthetic guidance section 1')},
+      {id:'priorities',number:'2',title:'Priorities and objectives',required:true,guidance:'Record evidence-based priorities and objectives.',indicator_ids:['water'],legal_basis:evidence('guidance','Synthetic guidance section 2')},
+      {id:'implementation',number:'3',title:'Implementation and monitoring',required:true,guidance:'Set out actions, responsibilities, resources and monitoring.',indicator_ids:['population'],legal_basis:evidence('guidance','Synthetic guidance section 3')}
     ]},
     source_groups:[
       {id:'law',label:'Planning laws and guidance',note:'Synthetic legal basis only.',source_ids:['guidance']},
       {id:'census',label:'Census and national statistics',note:'Synthetic census evidence only.',source_ids:['test-source']},
-      {id:'international',label:'International institution data sources',note:'Synthetic international reference only.',source_ids:['test-source']}
+      {id:'international',label:'International institution data sources',note:'Synthetic international reference only.',source_ids:['international-data']}
     ],
     map:{mode:'official_status',category:'plan',period:planPeriod.label,statuses:[{id:'council_adopted',label:'Documented synthetic adoption',color:'#246f5e'},{id:'draft_published',label:'Published synthetic draft',color:'#9b6d20'}]},
     related_links:[{label:'Existing local finance view',url:'./thematic/',territory_id:'city'},{label:'Synthetic source catalogue',url:'https://example.org/planning/'}],

@@ -7,7 +7,8 @@ import {fixture} from './fixture.mjs';
 test('law-aligned Word output contains the verified country index, selected area evidence and source groups',()=>{
   const data=planningFixture('integrated'),bytes=planDocxBytes(data,'city','2024'),raw=new TextDecoder().decode(bytes);
   assert.deepEqual([...bytes.slice(0,4)],[0x50,0x4b,0x03,0x04]);
-  for(const expected of ['River Local Government','Synthetic official development plan index','1 Territorial context','2 Priorities and objectives','3 Implementation and monitoring','Planning laws and guidance','Census and national statistics','International institution data sources','Statistical evidence annex','Acquired planning materials'])assert.match(raw,new RegExp(expected));
+  for(const expected of ['Diagnóstico para el Plan de Desarrollo Municipal','River Local Government','Synthetic official development plan index','Diagnóstico Territorial','1 Territorial context','2 Priorities and objectives','3 Implementation and monitoring','Data-based diagnostic content','Planning laws and guidance','Census and national statistics','International institution data sources','Acquired planning materials'])assert.match(raw,new RegExp(expected));
+  assert.doesNotMatch(raw,/undefined|\[Prepare evidence-based content|Editable working document/);
 });
 
 test('Word output refuses a generic country dataset without verified planning-law structure',()=>{
