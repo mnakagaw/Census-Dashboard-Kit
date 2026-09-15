@@ -133,7 +133,9 @@ DDPTの既存実装との対応を保ち、新しいフレームワークへの�
 
 設計用profileは判断と未定事項の台帳である。実行時には[計画資料データ契約](PLANNING_DATA_CONTRACT.md)に従い、`data/dashboard.json`の任意の`planning`設定と`documents`へ変換する。datasetのschemaは`"0.2"`を維持し、共通UX candidate 0.4や設計profile schema 0.1と混同しない。設定を省略した旧データの動作と、実装済みの出力を保つ。
 
-`planning.sections`で採用した区分を並べ替えても、未掲載区分の取得済み資料を消さない。`planning.outputs`の省略は従来のMarkdown・HTML・根拠CSVを保つ意味で、空配列は提供しないという明示判断になる。後者は`purpose`等と案件記録に理由・原資料取得等の代替を示す。Word・PDF・AI生成の採用は国別に判断する。
+`planning.sections`で採用した区分を並べ替えても、未掲載区分の取得済み資料を消さない。旧datasetで`planning.outputs`を省略した場合は従来のMarkdown・HTML・根拠CSVを保つ。国別完成品では`docx`を必ず採用し、`planning.document_template`の確認済み国別目次を使う。PDFや追加のAI文章生成は国別に判断する。
+
+資料ページは`planning.source_groups`の`law`、`census`、`international`を別見出しで表示する。各区分には、実際に確認・採用判断した登録済みsource IDを置き、公式URL、発行主体、取得状態、確認日を示す。国際系列と国内国勢調査の定義を、一覧に同居したことだけで同一化しない。
 
 地図は既定で資料収録状況を示す。`official_status`モードを採用するなら区分・資料の正確な対象期間・状態定義が必要で、根拠のない状態や相反する状態は未確認にする。計画・会計年度の`target_period`を統計の`period`選択で代用しない。古い計画の地域範囲は当時の台帳で説明し、現行境界への変換を根拠なく行わない。
 

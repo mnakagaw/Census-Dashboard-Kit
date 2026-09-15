@@ -2,6 +2,7 @@
 export const documentCategories = ['plan','budget','implementation','evaluation','reference'];
 export const categoryLabels = {plan:'Development plans',budget:'Budgets and annual plans',implementation:'Implementation and financial results',evaluation:'Official assessments',reference:'Reference materials'};
 export const findingLabels = {budget:'Budget',revenue:'Revenue',expenditure:'Expenditure',implementation_result:'Implementation result',official_evaluation:'Official assessment',budget_execution:'Budget execution',plan_achievement:'Plan achievement'};
+export const sourceGroupLabels = {law:'Planning laws, regulations and official guidance',census:'Census and national statistics',international:'International institution data sources'};
 export function categoryFor(doc) {
   if(documentCategories.includes(doc.category))return doc.category;
   return ({'published-plan':'plan','development-plan':'plan',budget:'budget','annual-plan':'budget','execution-report':'implementation','performance-report':'implementation',evaluation:'evaluation'})[doc.kind] || 'reference';
@@ -16,7 +17,14 @@ export function planningSettings(dataset) {
   return {title:config.title || 'Development plan materials',purpose:config.purpose || 'Review official materials for the selected area and prepare evidence for plan preparation or revision.',
     sections:config.sections || documentCategories.map(id=>({id,label:categoryLabels[id]})),
     explicitSections:Array.isArray(config.sections),outputs:config.outputs || ['markdown','html','evidence_csv'],
-    map:config.map || {mode:'coverage'},related_links:config.related_links || [],system:config.system,update:config.update};
+    map:config.map || {mode:'coverage'},related_links:config.related_links || [],system:config.system,document_template:config.document_template,source_groups:config.source_groups || [],update:config.update};
+}
+export function planningSourceGroups(dataset) {
+  const configured=planningSettings(dataset).source_groups;
+  return configured.map(group=>({
+    ...group,label:group.label || sourceGroupLabels[group.id] || group.id,
+    sources:group.source_ids.map(id=>dataset.sources.find(source=>source.id===id)).filter(Boolean)
+  }));
 }
 export function planningDocuments(dataset,territoryId) {return dataset.documents.filter(doc=>doc.territory_id===territoryId);}
 export function documentGroups(dataset,territoryId) {

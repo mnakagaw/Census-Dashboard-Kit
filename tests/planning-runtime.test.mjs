@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {planningFixture} from './planning-fixture.mjs';
 import {fixture} from './fixture.mjs';
-import {planningSettings,planningDocuments,documentGroups,officialMapState,relatedResourceUrl} from '../scaffold/site/planning.mjs';
+import {planningSettings,planningDocuments,planningSourceGroups,documentGroups,officialMapState,relatedResourceUrl} from '../scaffold/site/planning.mjs';
 import {renderDocumentGroups} from '../scaffold/site/planning-view.mjs';
 import {initialState,selectHierarchyOption,planningMarkdown,planningHtml,documentsCsv,hierarchyControls} from '../scaffold/site/model.mjs';
 
@@ -25,6 +25,11 @@ test('all adopted and extra material categories remain reachable without imposin
   assert.match(renderDocumentGroups(data,'city'),/Synthetic official evaluation/);
   assert.deepEqual(planningSettings(fixture()).outputs,['markdown','html','evidence_csv']);
   assert.deepEqual(planningSettings(planningFixture('C')).outputs,[]);
+});
+test('planning source links remain classified as law, census and international evidence',()=>{
+  const groups=planningSourceGroups(planningFixture('A'));
+  assert.deepEqual(groups.map(group=>group.id),['law','census','international']);
+  for(const group of groups){assert.ok(group.sources.length);assert.ok(group.sources.every(source=>source.url.startsWith('https://')));}
 });
 test('same-named district and city, missing parent and same-parent reselection never inherit another area materials',()=>{
   const data=planningFixture('A'),city=initialState(data,'?territory=city&metric=water&period=2024');

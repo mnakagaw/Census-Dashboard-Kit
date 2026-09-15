@@ -221,7 +221,7 @@ test('generator writes five independent portable pages, same data and local-only
     await mkdir(path.join(directory,'data'));await writeFile(path.join(directory,'data','dashboard.json'),'canonical sentinel');
     await mkdir(path.join(directory,'site'));await writeFile(path.join(directory,'site','unrelated.txt'),'preserve');
     const data=fixture(),result=await generateSite({dataset:data,outDir:directory});
-    assert.equal(result.files.length,17);
+    assert.equal(result.files.length,18);
     assert.match(await readFile(path.join(result.siteDir,'.htaccess'),'utf8'),/AddType text\/javascript \.mjs/);
     assert.deepEqual(JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8')),data);
     assert.equal(await readFile(path.join(directory,'data','dashboard.json'),'utf8'),'canonical sentinel');
@@ -237,6 +237,8 @@ test('generator writes five independent portable pages, same data and local-only
     }
     const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
     assert.match(app,/new URL\('data\/dashboard.json',base\)/);assert.match(app,/no local observations are integrated/i);
+    assert.match(app,/Download law-aligned Word/);assert.match(app,/Official sources used for planning work/);
+    assert.match(await readFile(path.join(result.siteDir,'assets','docx.mjs'),'utf8'),/planDocxBytes/);
     assert.match(await readFile(path.join(result.siteDir,'assets','i18n.mjs'),'utf8'),/resolveLanguage/);
     assert.match(await readFile(result.handoffPath,'utf8'),/national observations only/);
   } finally {

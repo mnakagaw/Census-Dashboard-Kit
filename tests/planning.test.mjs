@@ -40,6 +40,10 @@ test('configuration rejects unknown categories, unsupported outputs and malforme
   assert.match(errorText(data=>data.planning.system.source_ids=['unknown']),/unknown source/);
   assert.match(errorText(data=>data.planning.sections[0].label=0),/label must be/);
   assert.match(errorText(data=>data.planning.purpose=[]),/purpose must be/);
+  assert.match(errorText(data=>data.planning.document_template.status='draft'),/verified prescribed index/);
+  assert.match(errorText(data=>data.planning.document_template.sections[0].legal_basis.source_id='unknown'),/registered source/);
+  assert.match(errorText(data=>data.planning.source_groups[0].id='miscellaneous'),/law, census or international/);
+  assert.match(errorText(data=>data.planning.source_groups[1].source_ids=[]),/at least one/);
 });
 
 test('official-state maps require exact document-period category and controlled local status definitions',()=>{
@@ -178,6 +182,7 @@ test('malformed optional objects, nested arrays and primitive rows report errors
   const mutations=[
     data=>data.planning=null,data=>data.planning=[],data=>data.planning.sections=[null],data=>data.planning.system=[],data=>data.planning.outputs={},
     data=>data.planning.map=null,data=>data.planning.map.statuses=[null],data=>data.planning.related_links=[null],data=>data.planning.update=9,
+    data=>data.planning.document_template=null,data=>data.planning.document_template.sections=[null],data=>data.planning.source_groups=[null],
     data=>data.documents=[null],data=>plan(data).target_period=[],data=>plan(data).territory_match='city',data=>plan(data).official_evidence=false,
     data=>plan(data).content=[],data=>plan(data).content.evidence=null,data=>budget(data).findings=[null],data=>budget(data).findings[0].period=5,
     data=>budget(data).findings[0].evidence=[],data=>budget(data).findings[0].scale=[],data=>data.gaps=[null],data=>data.sources=[null],data=>data.territories=[null]

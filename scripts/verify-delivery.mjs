@@ -81,6 +81,23 @@ export async function verifyDelivery(project) {
   if (delivery.empty_comparisons?.collapsed_or_suppressed !== true) errors.push('empty_comparisons.collapsed_or_suppressed must be true');
   if (delivery.coverage_claims?.qualified_by_indicator_period_level !== true) errors.push('coverage claims must be qualified by indicator, period and level');
 
+  const planning=data.planning,documentTemplate=planning?.document_template;
+  if(!planning?.outputs?.includes('docx'))errors.push('Country delivery must adopt the docx planning output');
+  if(!documentTemplate || !['verified_prescribed_index','verified_requirements_based_outline'].includes(documentTemplate.status))errors.push('Country delivery needs a verified law-aligned planning.document_template');
+  const sourceGroups=new Map((planning?.source_groups || []).map(group=>[group.id,group]));
+  for(const id of ['law','census','international'])if(!sourceGroups.get(id)?.source_ids?.length)errors.push(`planning.source_groups must list at least one ${id} source link`);
+  const word=delivery.word_plan;
+  if(word?.status!=='passed')errors.push('word_plan.status must be passed');
+  if(word?.outline_checked_against_law!==true)errors.push('word_plan.outline_checked_against_law must be true');
+  for(const key of ['sample_file','render_evidence_file']){
+    const value=word?.[key],filename=safeProjectPath(projectDir,value);
+    if(!filename || !await exists(filename))errors.push(`word_plan.${key} is missing or outside the project: ${value || ''}`);
+    else if(key==='sample_file'){
+      const bytes=await readFile(filename);
+      if(bytes.length<4||bytes[0]!==0x50||bytes[1]!==0x4b||bytes[2]!==0x03||bytes[3]!==0x04)errors.push('word_plan.sample_file is not a DOCX ZIP package');
+    }
+  }
+
   for (const relative of ['site/index.html', 'site/territorial/index.html', 'site/thematic/index.html', 'site/planning/index.html']) {
     if (!await exists(path.join(projectDir, relative))) errors.push(`Missing required page: ${relative}`);
   }

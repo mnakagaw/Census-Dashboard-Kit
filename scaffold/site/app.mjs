@@ -5,11 +5,12 @@ import {
   seriesFor, observedValue, makeCsv, evidenceCsv, safeFilename, planningMarkdown,
   planningHtml, documentsCsv, mapGeometry, seriesGeometry
 } from './model.mjs';
-import {planningSettings,planningDocuments,documentGroups,documentPeriod,officialMapState,hasDocumentReference,selectedGaps,relatedResourceUrl,categoryLabels} from './planning.mjs';
+import {planningSettings,planningDocuments,planningSourceGroups,documentGroups,documentPeriod,officialMapState,hasDocumentReference,selectedGaps,relatedResourceUrl,categoryLabels} from './planning.mjs';
 import {renderDocumentGroups,renderDocument} from './planning-view.mjs';
 import {comparisonSet,observationMeaning,observationContext,isTerminalTerritory} from './analysis.mjs';
 import {renderInternalComparison,diagnosticMarkdown,diagnosticHtml,diagnosticCsv,renderSourceAttribution,seriesSourceLabel} from './diagnostic.mjs';
 import {resolveLanguage,languageLocale,translateInterface,translateText,SUPPORTED_LANGUAGES} from './i18n.mjs';
+import {planDocxBlob} from './docx.mjs';
 
 const base = new URL('../', import.meta.url);
 const app = document.getElementById('app');
@@ -202,12 +203,13 @@ function thematic() {
 }
 function planning() {
   const settings=planningSettings(dataset),documents=planningDocuments(dataset,state.selected);
+  const sourceGroups=planningSourceGroups(dataset);
   const nationalDocuments=state.selected===dataset.country.national_territory_id?[]:planningDocuments(dataset,dataset.country.national_territory_id);
   const refs=new Set(dataset.documents.filter(hasDocumentReference).map(doc=>doc.territory_id));
   const groups=documentGroups(dataset,state.selected);
   const local=dataset.territories.filter(area=>area.level!=='national');
   const observed=dataset.indicators.filter(indicator=>areaObservationState(dataset,state.selected,indicator.id,state.period).value!==null).length;
-  const outputs={markdown:button('planning-markdown','Download editable Markdown','','button'),html:button('planning-html','Print-ready HTML'),evidence_csv:button('planning-csv','Evidence CSV'),documents_csv:button('documents-csv','Materials and findings CSV')};
+  const outputs={docx:button('planning-docx','Download law-aligned Word','','button'),markdown:button('planning-markdown','Download editable Markdown','','button'),html:button('planning-html','Print-ready HTML'),evidence_csv:button('planning-csv','Evidence CSV'),documents_csv:button('documents-csv','Materials and findings CSV')};
   const links=settings.related_links.filter(item=>!item.territory_id||item.territory_id===state.selected).map(item=>({label:item.label,url:relatedResourceUrl(item.url,base,routeWithLanguage())})).filter(item=>item.url);
   const gaps=selectedGaps(dataset,state.selected);
   if(worldMode()&&currentArea().type!=='country')return '<section class="panel planning-overview"><h2>'+e(settings.title)+'</h2><p>'+e(settings.purpose)+'</p></section><section class="panel planning-controls"><h2>Choose one planning territory</h2>'+areaControls()+identity()+'</section><div class="planning-grid">'+mapPanel({planning:true})+'<section class="panel planning-resources"><h2>'+e(currentArea().name)+'</h2><p class="notice"><strong>This selected area is an analysis scope, not a verified legal planning authority.</strong> No planning draft or official-material attribution is generated for it. Select one country, then use that country’s verified law, responsible body, cycle and subnational hierarchy as its adapter is completed.</p><div class="actions">'+pageLink('territorial','Review territorial evidence')+pageLink('thematic','Compare countries')+pageLink('database','Inspect source data')+'</div></section></div>';
@@ -216,8 +218,10 @@ function planning() {
   '<div class="planning-grid">'+mapPanel({planning:true})+'<section class="panel planning-resources"><h2>'+e(currentArea().name)+' — available materials</h2><p>Materials keep their own plan period, fiscal year or quarter. The statistical year below does not filter or relabel them.</p>'+
   (groups.some(group=>group.documents.length)?'<nav class="document-contents" aria-label="Available material categories">'+groups.filter(group=>group.documents.length).map(group=>'<a href="#documents-'+e(group.id)+'">'+e(group.label)+'</a>').join('')+'</nav>':'')+
   renderDocumentGroups(dataset,state.selected)+'</section></div>'+
+  '<section class="panel planning-source-register"><h2>Official sources used for planning work</h2><p>Laws and guidance, census sources, and international institution datasets are listed separately. A source link records provenance; it does not mean every table or local area was adopted.</p>'+
+  (sourceGroups.length?sourceGroups.map(group=>'<section class="source-group"><h3>'+e(group.label)+'</h3><p class="small-note">'+e(group.note)+'</p>'+(group.sources.length?'<ul>'+group.sources.map(source=>'<li>'+link(source.url,source.name)+'<small>'+e(source.publisher||'Publisher not recorded')+' · '+e(statusLabel(source.status))+' · retrieved '+e((source.retrieved_at||'Not recorded').slice(0,10))+'</small></li>').join('')+'</ul>':'<p class="missing-note">No verified source is registered in this category.</p>')+'</section>').join(''):'<p class="missing-note">The country adapter has not yet classified its planning-law, census and international sources.</p>')+'</section>'+
   '<section class="panel planning-output"><h2>Prepare a working evidence base</h2><p class="notice compact"><strong>Generated working material — unapproved.</strong> These outputs bring together selected-area statistics and collected references. They do not replace the published originals or establish official approval, targets or resident agreement.</p><div class="control-row">'+periodControl('planning-period')+'</div><p>'+observed+' of '+dataset.indicators.length+' statistical indicators have an observed value for '+e(currentArea().name)+' in '+e(state.period || 'the selected period')+'. '+documents.length+' selected-area material records retain their own periods.</p><div class="download-actions">'+settings.outputs.map(format=>outputs[format] || '').join('')+'</div>'+
-  (settings.outputs.length?'<p class="small-note">Evidence CSV contains the selected statistical year. Materials CSV, when adopted, contains the original document periods and findings. Markdown and HTML include both with source definitions and explicit gaps.</p>':'<p class="missing-note">No generated download format is adopted for this project. Use the original references and territorial evidence; record the country-specific output workflow in the handoff.</p>')+
+  (settings.outputs.length?'<p class="small-note">The Word file uses the country-verified statutory index or a requirements-based outline when the official system prescribes no fixed index. Evidence CSV contains the selected statistical year. Materials CSV retains original document periods and findings.</p>':'<p class="missing-note">No generated download format is adopted for this project. Use the original references and territorial evidence; record the country-specific output workflow in the handoff.</p>')+
   (settings.outputs.includes('markdown')||settings.outputs.includes('html')?'<details><summary>Preview planning base</summary><pre class="planning-preview">'+e(planningMarkdown(dataset,state.selected,state.period))+'</pre></details>':'')+
   (gaps.length?'<details><summary>Outstanding evidence and next actions</summary><ul>'+gaps.map(gap=>'<li><strong>'+e(statusLabel(gap.status))+'</strong> — '+e(gap.detail)+'<p class="small-note">Next: '+e(gap.next_action || 'Verify the responsible source.')+'</p></li>').join('')+'</ul></details>':'')+'</section>'+
   (links.length?'<section class="panel"><h2>Related investment, finance and official services</h2><ul>'+links.map(item=>'<li><a href="'+e(item.url)+'">'+e(item.label)+'</a></li>').join('')+'</ul></section>':'')+
@@ -321,6 +325,9 @@ function download(text, filename, type) {
   const object=URL.createObjectURL(new Blob([text],{type}));
   const anchor=document.createElement('a');anchor.href=object;anchor.download=filename;document.body.append(anchor);anchor.click();anchor.remove();setTimeout(()=>URL.revokeObjectURL(object),1000);actionStatus(`Prepared ${filename} for ${currentArea().name}.`);
 }
+function downloadBlob(blob,filename) {
+  const object=URL.createObjectURL(blob),anchor=document.createElement('a');anchor.href=object;anchor.download=filename;document.body.append(anchor);anchor.click();anchor.remove();setTimeout(()=>URL.revokeObjectURL(object),1000);actionStatus(`Prepared ${filename} for ${currentArea().name}.`);
+}
 function seriesCsv(indicatorId, territoryId) {
   const indicator=metricFor(indicatorId), area=areaFor(territoryId);
   const rows=seriesFor(dataset,territoryId,indicatorId),extended=!!dataset.analysis || rows.some(row=>!observationContext(dataset,area,indicator,row).comparable);
@@ -385,6 +392,7 @@ app.addEventListener('click',async event=>{
     else if(action==='diagnostic-html')download(diagnosticHtml(dataset,state.selected,state.period),`${stem}-diagnostic.html`,'text/html;charset=utf-8');
     else if(action==='diagnostic-csv')download(diagnosticCsv(dataset,state.selected,state.period),`${stem}-diagnostic.csv`,'text/csv;charset=utf-8');
     else if(action==='planning-markdown')download(planningMarkdown(dataset,state.selected,state.period),`${stem}-planning-base.md`,'text/markdown;charset=utf-8');
+    else if(action==='planning-docx')downloadBlob(planDocxBlob(dataset,state.selected,state.period),`${stem}-development-plan.docx`);
     else if(action==='planning-html')download(planningHtml(dataset,state.selected,state.period),`${stem}-planning-base.html`,'text/html;charset=utf-8');
     else if(action==='documents-csv')download(documentsCsv(dataset,state.selected),`${safeFilename(dataset.country.id+'-'+state.selected)}-materials.csv`,'text/csv;charset=utf-8');
     else if(action==='planning-csv')download(evidenceCsv(dataset,state.selected,state.period),`${stem}-evidence.csv`,'text/csv;charset=utf-8');

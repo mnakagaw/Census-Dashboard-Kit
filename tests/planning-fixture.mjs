@@ -39,6 +39,17 @@ export function planningFixture(scenario='integrated') {
     title:'Planning evidence and resources',purpose:'Use acquired local sources without inferring plan approval or filling missing parent evidence.',
     sections:[{id:'plan',label:'Development plans'},{id:'budget',label:'Budgets and expenditure'},{id:'implementation',label:'Implementation results'},{id:'evaluation',label:'Published evaluations'},{id:'reference',label:'Guidance and references'}],
     system:{label:'Synthetic planning system',scope:'Fictional city and district authorities',cycle:'Synthetic 2025/26–2029/30 cycle',source_ids:['guidance']},
+    outputs:['docx','markdown','html','evidence_csv','documents_csv'],
+    document_template:{status:'verified_prescribed_index',title:'Synthetic official development plan index',authority:'Synthetic Planning Authority',document_type:'Development Plan',verified_at:'2026-09-13T00:00:00Z',source_ids:['guidance'],rationale:'The synthetic guidance prescribes this fictional index for test purposes.',sections:[
+      {id:'context',number:'1',title:'Territorial context',required:true,guidance:'Describe the area, population and service conditions.',legal_basis:evidence('guidance','Synthetic guidance section 1')},
+      {id:'priorities',number:'2',title:'Priorities and objectives',required:true,guidance:'Record evidence-based priorities and objectives.',legal_basis:evidence('guidance','Synthetic guidance section 2')},
+      {id:'implementation',number:'3',title:'Implementation and monitoring',required:true,guidance:'Set out actions, responsibilities, resources and monitoring.',legal_basis:evidence('guidance','Synthetic guidance section 3')}
+    ]},
+    source_groups:[
+      {id:'law',label:'Planning laws and guidance',note:'Synthetic legal basis only.',source_ids:['guidance']},
+      {id:'census',label:'Census and national statistics',note:'Synthetic census evidence only.',source_ids:['test-source']},
+      {id:'international',label:'International institution data sources',note:'Synthetic international reference only.',source_ids:['test-source']}
+    ],
     map:{mode:'official_status',category:'plan',period:planPeriod.label,statuses:[{id:'council_adopted',label:'Documented synthetic adoption',color:'#246f5e'},{id:'draft_published',label:'Published synthetic draft',color:'#9b6d20'}]},
     related_links:[{label:'Existing local finance view',url:'./thematic/',territory_id:'city'},{label:'Synthetic source catalogue',url:'https://example.org/planning/'}],
     update:{status:'current',checked_at:'2026-09-13T00:00:00Z',last_success_at:'2026-09-12T00:00:00Z',message:'Synthetic source check completed.'}

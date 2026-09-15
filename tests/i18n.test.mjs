@@ -18,6 +18,9 @@ test('explicit URL language and remembered choice take precedence over browser d
 test('core interface and source-series labels have all three display languages',()=>{
   assert.equal(translateText('Territorial diagnostic','es'),'Diagnóstico territorial');
   assert.equal(translateText('Territorial diagnostic','ja'),'地域診断');
+  assert.equal(translateText('Download law-aligned Word','ja'),'法規に沿ったWordをダウンロード');
+  assert.equal(translateText('Census and national statistics','es'),'Censo y estadísticas nacionales');
+  assert.equal(translateText('International institution data sources','ja'),'国際機関データソース');
   assert.equal(sourceSeriesLabel({series_family:'census'},{period:'2022'},'2022','es'),'Censo 2022');
   assert.equal(sourceSeriesLabel({series_family:'international_reference'},{series_stage:'medium_projection'},'2026','ja'),'国連中位推計 2026年');
   assert.equal(sourceSeriesLabel({series_family:'international_reference',series_stage_by_period:{2026:'medium_projection'}},null,'2026','en'),'UN medium projection 2026');

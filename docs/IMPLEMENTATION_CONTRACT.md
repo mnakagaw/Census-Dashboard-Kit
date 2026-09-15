@@ -1,8 +1,8 @@
-# Census Dashboard Kit 1.0 implementation contract
+# Census Dashboard Kit 1.2 implementation contract
 
 This contract defines what an AI must preserve when it turns a country name into a country dashboard. The public kit supplies the initial collector, a data contract, three main page roles, reusable source research, and tests. Each country project supplies the verified local evidence and adaptations.
 
-Kit version 1.1.0 keeps `dataset.schema_version = "0.2"` for compatibility. Optional `analysis` and `planning` objects extend the schema without making old country datasets invalid. Version 1.1.0 adds a one-shot delivery gate without changing the country dataset schema.
+Kit version 1.2.0 keeps `dataset.schema_version = "0.2"` for compatibility. Optional `analysis` and `planning` objects extend the schema without making old country datasets invalid. Version 1.1.0 added a one-shot delivery gate; version 1.2.0 requires a verified country planning outline, DOCX output and classified planning-law, census and international-source links for completed country deliveries.
 
 ## Required page roles
 
@@ -61,7 +61,7 @@ Planning displays and outputs keep statistical periods, multi-year plan periods,
 
 The legal planning unit and its internal-analysis geography must be recorded separately. A District plan may require Subcounty distributions without making Subcounties the legal plan owner.
 
-An old dataset without `planning` keeps default labels and supported generic outputs. Existing unverified free text cannot be promoted to verified evidence during migration.
+An old dataset without `planning` keeps default labels and legacy working outputs. It remains readable but cannot pass the country delivery gate until it has a verified `planning.document_template`, the three `planning.source_groups`, adopted `docx` output and rendered sample evidence. Existing unverified free text cannot be promoted to verified evidence during migration.
 
 ## Update failure and recovery
 

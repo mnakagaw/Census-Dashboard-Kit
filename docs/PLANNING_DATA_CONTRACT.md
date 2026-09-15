@@ -1,6 +1,6 @@
 # 計画・資料の国別データ契約
 
-実行テンプレート0.3の任意拡張。`dataset.schema_version`は`0.2`のままとする。旧データの`documents`、選択地域、統計期間、既存の出力は利用できる。拡張を加えたことだけで、旧資料の内容・制度状態を確認済みに変更しない。
+実行テンプレート1.2の任意拡張。`dataset.schema_version`は`0.2`のままとする。旧データの`documents`、選択地域、統計期間、既存の出力は利用できる。ただし、新しい国別完成品は`document_template`、`source_groups`、`docx`出力と実DOCXのレンダリング確認がない限り納品ゲートを通らない。拡張を加えたことだけで、旧資料の内容・制度状態を確認済みに変更しない。
 
 国による違いは、資料の分類・取得段階、計画制度の出典、対象期間、地域照合、確認した内容、採用する出力で表現する。計画・予算・実績・評価を一つの達成率へまとめない。
 
@@ -13,12 +13,65 @@
 | `title`, `purpose` | 非空文字列 | ページ名と利用目的 |
 | `sections` | `[{id,label,empty_message?}]` | 採用する分類の順序・表示名。`id`は後述の5分類、重複不可 |
 | `system` | `{label,scope,cycle,source_ids}` | 出典で確認した国別制度。各文字列は非空、`source_ids`は1件以上の登録済み出典 |
-| `outputs` | 形式IDの配列、重複不可 | `markdown`, `html`, `evidence_csv`, `documents_csv`から採用するもの |
+| `document_template` | 後述 | 計画法規・公式手引き・様式で確認した計画書の目次と各章の法的根拠 |
+| `source_groups` | 後述 | 資料ページとWordへ出す法規、Census、国際機関sourceの区分 |
+| `outputs` | 形式IDの配列、重複不可 | `docx`, `markdown`, `html`, `evidence_csv`, `documents_csv`から採用するもの。国別完成品は`docx`必須 |
 | `map` | 後述 | 資料参照の有無、または根拠のある制度状態の表示 |
 | `related_links` | `[{label,url,territory_id?}]` | 既存の投資・財政等への導線。任意地域IDは地域台帳への参照 |
 | `update` | `{status,checked_at,last_success_at?,message}` | 資料更新の状態。`status`は`current`または`stopped` |
 
-`outputs`の省略時は従来の`markdown`, `html`, `evidence_csv`を保つ。`[]`も有効であり、画面は出典の取得や現地での作業等の代替を説明する。DOCX・PDF・AI文章生成を新たな必須条件にしない。
+`outputs`の省略時は旧datasetとの互換性のため`markdown`, `html`, `evidence_csv`を保つ。`[]`も旧datasetでは有効だが、新しい国別完成品として納品できない。PDF・追加のAI文章生成は国別判断であり、DOCXだけを共通の必須出力とする。
+
+### 1.1 法規に沿ったWord目次
+
+```json
+{
+  "document_template": {
+    "status": "verified_prescribed_index",
+    "title": "Official local development plan structure",
+    "authority": "Responsible ministry or planning authority",
+    "document_type": "Local Development Plan",
+    "verified_at": "2026-09-15T00:00:00Z",
+    "source_ids": ["planning-law", "official-guidance"],
+    "rationale": "Explain whether the source prescribes this exact index.",
+    "sections": [
+      {
+        "id": "situation-analysis",
+        "number": "1",
+        "title": "Situation analysis",
+        "required": true,
+        "guidance": "Describe the required content and official tables or fields.",
+        "legal_basis": {
+          "source_id": "official-guidance",
+          "locator": "Chapter 3, page 18",
+          "checked_at": "2026-09-15T00:00:00Z"
+        }
+      }
+    ]
+  }
+}
+```
+
+`status`は次の二つだけを使う。
+
+- `verified_prescribed_index`: 法令・規則・公式手引き・様式が、章順または目次を明示している。
+- `verified_requirements_based_outline`: 公式資料は必要内容を定めるが固定目次を定めていない。`rationale`へその確認根拠を示し、各章を対応条項へ結ぶ。
+
+未調査、リンクだけ確認、他国の様式、AIが考えた一般的な目次はどちらにも該当しない。各`section.legal_basis`は登録済みsource、原文の条・章・頁、確認日を持つ。DOCXは選択地域、統計年、取得済み統計、計画資料、source一覧、根拠箇所、不足と次の行動を含む編集可能な作業文書であり、作成しただけで承認済み計画にはならない。
+
+### 1.2 資料ページとWordのsource一覧
+
+```json
+{
+  "source_groups": [
+    {"id":"law","label":"Planning laws and guidance","note":"Applicable legal and procedural basis.","source_ids":["planning-law","official-guidance"]},
+    {"id":"census","label":"Census and national statistics","note":"Official census tables and dictionaries.","source_ids":["census-tables"]},
+    {"id":"international","label":"International institution data sources","note":"Adopted reference or humanitarian series.","source_ids":["unhcr-data"]}
+  ]
+}
+```
+
+3区分をすべて登録し、各区分に少なくとも1件の確認済みsourceリンクを置く。該当指標を採用していないsourceも、所在確認だけで取得済みに昇格させない。国際機関値とCensus値は別系列・別定義のまま表示する。
 
 `sections`にない分類の取得済み資料も、選択地域の「その他の取得資料」から到達可能にする。設定の変更で資料を黙って削除しない。
 
