@@ -48,4 +48,13 @@ The area control was exercised from Uganda to Northern Region and back to Uganda
 - Deployment of a generated country site
 - Legal review of each upstream dataset's redistribution conditions
 
-GitHub repository visibility, template status and Actions runs are recorded after publication in the release history or a follow-up validation update.
+## GitHub publication verification
+
+- Repository: [mnakagaw/Census-Dashboard-Kit](https://github.com/mnakagaw/Census-Dashboard-Kit)
+- Visibility: Public; anonymous HTTP request returned 200
+- Template repository: enabled
+- Published revision: `5f22d3e`
+- [Validate kit run 34919685357](https://github.com/mnakagaw/Census-Dashboard-Kit/actions/runs/34919685357): passed on Windows and Linux with Node.js 22 and 24
+- [Uganda baseline run 34919743537](https://github.com/mnakagaw/Census-Dashboard-Kit/actions/runs/34919743537): passed; generated 273 observations and 5 territories and uploaded `country-baseline-34919743537` as a seven-day Artifact
+
+The Actions result is evidence that the public revision passes the kit tests and can create the documented baseline. It is not evidence that Uganda's official subnational census and planning sources have been fully collected or that a country site has been publicly deployed.
