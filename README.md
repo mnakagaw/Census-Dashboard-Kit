@@ -56,6 +56,36 @@ Antigravityを開いた後は、次の順番だけで開始できます。すで
 14. チャット入力欄へ`/browser`と入力し、Chromeとの接続確認が出たら許可します。これは最後に生成サイトを実画面で検証するためです。
 15. 続けて、下の「② コピペするプロンプト」を貼り付けます。入力後にModeを再度聞かれたら`Local`を選びます。
 
+#### `Waiting for user input`と表示された場合
+
+Antigravityがコマンドを実行する前に、確認画面を出すことがあります。これはエラーではありません。画面下部で選択肢を一つ選び、右下の`Submit`を押すと作業が続きます。`Skip`を押すと、その操作を実行せず待機したままになる場合があります。
+
+最初に次の表示が出た場合：
+
+```text
+Allow cloning repository?
+git clone https://github.com/mnakagaw/Census-Dashboard-Kit.git .
+```
+
+URLが上と同じで、作成した空フォルダー内で実行しようとしていることを確認し、**③ `Yes, and always allow ... in this project`**を選んで`Submit`を押します。これにより、この国別Project内では同じclone操作を再確認せず実行できます。
+
+| 選択肢 | 意味 | この作業での選び方 |
+|---|---|---|
+| ① `Yes, allow this time` | 今回だけ許可 | これでも進められますが、同じ確認が再度出ることがあります。 |
+| ② `... in this conversation` | 今の会話中は同じ操作を許可 | 一回の会話だけで終える場合に使えます。 |
+| ③ `... in this project` | この国別Projectでは同じ操作を許可 | **通常はこちらを選びます。** 中断後に同じProjectで再開する場合にも分かりやすい設定です。 |
+| ④ Projectやconversationの限定がない許可 | 他のProjectでも同じ操作を自動許可 | この作業では選ぶ必要はありません。 |
+| ⑤ `No` | 実行しない | URL、保存先、コマンドが説明と違う場合に選び、AIへ理由を確認します。 |
+
+以後、`npm run check`、`npm test`、`node scripts/...`など、このキットの検証・生成コマンドで同じ確認が出た場合も、表示されたコマンドがこのProject内を対象としていれば③のProject単位の許可を選べます。公式資料サイトへの接続やChrome接続は、表示された接続先を確認して今回またはProject単位で許可します。
+
+次の場合は、すぐに許可せず⑤`No`を選び、AIへ「何のための操作か、保存先はどこか」を日本語で説明させます。
+
+- GitHubのURLが`https://github.com/mnakagaw/Census-Dashboard-Kit.git`と違う
+- 作成した国別Project以外のフォルダーを削除・上書きしようとしている
+- パスワード、APIキー、個票などをPublic GitHubへ送ろうとしている
+- 依頼していない外部公開、GitHubへのpush、有料サービスの操作をしようとしている
+
 Antigravity公式の画面説明：[Projectの作成](https://antigravity.google/docs/getting-started)、[Projectごとの設定](https://antigravity.google/docs/projects)、[権限の仕組み](https://antigravity.google/docs/permissions)。
 
 #### Codexで、最初に押す場所
@@ -89,6 +119,7 @@ docs/COUNTRY_AGENT_WORKFLOW.mdを読んでください。
 国名を十分な開始情報として扱い、開始票とTask Contractはあなたが作成してください。
 この作業フォルダー内に新しい国別ディレクトリを作り、テンプレート本体を一国用に書き換えないでください。
 通常の実装判断は進め、国の同定や成果を大きく変える不明点だけ質問してください。
+確認画面で私の操作が必要な場合は、選ぶ番号と押すボタンを日本語で一つだけ具体的に示してください。
 
 初期生成を実行した後、そこで終了せず、次を調査・取得・確認してください。
 ・指定国の公式な国勢調査の所在、詳細表、全テーマ・項目と数値列
