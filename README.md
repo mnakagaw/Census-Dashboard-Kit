@@ -253,7 +253,7 @@ tests/                   選択、欠測、地理、計画、出力等の回帰�
 .github/workflows/       キットCIと管理者用の内部作業場所確認
 ```
 
-[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。実装時の主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。キット1.1.0で確認した範囲は[検証記録](docs/VALIDATION_1.1.0.md)に分けています。
+[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。実装時の主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。最新の確認範囲は[キット1.2.0検証記録](docs/VALIDATION_1.2.0.md)、一つ前の納品方式変更は[キット1.1.0検証記録](docs/VALIDATION_1.1.0.md)に分けています。
 
 ## ライセンスと第三者データ
 
