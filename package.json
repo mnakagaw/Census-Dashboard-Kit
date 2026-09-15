@@ -16,6 +16,7 @@
     "validate:country": "node scripts/validate-country.mjs",
     "verify:delivery": "node scripts/verify-delivery.mjs",
     "serve": "node scripts/serve.mjs",
-    "sources:plan": "node scripts/source-plan.mjs"
+    "sources:plan": "node scripts/source-plan.mjs",
+    "sources:acquire": "node scripts/acquire-country-sources.mjs"
   }
 }

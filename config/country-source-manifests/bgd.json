@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "country": {
+    "iso3": "BGD",
+    "name": "Bangladesh"
+  },
+  "checked_at": "2026-09-16",
+  "scope": "Representative official-source acquisition probe. This manifest proves repeatable retrieval; it is not the complete Bangladesh source inventory or a finished country adapter.",
+  "sources": [
+    {
+      "id": "BGD_BBS_YEARBOOK_2024",
+      "role": "cross_theme_statistical_compendium",
+      "title": "Bangladesh Statistical Yearbook 2024",
+      "publisher": "Bangladesh Bureau of Statistics",
+      "catalog_url": "https://bbs.portal.gov.bd/pages/static-pages/6922e07a933eb65569e27407",
+      "download_url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/eca101901c5f41329d08ce583e842be8.pdf",
+      "format": "pdf",
+      "expected_content_type": "application/pdf",
+      "minimum_bytes": 10000000,
+      "redistribution": "verify_before_publication",
+      "note": "Official BBS compendium. Inventory every adopted table and keep national, division and district geographies distinct."
+    },
+    {
+      "id": "BGD_BBS_CENSUS_PRELIMINARY_2022",
+      "role": "census_report",
+      "title": "Population and Housing Census 2022: Preliminary Report",
+      "publisher": "Bangladesh Bureau of Statistics",
+      "catalog_url": "https://bbs.portal.gov.bd/pages/static-pages/6922e073933eb65569e27220",
+      "download_url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/64cfb2e2a63042c9b96acfc276275836.pdf",
+      "format": "pdf",
+      "expected_content_type": "application/pdf",
+      "minimum_bytes": 30000000,
+      "redistribution": "verify_before_publication",
+      "note": "Official preliminary census report. Later detailed and final products take precedence for local indicators when definitions and geography match."
+    },
+    {
+      "id": "BGD_BBS_GAZIPUR_DISTRICT_REPORT_2022",
+      "role": "census_district_report",
+      "title": "Population and Housing Census 2022, District Report: Gazipur",
+      "publisher": "Bangladesh Bureau of Statistics",
+      "catalog_url": "https://bbs.portal.gov.bd/site/page/b432a7e5-8b4d-4dac-a76c-a9be4e85828c",
+      "download_url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs-gazipur/2024/12/3dd50a4789444281af210df323df7fdf.pdf",
+      "format": "pdf",
+      "expected_content_type": "application/pdf",
+      "minimum_bytes": 4000000,
+      "redistribution": "verify_before_publication",
+      "note": "Representative detailed report used to prove local-table availability. Its contents include City Corporation and Upazila tables; do not generalize one district's successful acquisition to all 64 districts."
+    },
+    {
+      "id": "BGD_UNION_DEVELOPMENT_PLANNING_RULES_2013",
+      "role": "planning_law",
+      "title": "Union Parishad (Development Planning) Rules, 2013",
+      "publisher": "Local Government Division, Government of Bangladesh",
+      "catalog_url": "https://lgd.gov.bd/pages/static-pages/6941401ec4774958d7b54a4e",
+      "download_url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-lgd/2024/12/9444a662111d408c8d4813d95fb670fc.pdf",
+      "format": "pdf",
+      "expected_content_type": "application/pdf",
+      "minimum_bytes": 90000,
+      "redistribution": "verify_before_publication",
+      "note": "Official gazette PDF linked from the LGD law and rules catalogue. The Bengali text and current legal status require qualified review before treating it as a complete current-law opinion."
+    }
+  ]
+}

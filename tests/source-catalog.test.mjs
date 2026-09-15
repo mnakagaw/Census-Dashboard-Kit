@@ -6,7 +6,7 @@ import { sourcePlan } from '../scripts/source-plan.mjs';
 test('source catalog combines reusable international candidates and pre-researched countries', async () => {
   const catalog = await loadSourceCatalog();
   assert.equal(catalog.coverage.common_sources, 10);
-  assert.equal(catalog.coverage.country_records, 22);
+  assert.equal(catalog.coverage.country_records, 23);
   assert.deepEqual(catalog.coverage.status_model, [
     'catalogued',
     'country_availability_checked',
@@ -49,6 +49,17 @@ test('Belize has a verified 2022 census location without claiming planning resea
   assert.match(belize.census.published_geography, /city, town, village or community/i);
   assert.match(belize.planning.planning_level, /Not yet researched/);
   assert.ok(belize.sources.every(source => source.publisher === 'Statistical Institute of Belize'));
+});
+
+test('Bangladesh records detailed 2022 census products and keeps planning bodies distinct', async () => {
+  const catalog = await loadSourceCatalog();
+  const bangladesh = findCountrySourceRecord(catalog, 'バングラデシュ');
+  assert.equal(bangladesh.iso3, 'BGD');
+  assert.equal(bangladesh.census.usable_detailed_year, 2022);
+  assert.match(bangladesh.census.published_geography, /Upazila/i);
+  assert.match(bangladesh.planning.planning_level, /Union Parishad/);
+  assert.ok(bangladesh.sources.some(source => source.role === 'census_district_report'));
+  assert.ok(bangladesh.sources.some(source => source.role === 'planning_law'));
 });
 
 test('unresearched country still receives common candidates and an explicit research task', async () => {

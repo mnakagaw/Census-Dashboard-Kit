@@ -29,6 +29,7 @@
 Antigravity、Codex、Claude Codeのいずれかにログイン済みで、アプリを使える状態から始めます。ここではインストール方法は説明しません。
 
 1. 国別成果を保存する**空の作業フォルダー**を一つ用意します。既存の業務リポジトリやこのキットの原本を直接編集する場所は避けます。
+   国別成果のフォルダー名と公開URLは、ISO 3166-1 alpha-3の小文字で統一します（例：バングラデシュ=`bgd`、ラオス=`lao`）。
 2. 使用するAIで、そのフォルダーをローカルのプロジェクトまたはワークスペースとして開きます。
 3. 下表の権限を設定します。このリポジトリはPublicなので、読むだけならGitHub連携やGitHubの有料契約は不要です。作成物を自分のGitHubへpushする段階では、その利用者のGitHub認証が必要です。
 4. ②のプロンプトで`［国名］`だけを変更し、AIのチャット欄へ貼り付けます。
@@ -315,7 +316,7 @@ tests/                   選択、欠測、地理、計画、出力等の回帰�
 .github/workflows/       キットCIと管理者用の内部作業場所確認
 ```
 
-[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。実装時の主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[汎用AIの失敗例と防止確認](docs/AI_FAILURE_MODE_REVIEW.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。最新の確認範囲は[キット1.4.0検証記録](docs/VALIDATION_1.4.0.md)、一つ前の収集・言語要件は[キット1.3.0検証記録](docs/VALIDATION_1.3.0.md)に分けています。
+[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。実装時の主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[230か国の情報源・データ・サイト運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[汎用AIの失敗例と防止確認](docs/AI_FAILURE_MODE_REVIEW.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。最新の確認範囲は[キット1.4.0検証記録](docs/VALIDATION_1.4.0.md)、一つ前の収集・言語要件は[キット1.3.0検証記録](docs/VALIDATION_1.3.0.md)に分けています。
 
 ## ライセンスと第三者データ
 

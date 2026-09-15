@@ -18,6 +18,14 @@ APIのページ分割・取得制限を確認し、最初のページだけを�
 
 ## 2. 案件側に取得と変換を実装する
 
+キットに確認済みの国別取得manifestがある場合は、最初に次を実行する。国名ではなくISO alpha-3を使い、国別成果ディレクトリ名も小文字の3文字コードにする。
+
+```sh
+npm run sources:acquire -- --country BGD --project <country-project>/bgd
+```
+
+このコマンドの成功は、manifestに列挙した原本とreceiptを取得できたという意味である。全資料の棚卸し、表抽出、地理照合、指標採用、サイト完成を意味しない。取得処理はPDF signature、Content-Type、最低byte数を確認し、HTMLの停止画面をPDF原本として保存しない。
+
 ```text
 adapters/<source-id>.mjs       公開API等の取得・正規化
 scripts/update-data.mjs       取得、既存データとの統合、検証、保存

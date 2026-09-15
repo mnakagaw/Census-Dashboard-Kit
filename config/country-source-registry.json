@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "as_of": "2026-09-14",
+  "as_of": "2026-09-16",
   "purpose": "Pre-researched locations for census, planning law, planning guidance, planning documents and geography. Every link must be refreshed for the actual country project.",
   "imports": [
     {
@@ -14,7 +14,10 @@
   "countries": [
     {
       "iso3": "UGA",
-      "names": ["Uganda", "ウガンダ"],
+      "names": [
+        "Uganda",
+        "ウガンダ"
+      ],
       "research_status": "source_locations_verified",
       "checked_at": "2026-09-14",
       "census": {
@@ -22,7 +25,12 @@
         "usable_detailed_year": 2024,
         "published_geography": "National, sub-region/city profiles, district/city and subcounty/division/town council tables depending on product.",
         "finer_geography": "Parish/ward, village/cell and enumeration-area identifiers exist in census instruments; public data availability must be checked by product.",
-        "formats": ["interactive explorer", "XLSX", "PDF", "NADA microdata catalogue"]
+        "formats": [
+          "interactive explorer",
+          "XLSX",
+          "PDF",
+          "NADA microdata catalogue"
+        ]
       },
       "planning": {
         "planning_level": "District/city and lower local governments under the Local Governments Act; plan type and authority must be distinguished from statistical sub-regions.",
@@ -98,7 +106,10 @@
     },
     {
       "iso3": "BLZ",
-      "names": ["Belize", "ベリーズ"],
+      "names": [
+        "Belize",
+        "ベリーズ"
+      ],
       "research_status": "census_catalog_verified_planning_not_researched",
       "checked_at": "2026-09-15",
       "census": {
@@ -106,7 +117,13 @@
         "usable_detailed_year": 2022,
         "published_geography": "National and district results, with an official population table by city, town, village or community and sex.",
         "finer_geography": "City, town, village and community are present in published tables; their exact statistical and administrative status and boundary correspondence must be checked before mapping.",
-        "formats": ["official census portal", "interactive map", "downloadable tables", "PDF reports", "questionnaires"]
+        "formats": [
+          "official census portal",
+          "interactive map",
+          "downloadable tables",
+          "PDF reports",
+          "questionnaires"
+        ]
       },
       "planning": {
         "planning_level": "Not yet researched for a Census Dashboard Kit country adapter.",
@@ -132,6 +149,81 @@
           "url": "https://sib.org.bz/wp-content/uploads/CensusKeyFindingsReport_2022.pdf",
           "stage": "content_verified",
           "note": "Official report documents the 2022 census concepts and district-level appendix tables. Use the detailed tables, rather than transcribing headline summaries, when building the adapter."
+        }
+      ]
+    },
+    {
+      "iso3": "BGD",
+      "names": [
+        "Bangladesh",
+        "バングラデシュ"
+      ],
+      "research_status": "source_locations_and_representative_content_verified",
+      "checked_at": "2026-09-16",
+      "census": {
+        "latest_census_year": 2022,
+        "usable_detailed_year": 2022,
+        "published_geography": "National, division, zila/district, City Corporation and Upazila/Thana tables, with Union Statistics and district/community products listed in the official catalogue.",
+        "finer_geography": "Union, mauza and village products are listed or described by BBS; verify the exact public file, code columns and boundary correspondence before using each level.",
+        "formats": [
+          "official census catalogue",
+          "PDF",
+          "XLSX/Excel listings",
+          "district reports",
+          "community series"
+        ]
+      },
+      "planning": {
+        "planning_level": "Union Parishad five-year and annual development planning is prescribed by the 2013 Rules; Upazila Parishad, Zila Parishad, municipalities and city corporations have separate laws and rules, so the applicable planning body depends on the selected territory.",
+        "internal_analysis_geography": "Use the verified census hierarchy inside the selected planning body, potentially including Upazila/Thana, Union and finer published census units; legal planning authority and statistical detail remain separate.",
+        "process_summary": "The Union Parishad rules cover five-year and annual plans, ward-meeting input, a planning committee, project identification and prioritisation, resource and finance estimates, annual approval, a development-plan register and yearly evaluation.",
+        "unresolved": "Confirm current legal status and amendments, obtain the applicable rules and guidance for every selected local-government type, inventory all 64 district and community files, and verify official geography codes and boundary editions."
+      },
+      "sources": [
+        {
+          "id": "BGD_CENSUS_2022_CATALOG",
+          "role": "census_catalog",
+          "title": "Population and Housing Census 2022 catalogue",
+          "publisher": "Bangladesh Bureau of Statistics",
+          "url": "https://bbs.portal.gov.bd/pages/static-pages/6922e073933eb65569e27220",
+          "stage": "location_and_catalog_content_verified",
+          "note": "Official catalogue lists metadata, administrative and national reports, Union Statistics, Urban Area Report, infographics, and 64 district report and community series products. Availability of each linked file must be rechecked at acquisition time."
+        },
+        {
+          "id": "BGD_CENSUS_2022_DISTRICT_PRODUCTS",
+          "role": "census_district_products",
+          "title": "Population and Housing Census 2022 district reports and community series",
+          "publisher": "Bangladesh Bureau of Statistics",
+          "url": "https://bbs.portal.gov.bd/site/page/b432a7e5-8b4d-4dac-a76c-a9be4e85828c",
+          "stage": "location_and_catalog_content_verified",
+          "note": "Official page lists PDF and Excel products by district. The page was temporarily unavailable during direct local retrieval on 2026-09-16, so use recorded direct official-object URLs and retry the catalogue without treating the outage as non-publication."
+        },
+        {
+          "id": "BGD_CENSUS_2022_GAZIPUR_DISTRICT",
+          "role": "census_district_report",
+          "title": "Population and Housing Census 2022, District Report: Gazipur",
+          "publisher": "Bangladesh Bureau of Statistics",
+          "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs-gazipur/2024/12/3dd50a4789444281af210df323df7fdf.pdf",
+          "stage": "content_and_local_table_inventory_verified",
+          "note": "Retrieved and hashed on 2026-09-16. Its table inventory includes population, age-sex, literacy, disability, education, employment, internet and household characteristics by City Corporation and Upazila. This verifies a detailed product pattern, not all-district acquisition."
+        },
+        {
+          "id": "BGD_LGD_LOCAL_LAW_CATALOG",
+          "role": "planning_law_catalog",
+          "title": "Laws and rules for Zila, Upazila and Union Parishads",
+          "publisher": "Local Government Division, Government of Bangladesh",
+          "url": "https://lgd.gov.bd/pages/static-pages/6941401ec4774958d7b54a4e",
+          "stage": "location_and_catalog_content_verified",
+          "note": "Official catalogue separates laws and rules by local-government body and links the Union Parishad development-planning rules."
+        },
+        {
+          "id": "BGD_UNION_DEVELOPMENT_PLANNING_RULES_2013",
+          "role": "planning_law",
+          "title": "Union Parishad (Development Planning) Rules, 2013",
+          "publisher": "Local Government Division, Government of Bangladesh",
+          "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-lgd/2024/12/9444a662111d408c8d4813d95fb670fc.pdf",
+          "stage": "content_verified",
+          "note": "Official gazette PDF retrieved and hashed on 2026-09-16. It defines five-year and annual development plans and their content/process for Union Parishads. Current status and amendments still require project-time legal verification."
         }
       ]
     }

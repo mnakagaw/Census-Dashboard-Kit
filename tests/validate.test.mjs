@@ -21,6 +21,13 @@ test('unsafe source URLs and raw evidence paths are rejected', () => {
   const d=fixture(); d.sources[0].url='javascript:alert(1)'; d.sources[0].raw_path='../secret.env';
   const errors=validateDataset(d).errors.join(' '); assert.match(errors,/HTTPS/); assert.match(errors,/Unsafe raw_path/);
 });
+test('one acquired artifact cannot silently verify two unrelated source records', () => {
+  const d=fixture();
+  d.sources.push({...d.sources[0],id:'claimed-law',name:'Claimed law',url:'https://example.org/law'});
+  assert.match(validateDataset(d).errors.join(' '),/same raw artifact and SHA-256/);
+  d.sources.at(-1).artifact_alias_of='test';
+  assert.doesNotMatch(validateDataset(d).errors.join(' '),/same raw artifact and SHA-256/);
+});
 test('invalid and unclosed boundary rings are rejected', () => {
   const d=fixture(); d.boundaries.features[0].geometry.coordinates[0][4]=[300,100];
   const errors=validateDataset(d).errors.join(' '); assert.match(errors,/coordinate/); assert.match(errors,/closed/);
