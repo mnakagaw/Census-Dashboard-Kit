@@ -1,11 +1,13 @@
 # Census Dashboard Kit
 
-**Give an AI a country name and this repository URL. It gets a tested starting point for researching official census and planning sources, building a local dashboard, and recording what remains unverified.**
+**Give a local coding AI one country name and this repository URL. The AI must research, build and verify a usable country dashboard before it returns the result.**
 
 国名とこのPublicリポジトリのURLをAntigravity、Gemini、Claude Code、Codex等へ渡し、各国の公式資料を調査して国別ダッシュボードを作るためのOSSキットです。DDPT（ドミニカ共和国の地域情報・計画策定ダッシュボード）とウガンダ版から得た操作・制作上の教訓を、国別に適応できる形へまとめています。
 
 > [!IMPORTANT]
-> `create-country.mjs`の成功は完成を意味しません。初期生成で取得するのはWorld Bank WDIの全国系列、取得可能なgeoBoundaries ADM1参照境界、情報源の事前確認票です。AIは続けて、その国の公式な地方統計、行政コード・境界、計画法、計画手引き、地方計画・予算資料を調査し、採用できる実データを統合して検証します。
+> 利用者が行う依頼は一回です。AIは内部で作業場所の準備、公式資料調査、データ取得・統合、3ページの制作、ブラウザー操作、出力照合、納品ゲートまで連続して実行します。途中の生成サイト、全国値だけの画面、リンク一覧、緑のGitHub Actionsを利用者への成果として返してはいけません。
+
+「完成」は、公開されている全資料が無条件に入手できるという意味ではありません。取得不能・未公開・利用制限がある国では、確認した根拠を残し、取得済み資料で3ページの業務を完結できる代替表示と出力を作った状態を**制約付き完成品**とします。空欄が大量に並ぶ画面や「後で追加調査してください」という引継ぎだけでは完成になりません。
 
 ## 作るもの
 
@@ -30,7 +32,7 @@ Antigravity、Codex、Claude Codeのいずれかにログイン済みで、ア�
 
 | AI | 開始時の設定 |
 |---|---|
-| **Google Antigravity** | 空フォルダーを`Local`プロジェクトとして開きます。Agentがプロジェクト内ファイルを読み書きできるようにし、Terminal Command Auto Executionは`Always Proceed`、または実行ごとに承認する設定にします。Web・Chrome操作の接続要求が出たら許可します。PC全体の`Full machine`権限は必須ではありません。 |
+| **Google Antigravity** | 空フォルダーを`Local`プロジェクトとして開きます。**その国別Projectの設定**で`Security Preset: Full Machine`、コマンドと成果物の自動続行に相当する設定を選びます。Web・Chrome操作の接続要求が出たら許可します。別Project名の`Modified in ...`は今回の設定ではありません。 |
 | **Codex** | 新しいローカルタスクを作り、空フォルダーまたは保存済みプロジェクトを作業場所に指定します。作業フォルダーの読み書き、ターミナル、ネット接続、ブラウザー確認を許可します。クラウドの会話だけではなく、ローカルファイルとコマンドを扱える実行環境を使います。 |
 | **Claude Code** | 空フォルダーを作業ディレクトリとして開き、そのフォルダーを信頼します。プロジェクト内のRead・Edit、コマンド実行、Web検索・取得を許可します。確認を省略したい場合は許可済み操作の自動承認を使えますが、PC全体を無制限に許可する設定は必須ではありません。 |
 
@@ -105,11 +107,11 @@ Antigravity公式の画面説明：[Projectの作成](https://antigravity.google
 
 ### ② コピペするプロンプト
 
-`［国名］`だけを、ウガンダ、ケニア、ネパールなどの対象国へ変更してください。
+`［国名］`だけを、ウガンダ、ケニア、ネパールなどの対象国へ変更してください。**途中で別の追加プロンプトを送ることを前提にしません。**
 
 ```text
 ［国名］の地域情報・開発計画ダッシュボードを作ってください。
-私はプログラミング初心者です。調査、データ取得、制作、動作確認まで進めてください。
+私はプログラミング初心者です。この一回の依頼で、調査、データ取得、制作、動作確認を完了し、完成品だけを返してください。
 
 使用するPublicテンプレート：
 https://github.com/mnakagaw/Census-Dashboard-Kit
@@ -121,7 +123,7 @@ docs/COUNTRY_AGENT_WORKFLOW.mdを読んでください。
 通常の実装判断は進め、国の同定や成果を大きく変える不明点だけ質問してください。
 確認画面で私の操作が必要な場合は、選ぶ番号と押すボタンを日本語で一つだけ具体的に示してください。
 
-初期生成を実行した後、そこで終了せず、次を調査・取得・確認してください。
+create-country.mjsは内部の作業場所を準備する工程にすぎません。実行結果を私に完成品として見せず、そのまま次を調査・取得・確認してください。
 ・指定国の公式な国勢調査の所在、詳細表、全テーマ・項目と数値列
 ・公式な行政地域コード、地域階層、境界データと統計表の対応
 ・地方開発計画に関する法律、法定の計画策定単位、策定手順と計画書の内容
@@ -138,6 +140,8 @@ docs/COUNTRY_AGENT_WORKFLOW.mdを読んでください。
 
 行政階層、言語、指標、統計年、地図、図表、計画制度と出力形式は、その国の根拠に合わせてください。
 データが少ないことを理由に、3ページの目的や地域選択の意味を独自に変更しないでください。
+地方観測が一件でもある場合、初期表示は地方比較できる指標・年にしてください。全国系列しかない指標の空の地域地図・凡例・全件表は画面上で省略または折りたたみ、短い不足説明と取得済み指標への導線を示してください。
+「全地域に少なくとも1件ある」という全期間・全指標の件数を、現在の指標・年の収録率に見えるよう表示しないでください。実測、推計、投影も区別してください。
 
 地域選択は、地図、見出し、全指標、資料、URL、保存内容と出力へ即時に反映してください。
 特に、下位地域を選んだ後、その現在の所属先と同じ上位地域をドロップダウンから明示的に選び直した場合も、
@@ -149,18 +153,20 @@ docs/COUNTRY_AGENT_WORKFLOW.mdを読んでください。
 
 npm run check、npm test、
 node scripts/validate-country.mjs --project <国別プロジェクトのパス>
-を実行してください。通常の不具合は修正し、再検証してください。
+を実行してください。通常の不具合は修正し、再検証してください。最後にtemplates/DELIVERY.jsonを実結果でevidence/DELIVERY.jsonへ記入し、
+node scripts/verify-delivery.mjs --project <国別プロジェクトのパス>
+を実行してください。この納品ゲートが成功するまで完成報告をしないでください。
 
 原資料、取得日時、hash、地域対応、採用・不採用、未取得、未検証、再実行コマンドを証拠として保存し、
 中断・再開方法を国別プロジェクトのHANDOFF.mdへ残してください。
-全国値だけの初期画面、リンク一覧、またはGitHub Actionsのsuccessを完成扱いしないでください。
+作業用サイトが起動しても私へ返答して止まらず、調査・統合・検証を続行してください。全国値だけの画面、リンク一覧、空欄中心の画面、またはGitHub Actionsのsuccessを完成扱いしないでください。
 
 最後に、完成したローカルサイトをブラウザーで開き、
 できたこと、利用できる地域・データ・資料、残る不足、未検証事項を日本語で報告してください。
 外部公開や有料サービスの追加契約は、私が別途依頼した場合だけ行ってください。
 ```
 
-途中で止まった場合は、同じ作業フォルダーで次を貼り付けます。
+AIやPCが予期せず終了した場合だけ、同じ作業フォルダーで次を貼り付けます。通常の作業を段階的な追加依頼に分けるための文章ではありません。
 
 ```text
 この国別案件のHANDOFF.mdと保存済み成果を読み、続きから再開してください。
@@ -174,15 +180,14 @@ node scripts/validate-country.mjs --project <国別プロジェクトのパス>
 ```sh
 git clone https://github.com/mnakagaw/Census-Dashboard-Kit.git
 node ./Census-Dashboard-Kit/scripts/create-country.mjs --country "Uganda" --out ./uganda-dashboard
-node ./Census-Dashboard-Kit/scripts/serve.mjs --dir ./uganda-dashboard/site --port 4173
 ```
 
-`http://127.0.0.1:4173/`を開きます。既存の出力先は上書きしません。初期収集が一部失敗しても取得済みの証拠と失敗記録を残しますが、数値を一件も取得できなければ成功終了しません。
+ここまででできるのはAIが調査・制作するための内部作業場所です。人がこのコマンドだけを実行しても完成品にはなりません。通常の利用者は上のプロンプト一回でAIへ依頼します。
 
-生成後は次を読み、公式地方データの統合を続けます。
+AIは作業場所の準備後、次を読み、公式地方データの統合を連続して進めます。
 
 - `evidence/SOURCE_PREFLIGHT.md` — 国別情報源の所在と国際共通source候補。所在、取得、地理照合、指標採用は別の状態です。
-- `COUNTRY_AGENT_WORKFLOW.md` — 初期生成後の調査・実装・検証手順。
+- `COUNTRY_AGENT_WORKFLOW.md` — 一回の依頼内で完遂する調査・実装・検証手順。
 - `TEMPLATE_REFERENCE.json` — 使用したキットの版、commit、同梱した仕様のhash。
 - `data/dashboard.json` — 国別データ。国別アダプターの正規化先です。
 
@@ -192,6 +197,7 @@ node ./Census-Dashboard-Kit/scripts/serve.mjs --dir ./uganda-dashboard/site --po
 node scripts/validate-country.mjs --project ../uganda-dashboard
 node scripts/build-country.mjs --project ../uganda-dashboard
 npm run sources:plan -- --country UGA
+node scripts/verify-delivery.mjs --project ../uganda-dashboard
 ```
 
 ## 地域選択の重要な契約
@@ -216,29 +222,29 @@ npm run sources:plan -- --country UGA
 
 ## GitHub Actions（通常の利用者には不要）
 
-Antigravity、Codex、Claude CodeへこのPublicリポジトリのURLを渡し、PC内に国別ダッシュボードを作るだけなら、**GitHubアカウントは不要**です。この節は、リポジトリを管理する人や、GitHub上で初期生成を試したい人向けです。
+Antigravity、Codex、Claude CodeへこのPublicリポジトリのURLを渡し、PC内に国別ダッシュボードを作るだけなら、**GitHubアカウントは不要**です。この節はリポジトリ管理者向けで、一般利用者の完成品制作手順ではありません。
 
 - **Validate kit** — リポジトリ管理者が変更をpushしたとき、またはpull requestを作ったときに、Windows/Linux、Node.js 22/24でキットの構文検査とテストを自動実行します。一般利用者が押すボタンではありません。
-- **Build country baseline** — GitHubへログインし、このリポジトリのActionsを実行できる人が、国名またはISOコードを入力して初期生成を試す任意機能です。結果は7日間のArtifactとして保存されます。同じ初期生成は、通常のAI制作手順でもPC内で実行できます。
+- **Prepare country workspace (not a delivery)** — GitHubへログインし、このリポジトリのActionsを実行できる管理者が、内部作業場所の生成だけを試す任意機能です。結果は7日間のArtifactとして保存されます。完成した国別サイトを作るActionsではありません。
 
 GitHubアカウントが必要になるのは、自分のGitHubへリポジトリを作る、`Use this template`を使う、fork・push・pull requestを行う、またはGitHub Actionsを手動実行する場合です。完成したサイトをPC内だけで使う場合は必要ありません。
 
-Actionsの`success`は、キットのテストまたは全国統計中心の初期生成が成功したという意味です。AIによる国内公式資料の調査・統合、実利用者テスト、完成サイトの外部公開まで完了したという意味ではありません。
+Actionsの`success`は、キットのテストまたは内部作業場所の準備が成功したという意味だけです。国別完成品は、AIがローカルで調査・統合・実画面検証を行い、`verify-delivery.mjs`に合格して初めて完成扱いにできます。
 
 ## 主な構成
 
 ```text
 START_HERE.md            AIが最初に読む入口
 AGENTS.md                自律実行と証拠・UXの必須規則
-lib/                     国の解決、初期収集、検証、生成
-scripts/                 初期生成、再構築、検証、配信、source確認
+lib/                     国の解決、内部準備、検証、生成
+scripts/                 作業場所準備、再構築、検証、納品ゲート、配信
 config/                  国別情報源と国際共通sourceの事前台帳
 scaffold/site/           3ページの共通UI
 docs/                    データ・計画・分析・制作の契約
 templates/               開始票、監査票、42の受入シナリオ
 examples/                計画資料の出典付き例
 tests/                   選択、欠測、地理、計画、出力等の回帰検査
-.github/workflows/       CIと手動の国別初期生成
+.github/workflows/       キットCIと管理者用の内部作業場所確認
 ```
 
 [START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。実装時の主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。

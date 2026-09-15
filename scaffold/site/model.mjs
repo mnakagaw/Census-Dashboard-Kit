@@ -58,6 +58,15 @@ export function countryDiagnosticUrl(dataset, state, base) {
   target.search=query.toString();
   return target.href;
 }
+function bestObservedLocalView(dataset) {
+  const national=dataset.country?.national_territory_id,counts=new Map();
+  for(const row of dataset.observations || []) {
+    if(row.territory_id===national || observedValue(row)===null)continue;
+    const key=`${row.indicator_id}\u0000${row.period}`;
+    counts.set(key,(counts.get(key)||0)+1);
+  }
+  return [...counts.entries()].map(([key,count])=>{const [indicator_id,period]=key.split('\u0000');return {indicator_id,period,count};}).sort((a,b)=>b.count-a.count || String(b.period).localeCompare(String(a.period),'en',{numeric:true}) || dataset.indicators.findIndex(i=>i.id===a.indicator_id)-dataset.indicators.findIndex(i=>i.id===b.indicator_id))[0] || null;
+}
 export function initialState(dataset, search = '') {
   const query = new URLSearchParams(search), notices = [];
   const suppliedTerritory = query.get('territory');
@@ -73,14 +82,21 @@ export function initialState(dataset, search = '') {
   if(requestedMetric)notices.push(`No verified indicator mapping was supplied for “${requestedMetric}” from dataset “${query.get('source_dataset') || 'not specified'}”. The displayed country indicator is a separate concept. The requested period is retained.`);
   const indicator = dataset.indicators.find(row => row.id === suppliedMetric);
   if (suppliedMetric && !indicator) notices.push(`The linked indicator “${suppliedMetric}” is unavailable in this edition. The first available indicator is shown.`);
+  const localDefault=bestObservedLocalView(dataset);
+  const configuredMetric=dataset.analysis?.default_indicator_id;
+  const configuredIndicator=dataset.indicators.find(item=>item.id===configuredMetric);
   const firstObservedIndicator = dataset.indicators.find(item => dataset.observations.some(row => row.indicator_id === item.id && observedValue(row) !== null));
-  const metric = indicator?.id || firstObservedIndicator?.id || dataset.indicators[0]?.id || '';
+  const fallbackMetric = requestedMetric
+    ? configuredIndicator?.id || firstObservedIndicator?.id || dataset.indicators[0]?.id || ''
+    : configuredIndicator?.id || localDefault?.indicator_id || firstObservedIndicator?.id || dataset.indicators[0]?.id || '';
+  const metric = indicator?.id || fallbackMetric;
   const requestedPeriod = query.get('period');
   // A syntactically valid requested period remains selected even when its value is missing.
   const validPeriod = requestedPeriod && /^[\p{L}\p{N} ._/:–-]{1,40}$/u.test(requestedPeriod);
   if (requestedPeriod && !validPeriod) notices.push('The linked period is invalid. The most recent available source period is shown.');
   const configuredPeriod=dataset.analysis?.default_period_by_indicator?.[metric];
-  const period = validPeriod ? requestedPeriod : configuredPeriod || latestObservedPeriod(dataset, metric) || periodsFor(dataset, metric)[0] || '';
+  const localDefaultPeriod=localDefault?.indicator_id===metric?localDefault.period:'';
+  const period = validPeriod ? requestedPeriod : configuredPeriod || localDefaultPeriod || latestObservedPeriod(dataset, metric) || periodsFor(dataset, metric)[0] || '';
   const levels = localLevels(dataset);
   const selected = territory?.id || dataset.country.national_territory_id;
   const selectedLevel = territory?.level;

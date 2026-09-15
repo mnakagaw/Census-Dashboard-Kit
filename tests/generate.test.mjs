@@ -236,7 +236,7 @@ test('generator writes five independent portable pages, same data and local-only
       assert.doesNotMatch(html,/<script[^>]+src="https?:/);
     }
     const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
-    assert.match(app,/new URL\('data\/dashboard.json',base\)/);assert.match(app,/local statistics not yet collected/i);
+    assert.match(app,/new URL\('data\/dashboard.json',base\)/);assert.match(app,/no local observations are integrated/i);
     assert.match(await readFile(path.join(result.siteDir,'assets','i18n.mjs'),'utf8'),/resolveLanguage/);
     assert.match(await readFile(result.handoffPath,'utf8'),/national observations only/);
   } finally {

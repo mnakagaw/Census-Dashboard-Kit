@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "status": "ready",
+  "country_id": "REPLACE_WITH_ISO3",
+  "completed_at": "REPLACE_WITH_ISO_DATETIME",
+  "research": {
+    "census_catalog": {"status": "completed", "evidence_files": ["evidence/SOURCES.md", "evidence/INDICATOR_INVENTORY.csv"], "note": "Describe the official census catalogue and detailed tables actually inspected."},
+    "geography": {"status": "completed", "evidence_files": ["evidence/SOURCES.md", "evidence/CODE_CROSSWALK.csv"], "note": "Describe official codes, hierarchy, boundary edition and unresolved joins."},
+    "planning_system": {"status": "completed", "evidence_files": ["evidence/SOURCES.md", "evidence/PLANNING_CENSUS_AUDIT.md"], "note": "Describe the law, responsible levels, procedure and acquired planning materials."},
+    "local_statistics": {"status": "completed", "evidence_files": ["evidence/SOURCES.md", "evidence/INDICATOR_INVENTORY.csv"], "note": "Describe integrated local observations by theme, period and level."},
+    "common_sources": {"status": "completed", "evidence_files": ["evidence/SOURCES.md"], "note": "Describe each applicable multi-country source and its adoption decision."}
+  },
+  "default_view": {"territory_id": "REPLACE", "indicator_id": "REPLACE", "period": "REPLACE"},
+  "empty_comparisons": {"collapsed_or_suppressed": true},
+  "coverage_claims": {"qualified_by_indicator_period_level": true},
+  "validation": {
+    "kit_check": {"status": "passed", "evidence_files": ["evidence/VALIDATION.md"]},
+    "kit_tests": {"status": "passed", "evidence_files": ["evidence/VALIDATION.md"]},
+    "country_validation": {"status": "passed", "evidence_files": ["evidence/validation.json"]},
+    "browser": {"status": "passed", "evidence_files": ["evidence/ACCEPTANCE.md"]},
+    "outputs": {"status": "passed", "evidence_files": ["evidence/ACCEPTANCE.md"]}
+  },
+  "artifacts": ["site/index.html", "site/territorial/index.html", "site/thematic/index.html", "site/planning/index.html", "data/dashboard.json", "HANDOFF.md"],
+  "limitations": []
+}

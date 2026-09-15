@@ -2,7 +2,7 @@
 
 This contract defines what an AI must preserve when it turns a country name into a country dashboard. The public kit supplies the initial collector, a data contract, three main page roles, reusable source research, and tests. Each country project supplies the verified local evidence and adaptations.
 
-Kit version 1.0.0 keeps `dataset.schema_version = "0.2"` for compatibility. Optional `analysis` and `planning` objects extend the schema without making old country datasets invalid.
+Kit version 1.1.0 keeps `dataset.schema_version = "0.2"` for compatibility. Optional `analysis` and `planning` objects extend the schema without making old country datasets invalid. Version 1.1.0 adds a one-shot delivery gate without changing the country dataset schema.
 
 ## Required page roles
 
@@ -14,10 +14,10 @@ The generated home page routes users to these roles. A supporting Data Register 
 
 Country-specific evidence controls the administrative hierarchy, legal planning level, internal-analysis level, language, indicator set, periods, map depth, charts, document types, and outputs. Do not freeze one country's institutions, cycle, headings, or available data as the global format.
 
-## Bootstrap and continuation
+## Internal workspace preparation and one-shot delivery
 
 - Node.js 22 or later; ES modules; no runtime npm dependency or API key.
-- `scripts/create-country.mjs --country <name-or-ISO> --out <new-directory>` resolves the country, collects initial WDI national series and an available geoBoundaries ADM1 reference, validates the dataset, generates the site, and writes continuation evidence.
+- `scripts/create-country.mjs --country <name-or-ISO> --out <new-directory>` prepares an internal AI workspace: it resolves the country, collects WDI national series and an available geoBoundaries ADM1 reference, validates the dataset, generates working files, and writes research evidence. It is never the user delivery.
 - The command refuses an existing output directory. Collection failure leaves acquired evidence and a failure receipt.
 - `evidence/SOURCE_PREFLIGHT.json` and `.md` separate source-location research from acquisition, geographic matching, and indicator adoption.
 - `scripts/build-country.mjs --project <directory>` validates canonical `data/dashboard.json` and regenerates `site/`.
@@ -27,7 +27,7 @@ Country-specific evidence controls the administrative hierarchy, legal planning 
 - `lib/generate.mjs` exports `generateSite({dataset, outDir})`.
 - `lib/validate.mjs` exports `validateDataset(dataset)` and returns `{errors, warnings}`.
 
-The bootstrap is a starting point. A country is not complete until the AI has inspected the country's official census catalogue and detailed tables, official codes and boundaries, planning law and guidance, representative local plans, and relevant sector, budget, implementation, or evaluation sources; integrated the usable local evidence; and tested the actual site and outputs.
+The AI continues without returning the working site to the user. A country is complete only after it has inspected the country's official census catalogue and detailed tables, official codes and boundaries, planning law and guidance, representative local plans, and relevant sector, budget, implementation, or evaluation sources; integrated the usable local evidence; adapted all three pages; tested the actual site and outputs; recorded `evidence/DELIVERY.json`; and passed `scripts/verify-delivery.mjs`. Source constraints may produce a constrained complete product only when the investigation evidence and usable fallback are both complete.
 
 ## Region-selection contract
 
@@ -152,5 +152,6 @@ For the adopted scope, record:
 - representative complete, sparse, and special-type areas tested through selection, diagnostics, materials, URLs, reload, back/forward, and downloads;
 - `npm run check`, `npm test`, country validation, actual browser checks, output-content checks, environment, dataset edition, commit, and anything not performed;
 - a `HANDOFF.md` with completed work, exact replay commands, the last successful build, current gaps, and the next concrete action.
+- an `evidence/DELIVERY.json` grounded in the above records and a passing delivery-gate result. If local observations exist, its default indicator and period must actually support local comparison. All-missing maps, legends and tables are suppressed or collapsed on screen while full audit rows remain in exports.
 
-Use the applicable cases in [the 42-scenario acceptance sheet](../templates/ACCEPTANCE.md). The existence of a scenario is not a passing result. A list of source links, a successful bootstrap, or a green CI run does not by itself prove that the country dashboard is complete.
+Use the applicable cases in [the 42-scenario acceptance sheet](../templates/ACCEPTANCE.md). The existence of a scenario is not a passing result. A list of source links, a prepared workspace, or a green CI run does not by itself prove that the country dashboard is complete.

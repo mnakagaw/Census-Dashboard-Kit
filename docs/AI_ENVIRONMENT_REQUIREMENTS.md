@@ -26,7 +26,7 @@ Public GitHubから別の利用者が制作する場合を想定した仕様案�
 
 契約根拠：[Antigravityプラン](https://antigravity.google/docs/plans)、[Google日本料金](https://gemini.google/jp/subscriptions/?hl=ja)、[Google米国料金](https://gemini.google/subscriptions/)、[Claude料金](https://claude.com/pricing)、[Codex料金](https://learn.chatgpt.com/docs/pricing)。
 
-API経由の従量課金は別経路であり、月額Pro等を必須としない構成もある。各社ともAPI利用資格・課金設定・上限を別に確認する。上表は月額契約／無料ログイン経路の比較で、「最低月額＝1か国を完成させる総費用」ではない。テンプレートの初期収集・生成自体にはAI APIキーを要求しない。
+API経由の従量課金は別経路であり、月額Pro等を必須としない構成もある。各社ともAPI利用資格・課金設定・上限を別に確認する。上表は月額契約／無料ログイン経路の比較で、「最低月額＝1か国を完成させる総費用」ではない。テンプレートの内部作業場所を準備するスクリプト自体にはAI APIキーを要求しない。
 
 ### 使用量の見方
 
@@ -86,7 +86,7 @@ https://github.com/mnakagaw/Census-Dashboard-Kit を使って［国名］版を�
 README.md、START_HERE.md、AGENTS.md、docs/COUNTRY_AGENT_WORKFLOW.mdを明示的に読み、
 既存の生成コードと共通操作契約を使ってください。使用commitを記録してください。
 国内公式資料の収集・統合から、3ページと採用出力の検証まで進めてください。
-初期生成で止めず、画面を独自に再設計しないでください。
+内部作業場所の準備で止めず、納品ゲートまで完遂し、画面を独自に再設計しないでください。
 作業環境はdocs/AI_ENVIRONMENT_REQUIREMENTS.mdで確認し、不足能力は具体的に示してください。
 ```
 

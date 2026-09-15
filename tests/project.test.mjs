@@ -24,13 +24,14 @@ test('creation leaves the source evidence and error receipt on collection failur
   assert.match(await readFile(path.join(out,'COLLECTION_FAILED.txt'),'utf8'),/lookup failed/);
   assert.equal(await readFile(path.join(out,'raw/evidence.txt'),'utf8'),'acquired before failure');
 });
-test('bootstrap saves validated data, a working site and a continuation contract', async () => {
+test('workspace preparation saves validated data, a working site and a one-shot completion contract', async () => {
   const base=await mkdtemp(path.join(os.tmpdir(),'ddpt-created-')),out=path.join(base,'country');
   const result=await createCountry({country:'Test',out,collect:async()=>fixture()});
   assert.deepEqual(result.validation.errors,[]);
   await access(path.join(out,'site/territorial/index.html'));
-  assert.match(await readFile(path.join(out,'COUNTRY_AGENT_WORKFLOW.md'),'utf8'),/初期生成であり/);
-  assert.match(await readFile(path.join(out,'AGENTS.md'),'utf8'),/not a completed/);
+  assert.match(await readFile(path.join(out,'COUNTRY_AGENT_WORKFLOW.md'),'utf8'),/利用者向けの版ではない/);
+  assert.match(await readFile(path.join(out,'AGENTS.md'),'utf8'),/one finished country dashboard/);
+  assert.equal(JSON.parse(await readFile(path.join(out,'evidence/WORK_STATUS.json'),'utf8')).status,'research_required');
   const preflight=JSON.parse(await readFile(path.join(out,'evidence/SOURCE_PREFLIGHT.json'),'utf8'));
   assert.equal(preflight.country.iso3,result.dataset.country.id);
   assert.equal(preflight.summary.acquired_sources,0);
@@ -46,6 +47,7 @@ test('bootstrap saves validated data, a working site and a continuation contract
   assert.ok(reference.documentation.some(doc=>doc.source_path==='docs/COMMON_DATA_AND_SOURCE_REGISTRY.md'));
   assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/ACCEPTANCE.md'));
   assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/COUNTRY_START.md'));
+  assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/DELIVERY.json'));
   for(const doc of reference.documentation) {
     const filename=path.join(out,doc.artifact_path),text=await readFile(filename,'utf8');
     assert.equal(createHash('sha256').update(text).digest('hex'),doc.artifact_sha256);

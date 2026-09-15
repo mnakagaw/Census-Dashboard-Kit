@@ -1,4 +1,4 @@
-name: Build country baseline
+name: Prepare country workspace (not a delivery)
 on:
   workflow_dispatch:
     inputs:
@@ -19,7 +19,7 @@ jobs:
           node-version: 22
       - run: npm run check
       - run: npm test
-      - name: Collect and build country baseline
+      - name: Prepare internal country workspace
         env:
           CENSUS_COUNTRY_INPUT: ${{ inputs.country }}
         run: node scripts/create-country.mjs --country "$CENSUS_COUNTRY_INPUT" --out generated/country
@@ -27,7 +27,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: country-baseline-${{ github.run_id }}
+          name: country-workspace-not-delivery-${{ github.run_id }}
           path: generated/country/
           if-no-files-found: ignore
           retention-days: 7

@@ -40,6 +40,8 @@ export function renderInternalComparison(data,parentId,indicatorId,period,{inter
   if(!indicator)return '';
   if(comparison.set.terminal)return '<p class="internal-stop small-note">Internal comparison stops at this area. Its own observations remain the diagnostic evidence.</p>';
   if(!comparison.rows.length)return `<p class="internal-unavailable missing-note">${e(comparison.reason || 'No lower-area comparison set is configured. Overall evidence is retained.')}</p>`;
+  const comparableCount=comparison.rows.filter(row=>row.comparable && finite(row.value)).length;
+  if(!comparableCount)return `<section class="internal-comparison internal-comparison-empty" data-internal-comparison="${e(indicatorId)}"><h4>Within the selected area — ${e(comparison.set.label)}</h4><p class="small-note">${e(comparison.set.note || '')}</p><p class="internal-unavailable missing-note">${e(comparisonSummary(data,comparison))} The empty map, legend and ${comparison.rows.length}-row all-missing table are suppressed on screen. Missing member rows remain in the diagnostic CSV and print-ready evidence output.</p></section>`;
   const geometry=mapGeometry(comparison.features),byId=new Map(comparison.rows.map(row=>[row.area.id,row]));
   const label=`${comparison.set.label} · ${indicator.name} · ${period} · ${indicator.unit}`;
   const map=geometry.paths.length?`<svg class="internal-map" viewBox="0 0 760 400" role="group" aria-label="${e(label)}. Inspect values without changing the analysis area."><title>${e(label)}</title><rect width="760" height="400" fill="#f4f8f7"/>${geometry.paths.map(path=>{

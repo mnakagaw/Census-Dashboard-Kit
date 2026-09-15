@@ -1,8 +1,8 @@
-# Geminiで国別ダッシュボードを作る：初心者向け開始手順
+# Antigravityで国別完成品を一回で作る：初心者向け手順
 
 確認日：2026-09-14。Google AI Pro（月約20ドル、日本の公式表示は2,900円）を契約した人が、Publicリポジトリから制作する場合の手順。Windows PCを例にする。
 
-**利用者が準備するのはGoogle Antigravityアプリ、Chrome、作業フォルダー。Node.js等の導入、資料収集、制作、検証はAIへ依頼する。** アプリのインストール・ログイン・OSの許可など、本人の操作が必要な場面は残る。
+**AntigravityとChromeを利用できる人が準備するのは空の作業フォルダーだけ。Node.js等の確認、資料収集、制作、検証は一回のプロンプトでAIへ依頼する。** OSやアプリが表示する許可だけは本人の操作が必要になる。
 
 通常のGeminiチャットではなく、同じGoogleアカウントで使う**Google Antigravity 2.0**へ依頼する。公式資料はファイル編集・コマンド実行・Web検索・Chrome操作を案内している。[アプリの機能](https://antigravity.google/docs/overview/)、[Proの利用条件](https://antigravity.google/docs/plans)
 
@@ -10,26 +10,26 @@
 
 ## ① 初回の準備・設定
 
-1. **Google AI Proの契約アカウントを確認する。** アプリでも同じアカウントを使う。APIキーの発行やGoogle Cloudの課金設定は、この開始経路には不要。
-2. **[Google Antigravityのダウンロードページ](https://antigravity.google/download)からAntigravity 2.0をインストールする。** WindowsではPCに合う版を選び、起動してGoogleアカウントでログイン。モデルはGeminiの既定モデルから始める。Google Chromeも用意する。
-3. **空の作業フォルダーを作る。** 例：ドキュメント内の`CountryDashboards`。既存の仕事のフォルダーを流用する必要はない。
-4. **Antigravityでプロジェクトを作る。** 左のフォルダー＋ → `New Project` → `Add Folder`で上のフォルダーを選ぶ → `Create`。作業モードは`Local`。コードを事前にダウンロードする必要はない。[公式の作成手順](https://antigravity.google/docs/getting-started)
-5. **下の権限設定を確認し、②の文章をチャット欄へ貼る。** 初回のChrome接続やソフト導入に本人の許可が必要なら、表示された案内に従う。AIがブラウザー確認に入れない場合は、`/browser`の入力で接続手順を進める。[ブラウザー操作入口](https://antigravity.google/docs/getting-started)
+1. **Google AI Pro等を使うアカウントでAntigravityへログインしていることを確認する。** APIキーやGoogle Cloudの課金設定は、この開始経路には不要。
+2. **空の作業フォルダーを作る。** 例：ドキュメント内の`CountryDashboards\Laos`。既存の仕事のフォルダーを流用しない。
+3. **Antigravityでプロジェクトを作る。** 左のフォルダー＋ → `New Project` → `Add Folder`で上のフォルダーを選ぶ → `Create`。作業モードは`Local`。[公式の作成手順](https://antigravity.google/docs/getting-started)
+4. **そのProjectの権限を設定し、②の文章を一度だけ貼る。** AIがブラウザー確認に入れない場合は、`/browser`で接続する。[ブラウザー操作入口](https://antigravity.google/docs/getting-started)
 
 ### 「フルアクセス」に相当する設定
 
-プロジェクト横の歯車から設定を開く。今回のように必要ソフトの準備から任せる用途には、次を案内する。
+歯車からSettingsを開き、左の`Projects`で**今作った国別Project名**を選んでから`General`を見る。`Modified in AIFX07`など別名が表示されていれば、別Projectの設定なので戻って選び直す。
 
 | 設定 | この手順での選び方 | 意味 |
 |---|---|---|
-| Terminal Command Auto Execution | `Always Proceed` | 許可されたコマンドをその都度確認せず実行する |
-| プロジェクト外のファイルへのアクセス | `Always Ask`から開始 | ユーザー領域へのソフト導入等で必要な場所を追加許可する |
-| Chrome／Web操作 | 案内された接続と必要なサイトの権限を許可 | 実画面と資料の取得をAIが確認する |
+| Security Preset | `Full Machine` | 今回のProjectでファイル、ターミナル、ネットを使う長い作業を止めにくくする |
+| Artifact Review Policy | 画面にある「常に続行」に相当する選択 | 成果物ごとの確認待ちを減らす。名称は版により異なる |
+| Tool Permissions等 | `Full Machine`後も確認が出る項目だけProject単位で許可 | clone、node、npm、調査先Webへの同種確認を減らす |
+| Chrome／Web操作 | 案内された接続と調査先を許可 | 実画面と資料をAIが確認する |
 | AI Credit Overages | `Never` | 契約枠を使い切ったとき追加クレジットを自動使用せず、枠回復を待つ |
 
 設定の根拠：[設定画面](https://antigravity.google/docs/settings)、[コマンドとファイル権限](https://antigravity.google/docs/agent-settings/)、[追加利用](https://antigravity.google/docs/plans)。設定名はアプリ版により変わり得る。
 
-公式には`Full machine`・`Unrestricted`という広い権限のプリセットもある。これらはPC全体のファイルへのアクセスを広げるためのもので、Node.js導入の必須条件ではない。[権限プリセット](https://antigravity.google/docs/features)
+`Full Machine`でも、OS、Chrome、初めての外部サイト、Project固有の禁止ルールでは確認が残る場合がある。確認画面で安全なキット内コマンドなら`Yes, and always allow ... in this project`を選ぶ。プロンプト本文だけでアプリの権限確認を無効にはできない。[権限プリセット](https://antigravity.google/docs/features)
 
 **AIはNode.js・Git・Python等を導入できるが、コマンドの自動実行許可とOSの管理者権限は別。** Windowsの確認画面、管理者パスワード、会社PCのインストール制限は、AI側の権限設定だけでは解消しない。AIには既存ソフトを先に確認させ、公式配布元からユーザー領域へ必要なものだけ導入させる。
 
@@ -39,7 +39,7 @@
 
 ```text
 ［国名］の地域情報・開発計画ダッシュボードを作ってください。
-私はプログラミング初心者です。準備、資料収集、制作、動作確認まで進めてください。
+私はプログラミング初心者です。この一回の依頼で、準備、資料収集、制作、動作確認を完了し、完成品だけを返してください。
 
 使うテンプレート：
 https://github.com/mnakagaw/Census-Dashboard-Kit
@@ -55,22 +55,25 @@ docs/COUNTRY_AGENT_WORKFLOW.mdを読み、その生成コードと操作仕様�
 
 ①地域診断 ②テーマ別比較 ③開発計画・資料 の3ページを作ってください。
 公式の国勢調査・市県統計・行政区分・計画・予算資料を調べて組み込み、
-全国統計だけの初期生成で終了しないでください。
+create-country.mjsの画面は内部作業用です。その段階で私へ返答せず、国内公式資料の調査・統合を続けてください。
 取得できないデータは不足理由を表示し、推測やゼロで埋めないでください。
 地域選択などの共通操作を維持し、独自にページ構成を作り直さないでください。
+地方データがある場合は地方比較できる指標・年を初期表示にし、全国値しかない指標の空の地図・凡例・全件表を大量に並べないでください。
+収録率は指標・年・階層を明記し、国勢調査実測、推計、投影を区別してください。
 
 画面はその国の利用者が使える言語、私への説明は日本語にしてください。
 実際にブラウザーで操作し、取得した資料・出力も確認して、通常の不具合は修正してください。
 特に、市を選んだ後に同じ上位地域を選び直すと、市が解除され上位全体へ切り替わることを確認してください。
 
 完成したらブラウザーで開き、後日もコードを書かずに起動できる入口と短い使い方を用意してください。
+templates/DELIVERY.jsonを実結果でevidence/DELIVERY.jsonへ記入し、npm run check、npm test、validate-country.mjs、verify-delivery.mjsを実行してください。verify-delivery.mjsがready: trueになるまで完成報告をしないでください。
 できたこと、データの不足、未検証事項を分けて教えてください。
 途中経過と再開方法はHANDOFF.mdに保存してください。
 通常の実装判断は進め、本人の操作や成果を変える重大な不明点だけ確認してください。
 まず私のPCで使えるところまで完成させてください。外部公開や有料サービスの追加契約は別途相談します。
 ```
 
-## 途中で止まったときのプロンプト
+## アプリやPCが終了した場合だけ使う再開文
 
 ```text
 この案件のHANDOFF.mdと保存済みの成果を確認し、続きから進めてください。
@@ -82,8 +85,8 @@ docs/COUNTRY_AGENT_WORKFLOW.mdを読み、その生成コードと操作仕様�
 
 ## 使える状態の目安
 
-- ブラウザーで3ページを開けて、対象地域を選べる。
-- 取得済みの地方値・資料と、まだ不足する項目が分かる。
+- `verify-delivery.mjs`が`ready: true`で、ブラウザーで3ページを開けて対象地域を選べる。
+- 取得済みの地方値・資料と、調査しても取得できなかった項目が分かる。未調査項目を不足扱いにしていない。
 - 地域選択、ページ移動、画面・出力の対象が一致する。
 - 後日も起動入口から使えて、中断時は保存記録から制作を再開できる。
 - インターネットで他の人が見られる公開URLは、PC上の表示URLと区別する。
@@ -92,8 +95,8 @@ docs/COUNTRY_AGENT_WORKFLOW.mdを読み、その生成コードと操作仕様�
 
 本書は公式資料と既存テンプレートに基づく案内であり、Google AI Proの新規Windows環境でのインストールから国別完成までの実機試験は未実施。公開配布前には、Node・Git未導入のPCで上のプロンプトを試し、許可画面・Chrome接続・起動入口・再開を確認する必要がある。
 
-この手順はリポジトリがPublicになった場合を想定する。現状Privateのままなら読取権限が必要。本書の追加ではリポジトリの公開設定、利用者PC、公開サイトは変更していない。
+このリポジトリはPublicであり、URLをAntigravityへ渡してPC内に制作するだけならGitHubアカウントは不要。GitHubへ保存、fork、Actions実行を行う場合だけGitHubアカウントと該当権限が必要になる。
 
 関連：[AI環境要求仕様](AI_ENVIRONMENT_REQUIREMENTS.md)、[共通操作契約](02_COMMON_SPEC.md)。
 
-文書追加・訂正時の検査：2026-09-14、Windows、`f05bf2f`＋本書・README・要求仕様の文書差分。`npm run check`は35モジュールとJSONテンプレートを確認、`npm test`は114件合格。Antigravityの実機試験とは別の結果である。
+キット1.1.0の検査：2026-09-15、Windows、`npm run check`は41個のJavaScriptモジュール、JSONテンプレート、35個のMarkdownを確認し、`npm test`は128件合格。納品ゲート、地方比較できる初期表示、全欠測比較の画面抑制を含む。Antigravityの新規PCで国名だけを入力して完成まで走らせる実機受入は別途記録する。

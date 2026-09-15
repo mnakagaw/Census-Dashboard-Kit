@@ -93,7 +93,7 @@ schema 0.2の任意`analysis`では`kind: "country"`を使い、`comparisons`へ
 
 ```text
 テンプレート scaffold/site/   地域選択・URL・ページ表示・取得操作
-テンプレート lib/             初期収集、データ検証、サイト生成
+テンプレート lib/             内部作業場所の準備、データ検証、サイト生成
 テンプレート tests/           欠測・選択・資料等の共通回帰検証
 国別案件 data/dashboard.json  地域・統計・資料、任意のplanning／analysis設定
 国別案件 adapters/            source別の取得・結合・正規化を案件で追加
