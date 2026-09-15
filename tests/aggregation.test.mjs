@@ -45,6 +45,26 @@ test('overlapping selections and non-additive indicators are not calculated',()=
   assert.deepEqual(validateDataset(data).errors,[]);
 });
 
+test('a complete rate uses declared source weights and is labelled as a dashboard calculation',()=>{
+  const data=enabled();
+  data.indicators.find(item=>item.id==='water').aggregation='weighted_rate';
+  data.indicators.push({id:'survey_weight',name:'Survey population share',theme:'Methods',unit:'%',definition:'Source-reported population share.',population:'Survey population',measurement_method:'source_reported',aggregation:'none',display_role:'calculation_input',source_id:'local'});
+  data.observations.push(
+    {territory_id:'river',indicator_id:'water',period:'2024',value:40,status:'observed',source_id:'local'},
+    {territory_id:'lake',indicator_id:'water',period:'2024',value:80,status:'observed',source_id:'local'},
+    {territory_id:'river',indicator_id:'survey_weight',period:'2024',value:25,status:'observed',source_id:'local'},
+    {territory_id:'lake',indicator_id:'survey_weight',period:'2024',value:75,status:'observed',source_id:'local'}
+  );
+  data.analysis.aggregation.rules.push({indicator_id:'water',method:'weighted_mean',weight_indicator_id:'survey_weight',completeness:'full_cover',label:'Calculated water rate',note:'Uses complete source weights.'});
+  const result=resolvedObservation(data,'north','water','2024');
+  assert.equal(result.value,70);assert.equal(result.status,'calculated');assert.equal(result.provenance,'areadata_calculated');
+  assert.deepEqual(result.components.map(item=>item.weight),[25,75]);
+  assert.match(result.note,/weighted by survey_weight/);
+  assert.deepEqual(validateDataset(data).errors,[]);
+  data.observations=data.observations.filter(row=>!(row.territory_id==='lake'&&row.indicator_id==='survey_weight'));
+  assert.equal(resolvedObservation(data,'north','water','2024').value,null);
+});
+
 test('latest census observations can use different declared years only under an explicit mixed-period rule',()=>{
   const data=enabled();
   const rule=data.analysis.aggregation.rules[0];

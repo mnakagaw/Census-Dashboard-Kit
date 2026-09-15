@@ -22,7 +22,7 @@ World, continental and regional dashboards keep their explicit period behavior. 
 The local release candidate was verified with:
 
 - `npm run check`: 44 JavaScript modules and JSON templates plus 41 Markdown files passed.
-- `npm test`: 138 of 138 tests passed, including mixed latest years, comparison-year selection, country delivery-gate requirements and Planning Word data generation.
+- `npm test`: 141 of 141 tests passed, including mixed latest years, comparison-year selection, parent-scoped lower-level comparison, country delivery-gate requirements and Planning Word data generation.
 - A read-only copy of the earlier Laos project was rebuilt with the 1.4.0 scaffold and checked in a real browser. On the same national Territorial Diagnostic, population indicators showed 2024, unemployment showed 2025 and provincial poverty indicators showed 2017. Each value displayed its year, and no country period selector or historical-series action was present.
 - The Laos Thematic Diagnostic automatically changed an obsolete `period=2024` URL for the MPI indicator to its newest comparable year, 2017. The map, coverage, ranking rows and selected-area value all displayed 2017.
 - The Laos Planning Materials page displayed the latest-per-indicator policy and the number of indicators with a latest confirmed value, without a statistical period selector. Planning records continued to show their own document periods.

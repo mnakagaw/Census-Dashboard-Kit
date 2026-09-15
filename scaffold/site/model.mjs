@@ -42,8 +42,8 @@ export function latestDisplayPeriod(dataset, territoryId, indicatorId) {
   for(const period of periods)if(dataset.observations.some(row=>childIds.has(row.territory_id)&&row.indicator_id===indicatorId&&String(row.period)===period&&observedValue(row)!==null))return period;
   return observedPeriodsForArea(dataset,territoryId,indicatorId)[0] || periods[0] || '';
 }
-export function latestComparisonPeriod(dataset, indicatorId, level) {
-  const ids=new Set(dataset.territories.filter(area=>area.level===level).map(area=>area.id));
+export function latestComparisonPeriod(dataset, indicatorId, level, selectedId=dataset.country.national_territory_id) {
+  const ids=new Set(comparisonAreas(dataset,{selected:selectedId,level}).map(area=>area.id));
   const periods=[...new Set(dataset.observations.filter(row=>ids.has(row.territory_id)&&row.indicator_id===indicatorId&&observedValue(row)!==null).map(row=>String(row.period)))]
     .sort((a,b)=>b.localeCompare(a,'en',{numeric:true}));
   return periods[0] || latestObservedPeriod(dataset,indicatorId);
@@ -200,8 +200,37 @@ export function routeQuery(dataset, state) {
   }
   return query.toString();
 }
+export function comparisonScope(dataset,state) {
+  const national=dataset.territories.find(area=>area.id===dataset.country.national_territory_id);
+  const selected=dataset.territories.find(area=>area.id===state.selected) || national;
+  if(!selected || selected.level==='national')return selected;
+  // A selected member at the comparison level is inspected within its siblings.
+  if(selected.level===state.level)return dataset.territories.find(area=>area.id===selected.parent_id) || national;
+  // An ancestor remains the analysis scope when its lower areas are compared.
+  const hasDescendant=dataset.territories.some(area=>area.level===state.level&&territoryLineage(dataset,area.id).slice(0,-1).some(parent=>parent.id===selected.id));
+  return hasDescendant?selected:national;
+}
+export function comparisonAreas(dataset,state) {
+  const scope=comparisonScope(dataset,state);
+  const candidates=dataset.territories.filter(area=>area.level!=='national'&&area.level===state.level);
+  if(!scope || scope.level==='national')return candidates;
+  return candidates.filter(area=>territoryLineage(dataset,area.id).slice(0,-1).some(parent=>parent.id===scope.id));
+}
+export function preferredThematicLevel(dataset,selectedId,indicatorId,fallback='') {
+  const selected=dataset.territories.find(area=>area.id===selectedId) || dataset.territories.find(area=>area.id===dataset.country.national_territory_id);
+  if(!selected)return fallback || localLevels(dataset)[0] || '';
+  const observedIds=new Set(dataset.observations.filter(row=>row.indicator_id===indicatorId&&observedValue(row)!==null).map(row=>row.territory_id));
+  const descendants=dataset.territories.map(area=>({area,lineage:territoryLineage(dataset,area.id)})).filter(item=>item.area.id!==selected.id&&item.lineage.slice(0,-1).some(parent=>parent.id===selected.id)&&observedIds.has(item.area.id));
+  if(descendants.length) {
+    const depth=Math.min(...descendants.map(item=>item.lineage.length));
+    return descendants.find(item=>item.lineage.length===depth)?.area.level || fallback;
+  }
+  if(selected.level!=='national'&&observedIds.has(selected.id))return selected.level;
+  const levels=localLevels(dataset);
+  return levels.includes(fallback)?fallback:levels.find(level=>dataset.territories.some(area=>area.level===level&&observedIds.has(area.id))) || levels[0] || '';
+}
 export function comparisonCompatibility(dataset, state) {
-  const areas = dataset.territories.filter(area => area.level !== 'national' && area.level === state.level);
+  const areas = comparisonAreas(dataset,state);
   const types = [...new Set(areas.map(area => area.type || 'unspecified'))];
   const editions = [...new Set(areas.map(area => area.boundary_version || 'unverified'))];
   const reasons=[];
@@ -212,7 +241,7 @@ export function comparisonCompatibility(dataset, state) {
 export function comparisonRows(dataset, state) {
   const compatibility=comparisonCompatibility(dataset,state);
   const indicator=dataset.indicators.find(item=>item.id===state.metric);
-  return dataset.territories.filter(area => area.level !== 'national' && area.level === state.level).map(area => {
+  return comparisonAreas(dataset,state).map(area => {
     const result=observationState(dataset,area.id,state.metric,state.period);
     const meaning=observationContext(dataset,area,indicator,result.row);
     return {area,...result,period:result.row?.period || state.period,...(!compatibility.comparable || !meaning.comparable?{value:null,status:'incomparable',reason:[compatibility.reason,meaning.reason].filter(Boolean).join(' ')}:{})};
@@ -265,11 +294,11 @@ export function evidenceCsv(dataset, territoryId, period, indicatorIds) {
   const extended=!!dataset.analysis || rows.some(({indicator,row})=>indicator.definition_id || indicator.population || ['definition_id','definition','unit','population','method','measurement_method'].some(key=>row?.[key]!==undefined));
   const aggregation=!!dataset.analysis?.aggregation;
   return makeCsv([
-    ['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status',...(aggregation?['Value provenance','Aggregation note','Component IDs','Component periods','Missing area IDs','Covered subtotal']:[]),'Definition','Source','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Population','Measurement method','Comparable concept','Comparison note']:[])],
+    ['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status',...(aggregation?['Value provenance','Aggregation note','Component IDs','Component periods','Component weights','Missing area IDs','Covered subtotal']:[]),'Definition','Source','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Population','Measurement method','Comparable concept','Comparison note']:[])],
     ...rows.map(({area, indicator, row, value, status, source,period:displayPeriod}) => {
       const meaning=observationContext(dataset,area,indicator,row);
       const aggregate=areaObservationState(dataset,area.id,indicator.id,displayPeriod);
-      return [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, displayPeriod, value, meaning.unit, status,...(aggregation?[aggregate.provenance, aggregate.note, aggregate.components.map(item=>item.territory_id).join('; '), aggregate.components.map(item=>`${item.territory_id}@${item.period}`).join('; '), aggregate.missing_ids.join('; '), aggregate.covered_value]:[]), meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,meaning.population,meaning.method,meaning.comparable,meaning.reason]:[])];
+      return [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, displayPeriod, value, meaning.unit, status,...(aggregation?[aggregate.provenance, aggregate.note, aggregate.components.map(item=>item.territory_id).join('; '), aggregate.components.map(item=>`${item.territory_id}@${item.period}`).join('; '), aggregate.components.map(item=>finite(item.weight)?`${item.territory_id}=${item.weight}`:'').filter(Boolean).join('; '), aggregate.missing_ids.join('; '), aggregate.covered_value]:[]), meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,meaning.population,meaning.method,meaning.comparable,meaning.reason]:[])];
     })
   ]);
 }
@@ -402,4 +431,16 @@ export function seriesGeometry(series, width=600, height=170) {
   for (const point of points) {if(point){segment.push(point);}else if(segment.length){segments.push(segment);segment=[];}}
   if(segment.length)segments.push(segment);
   return {min,max,points:points.filter(Boolean),segments:segments.map(line => line.map(point=>`${point.x.toFixed(2)},${point.y.toFixed(2)}`).join(' ')),width,height};
+}
+
+export function pyramidBands(bands = []) {
+  const ageStart = value => {
+    const label = String(value || '').trim();
+    if (/^(under|less than|below|<)/i.test(label)) return 0;
+    const match = label.match(/\d+(?:\.\d+)?/);
+    return match ? Number(match[0]) : Number.NEGATIVE_INFINITY;
+  };
+  return bands.map((row,index) => ({row,index,ageStart:ageStart(row?.age)}))
+    .sort((a,b) => b.ageStart-a.ageStart || a.index-b.index)
+    .map(item => item.row);
 }

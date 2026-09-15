@@ -95,7 +95,7 @@ ADM2は全項目が空ではない。ただし、20指標のうちADM2値があ�
 
 対処:
 
-- Word名と文書タイトルを`Diagnóstico para el Plan de Desarrollo Municipal — 地域名`にする。
+- Word名と文書タイトルを`Territorial Development Planning Diagnostic`とし、地域名・行政型を副題に置く。スペイン語圏は`Diagnóstico Territorial para la Planificación del Desarrollo`とする。
 - 文書の性格を市開発計画用の診断・基礎資料とし、計画案、草案、承認待ち文書の体裁にしない。
 - 法・ガイドに基づくインデックスを保持する。
 - `Diagnóstico Territorial`を必須章として追加し、全テーマの最新版、値、単位、年、状態、出典を掲載する。
@@ -170,20 +170,15 @@ ADM2は全項目が空ではない。ただし、20指標のうちADM2値があ�
 5. 下位地域に値があるテーマは開き、両方空のテーマだけ閉じる。
 6. 選択指標で0件の階層を比較候補に出さない。
 7. 人口ピラミッドを表示するか、取得不能の根拠を残す。
-8. Word名が`Diagnóstico para el Plan de Desarrollo Municipal`で、`Diagnóstico Territorial`、最新版・年・出典、法・ガイド準拠インデックスを含む。
+8. Word名が`Territorial Development Planning Diagnostic`（スペイン語圏は`Diagnóstico Territorial para la Planificación del Desarrollo`）で、`Territorial Diagnostic`（スペイン語圏は`Diagnóstico Territorial`）、最新版・年・出典、法・ガイド準拠インデックスを含む。
 9. Wordに空欄指示、`undefined`、代替文字列が残らない。
 10. 法律sourceが国勢調査sourceと同じURL、ファイル、hashではない。
 11. データ収集の不足がある版を`collection.status: complete`と表示しない。
 12. `npm run check`、`npm test`、国別検証、納品ゲート、実ブラウザ、Word全ページ確認を同じデータ版で通す。
+13. テーマ診断で上位地域を比較対象にして下位階層を表示したとき、全国へ戻らず、親境界内の構成地域だけを地図・表・KPIへ表示する。比較対象エリアはテーマ診断内で変更できる。
 
-## 現在の修正状態
+## 修正結果
 
-この監査記録を作成した時点で、テンプレート側には次の修正が作業中である。テスト、Word再レンダリング、今回のラオス成果物を使った負例検証、GitHub反映は未完了である。
+上記の負例を基に、テンプレートと独立したラオス見本を修正した。ルートの全国地域診断化、ヘッダー全国復帰、3メニュー、Word名称と内容、下位データのあるテーマの展開、値0件の比較抑止、人口ピラミッド、source役割検査、テーマ診断の比較対象エリアと表示階層の分離を実装した。
 
-- ルートを地域診断にする変更
-- 計画メニューとWord名称の変更
-- Wordへの`Diagnóstico Territorial`とデータ記述の追加
-- 下位地域データがあるテーマの自動展開
-- 値0件の比較階層の除外
-- 人口ピラミッド用データ契約と表示
-- source役割の重複検出
+さらに、階層selectの上端・高さ、検索行、計画ページの左右カラム、狭幅の一列化を実ブラウザで確認する条件を共通仕様と受入表へ追加した。ラオス見本では42指標、1,896観測、167地域分の人口ピラミッド、141自動試験、国別validator、納品ゲート、Word全20ページの隔離レンダリングを同じデータ版で検証した。GitHubへは汎用テンプレート、仕様、試験だけを反映し、ラオス固有bundleは含めない。

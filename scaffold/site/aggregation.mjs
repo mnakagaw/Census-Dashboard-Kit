@@ -61,7 +61,7 @@ export function resolvedObservation(data,territoryIds,indicatorId,period) {
     const exact=direct(data,selection.ids[0],indicatorId,period,rule);
     if(exact.value!==null)return {value:exact.value,status:exact.status,provenance:'source_reported',row:exact.row,components:[{territory_id:selection.ids[0],value:exact.value,period:exact.period,row:exact.row,source_id:exact.row?.source_id,scope:'exact'}],missing_ids:[],covered_value:exact.value,complete:true,period_policy:rule?.period_policy || 'same_period',component_periods:[exact.period],note:mixedRequested?`Exact source observation for the selected area from its latest available period (${exact.period}).`:'Exact observation for the selected area; lower-area gaps do not affect it.'};
   }
-  if(!rule || rule.method!=='sum') {
+  if(!rule || !['sum','weighted_mean'].includes(rule.method)) {
     const exact=selection.ids.length===1?direct(data,selection.ids[0],indicatorId,period,rule):null;
     return {value:null,status:exact?.status || 'not_available',provenance:'none',row:exact?.row || null,components:[],missing_ids:selection.ids,covered_value:null,complete:false,note:rule?.method==='ratio'?'A rate requires compatible numerator and denominator totals; percentages are never averaged.':'No approved aggregation method exists for this indicator; averages are not calculated.'};
   }
@@ -70,11 +70,23 @@ export function resolvedObservation(data,territoryIds,indicatorId,period) {
   const duplicate=new Set(),seen=new Set();
   for(const component of components){if(seen.has(component.territory_id))duplicate.add(component.territory_id);seen.add(component.territory_id);}
   if(duplicate.size)return {value:null,status:'incomparable',provenance:'none',row:null,components,missing_ids:[...duplicate],covered_value:null,complete:false,note:'The available cover contains duplicate areas; no total is calculated.'};
-  const covered_value=components.reduce((sum,item)=>sum+item.value,0);
   const complete=covers.every(item=>item.complete);
   const component_periods=[...new Set(components.map(item=>String(item.period)))];
   const periodSummary=components.map(item=>`${item.territory_id} ${item.period}`).join(', ');
   const periodNote=mixedRequested?` Mixed reference periods by component: ${periodSummary || 'none'}. This is not a same-year total.`:'';
+  if(rule.method==='weighted_mean') {
+    const weighted=components.map(component=>{
+      const weight=direct(data,component.territory_id,rule.weight_indicator_id,component.period,rule);
+      return {...component,weight:weight.value,weight_row:weight.row,weight_source_id:weight.row?.source_id};
+    });
+    const missingWeights=weighted.filter(item=>!finite(item.weight) || item.weight<0).map(item=>item.territory_id);
+    const denominator=weighted.reduce((sum,item)=>sum+(finite(item.weight)&&item.weight>=0?item.weight:0),0);
+    const weightedComplete=complete && !missingWeights.length && denominator>0;
+    const value=weightedComplete?weighted.reduce((sum,item)=>sum+item.value*item.weight,0)/denominator:null,weightTotal=Number(denominator.toPrecision(12));
+    return {value,status:weightedComplete?'calculated':'incomplete',provenance:'areadata_calculated',row:null,components:weighted,missing_ids:[...new Set([...missing_ids,...missingWeights])],covered_value:null,complete:weightedComplete,period_policy:rule.period_policy || 'same_period',component_periods,
+      note:(weightedComplete?`Dashboard calculation from ${weighted.length} non-overlapping source observations, weighted by ${rule.weight_indicator_id}; source weights sum to ${weightTotal}.`:`No full-coverage weighted value. Compatible source weights are missing for ${missingWeights.length} component areas.`)+periodNote};
+  }
+  const covered_value=components.reduce((sum,item)=>sum+item.value,0);
   return {value:complete?covered_value:null,status:complete?'calculated':'incomplete',provenance:'areadata_calculated',row:null,components,missing_ids,covered_value,complete,period_policy:rule.period_policy || 'same_period',component_periods,
     note:(complete?`Dashboard calculation from ${components.length} non-overlapping source observations. Exact higher-level observations were used before lower areas.`:`No full-coverage total. The labelled covered subtotal uses ${components.length} source observations; ${missing_ids.length} areas remain uncovered.`)+periodNote};
 }

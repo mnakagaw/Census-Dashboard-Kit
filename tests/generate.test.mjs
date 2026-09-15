@@ -4,7 +4,7 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,latestObservedPeriod,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,latestObservedPeriod,nationalOnly,comparisonScope,comparisonAreas,preferredThematicLevel,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,pyramidBands,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
 function fixture() {
@@ -112,6 +112,20 @@ test('district to same parent and incomplete hierarchies retain generic, non-cou
   data.territories.find(area=>area.id==='city').parent_id='city';assert.deepEqual(territoryLineage(data,'city'),[]);
 });
 
+test('thematic comparison keeps the selected parent as scope and shows only its lower areas',()=>{
+  const data=hierarchyFixture();
+  const region=initialState(data,'?territory=north&metric=population&period=2024&level=city');
+  assert.equal(comparisonScope(data,region).id,'north');
+  assert.equal(preferredThematicLevel(data,'north','population','region'),'subregion','nearest observed lower level is preferred when entering thematic view');
+  const cityAreas=comparisonAreas(data,region);
+  assert.ok(cityAreas.length>20);
+  assert.ok(cityAreas.every(area=>territoryLineage(data,area.id).some(parent=>parent.id==='north')));
+  assert.ok(cityAreas.some(area=>area.id==='other-city'),'all matching lower branches inside the selected region remain visible');
+  const inspected={...region,selected:'city'};
+  assert.equal(comparisonScope(data,inspected).id,'nile','an inspected member remains within its parent cohort');
+  assert.ok(comparisonRows(data,inspected).every(row=>row.area.parent_id==='nile'));
+});
+
 test('map-selected ranking row is revealed by clearing only a masking search; missing remains unranked',()=>{
   const data=localValues(fixture()),state=initialState(data,'?metric=water&period=2024'),rows=comparisonRows(data,state);
   const baseline=JSON.stringify(rows);
@@ -196,6 +210,17 @@ test('time-series gaps break the line and numeric zero remains visible',()=>{
   assert.equal(seriesGeometry([{value:null,status:'missing'}]),null);
 });
 
+test('population pyramid places the oldest age band at the top and youngest at the bottom',()=>{
+  const bands=[
+    {age:'0–4',male:10,female:9},
+    {age:'80+',male:1,female:2},
+    {age:'25–29',male:7,female:6},
+    {age:'5–9',male:9,female:8}
+  ];
+  assert.deepEqual(pyramidBands(bands).map(row=>row.age),['80+','25–29','5–9','0–4']);
+  assert.deepEqual(bands.map(row=>row.age),['0–4','80+','25–29','5–9'],'source evidence order is preserved');
+});
+
 test('CSV quotes source strings and blocks formula prefixes without changing numeric negative values',()=>{
   for(const value of ['=SUM(A1:A2)','+1','-2+3','@SUM(A1:A2)','   =HYPERLINK("x")','\tformula'])assert.ok(csvCell(value).startsWith('"\''));
   assert.equal(csvCell(-12),'"-12"');assert.equal(csvCell(0),'"0"');assert.equal(csvCell('A,"B"'),'"A,""B"""');
@@ -237,7 +262,7 @@ test('generator writes five independent portable pages, same data and local-only
     }
     const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
     assert.match(app,/new URL\('data\/dashboard.json',base\)/);assert.match(app,/no local observations are integrated/i);
-    assert.match(app,/Download municipal planning diagnostic/);assert.match(app,/Sources used for planning work/);
+    assert.match(app,/Download territorial planning diagnostic/);assert.match(app,/Sources used for planning work/);
     assert.match(await readFile(path.join(result.siteDir,'assets','docx.mjs'),'utf8'),/planDocxBytes/);
     assert.match(await readFile(path.join(result.siteDir,'assets','i18n.mjs'),'utf8'),/resolveLanguage/);
     assert.match(await readFile(result.handoffPath,'utf8'),/national observations only/);
