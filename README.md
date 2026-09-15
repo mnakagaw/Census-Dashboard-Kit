@@ -36,6 +36,43 @@ Antigravity、Codex、Claude Codeのいずれかにログイン済みで、ア�
 
 3製品とも、必要なのは**Public GitHubの読取、作業フォルダーへの書込、ターミナル、ネット接続、生成サイトを確認するブラウザー**です。プロンプトへ「フルアクセス」と書くだけでは権限は変わらないため、実際の許可画面で設定してください。秘密情報や再配布できない資料をPublic GitHubへ保存する権限は含みません。
 
+#### Antigravityで、最初に押す場所
+
+Antigravityを開いた後は、次の順番だけで開始できます。すでに別のProjectを使っている場合も、国別ダッシュボード用に新しいProjectを作ります。
+
+1. Windowsのエクスプローラーで、成果を保存する空フォルダーを作ります。例：`ドキュメント\CountryDashboards\Kenya`。
+2. Antigravityの設定画面が開いている場合は、右上の`×`で閉じます。
+3. 左側にある**フォルダーに＋が付いたボタン**を押します。
+4. `New Project`を押します。
+5. `Add Folder`を押し、1で作った空フォルダーを選びます。
+6. `Create`を押します。Project名は国名が分かる名前にします。例：`Kenya Dashboard`。
+7. 作成したProjectを開き、`New Conversation`を押します。
+8. 開始時にModeを聞かれたら`Local`を選びます。これで、選んだフォルダーへ成果が保存されます。
+9. 歯車から`Settings`を開き、左側の`Projects`の下にある今作ったProject名を押してから`General`を開きます。設定はProjectごとに分かれています。`Security Preset`の説明に`Modified in AIFX07`など別のProject名が表示されている場合は、国別Projectの設定画面ではありません。
+10. `Security Preset`を確認します。最も簡単に進める場合は`Full Machine`を選びます。画面にすでに`Full Machine`と表示されていれば変更不要です。
+11. `Artifact Review Policy`は`Always Ask`のままで開始できます。成果物の確認画面が出た場合は、内容を確認して承認します。確認で止めたくない場合は、プルダウンに表示される「常に続行する」設定を選べます。
+12. `Tool Permissions`、`Network Access Rules`、`Commands Outside Sandbox`は、`Full Machine`で開始する場合は最初に一件ずつ編集する必要はありません。実行中に確認が出た場合は、このProjectのファイル操作、コマンド実行、調査先Webサイトへの接続を許可します。
+13. 右上の`×`で設定を閉じます。
+14. チャット入力欄へ`/browser`と入力し、Chromeとの接続確認が出たら許可します。これは最後に生成サイトを実画面で検証するためです。
+15. 続けて、下の「② コピペするプロンプト」を貼り付けます。入力後にModeを再度聞かれたら`Local`を選びます。
+
+Antigravity公式の画面説明：[Projectの作成](https://antigravity.google/docs/getting-started)、[Projectごとの設定](https://antigravity.google/docs/projects)、[権限の仕組み](https://antigravity.google/docs/permissions)。
+
+#### Codexで、最初に押す場所
+
+1. Codexで`New Task`を押します。
+2. 作業場所として、国別成果を保存する空フォルダーまたはそのフォルダーを登録したProjectを選びます。
+3. 実行環境は`Local`を選びます。
+4. ファイル、ターミナル、ネット、ブラウザーの確認が出た場合は、この国別Projectについて許可します。
+5. 下の「② コピペするプロンプト」を貼り付けます。
+
+#### Claude Codeで、最初に行うこと
+
+1. 国別成果を保存する空フォルダーをClaude Codeの作業フォルダーとして開きます。
+2. フォルダーを信頼するか聞かれた場合は、作成した国別フォルダーであることを確認して許可します。
+3. Read、Edit、コマンド実行、Web検索・取得の確認が出た場合は、この国別フォルダーについて許可します。
+4. 下の「② コピペするプロンプト」を貼り付けます。
+
 ### ② コピペするプロンプト
 
 `［国名］`だけを、ウガンダ、ケニア、ネパールなどの対象国へ変更してください。
