@@ -7,6 +7,8 @@ import { observedValue } from '../scaffold/site/model.mjs';
 const requiredResearch = ['census_catalog', 'geography', 'planning_system', 'local_statistics', 'common_sources'];
 const requiredValidation = ['kit_check', 'kit_tests', 'country_validation', 'browser', 'outputs'];
 const allowedResearchStatus = new Set(['completed', 'constrained']);
+const requiredThemes = ['population_demography','education','health_nutrition','water_sanitation_housing_energy','livelihoods_poverty_economy','access_infrastructure_environment'];
+const finalThemeStatus = new Set(['local_data_integrated','checked_no_usable_local_data','blocked_with_evidence','not_applicable']);
 
 async function exists(filename) {
   try { await access(filename); return true; } catch { return false; }
@@ -17,6 +19,22 @@ function safeProjectPath(projectDir, value) {
   const resolved = path.resolve(projectDir, value);
   const relative = path.relative(projectDir, resolved);
   return relative && !relative.startsWith(`..${path.sep}`) && !path.isAbsolute(relative) ? resolved : null;
+}
+
+async function readProjectJson(projectDir,value,label,errors) {
+  const filename=safeProjectPath(projectDir,value);
+  if(!filename || !await exists(filename)){errors.push(`${label} is missing or outside the project: ${value || ''}`);return null;}
+  try{return JSON.parse(await readFile(filename,'utf8'));}
+  catch{errors.push(`${label} is not valid JSON: ${value}`);return null;}
+}
+
+function validHttpUrl(value) {
+  try { const url=new URL(value); return ['https:','http:'].includes(url.protocol) && !url.username && !url.password && !url.hostname.endsWith('.invalid'); }
+  catch { return false; }
+}
+
+function validEvidenceText(value) {
+  return typeof value === 'string' && value.trim().length > 0 && !/(?:REPLACE(?:_WITH)?(?:_|$)|\b(?:TODO|TBD)\b)/i.test(value);
 }
 
 export async function verifyDelivery(project) {
@@ -35,7 +53,7 @@ export async function verifyDelivery(project) {
   errors.push(...datasetValidation.errors.map(message => `dataset: ${message}`));
   warnings.push(...datasetValidation.warnings.map(message => `dataset: ${message}`));
 
-  if (delivery.schema_version !== '0.1') errors.push('DELIVERY schema_version must be 0.1');
+  if (delivery.schema_version !== '0.2') errors.push('DELIVERY schema_version must be 0.2');
   if (delivery.status !== 'ready') errors.push('DELIVERY status must be ready');
   if (delivery.country_id !== data.country?.id) errors.push('DELIVERY country_id must match data/dashboard.json');
   if (!/^\d{4}-\d{2}-\d{2}T/.test(delivery.completed_at || '')) errors.push('DELIVERY completed_at must be an ISO datetime');
@@ -80,6 +98,91 @@ export async function verifyDelivery(project) {
   }
   if (delivery.empty_comparisons?.collapsed_or_suppressed !== true) errors.push('empty_comparisons.collapsed_or_suppressed must be true');
   if (delivery.coverage_claims?.qualified_by_indicator_period_level !== true) errors.push('coverage claims must be qualified by indicator, period and level');
+
+  const inventoryConfig=delivery.source_table_inventory;
+  if(inventoryConfig?.status!=='passed')errors.push('source_table_inventory.status must be passed');
+  if(inventoryConfig?.all_adopted_indicators_traced!==true)errors.push('source_table_inventory.all_adopted_indicators_traced must be true');
+  if(inventoryConfig?.all_numeric_fields_decided!==true)errors.push('source_table_inventory.all_numeric_fields_decided must be true');
+  const inventory=await readProjectJson(projectDir,inventoryConfig?.file,'source_table_inventory.file',errors);
+  if(inventory){
+    if(inventory.schema_version!=='0.1')errors.push('SOURCE_TABLE_INVENTORY schema_version must be 0.1');
+    if(!/^\d{4}-\d{2}-\d{2}T/.test(inventory.completed_at||''))errors.push('SOURCE_TABLE_INVENTORY completed_at must be an ISO datetime');
+    const sourceIds=new Set((data.sources||[]).map(source=>source.id)),indicatorIds=new Set((data.indicators||[]).map(indicator=>indicator.id));
+    const traced=new Set(),seenSources=new Set();
+    if(!Array.isArray(inventory.sources)||!inventory.sources.length)errors.push('SOURCE_TABLE_INVENTORY must contain inspected sources');
+    for(const source of inventory.sources||[]){
+      if(!sourceIds.has(source.source_id))errors.push(`SOURCE_TABLE_INVENTORY has unknown source_id: ${source.source_id}`);
+      if(seenSources.has(source.source_id))errors.push(`SOURCE_TABLE_INVENTORY repeats source_id: ${source.source_id}`);seenSources.add(source.source_id);
+      if(source.all_tables_checked!==true)errors.push(`SOURCE_TABLE_INVENTORY ${source.source_id} must confirm all_tables_checked`);
+      if(!Array.isArray(source.raw_files)||!source.raw_files.length)errors.push(`SOURCE_TABLE_INVENTORY ${source.source_id} must list raw_files`);
+      for(const value of source.raw_files||[]){const filename=safeProjectPath(projectDir,value);if(!filename||!await exists(filename))errors.push(`SOURCE_TABLE_INVENTORY raw file is missing or outside the project: ${value}`);}
+      if(source.redistribution_review?.status!=='checked'||!validEvidenceText(source.redistribution_review?.terms)||!['include_raw','exclude_raw','metadata_only'].includes(source.redistribution_review?.raw_publication_decision))errors.push(`SOURCE_TABLE_INVENTORY ${source.source_id} needs a final redistribution review`);
+      if(!Array.isArray(source.tables)||!source.tables.length)errors.push(`SOURCE_TABLE_INVENTORY ${source.source_id} must list inspected tables, sheets, pages or API fields`);
+      for(const table of source.tables||[]){
+        if(!validEvidenceText(table.locator))errors.push(`SOURCE_TABLE_INVENTORY ${source.source_id} has a table without a final locator`);
+        if(!Array.isArray(table.numeric_fields)||!table.numeric_fields.length)errors.push(`SOURCE_TABLE_INVENTORY ${source.source_id} ${table.locator||''} must list numeric_fields`);
+        for(const field of table.numeric_fields||[]){
+          for(const key of ['name','meaning','unit','denominator'])if(!validEvidenceText(field[key]))errors.push(`SOURCE_TABLE_INVENTORY field ${field.name||''} needs final ${key} metadata`);
+          if(!['adopted','not_adopted'].includes(field.decision))errors.push(`SOURCE_TABLE_INVENTORY field ${field.name||''} needs adopted or not_adopted decision`);
+          if(!validEvidenceText(field.reason))errors.push(`SOURCE_TABLE_INVENTORY field ${field.name||''} needs a final reason`);
+          if(field.decision==='adopted'){
+            if(!indicatorIds.has(field.indicator_id))errors.push(`SOURCE_TABLE_INVENTORY adopted field ${field.name||''} has unknown indicator_id: ${field.indicator_id}`);
+            else traced.add(field.indicator_id);
+          } else if(field.indicator_id!==null) errors.push(`SOURCE_TABLE_INVENTORY rejected field ${field.name||''} must use null indicator_id`);
+        }
+      }
+    }
+    for(const id of indicatorIds)if(!traced.has(id))errors.push(`SOURCE_TABLE_INVENTORY does not trace adopted indicator: ${id}`);
+  }
+
+  const themeConfig=delivery.theme_coverage;
+  if(themeConfig?.status!=='passed')errors.push('theme_coverage.status must be passed');
+  if(themeConfig?.candidates_integrated_or_constrained!==true)errors.push('theme_coverage.candidates_integrated_or_constrained must be true');
+  const themeAudit=await readProjectJson(projectDir,themeConfig?.file,'theme_coverage.file',errors);
+  if(themeAudit){
+    if(themeAudit.schema_version!=='0.1')errors.push('THEME_COVERAGE schema_version must be 0.1');
+    if(!/^\d{4}-\d{2}-\d{2}T/.test(themeAudit.completed_at||''))errors.push('THEME_COVERAGE completed_at must be an ISO datetime');
+    const sourceIds=new Set((data.sources||[]).map(source=>source.id)),indicatorIds=new Set((data.indicators||[]).map(indicator=>indicator.id)),assigned=new Set();
+    const localIndicatorIds=new Set(localRows.map(row=>row.indicator_id));
+    for(const id of requiredThemes){const matches=(themeAudit.themes||[]).filter(theme=>theme.id===id);if(matches.length!==1)errors.push(`THEME_COVERAGE must contain exactly one ${id} entry`);}
+    for(const theme of themeAudit.themes||[]){
+      if(!requiredThemes.includes(theme.id))errors.push(`THEME_COVERAGE has unknown theme id: ${theme.id}`);
+      if(!finalThemeStatus.has(theme.status))errors.push(`THEME_COVERAGE ${theme.id} is unfinished: ${theme.status || 'missing status'}`);
+      if(!validEvidenceText(theme.note))errors.push(`THEME_COVERAGE ${theme.id} needs a specific final note`);
+      if(!Array.isArray(theme.checked_locations)||!theme.checked_locations.length)errors.push(`THEME_COVERAGE ${theme.id} must list checked_locations`);
+      for(const check of theme.checked_locations||[])if(!validHttpUrl(check?.url)||!validEvidenceText(check?.result))errors.push(`THEME_COVERAGE ${theme.id} has an invalid or unfinished checked location`);
+      for(const id of theme.source_ids||[])if(!sourceIds.has(id))errors.push(`THEME_COVERAGE ${theme.id} has unknown source_id: ${id}`);
+      if(theme.status==='local_data_integrated'){
+        if(!Array.isArray(theme.indicator_ids)||!theme.indicator_ids.length)errors.push(`THEME_COVERAGE ${theme.id} must list integrated indicator_ids`);
+        if(!Array.isArray(theme.source_ids)||!theme.source_ids.length)errors.push(`THEME_COVERAGE ${theme.id} must list source_ids`);
+        for(const id of theme.indicator_ids||[]){assigned.add(id);if(!indicatorIds.has(id))errors.push(`THEME_COVERAGE ${theme.id} has unknown indicator_id: ${id}`);else if(!localIndicatorIds.has(id))errors.push(`THEME_COVERAGE ${theme.id} claims local integration without a local observation: ${id}`);}
+      } else if(['checked_no_usable_local_data','blocked_with_evidence'].includes(theme.status) && (theme.checked_locations||[]).length<2) errors.push(`THEME_COVERAGE ${theme.id} needs at least two checked locations for a constrained result`);
+    }
+    for(const id of localIndicatorIds)if(!assigned.has(id))errors.push(`THEME_COVERAGE does not classify locally observed indicator: ${id}`);
+  }
+
+  const geography=delivery.geography_review;
+  if(geography?.status!=='passed')errors.push('geography_review.status must be passed');
+  if(geography?.stable_url_identity_checked!==true)errors.push('geography_review.stable_url_identity_checked must be true');
+  if(geography?.no_geometry_layout_checked!==true)errors.push('geography_review.no_geometry_layout_checked must be true');
+  const geographyEvidence=safeProjectPath(projectDir,geography?.evidence_file);
+  if(!geographyEvidence||!await exists(geographyEvidence))errors.push(`geography_review.evidence_file is missing or outside the project: ${geography?.evidence_file||''}`);
+  const localLevels=[...new Set((data.territories||[]).filter(area=>area.id!==data.country?.national_territory_id).map(area=>area.level))];
+  for(const level of localLevels){
+    const territories=(data.territories||[]).filter(area=>area.level===level),ids=new Set(territories.map(area=>area.id));
+    const boundaryIds=new Set((data.boundaries?.features||[]).map(feature=>feature.properties?.territory_id).filter(id=>ids.has(id)));
+    const entry=(geography?.selectable_levels||[]).find(item=>item.level===level),expectedStatus=boundaryIds.size===0?'none':boundaryIds.size===territories.length?'complete':'partial';
+    if(!entry){errors.push(`geography_review.selectable_levels is missing ${level}`);continue;}
+    if(entry.territory_count!==territories.length||entry.boundary_count!==boundaryIds.size)errors.push(`geography_review ${level} counts do not match the dataset`);
+    if(entry.status!==expectedStatus)errors.push(`geography_review ${level} status must be ${expectedStatus}`);
+    if(expectedStatus!=='complete'&&entry.unjoined_ids_recorded!==true)errors.push(`geography_review ${level} must record unjoined IDs`);
+  }
+
+  const presentation=delivery.period_and_language_review;
+  if(presentation?.status!=='passed')errors.push('period_and_language_review.status must be passed');
+  for(const key of ['different_year_data_discoverable','national_context_separated_on_local_views','mixed_language_reviewed'])if(presentation?.[key]!==true)errors.push(`period_and_language_review.${key} must be true`);
+  const presentationEvidence=safeProjectPath(projectDir,presentation?.evidence_file);
+  if(!presentationEvidence||!await exists(presentationEvidence))errors.push(`period_and_language_review.evidence_file is missing or outside the project: ${presentation?.evidence_file||''}`);
 
   const planning=data.planning,documentTemplate=planning?.document_template;
   if(!planning?.outputs?.includes('docx'))errors.push('Country delivery must adopt the docx planning output');

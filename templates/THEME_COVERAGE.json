@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.1",
+  "completed_at": "REPLACE_WITH_ISO_DATETIME",
+  "themes": [
+    {"id":"population_demography","status":"local_data_integrated","source_ids":["REPLACE"],"indicator_ids":["REPLACE"],"levels":["adm1"],"checked_locations":[{"url":"https://example.invalid/replace","result":"REPLACE_WITH_WHAT_WAS_INSPECTED"}],"note":"REPLACE"},
+    {"id":"education","status":"candidate_found_not_integrated","source_ids":["REPLACE"],"indicator_ids":[],"levels":[],"checked_locations":[{"url":"https://example.invalid/replace","result":"REPLACE"}],"note":"A ready delivery cannot retain this status. Integrate the usable candidate or record a specific verified constraint."},
+    {"id":"health_nutrition","status":"candidate_found_not_integrated","source_ids":["REPLACE"],"indicator_ids":[],"levels":[],"checked_locations":[{"url":"https://example.invalid/replace","result":"REPLACE"}],"note":"REPLACE"},
+    {"id":"water_sanitation_housing_energy","status":"candidate_found_not_integrated","source_ids":["REPLACE"],"indicator_ids":[],"levels":[],"checked_locations":[{"url":"https://example.invalid/replace","result":"REPLACE"}],"note":"REPLACE"},
+    {"id":"livelihoods_poverty_economy","status":"candidate_found_not_integrated","source_ids":["REPLACE"],"indicator_ids":[],"levels":[],"checked_locations":[{"url":"https://example.invalid/replace","result":"REPLACE"}],"note":"REPLACE"},
+    {"id":"access_infrastructure_environment","status":"candidate_found_not_integrated","source_ids":["REPLACE"],"indicator_ids":[],"levels":[],"checked_locations":[{"url":"https://example.invalid/replace","result":"REPLACE"}],"note":"REPLACE"}
+  ]
+}

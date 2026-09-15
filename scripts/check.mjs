@@ -18,6 +18,8 @@ for (const root of roots) await walk(root);
 JSON.parse(await readFile('package.json', 'utf8'));
 JSON.parse(await readFile('templates/country-profile.json', 'utf8'));
 JSON.parse(await readFile('templates/DELIVERY.json', 'utf8'));
+JSON.parse(await readFile('templates/SOURCE_TABLE_INVENTORY.json', 'utf8'));
+JSON.parse(await readFile('templates/THEME_COVERAGE.json', 'utf8'));
 JSON.parse(await readFile('config/common-subnational-sources.json', 'utf8'));
 JSON.parse(await readFile('config/country-source-registry.json', 'utf8'));
 

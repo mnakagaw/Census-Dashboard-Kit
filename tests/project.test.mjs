@@ -45,8 +45,11 @@ test('workspace preparation saves validated data, a working site and a one-shot 
   assert.equal(JSON.stringify(reference).includes(base),false);
   assert.ok(reference.documentation.some(doc=>doc.source_path==='docs/SOURCE_ADAPTER_GUIDE.md'));
   assert.ok(reference.documentation.some(doc=>doc.source_path==='docs/COMMON_DATA_AND_SOURCE_REGISTRY.md'));
+  assert.ok(reference.documentation.some(doc=>doc.source_path==='docs/AI_FAILURE_MODE_REVIEW.md'));
   assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/ACCEPTANCE.md'));
   assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/COUNTRY_START.md'));
+  assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/SOURCE_TABLE_INVENTORY.json'));
+  assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/THEME_COVERAGE.json'));
   assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/DELIVERY.json'));
   for(const doc of reference.documentation) {
     const filename=path.join(out,doc.artifact_path),text=await readFile(filename,'utf8');

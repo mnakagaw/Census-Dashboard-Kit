@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "status": "ready",
   "country_id": "REPLACE_WITH_ISO3",
   "completed_at": "REPLACE_WITH_ISO_DATETIME",
@@ -13,6 +13,33 @@
   "default_view": {"territory_id": "REPLACE", "indicator_id": "REPLACE", "period": "REPLACE"},
   "empty_comparisons": {"collapsed_or_suppressed": true},
   "coverage_claims": {"qualified_by_indicator_period_level": true},
+  "source_table_inventory": {
+    "status": "passed",
+    "file": "evidence/SOURCE_TABLE_INVENTORY.json",
+    "all_adopted_indicators_traced": true,
+    "all_numeric_fields_decided": true
+  },
+  "theme_coverage": {
+    "status": "passed",
+    "file": "evidence/THEME_COVERAGE.json",
+    "candidates_integrated_or_constrained": true
+  },
+  "geography_review": {
+    "status": "passed",
+    "stable_url_identity_checked": true,
+    "no_geometry_layout_checked": true,
+    "selectable_levels": [
+      {"level": "REPLACE", "territory_count": 0, "boundary_count": 0, "status": "none", "unjoined_ids_recorded": true}
+    ],
+    "evidence_file": "evidence/GEOGRAPHY_REVIEW.md"
+  },
+  "period_and_language_review": {
+    "status": "passed",
+    "different_year_data_discoverable": true,
+    "national_context_separated_on_local_views": true,
+    "mixed_language_reviewed": true,
+    "evidence_file": "evidence/ACCEPTANCE.md"
+  },
   "word_plan": {
     "status": "passed",
     "outline_checked_against_law": true,

@@ -1,8 +1,8 @@
-# Census Dashboard Kit 1.2 implementation contract
+# Census Dashboard Kit 1.3 implementation contract
 
 This contract defines what an AI must preserve when it turns a country name into a country dashboard. The public kit supplies the initial collector, a data contract, three main page roles, reusable source research, and tests. Each country project supplies the verified local evidence and adaptations.
 
-Kit version 1.2.0 keeps `dataset.schema_version = "0.2"` for compatibility. Optional `analysis` and `planning` objects extend the schema without making old country datasets invalid. Version 1.1.0 added a one-shot delivery gate; version 1.2.0 requires a verified country planning outline, DOCX output and classified planning-law, census and international-source links for completed country deliveries.
+Kit version 1.3.0 keeps `dataset.schema_version = "0.2"` for compatibility. Optional `analysis` and `planning` objects extend the schema without making old country datasets invalid. Version 1.1.0 added a one-shot delivery gate; version 1.2.0 added a verified country planning outline, DOCX output and classified source links. Version 1.3.0 adds full acquired-table inventory, six-theme evidence coverage, selectable-level geography checks, alternative-period discovery and language review to the completed-country gate.
 
 ## Required page roles
 
@@ -27,7 +27,7 @@ Country-specific evidence controls the administrative hierarchy, legal planning 
 - `lib/generate.mjs` exports `generateSite({dataset, outDir})`.
 - `lib/validate.mjs` exports `validateDataset(dataset)` and returns `{errors, warnings}`.
 
-The AI continues without returning the working site to the user. A country is complete only after it has inspected the country's official census catalogue and detailed tables, official codes and boundaries, planning law and guidance, representative local plans, and relevant sector, budget, implementation, or evaluation sources; integrated the usable local evidence; adapted all three pages; tested the actual site and outputs; recorded `evidence/DELIVERY.json`; and passed `scripts/verify-delivery.mjs`. Source constraints may produce a constrained complete product only when the investigation evidence and usable fallback are both complete.
+The AI continues without returning the working site to the user. A country is complete only after it has inspected the country's official census catalogue and detailed tables, every table and numeric field in acquired sources, official codes and boundaries at each selectable level, planning law and guidance, representative local plans, and relevant sector, budget, implementation, evaluation and international sources; completed the six-theme search record; integrated every usable adopted candidate; adapted all three pages; tested the actual site and outputs; recorded `evidence/SOURCE_TABLE_INVENTORY.json`, `evidence/THEME_COVERAGE.json` and `evidence/DELIVERY.json`; and passed `scripts/verify-delivery.mjs`. Source constraints may produce a constrained complete product only when the investigation evidence and usable fallback are both complete.
 
 ## Region-selection contract
 

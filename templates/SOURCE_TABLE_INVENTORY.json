@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1",
+  "completed_at": "REPLACE_WITH_ISO_DATETIME",
+  "sources": [
+    {
+      "source_id": "REPLACE_WITH_DATA_SOURCE_ID",
+      "raw_files": ["raw/REPLACE_WITH_FILENAME.xlsx"],
+      "redistribution_review": {
+        "status": "checked",
+        "terms": "REPLACE_WITH_LICENSE_OR_PUBLISHED_REUSE_TERMS",
+        "raw_publication_decision": "exclude_raw"
+      },
+      "all_tables_checked": true,
+      "tables": [
+        {
+          "locator": "REPLACE_WITH_SHEET_TABLE_OR_PAGE",
+          "geographic_levels": ["adm1"],
+          "periods": ["REPLACE"],
+          "numeric_fields": [
+            {
+              "name": "REPLACE_WITH_ORIGINAL_FIELD",
+              "meaning": "REPLACE_WITH_PUBLISHED_MEANING",
+              "unit": "REPLACE",
+              "denominator": "REPLACE_OR_NOT_APPLICABLE",
+              "decision": "adopted",
+              "indicator_id": "REPLACE_WITH_DATASET_INDICATOR_ID",
+              "reason": "Adopted after geography, period, unit and definition checks."
+            },
+            {
+              "name": "REPLACE_WITH_REJECTED_FIELD",
+              "meaning": "REPLACE_WITH_PUBLISHED_MEANING",
+              "unit": "REPLACE",
+              "denominator": "REPLACE_OR_NOT_APPLICABLE",
+              "decision": "not_adopted",
+              "indicator_id": null,
+              "reason": "REPLACE_WITH_A_SPECIFIC_REASON"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

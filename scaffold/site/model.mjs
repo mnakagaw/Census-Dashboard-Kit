@@ -25,6 +25,19 @@ export function periodsFor(dataset, indicatorId) {
   if(indicatorId && aggregationRule(dataset,indicatorId)?.period_policy==='latest_available_by_component')periods.unshift(LATEST_AVAILABLE_PERIOD);
   return periods;
 }
+export function observedPeriodsForArea(dataset, territoryId, indicatorId) {
+  return [...new Set(dataset.observations
+    .filter(row => row.territory_id === territoryId && row.indicator_id === indicatorId && observedValue(row) !== null)
+    .map(row => String(row.period)))]
+    .sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
+}
+export function themePeriodCoverage(dataset, territoryId, indicators, period) {
+  const exact = indicators.filter(indicator => observationState(dataset, territoryId, indicator.id, period).value !== null);
+  const otherPeriods = [...new Set(indicators.flatMap(indicator => observedPeriodsForArea(dataset, territoryId, indicator.id)))]
+    .filter(value => value !== String(period))
+    .sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
+  return {total:indicators.length, exact:exact.length, otherPeriods};
+}
 export function latestObservedPeriod(dataset, indicatorId) {
   return [...new Set(dataset.observations.filter(row => row.indicator_id === indicatorId && observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
 }

@@ -69,7 +69,7 @@ create-country.mjsの画面は内部作業用です。その段階で私へ返�
 特に、市を選んだ後に同じ上位地域を選び直すと、市が解除され上位全体へ切り替わることを確認してください。
 
 完成したらブラウザーで開き、後日もコードを書かずに起動できる入口と短い使い方を用意してください。
-templates/DELIVERY.jsonを実結果でevidence/DELIVERY.jsonへ記入し、npm run check、npm test、validate-country.mjs、build-plan-docx.mjs、verify-delivery.mjsを実行してください。verify-delivery.mjsがready: trueになるまで完成報告をしないでください。
+取得した全表・全数値列をtemplates/SOURCE_TABLE_INVENTORY.json、人口・教育・保健栄養・水衛生住宅エネルギー・生計貧困経済・アクセス等の6分野をtemplates/THEME_COVERAGE.jsonの形式でevidence/へ記録してください。別年データへの切替、選択可能階層の境界、全国参考値の分離、表示言語も実画面で確認してください。templates/DELIVERY.jsonを実結果でevidence/DELIVERY.jsonへ記入し、npm run check、npm test、validate-country.mjs、build-plan-docx.mjs、verify-delivery.mjsを実行してください。verify-delivery.mjsがready: trueになるまで完成報告をしないでください。
 できたこと、データの不足、未検証事項を分けて教えてください。
 途中経過と再開方法はHANDOFF.mdに保存してください。
 通常の実装判断は進め、本人の操作や成果を変える重大な不明点だけ確認してください。
