@@ -1,0 +1,19 @@
+{
+  "name": "census-dashboard-kit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public AI-ready kit for building evidence-based country census and planning dashboards",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check.mjs",
+    "create:country": "node scripts/create-country.mjs",
+    "build:country": "node scripts/build-country.mjs",
+    "validate:country": "node scripts/validate-country.mjs",
+    "serve": "node scripts/serve.mjs",
+    "sources:plan": "node scripts/source-plan.mjs"
+  }
+}

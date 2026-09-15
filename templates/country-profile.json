@@ -1,0 +1,129 @@
+{
+  "schema_version": "0.1",
+  "artifact_kind": "design_template_not_runtime_config",
+  "status": "unfilled",
+  "country": {
+    "id": null,
+    "name": null,
+    "default_locale": null,
+    "supported_locales": [],
+    "text_direction": null,
+    "timezone": null,
+    "currency": null,
+    "number_format_locale": null
+  },
+  "baseline": {
+    "common_spec_version": "0.4",
+    "reference_repository": "https://github.com/mnakagaw/DDPT-TOP",
+    "reference_commit": "6d2aee5f767515c5b20118ed642f832f21a15151",
+    "reference_public_urls": [],
+    "reference_verified_at": null,
+    "ux_baseline_status": "candidate_not_approved"
+  },
+  "geography": {
+    "territory_types": [],
+    "code_systems": [],
+    "administrative_relationships": [],
+    "statistical_classifications": [],
+    "project_focus_groups": [],
+    "boundary_versions": [],
+    "historical_crosswalks": [],
+    "exploration_classifications": [],
+    "planning_entities_ref": null,
+    "basic_municipality_identification_ref": null
+  },
+  "internal_comparison_design": {
+    "artifact_role": "design_decisions_not_runtime_settings",
+    "analysis_scopes": [],
+    "constituent_registry_refs": [],
+    "indicator_comparison_policies": [],
+    "basic_municipality_stop_decisions": [],
+    "parent_observation_and_aggregation_evidence_ref": null,
+    "missing_and_boundary_fallbacks": [],
+    "observation_meaning_difference_evidence_refs": [],
+    "color_scale_decisions": [],
+    "diagnostic_output_validation_ref": null,
+    "world_connection_decisions": [],
+    "preserved_top_layout_reference": null,
+    "interaction_contract": "Compare beneath each indicator; comparison focus does not change the analysis target, URL, documents or output target.",
+    "print_contract": "Print every constituent row, including missing values, regardless of viewport, search, collapse or pagination.",
+    "runtime_mapping": {
+      "dataset_file": "data/dashboard.json",
+      "dataset_schema_version": "0.2",
+      "optional_settings_field": "analysis",
+      "contract_ref": "docs/ANALYSIS_DATA_CONTRACT.md",
+      "decision_record_ref": null,
+      "note": "Translate decisions explicitly to kind, comparisons, terminal_territory_ids and optional country_sites. The design profile is not loaded automatically. The legacy fallback compares direct children and stops at built-in city/municipality types; verify the country meaning. Country sites are separate datasets and indicator transfer needs an explicit indicator_map."
+    },
+    "acceptance_record_ref": null,
+    "note": "World, continent and broad-area exploration classifications do not establish legal planning authority. Include national analysis; stop normal subdivision at the verified basic municipality. Never infer parent values by averaging child rates. Empty lists mean undecided."
+  },
+  "planning": {
+    "plan_types": [],
+    "responsible_institutions": [],
+    "legal_and_methodological_sources": [],
+    "planning_periods": [],
+    "document_templates": [],
+    "evidence_statuses": [],
+    "official_decision_statuses": [],
+    "research_lenses": ["plan", "budget", "implementation", "evaluation", "reference"],
+    "research_lenses_note": "Investigation prompts, not mandatory cards, pages, chapters, cycles or scoring systems.",
+    "source_assessments": [],
+    "territory_identity_evidence_ref": null,
+    "document_period_policy_ref": null,
+    "content_and_findings_evidence_ref": null,
+    "section_adoption_decisions": [],
+    "map_meaning_decision": null,
+    "output_adoption_decisions": [],
+    "related_module_decisions": [],
+    "gap_alternatives": [],
+    "source_update_contracts": [],
+    "last_good_and_retry_procedure_ref": null,
+    "runtime_mapping": {
+      "dataset_file": "data/dashboard.json",
+      "dataset_schema_version": "0.2",
+      "optional_settings_field": "planning",
+      "documents_field": "documents",
+      "contract_ref": "docs/PLANNING_DATA_CONTRACT.md",
+      "decision_record_ref": null,
+      "note": "Map adopted decisions to the runtime contract explicitly. This design section is not dataset.planning and is not loaded automatically. Missing runtime outputs preserve defaults; an empty runtime outputs array disables exports and needs a documented alternative."
+    }
+  },
+  "data": {
+    "source_registry_ref": null,
+    "indicator_dictionary_ref": null,
+    "territory_registry_ref": null,
+    "dataset_versions": [],
+    "update_contracts": [],
+    "join_reports": [],
+    "comparison_policies": []
+  },
+  "capabilities": {
+    "decision_unit": "indicator_x_territory_x_period_x_boundary_version",
+    "allowed_decisions": ["implement", "conditional", "alternative", "deferred"],
+    "module_decisions": [],
+    "chart_decisions": [],
+    "export_formats": [],
+    "narrative_generation": null,
+    "local_work_notes": null,
+    "backup_restore": null,
+    "decision_record_ref": null
+  },
+  "design": {
+    "shared_tokens_ref": null,
+    "country_token_overrides": {},
+    "page_correspondence_ref": null,
+    "accepted_deviations": []
+  },
+  "delivery": {
+    "mode": null,
+    "repository": null,
+    "public_base_url": null,
+    "hosting_method": null,
+    "access_policy_ref": null,
+    "responsibility_register_ref": null,
+    "validation_record_ref": null,
+    "release_record_ref": null
+  },
+  "completion_notes": "Null and empty decision lists in this design inventory mean undecided, not false, absent in the country or disabled. No runtime loader or schema validator for this design profile is implemented. Runtime dataset validation is separate. Common UX 0.4 is a candidate, not accepted v1.0. Do not place credentials or personal data here."
+}
