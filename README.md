@@ -2,15 +2,12 @@
 
 **Give a local coding AI one country name and this repository URL. The AI must research, build and verify a usable country dashboard before it returns the result.**
 
-国名とこのPublicリポジトリのURLをAntigravity、Gemini、Claude Code、Codex等へ渡し、各国の公式資料を調査して国別ダッシュボードを作るためのOSSキットです。ドミニカ共和国、ウガンダ、ラオス、バングラデシュの実作業から得た役割の異なる教訓を、国別に適応できる形へまとめています。
+国名とこのPublicリポジトリのURLをAntigravity、Gemini、Claude Code、Codex等へ渡し、各国の公式資料を調査して国別ダッシュボードを作るためのOSSキットです。
 
 > [!IMPORTANT]
 > 利用者が行う依頼は一回です。AIは内部で作業場所の準備、公式資料調査、データ取得・統合、3ページの制作、ブラウザー操作、出力照合、納品ゲートまで連続して実行します。途中の生成サイト、全国値だけの画面、リンク一覧、緑のGitHub Actionsを利用者への成果として返してはいけません。
 
 「完成」は、公開されている全資料が無条件に入手できるという意味ではありません。取得不能・未公開・利用制限がある国では、確認した根拠を残し、取得済み資料で3ページの業務を完結できる代替表示と出力を作った状態を**制約付き完成品**とします。空欄が大量に並ぶ画面や「後で追加調査してください」という引継ぎだけでは完成になりません。
-
-> [!NOTE]
-> 1.0系で作られたラオス試作のように、人口ファイル一つと全国WDIだけを入れ、取得済みExcelの大半を使わず、境界のない大きな地図と「データなし」を並べたものは完成品ではありません。1.6.0では、JICA優先142か国・地域の根拠付き台帳、全142件の国勢調査・計画法・地理・国際データの探索開始アドレス、[ドミニカ共和国・ウガンダ・ラオス・バングラデシュの4つの基準国ケース](docs/REFERENCE_COUNTRY_CASES.md)を追加し、全表・数値列、6分野、地理、最新値、Word、実ブラウザーと納品ゲートの要件を同じ一発完成手順へ接続します。詳しくは[国名だけで完成させる受入条件](docs/COUNTRY_NAME_ONLY_ACCEPTANCE.md)と[汎用AIの失敗例と防止確認](docs/AI_FAILURE_MODE_REVIEW.md)を参照してください。
 
 ## 作るもの
 
@@ -111,85 +108,14 @@ Antigravity公式の画面説明：[Projectの作成](https://antigravity.google
 
 ### ② コピペするプロンプト
 
-最新版の一発完成プロンプトは **[`prompts/ONE_COUNTRY_COMPLETE.md`](prompts/ONE_COUNTRY_COMPLETE.md)** です。変更する箇所は `COUNTRY_NAME` だけです。製品別の開始メモは [Antigravity](prompts/ANTIGRAVITY.md)、[Codex](prompts/CODEX.md)、[Claude Code](prompts/CLAUDE_CODE.md) にあります。3製品とも同じ [`COUNTRY_COMPLETION_CONTRACT`](docs/COUNTRY_COMPLETION_CONTRACT.md) と納品ゲートを使うため、製品別の短い指示で完成条件が弱くなることはありません。対象には基準国のDOM、UGA、LAO、BGDも含まれ、その場合も保存済み見本を返さず、現在の公式sourceを再確認して新しい国別成果を作ります。
+最新版の一発完成プロンプトは **[`prompts/ONE_COUNTRY_COMPLETE.md`](prompts/ONE_COUNTRY_COMPLETE.md)** です。変更する箇所は `COUNTRY_NAME` だけです。製品別の開始メモは [Antigravity](prompts/ANTIGRAVITY.md)、[Codex](prompts/CODEX.md)、[Claude Code](prompts/CLAUDE_CODE.md) にあります。3製品とも同じ完成条件と納品ゲートを使います。
 
 142か国・地域それぞれについて、統計局・国勢調査、計画法と関連資料、行政コード・境界、国際データ候補の探索開始アドレスを[`config/jica-priority-source-preflight.json`](config/jica-priority-source-preflight.json)に記録しています。人が読める全件表は[`docs/research/jica-priority-2026/SOURCE_PREFLIGHT_142.md`](docs/research/jica-priority-2026/SOURCE_PREFLIGHT_142.md)です。これはAIが探索を省略しないための案内であり、法令本文や統計表を取得・確認済みとする証拠ではありません。AIは国別案件の中で最新版、本文、表、粒度、利用条件を確認し、取得・地理照合・採用まで進めます。
 
 
-`［国名］`だけを、ウガンダ、ケニア、ネパールなどの対象国へ変更してください。**途中で別の追加プロンプトを送ることを前提にしません。**
+`prompts/ONE_COUNTRY_COMPLETE.md`を開き、コードブロックをすべてコピーします。`COUNTRY_NAME`の一か所だけを対象国名へ変更し、AIのチャットへ一度貼り付けてください。途中で追加プロンプトを送ることを前提にしません。
 
-```text
-［国名］の地域情報・開発計画ダッシュボードを作ってください。
-私はプログラミング初心者です。この一回の依頼で、調査、データ取得、制作、動作確認を完了し、完成品だけを返してください。
-
-使用するPublicテンプレート：
-https://github.com/mnakagaw/Census-Dashboard-Kit
-
-最初にテンプレートを取得し、README.md、START_HERE.md、AGENTS.md、
-docs/COUNTRY_AGENT_WORKFLOW.md、docs/AI_FAILURE_MODE_REVIEW.mdを読んでください。
-国名を十分な開始情報として扱い、開始票とTask Contractはあなたが作成してください。
-この作業フォルダー内に新しい国別ディレクトリを作り、テンプレート本体を一国用に書き換えないでください。
-通常の実装判断は進め、国の同定や成果を大きく変える不明点だけ質問してください。
-確認画面で私の操作が必要な場合は、選ぶ番号と押すボタンを日本語で一つだけ具体的に示してください。
-
-create-country.mjsは内部の作業場所を準備する工程にすぎません。実行結果を私に完成品として見せず、そのまま次を調査・取得・確認してください。
-・指定国の公式な国勢調査の所在、詳細表、全テーマ・項目と数値列
-・公式な行政地域コード、地域階層、境界データと統計表の対応
-・地方開発計画に関する法律、法定の計画策定単位、策定手順と計画書の内容
-・地方計画、予算、実施報告、評価資料、および地域別データを持つ国際・複数国source
-
-リンクの発見、原資料の取得、内容確認、地理照合、指標採用を別々に記録してください。
-全国値を地方値として流用せず、欠測、ゼロ、非該当、未確認、取得失敗、利用制限を区別してください。
-人口ファイル一つで探索を止めず、統計局の国勢調査目録・詳細表・地域統計書・API、所管省庁統計、公式共同調査、国際機関・複数国sourceの順で探索してください。
-人口・人口動態、教育、保健・栄養、水・衛生・住宅・エネルギー、生計・貧困・経済、アクセス・インフラ・環境の6分野をすべて確認してください。
-取得したExcelの全シート、CSV/APIの全フィールド、PDFの目次・付表・継続表を確認し、全数値列をevidence/SOURCE_TABLE_INVENTORY.jsonへ棚卸ししてください。データセットの配布ページに複数resourceがある場合は、最初のCSVだけで止めず、ADM0・ADM1・ADM2、説明書、年齢男女別表などを全件列挙して確認してください。採用・不採用と具体的理由、原本の再配布可否を残し、利用可能候補を見つけたまま未統合で納品しないでください。再配布不可・要許諾の原本をPublic成果へ含めないでください。6分野の結果はevidence/THEME_COVERAGE.jsonへ記録してください。年齢・性別の地域表を取得できた場合は、各対応地域に人口ピラミッドを表示してください。
-
-次の3ページを、テンプレートの操作契約を使って完成させてください。
-① Territorial Diagnostic
-② Thematic Diagnostic
-③ Planning Materials and Links
-
-トップページ`/`は地域診断の全国版にし、内容のない案内専用ホームを作らないでください。ヘッダーのCensus Dashboardタイトルを押すと、選択中の指標を保持したまま地域診断の全国版へ戻るようにしてください。メニュー名は地域診断、テーマ診断、計画資料・リンクの汎用名にし、特定国の計画名や「Official」など、政府の公式サイト・公式計画書に見える自己表示を避けてください。
-
-テーマ診断では「比較対象エリア」と「エリア内の表示階層」を別々に選べるようにしてください。地域診断でADM1等の上位地域を選んでテーマ診断へ進んだら、指標の取得状況にかかわらず、上位地域を比較範囲として保持したまま、その内部の最も近い下位階層を初期表示してください。地図・順位表・中央値・被覆率はその親の構成地域だけを対象にし、親境界を地図上に残してください。下位値が0件なら、その階層と構成地域を保ったまま0件と欠測を表示し、観測のある上位階層や全国へ自動的に戻してはいけません。比較対象エリアはテーマ診断内のドロップダウンから変更でき、地図や順位表で下位地域へ注目しても親の比較範囲は変えないでください。
-
-資料ページには、適用法令・省令・公式手引き、国勢調査・統計局原表、採用した国際機関データを別区分で、公式リンク・取得状態・確認日とともに一覧表示してください。
-法令、規則、所管省庁の策定手引き、公式様式から、その国の計画書に必要な章・表・記入欄を確認してください。固定の公式目次がある場合は同じ順序を採用し、固定目次がない場合は法定要求を各章へ対応付けた根拠付き目次にしてください。
-選択地域について、その目次、法的根拠、取得済み統計、資料、出典、不足欄を含む編集可能なDOCXを必ず生成してください。Wordの文書名・先頭タイトルは「Territorial Development Planning Diagnostic」（スペイン語圏は「Diagnóstico Territorial para la Planificación del Desarrollo」）とし、少なくともTerritorial Diagnostic（スペイン語圏はDiagnóstico Territorial）、位置図、利用可能な人口ピラミッド、比較可能な指標図、テーマ別の取得済み最新版と出典年、法規・国勢調査・国際機関sourceの一覧を含めてください。本文は表の読み上げや指標ごとの同じ欠測文を並べず、選択地域の確認済み値、同じ親の同階層地域との比較、上位地域の参考値、地域値の不足を区別して診断文にします。上位値は地方値へ代入しません。スペイン語圏以外はファイル名、タイトル、見出し、固定文、指標表示名を英語に統一し、DDPTからスペイン語を引き継がないでください。地域名は原綴りを保持します。計画書の下書きや政府様式を名乗る表現は使わず、一般的な8章構成を国別確認なしに使わないでください。
-
-行政階層、言語、指標、統計年、地図、図表、計画制度と出力形式は、その国の根拠に合わせてください。
-データが少ないことを理由に、3ページの目的や地域選択の意味を独自に変更しないでください。
-地方観測が一件でもある場合、初期表示は地方比較できる指標にしてください。地域診断・計画資料では、各テーマ・指標について選択地域で確認できた最新版を自動表示し、値の横に出典年を付けてください。年セレクター、過去年への切替、時系列グラフ、履歴CSVは国別3ページに置きません。テーマ診断の行政階層は取得済み地域台帳に従って選択可能にし、指標値の有無を理由に選択肢から消したり上位階層へ戻したりしません。観測がある場合は最も新しい共通年で順位・地図・中央値・比較CSVを揃え、0件の場合は親範囲と全構成地域を維持して、欠測色・被覆0件・順位なしと明示します。選択した親地域自身に直接値がなく、下位地域には値がある場合は、親の「データなし」と下位地域比較を別々に明記してください。下位比較地図を親の値の代わりに見せないでください。全国系列しかないテーマや地方値が全件欠測のテーマは、地域診断と計画資料の反復する指標カードを短い不足説明へまとめます。テーマ診断で利用者がその指標を明示選択した場合は、参照境界と欠測地域を表示し、主題値があるような塗り分けや順位を作りません。全国系列は地方値と混ぜず、全国参考として分離してください。出典にない割合・合計・年齢区分などを計算した場合は、画面、CSV、Wordのすべてで「ダッシュボード算出値」とし、出典公表値と区別してください。詳しくは[最新版表示方針](docs/LATEST_VALUE_POLICY.md)に従ってください。
-「全地域に少なくとも1件ある」という全期間・全指標の件数を、現在の指標・年の収録率に見えるよう表示しないでください。実測、推計、投影も区別してください。
-
-選択可能な各行政階層について、統計地域コードと境界の対応件数を実測してください。境界を取得できない階層では、巨大な空地図を出さず、短い不足表示と地域選択・統計・資料への導線を残してください。古いURLや大文字小文字の違いで別地域と判定されないよう、共有URLを再読み込みして同じ地域になることを確認してください。主要な見出し、ボタン、欠測説明、出典説明を対象言語で通読し、英語と混在したまま完成扱いしないでください。
-
-地域選択は、地図、見出し、全指標、資料、URL、保存内容と出力へ即時に反映してください。
-特に、下位地域を選んだ後、その現在の所属先と同じ上位地域をドロップダウンから明示的に選び直した場合も、
-下位選択を解除し、上位全体へ切り替えてください。その際、選択中の指標は保持し、比較年はその指標・階層の最新共通年へ自動調整してください。
-親地域自身の値がない場合は、以前の下位地域の値を残さず、親地域の欠測を表示してください。
-
-完全な地域、データの少ない地域、特殊な行政区分を代表例として、実際のブラウザーで確認してください。最後に「この国には本当に他の地方データがないか」「取得済み資料に未採用の有用な数値列が残っていないか」「各指標の最新版と年を正しく表示しているか」を反証確認してください。
-画面だけでなく、CSV、印刷、作業文書など採用した出力の地域、期間、値、単位、出典も照合してください。
-DOCXは実際に開けるファイルを出力し、隔離されたレンダラーで全ページを画像化して、文字切れ、表の欠落、章順、選択地域、法的根拠と出典を確認してください。
-
-npm run check、npm test、
-node scripts/validate-country.mjs --project <国別プロジェクトのパス>
-node scripts/build-plan-docx.mjs --project <国別プロジェクトのパス> --territory <確認地域ID> --out <国別プロジェクトのパス>/evidence/WORD_SAMPLE.docx
-を実行してください。通常の不具合は修正し、再検証してください。templates/SOURCE_TABLE_INVENTORY.json、templates/SOURCE_RESOURCE_INVENTORY.json、templates/THEME_COVERAGE.jsonを実結果でevidence/へ記入してください。カタログに複数ファイルがある場合は、発見件数・取得件数・統合件数を分け、全件に最終的な採否と理由を付けます。1件だけを代表例として統合して完了扱いにはできません。最後にtemplates/DELIVERY.jsonを実結果でevidence/DELIVERY.jsonへ記入し、
-node scripts/verify-delivery.mjs --project <国別プロジェクトのパス>
-を実行してください。この納品ゲートが成功するまで完成報告をしないでください。
-
-原資料、取得日時、hash、地域対応、採用・不採用、未取得、未検証、再実行コマンドを証拠として保存し、
-中断・再開方法を国別プロジェクトのHANDOFF.mdへ残してください。
-作業用サイトが起動しても私へ返答して止まらず、調査・統合・検証を続行してください。全国値だけの画面、リンク一覧、空欄中心の画面、またはGitHub Actionsのsuccessを完成扱いしないでください。
-
-最後に、完成したローカルサイトをブラウザーで開き、
-できたこと、利用できる地域・データ・資料、残る不足、未検証事項を日本語で報告してください。
-外部公開や有料サービスの追加契約は、私が別途依頼した場合だけ行ってください。
-```
-
-AIやPCが予期せず終了した場合だけ、同じ作業フォルダーで次を貼り付けます。通常の作業を段階的な追加依頼に分けるための文章ではありません。
+AIやPCが予期せず終了した場合だけ、同じ作業フォルダーで次の再開用プロンプトを送ります。
 
 ```text
 この国別案件のHANDOFF.mdと保存済み成果を読み、続きから再開してください。
@@ -292,7 +218,7 @@ node scripts/verify-delivery.mjs --project ../uganda-dashboard
 - 法定の計画策定単位と、その内部を診断する下位単位を分けます。District計画でSubcountyを分析しても、Subcountyを法定主体と推定しません。
 - リンク発見、本文取得、内容確認、公式な承認状態を別々に記録します。
 
-`config/country-source-registry.json`にはラテンアメリカ20か国とウガンダの出発点、`config/common-subnational-sources.json`には地域粒度を持ち得る10の国際・複数国source候補を収録しています。すべて案件時点で再確認が必要です。登録だけで、その国のデータ取得や採用が完了したとは扱いません。
+`config/country-source-registry.json`には国別sourceの出発点、`config/common-subnational-sources.json`には地域粒度を持ち得る国際・複数国source候補を収録しています。すべて案件時点で再確認が必要です。登録だけで、その国のデータ取得や採用が完了したとは扱いません。
 
 ## GitHub Actions（通常の利用者には不要）
 
@@ -321,7 +247,7 @@ tests/                   選択、欠測、地理、計画、出力等の回帰�
 .github/workflows/       キットCIと管理者用の内部作業場所確認
 ```
 
-[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。実装時の主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[国名だけで完成させる受入条件](docs/COUNTRY_NAME_ONLY_ACCEPTANCE.md)、[4つの基準国ケース](docs/REFERENCE_COUNTRY_CASES.md)、[世界全体とJICA優先142か国・地域の運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[汎用AIの失敗例と防止確認](docs/AI_FAILURE_MODE_REVIEW.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。JICA優先台帳は[`config/jica-priority-country-registry.json`](config/jica-priority-country-registry.json)、全142件の探索開始アドレスは[`config/jica-priority-source-preflight.json`](config/jica-priority-source-preflight.json)で機械判定します。`npm run verify:kit`は国名プレースホルダーが一つだけであること、142件の同一母集団、4区分の探索先、4基準国の再作成可能性を検査します。生成後のサイトとWordは利用者自身の成果物であり、国別作業ディレクトリで文言、テーマ、資料、公開先を修正・再生成できます。1.6.0の確認範囲は[検証記録](docs/VALIDATION_v1.6.0.md)に記録します。
+[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。利用者向けの主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[世界全体とJICA優先142か国・地域の運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。JICA優先台帳は[`config/jica-priority-country-registry.json`](config/jica-priority-country-registry.json)、全142件の探索開始アドレスは[`config/jica-priority-source-preflight.json`](config/jica-priority-source-preflight.json)で機械判定します。生成後のサイトとWordは利用者自身の成果物であり、国別作業ディレクトリで文言、テーマ、資料、公開先を修正・再生成できます。
 
 ## ライセンスと第三者データ
 
