@@ -1,0 +1,3623 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-09-16",
+  "definition": "Countries and territories named in the Purview lists of JICA's current regional overseas-office directory. Liaison-office locations without a Purview country list are not treated as cooperation targets.",
+  "use": "Priority and discovery context only. This registry does not prove that census, planning-law, guidance, geography or local indicator data have been acquired or accepted.",
+  "counts": {
+    "jica_priority_countries_and_territories": 142,
+    "dac_oda_recipients_2024": 132,
+    "non_dac_or_graduated_cooperation_partners": 10,
+    "jica_country_pages": 113,
+    "purview_only_without_jica_country_page": 29
+  },
+  "sources": [
+    {
+      "id": "JICA_WHERE_WE_WORK",
+      "url": "https://www.jica.go.jp/english/overseas/",
+      "role": "country_page_index"
+    },
+    {
+      "id": "JICA_OFFICES_ASIA",
+      "url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html",
+      "role": "office_and_purview_directory"
+    },
+    {
+      "id": "JICA_OFFICES_MIDDLE_EAST",
+      "url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html",
+      "role": "office_and_purview_directory"
+    },
+    {
+      "id": "JICA_OFFICES_AFRICA",
+      "url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html",
+      "role": "office_and_purview_directory"
+    },
+    {
+      "id": "JICA_OFFICES_NORTH_AND_LATIN_AMERICA",
+      "url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html",
+      "role": "office_and_purview_directory"
+    },
+    {
+      "id": "JICA_OFFICES_OCEANIA",
+      "url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html",
+      "role": "office_and_purview_directory"
+    },
+    {
+      "id": "JICA_OFFICES_EUROPE",
+      "url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html",
+      "role": "office_and_purview_directory"
+    },
+    {
+      "id": "UN_M49",
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "role": "country_area_name_and_code_registry"
+    },
+    {
+      "id": "OECD_DAC_2024",
+      "url": "https://webfs.oecd.org/oda/DAClists/DAC-List-of-ODA-Recipients-for-reporting-2024-flows.csv",
+      "role": "oda_recipient_classification"
+    },
+    {
+      "id": "MOFA_COUNTRY_POLICY_INDEX",
+      "url": "https://www.mofa.go.jp/mofaj/gaiko/oda/seisaku/kuni_enjyo_kakkoku.html",
+      "role": "country_cooperation_policy_discovery"
+    }
+  ],
+  "snapshot_receipt": {
+    "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html": {
+      "sha256": "628301ab6fe77e255f9ffa5a82ae3ea2c05808d054f35d3abd897a420b20bda4",
+      "bytes": 56577
+    },
+    "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html": {
+      "sha256": "2281e2e19af347b6bc7b2c8893a4adf3760179640c8554d18874b094742a1317",
+      "bytes": 49089
+    },
+    "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html": {
+      "sha256": "6a7425dcf8031cfcbd211fef15903e9d4eea881423ec3d1782571e99ce4daf8b",
+      "bytes": 60931
+    },
+    "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html": {
+      "sha256": "1b973cbc8240bda64c15e173ecf5b091c627ac4abf3eae092841aa60f310215c",
+      "bytes": 58023
+    },
+    "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html": {
+      "sha256": "19a6e5b75385a54d82a4ae3fae3161b7040899e7604a7b68bfcaab57a52516d8",
+      "bytes": 49506
+    },
+    "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html": {
+      "sha256": "c6c44183910f864fa53185c88246750663f5e50b705c614b9a3b343e0c6f795b",
+      "bytes": 46127
+    },
+    "https://www.jica.go.jp/english/overseas/": {
+      "sha256": "7af3487c95e941132255df6de36b5f78816640de3d02cfc4743077a1ee7373f3",
+      "bytes": 183578
+    },
+    "https://unstats.un.org/unsd/methodology/m49/overview/": {
+      "sha256": "b9048114f6e7f2abda83bf03d4263c9d7cd1bd7230e3d0461025ee7839a7a1fb",
+      "bytes": 1721575
+    },
+    "https://webfs.oecd.org/oda/DAClists/DAC-List-of-ODA-Recipients-for-reporting-2024-flows.csv": {
+      "sha256": "9667ed3dfcdf7d58076e82ef7a21e0b5f24627dc67ec44e2e69b0450f6365daa",
+      "bytes": 7682
+    }
+  },
+  "countries": [
+    {
+      "iso3": "AFG",
+      "m49": "004",
+      "name_en": "Afghanistan",
+      "jica_name": "Afghanistan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/afghanistan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Afghanistan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "AGO",
+      "m49": "024",
+      "name_en": "Angola",
+      "jica_name": "Angola",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/angola/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Angola Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ALB",
+      "m49": "008",
+      "name_en": "Albania",
+      "jica_name": "Albania",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/albania/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Europe",
+          "office": "JICA Balkan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ARG",
+      "m49": "032",
+      "name_en": "Argentina",
+      "jica_name": "Argentine",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/argentine/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Argentine Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ARM",
+      "m49": "051",
+      "name_en": "Armenia",
+      "jica_name": "Armenia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/armenia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Uzbekistan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ATG",
+      "m49": "028",
+      "name_en": "Antigua and Barbuda",
+      "jica_name": "Antigua and Barbuda",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "AZE",
+      "m49": "031",
+      "name_en": "Azerbaijan",
+      "jica_name": "Azerbaijan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/azerbaijan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Uzbekistan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BDI",
+      "m49": "108",
+      "name_en": "Burundi",
+      "jica_name": "Burundi",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/burundi/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Rwanda Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BEN",
+      "m49": "204",
+      "name_en": "Benin",
+      "jica_name": "Benin",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/benin/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Côte d'Ivoire Office (JICA EN Côte d'Ivoire)",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        },
+        {
+          "region": "Africa",
+          "office": "JICA/JOCV Benin Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BFA",
+      "m49": "854",
+      "name_en": "Burkina Faso",
+      "jica_name": "Burkina Faso",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/burkinafaso/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Burkina Faso Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BGD",
+      "m49": "050",
+      "name_en": "Bangladesh",
+      "jica_name": "Bangladesh",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/bangladesh/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Bangladesh Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BHS",
+      "m49": "044",
+      "name_en": "Bahamas",
+      "jica_name": "Bahamas",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BIH",
+      "m49": "070",
+      "name_en": "Bosnia and Herzegovina",
+      "jica_name": "Bosnia and Herzegovina",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/bosnia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Europe",
+          "office": "JICA Balkan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BLZ",
+      "m49": "084",
+      "name_en": "Belize",
+      "jica_name": "Belize",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/belize/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Belize Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        },
+        {
+          "region": "North and Latin America",
+          "office": "JICA El Salvador Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BOL",
+      "m49": "068",
+      "name_en": "Bolivia (Plurinational State of)",
+      "jica_name": "Bolivia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/bolivia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Bolivia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BRA",
+      "m49": "076",
+      "name_en": "Brazil",
+      "jica_name": "Brazil",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/brazil/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Brazil Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BRB",
+      "m49": "052",
+      "name_en": "Barbados",
+      "jica_name": "Barbados",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BTN",
+      "m49": "064",
+      "name_en": "Bhutan",
+      "jica_name": "Bhutan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/bhutan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Bhutan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "BWA",
+      "m49": "072",
+      "name_en": "Botswana",
+      "jica_name": "Botswana",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/botswana/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Botswana Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        },
+        {
+          "region": "Africa",
+          "office": "JICA South Africa Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "CAF",
+      "m49": "140",
+      "name_en": "Central African Republic",
+      "jica_name": "Central African",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Cameroon Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "CHL",
+      "m49": "152",
+      "name_en": "Chile",
+      "jica_name": "Chile",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/chile/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Chile Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        },
+        {
+          "region": "North and Latin America",
+          "office": "JICA Peru Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "CHN",
+      "m49": "156",
+      "name_en": "China",
+      "jica_name": "China",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/china/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA China Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "CIV",
+      "m49": "384",
+      "name_en": "Côte d’Ivoire",
+      "jica_name": "Côte d'Ivoire",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/cotedivoire/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Côte d'Ivoire Office (JICA EN Côte d'Ivoire)",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "CMR",
+      "m49": "120",
+      "name_en": "Cameroon",
+      "jica_name": "Cameroon",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/cameroon/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Cameroon Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "COD",
+      "m49": "180",
+      "name_en": "Democratic Republic of the Congo",
+      "jica_name": "Democratic Republic of Congo",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/drc/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Democratic Republic of Congo Office (JICA DRC Office)",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "COG",
+      "m49": "178",
+      "name_en": "Congo",
+      "jica_name": "Republic of Congo",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Democratic Republic of Congo Office (JICA DRC Office)",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "COK",
+      "m49": "184",
+      "name_en": "Cook Islands",
+      "jica_name": "Cook Islands",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Fiji Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "COL",
+      "m49": "170",
+      "name_en": "Colombia",
+      "jica_name": "Colombia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/colombia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Colombia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        },
+        {
+          "region": "North and Latin America",
+          "office": "JICA Peru Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "COM",
+      "m49": "174",
+      "name_en": "Comoros",
+      "jica_name": "Comoros",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/comoros/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Madagascar Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "CPV",
+      "m49": "132",
+      "name_en": "Cabo Verde",
+      "jica_name": "Cape Verde",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Senegal Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "CRI",
+      "m49": "188",
+      "name_en": "Costa Rica",
+      "jica_name": "Costa Rica",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/costarica/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Costa Rica Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        },
+        {
+          "region": "North and Latin America",
+          "office": "JICA Panama Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "CUB",
+      "m49": "192",
+      "name_en": "Cuba",
+      "jica_name": "Republic of Cuba",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/cuba/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Cuba Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "DJI",
+      "m49": "262",
+      "name_en": "Djibouti",
+      "jica_name": "Djibouti",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/djibouti/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Djibouti Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "DMA",
+      "m49": "212",
+      "name_en": "Dominica",
+      "jica_name": "Dominica",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "DOM",
+      "m49": "214",
+      "name_en": "Dominican Republic",
+      "jica_name": "Dominican Republic",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/dominicanrep/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "DZA",
+      "m49": "012",
+      "name_en": "Algeria",
+      "jica_name": "Algeria",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/algeria/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Tunisia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ECU",
+      "m49": "218",
+      "name_en": "Ecuador",
+      "jica_name": "Ecuador",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/ecuador/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Ecuador Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "EGY",
+      "m49": "818",
+      "name_en": "Egypt",
+      "jica_name": "Egypt",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/egypt/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Egypt Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ERI",
+      "m49": "232",
+      "name_en": "Eritrea",
+      "jica_name": "Eritrea",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/eritrea/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Kenya Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ETH",
+      "m49": "231",
+      "name_en": "Ethiopia",
+      "jica_name": "Ethiopia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/ethiopia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Ethiopia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "FJI",
+      "m49": "242",
+      "name_en": "Fiji",
+      "jica_name": "Fiji",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/fiji/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Fiji Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "FSM",
+      "m49": "583",
+      "name_en": "Micronesia (Federated States of)",
+      "jica_name": "Federated States of Micronesia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/fsm/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Micronesia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        },
+        {
+          "region": "Oceania",
+          "office": "JICA Palau Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GAB",
+      "m49": "266",
+      "name_en": "Gabon",
+      "jica_name": "Gabon",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/gabon/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Cameroon Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        },
+        {
+          "region": "Africa",
+          "office": "JICA/JOCV Gabon Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GEO",
+      "m49": "268",
+      "name_en": "Georgia",
+      "jica_name": "Georgia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/georgia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Georgia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        },
+        {
+          "region": "Asia",
+          "office": "JICA Uzbekistan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GHA",
+      "m49": "288",
+      "name_en": "Ghana",
+      "jica_name": "Ghana",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/ghana/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Ghana Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GIN",
+      "m49": "324",
+      "name_en": "Guinea",
+      "jica_name": "Guinea",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/guinea/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Senegal Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GMB",
+      "m49": "270",
+      "name_en": "Gambia",
+      "jica_name": "Gambia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Senegal Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GNB",
+      "m49": "624",
+      "name_en": "Guinea-Bissau",
+      "jica_name": "Guinea-Bissau",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Senegal Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GNQ",
+      "m49": "226",
+      "name_en": "Equatorial Guinea",
+      "jica_name": "Equatorial Guinea",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Angola Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GRD",
+      "m49": "308",
+      "name_en": "Grenada",
+      "jica_name": "Grenada",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GTM",
+      "m49": "320",
+      "name_en": "Guatemala",
+      "jica_name": "Guatemala",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/guatemala/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Guatemala Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "GUY",
+      "m49": "328",
+      "name_en": "Guyana",
+      "jica_name": "Guyana",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "HND",
+      "m49": "340",
+      "name_en": "Honduras",
+      "jica_name": "Honduras",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/honduras/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Honduras Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "HTI",
+      "m49": "332",
+      "name_en": "Haiti",
+      "jica_name": "Haiti",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/haiti/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "IDN",
+      "m49": "360",
+      "name_en": "Indonesia",
+      "jica_name": "Indonesia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/indonesia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Indonesia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "IND",
+      "m49": "356",
+      "name_en": "India",
+      "jica_name": "India",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/india/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA India Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "IRN",
+      "m49": "364",
+      "name_en": "Iran (Islamic Republic of)",
+      "jica_name": "Iran",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/iran/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Iran Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "IRQ",
+      "m49": "368",
+      "name_en": "Iraq",
+      "jica_name": "Iraq",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/iraq/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Iraq Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "JAM",
+      "m49": "388",
+      "name_en": "Jamaica",
+      "jica_name": "Jamaica",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/jamaica/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        },
+        {
+          "region": "North and Latin America",
+          "office": "JICA Jamaica Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "JOR",
+      "m49": "400",
+      "name_en": "Jordan",
+      "jica_name": "Jordan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/jordan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Jordan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "KAZ",
+      "m49": "398",
+      "name_en": "Kazakhstan",
+      "jica_name": "Kazakhstan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/kazakhstan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Kyrgyz Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "KEN",
+      "m49": "404",
+      "name_en": "Kenya",
+      "jica_name": "Kenya",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/kenya/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Kenya Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "KGZ",
+      "m49": "417",
+      "name_en": "Kyrgyzstan",
+      "jica_name": "Kyrgyz Republic",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/kyrgyz/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Kyrgyz Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "KHM",
+      "m49": "116",
+      "name_en": "Cambodia",
+      "jica_name": "Cambodia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/cambodia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Cambodia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "KIR",
+      "m49": "296",
+      "name_en": "Kiribati",
+      "jica_name": "Kiribati",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Fiji Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "KNA",
+      "m49": "659",
+      "name_en": "Saint Kitts and Nevis",
+      "jica_name": "Saint Christopher and Nevis",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "LAO",
+      "m49": "418",
+      "name_en": "Lao People's Democratic Republic",
+      "jica_name": "Laos",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/laos/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Laos Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "LBR",
+      "m49": "430",
+      "name_en": "Liberia",
+      "jica_name": "Liberia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/liberia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Ghana Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "LCA",
+      "m49": "662",
+      "name_en": "Saint Lucia",
+      "jica_name": "Saint Lucia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/stlucia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        },
+        {
+          "region": "North and Latin America",
+          "office": "JICA Saint Lucia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "LKA",
+      "m49": "144",
+      "name_en": "Sri Lanka",
+      "jica_name": "Sri Lanka",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/srilanka/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Sri Lanka Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "LSO",
+      "m49": "426",
+      "name_en": "Lesotho",
+      "jica_name": "Lesotho",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA South Africa Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MAR",
+      "m49": "504",
+      "name_en": "Morocco",
+      "jica_name": "Morocco",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/morocco/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Morocco Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MDA",
+      "m49": "498",
+      "name_en": "Republic of Moldova",
+      "jica_name": "Moldova",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/moldova/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Europe",
+          "office": "JICA Ukraine Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MDG",
+      "m49": "450",
+      "name_en": "Madagascar",
+      "jica_name": "Madagascar",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/madagascar/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Madagascar Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MDV",
+      "m49": "462",
+      "name_en": "Maldives",
+      "jica_name": "Maldives",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/maldives/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Maldives Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        },
+        {
+          "region": "Asia",
+          "office": "JICA Sri Lanka Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MEX",
+      "m49": "484",
+      "name_en": "Mexico",
+      "jica_name": "Mexico",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/mexico/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Mexico Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MHL",
+      "m49": "584",
+      "name_en": "Marshall Islands",
+      "jica_name": "Marshall Islands",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/marshall/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Palau Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        },
+        {
+          "region": "Oceania",
+          "office": "JICA/JOCV Marshall Islands Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MKD",
+      "m49": "807",
+      "name_en": "North Macedonia",
+      "jica_name": "Republic of North Macedonia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/north_macedonia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Europe",
+          "office": "JICA Balkan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MLI",
+      "m49": "466",
+      "name_en": "Mali",
+      "jica_name": "Mali",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Senegal Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MMR",
+      "m49": "104",
+      "name_en": "Myanmar",
+      "jica_name": "Myanmar",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/myanmar/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Myanmar Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MNE",
+      "m49": "499",
+      "name_en": "Montenegro",
+      "jica_name": "Montenegro",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/montenegro/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Europe",
+          "office": "JICA Balkan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MNG",
+      "m49": "496",
+      "name_en": "Mongolia",
+      "jica_name": "Mongolia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/mongolia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Mongolia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MOZ",
+      "m49": "508",
+      "name_en": "Mozambique",
+      "jica_name": "Mozambique",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/mozambique/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Mozambique Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MRT",
+      "m49": "478",
+      "name_en": "Mauritania",
+      "jica_name": "Mauritania",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Senegal Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MUS",
+      "m49": "480",
+      "name_en": "Mauritius",
+      "jica_name": "Mauritius",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/mauritius/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Madagascar Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MWI",
+      "m49": "454",
+      "name_en": "Malawi",
+      "jica_name": "Malawi",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/malawi/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Malawi Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "MYS",
+      "m49": "458",
+      "name_en": "Malaysia",
+      "jica_name": "Malaysia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/malaysia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Malaysia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "NAM",
+      "m49": "516",
+      "name_en": "Namibia",
+      "jica_name": "Namibia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/namibia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Namibia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        },
+        {
+          "region": "Africa",
+          "office": "JICA South Africa Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "NER",
+      "m49": "562",
+      "name_en": "Niger",
+      "jica_name": "Niger",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/niger/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Niger Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "NGA",
+      "m49": "566",
+      "name_en": "Nigeria",
+      "jica_name": "Nigeria",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/nigeria/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Nigeria Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "NIC",
+      "m49": "558",
+      "name_en": "Nicaragua",
+      "jica_name": "Nicaragua",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/nicaragua/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Nicaragua Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "NIU",
+      "m49": "570",
+      "name_en": "Niue",
+      "jica_name": "Niue",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Fiji Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "NPL",
+      "m49": "524",
+      "name_en": "Nepal",
+      "jica_name": "Nepal",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/nepal/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Nepal Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "NRU",
+      "m49": "520",
+      "name_en": "Naoero",
+      "jica_name": "Nauru",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Fiji Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "PAK",
+      "m49": "586",
+      "name_en": "Pakistan",
+      "jica_name": "Pakistan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/pakistan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Pakistan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "PAN",
+      "m49": "591",
+      "name_en": "Panama",
+      "jica_name": "Panama",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/panama/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Panama Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "PER",
+      "m49": "604",
+      "name_en": "Peru",
+      "jica_name": "Peru",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/peru/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Peru Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "PHL",
+      "m49": "608",
+      "name_en": "Philippines",
+      "jica_name": "Philippines",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/philippine/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Philippines Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "PLW",
+      "m49": "585",
+      "name_en": "Palau",
+      "jica_name": "Palau",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/palau/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Palau Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "PNG",
+      "m49": "598",
+      "name_en": "Papua New Guinea",
+      "jica_name": "Papua New Guinea",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/png/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Papua New Guinea Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "PRY",
+      "m49": "600",
+      "name_en": "Paraguay",
+      "jica_name": "Paraguay",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/paraguay/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Paraguay Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "PSE",
+      "m49": "275",
+      "name_en": "State of Palestine",
+      "jica_name": "Palestine",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/palestine/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Palestine Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "RWA",
+      "m49": "646",
+      "name_en": "Rwanda",
+      "jica_name": "Rwanda",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/rwanda/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Rwanda Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SAU",
+      "m49": "682",
+      "name_en": "Saudi Arabia",
+      "jica_name": "Saudi Arabia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Saudi Arabia Field Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SDN",
+      "m49": "729",
+      "name_en": "Sudan",
+      "jica_name": "Sudan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/sudan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Sudan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SEN",
+      "m49": "686",
+      "name_en": "Senegal",
+      "jica_name": "Senegal",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/senegal/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Senegal Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SLB",
+      "m49": "090",
+      "name_en": "Solomon Islands",
+      "jica_name": "Solomon Islands",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/solomon/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Papua New Guinea Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        },
+        {
+          "region": "Oceania",
+          "office": "JICA Solomon Islands Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SLE",
+      "m49": "694",
+      "name_en": "Sierra Leone",
+      "jica_name": "Sierra Leone",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/sierraleone/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Sierra Leone Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SLV",
+      "m49": "222",
+      "name_en": "El Salvador",
+      "jica_name": "El Salvador",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/elsalvador/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA El Salvador Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SOM",
+      "m49": "706",
+      "name_en": "Somalia",
+      "jica_name": "Somalia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/somalia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Kenya Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SRB",
+      "m49": "688",
+      "name_en": "Serbia",
+      "jica_name": "Serbia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/serbia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Europe",
+          "office": "JICA Balkan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SSD",
+      "m49": "728",
+      "name_en": "South Sudan",
+      "jica_name": "South Sudan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/south_sudan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA South Sudan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "STP",
+      "m49": "678",
+      "name_en": "Sao Tome and Principe",
+      "jica_name": "Sao Tome and Principe",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Angola Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SUR",
+      "m49": "740",
+      "name_en": "Suriname",
+      "jica_name": "Suriname",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SWZ",
+      "m49": "748",
+      "name_en": "Eswatini",
+      "jica_name": "Eswatini",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA South Africa Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SYC",
+      "m49": "690",
+      "name_en": "Seychelles",
+      "jica_name": "Seychelles",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/seychelles/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Kenya Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "SYR",
+      "m49": "760",
+      "name_en": "Syrian Arab Republic",
+      "jica_name": "Syria",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/syria/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Syria Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TCD",
+      "m49": "148",
+      "name_en": "Chad",
+      "jica_name": "Chad",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Cameroon Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TGO",
+      "m49": "768",
+      "name_en": "Togo",
+      "jica_name": "Togo",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Côte d'Ivoire Office (JICA EN Côte d'Ivoire)",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "THA",
+      "m49": "764",
+      "name_en": "Thailand",
+      "jica_name": "Thailand",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/thailand/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Thailand Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TJK",
+      "m49": "762",
+      "name_en": "Tajikistan",
+      "jica_name": "Tajikistan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/tajikistan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Tajikistan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TLS",
+      "m49": "626",
+      "name_en": "Timor-Leste",
+      "jica_name": "Timor-Leste",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/easttimor/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Timor-Leste Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TON",
+      "m49": "776",
+      "name_en": "Tonga",
+      "jica_name": "Tonga",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/tonga/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Fiji Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        },
+        {
+          "region": "Oceania",
+          "office": "JICA Tonga Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TTO",
+      "m49": "780",
+      "name_en": "Trinidad and Tobago",
+      "jica_name": "Trinidad and Tobago",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TUN",
+      "m49": "788",
+      "name_en": "Tunisia",
+      "jica_name": "Tunisia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/tunisia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Tunisia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TUR",
+      "m49": "792",
+      "name_en": "Türkiye",
+      "jica_name": "Turkey",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/turkey/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Europe",
+          "office": "JICA Turkey Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TUV",
+      "m49": "798",
+      "name_en": "Tuvalu",
+      "jica_name": "Tuvalu",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Fiji Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "TZA",
+      "m49": "834",
+      "name_en": "United Republic of Tanzania",
+      "jica_name": "Tanzania",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/tanzania/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Tanzania Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "UGA",
+      "m49": "800",
+      "name_en": "Uganda",
+      "jica_name": "Uganda",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/uganda/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Uganda Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "UKR",
+      "m49": "804",
+      "name_en": "Ukraine",
+      "jica_name": "Ukraine",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/ukraine/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Europe",
+          "office": "JICA Ukraine Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "URY",
+      "m49": "858",
+      "name_en": "Uruguay",
+      "jica_name": "Uruguay",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/uruguay/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Paraguay Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        },
+        {
+          "region": "North and Latin America",
+          "office": "JICA Uruguay Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": false,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "UZB",
+      "m49": "860",
+      "name_en": "Uzbekistan",
+      "jica_name": "Uzbekistan",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/uzbekistan/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Uzbekistan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "VCT",
+      "m49": "670",
+      "name_en": "Saint Vincent and the Grenadines",
+      "jica_name": "Saint Vincent",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": null,
+      "jica_relation": "purview_only",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Dominican Republic Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "VEN",
+      "m49": "862",
+      "name_en": "Venezuela (Bolivarian Republic of)",
+      "jica_name": "Venezuela",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/venezuela/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "North and Latin America",
+          "office": "JICA Peru Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        },
+        {
+          "region": "North and Latin America",
+          "office": "JICA Venezuela Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/america.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "VNM",
+      "m49": "704",
+      "name_en": "Viet Nam",
+      "jica_name": "Viet Nam",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/vietnam/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Asia",
+          "office": "JICA Viet Nam Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/asia.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "VUT",
+      "m49": "548",
+      "name_en": "Vanuatu",
+      "jica_name": "Vanuatu",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/vanuatu/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Fiji Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        },
+        {
+          "region": "Oceania",
+          "office": "JICA Vanuatu Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "WSM",
+      "m49": "882",
+      "name_en": "Samoa",
+      "jica_name": "Samoa",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/samoa/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Oceania",
+          "office": "JICA Fiji Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        },
+        {
+          "region": "Oceania",
+          "office": "JICA Samoa Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/oceania.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "XKX",
+      "m49": null,
+      "name_en": "Kosovo",
+      "jica_name": "Kosovo",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/kosovo/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Europe",
+          "office": "JICA Balkan Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/europe.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "YEM",
+      "m49": "887",
+      "name_en": "Yemen",
+      "jica_name": "Yemen",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/yemen/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Middle East",
+          "office": "JICA Egypt Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        },
+        {
+          "region": "Middle East",
+          "office": "JICA/JOCV Yemen Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/m_east.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ZAF",
+      "m49": "710",
+      "name_en": "South Africa",
+      "jica_name": "South Africa",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/southafrica/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA South Africa Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ZMB",
+      "m49": "894",
+      "name_en": "Zambia",
+      "jica_name": "Zambia",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/zambia/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA Zambia Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    },
+    {
+      "iso3": "ZWE",
+      "m49": "716",
+      "name_en": "Zimbabwe",
+      "jica_name": "Zimbabwe",
+      "priority_basis": "current_jica_overseas_office_purview",
+      "jica_country_page": "https://www.jica.go.jp/english/overseas/zimbabwe/index.html",
+      "jica_relation": "country_page_and_purview",
+      "supervising_offices": [
+        {
+          "region": "Africa",
+          "office": "JICA South Africa Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        },
+        {
+          "region": "Africa",
+          "office": "JICA Zimbabwe Office",
+          "source_url": "https://www.jica.go.jp/english/about/basic/structure/overseas/africa.html"
+        }
+      ],
+      "dac_oda_recipient_2024": true,
+      "source_preflight": {
+        "status": "national_census_planning_and_geography_sources_not_pre_researched",
+        "census_official_location": null,
+        "planning_law_official_location": null,
+        "planning_guidance_official_location": null,
+        "official_geography_location": null
+      }
+    }
+  ]
+}

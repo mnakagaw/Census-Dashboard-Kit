@@ -13,7 +13,7 @@ START_HERE.mdから読み、この一回の依頼の中で公式の地方統計�
 
 1. このリポジトリを既存の認証で読み取る。既にcloneがある場合はその場所・変更・参照commitを確認し、利用者の変更を上書きしない。
 2. `AGENTS.md`、[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[汎用AIの失敗例と防止確認](docs/AI_FAILURE_MODE_REVIEW.md)、[計画制度・国勢調査の方法](docs/PLANNING_CENSUS_METHOD.md)、[国勢調査系列と基準年](docs/CENSUS_SERIES_CONTRACT.md)、[実装契約](docs/IMPLEMENTATION_CONTRACT.md)、[共通仕様C01～C07](docs/02_COMMON_SPEC.md)、[データ適応規則](docs/03_COUNTRY_AND_DATA.md)、[計画資料データ契約](docs/PLANNING_DATA_CONTRACT.md)、[分析データ契約](docs/ANALYSIS_DATA_CONTRACT.md)を読む。
-   直近の実地検証で追加した[ラオス理想形の教訓](docs/LAOS_IDEAL_SAMPLE_LESSONS_2026-09-15.md)も確認する。
+   [4つの基準国ケース](docs/REFERENCE_COUNTRY_CASES.md)を入口に、ドミニカ共和国、ウガンダ、ラオス、バングラデシュから役割別の教訓を確認する。
 3. 利用者の既存指示・保存先・資産を確認し、分かる開始情報をAIが記録する。指定がなければ新しいローカル出力先を使い、国別サイトの公開先や別GitHubリポジトリを勝手に作らない。
 4. 次のCLIでAI用の内部作業場所を作り、利用者へ返答せずに公式の地方資料の調査・取得・統合へ進む。
 
@@ -28,7 +28,7 @@ node ./Census-Dashboard-Kit/scripts/create-country.mjs --country "ウガンダ" 
 
 CLIの準備工程が収集するのはWorld Bank WDIの**全国値**とgeoBoundariesの**参照境界**。これは利用者向けの初期版や納品物ではない。AIは画面を開いて利用者へ見せず、直ちに国内資料の調査・統合へ進む。geoBoundariesのIDは公式行政コードではなく、全国値を地方へ配分しない。
 
-生成された`evidence/SOURCE_PREFLIGHT.md`と`.json`を最初に読む。事前調査済みの国では国勢調査・計画法・手引き・計画資料・境界の所在を再確認し、未調査国ではその所在調査から始める。国際共通sourceは対象国・テーマ・年・粒度のavailabilityを確認してから取得する。所在の登録を取得済み・地理照合済み・採用済みと読み替えない。詳しくは[共通データと国別情報源の事前台帳](docs/COMMON_DATA_AND_SOURCE_REGISTRY.md)を使う。
+生成された`evidence/SOURCE_PREFLIGHT.md`と`.json`を最初に読む。`priority_context`はJICA優先142か国・地域の所管・ISO/M49・DAC区分の出発点であり、国別データ取得済みの記録ではない。事前調査済みの国では国勢調査・計画法・手引き・計画資料・境界の所在を再確認し、未調査国ではその所在調査から始める。国際共通sourceは対象国・テーマ・年・粒度のavailabilityを確認してから取得する。所在の登録を取得済み・地理照合済み・採用済みと読み替えない。詳しくは[共通データと国別情報源の事前台帳](docs/COMMON_DATA_AND_SOURCE_REGISTRY.md)を使う。
 
 AIは現地統計局、国勢調査、公式地域コード・境界、計画機関、地方計画様式、公開予算・事業を調べる。同条件で利用できる場合は国内の公式一次資料を優先する。データがAPI、Excel、PDF等に分かれていても、[ソース別アダプター手順](docs/SOURCE_ADAPTER_GUIDE.md)で再実行できる取得・抽出・結合を追加する。
 

@@ -226,6 +226,148 @@
           "note": "Official gazette PDF retrieved and hashed on 2026-09-16. It defines five-year and annual development plans and their content/process for Union Parishads. Current status and amendments still require project-time legal verification."
         }
       ]
+    },
+    {
+      "iso3": "LAO",
+      "names": [
+        "Lao People's Democratic Republic",
+        "Laos",
+        "Lao PDR",
+        "ラオス"
+      ],
+      "research_status": "source_locations_and_integrated_sample_content_verified",
+      "checked_at": "2026-09-16",
+      "census": {
+        "latest_census_year": 2025,
+        "usable_detailed_year": 2015,
+        "published_geography": "The fifth Population and Housing Census completed nationwide field collection in 2025 and entered processing/reporting in 2026; 2015 remains the newest verified detailed public national, province and district table set used by the reference build. The 2024 subnational population release provides national, province and district age-sex estimates.",
+        "finer_geography": "Village and enumeration detail may exist in census systems but was not adopted by the reference build; verify public products and exact codes before adding a finer selectable level.",
+        "formats": [
+          "official census report",
+          "PDF tables and appendices",
+          "CSV",
+          "GeoJSON",
+          "HDX catalogue and API"
+        ]
+      },
+      "planning": {
+        "planning_level": "National, provincial and district governance and planning roles must be verified from current Lao laws and Ministry of Planning and Investment material; statistical districts are not automatically municipal planning bodies.",
+        "internal_analysis_geography": "Province and district where verified census/population observations and matching codes exist.",
+        "process_summary": "Use the Law on Governance, current Ministry of Planning and Investment responsibilities and the applicable national or subnational planning instrument to construct a territorial diagnostic index; do not present the dashboard as an official SEDP.",
+        "unresolved": "Reconfirm current legal versions, amendments, plan cycle, official subnational guidance and territory-specific plan/budget repositories for each new Lao build."
+      },
+      "sources": [
+        {
+          "id": "LAO_CENSUS_2025_PORTAL",
+          "role": "census_catalog",
+          "title": "Fifth Population and Housing Census 2025 portal",
+          "publisher": "Lao Statistics Bureau",
+          "url": "https://www.lsb.gov.la/phc/?lang=en&page_id=524",
+          "stage": "census_completed_results_processing",
+          "note": "Official portal confirms the fifth census and nationwide 2025 field collection. As of 2026-09-16, detailed results were still to be inventoried; do not replace the verified 2015 detailed tables until the new products are published and checked."
+        },
+        {
+          "id": "LAO_CENSUS_2015",
+          "role": "census_report",
+          "title": "Results of Population and Housing Census 2015",
+          "publisher": "Lao Statistics Bureau / UNFPA Lao PDR",
+          "url": "https://www.lsb.gov.la/sdg/en/17-19-2/",
+          "stage": "content_and_subnational_table_inventory_verified",
+          "note": "The reference build inspected national, province and district tables and appendices. Refresh the official page and archive the exact report used."
+        },
+        {
+          "id": "LAO_SUBNATIONAL_POPULATION_2024",
+          "role": "subnational_population_catalog",
+          "title": "Lao PDR Subnational Population Statistics 2024",
+          "publisher": "UNFPA / Lao Statistics Bureau, distributed by HDX",
+          "url": "https://data.humdata.org/dataset/cod-ps-lao",
+          "stage": "content_and_geography_pattern_verified",
+          "note": "Provides national, province and district age-sex estimates used by the reference build. Preserve its estimate/projection status and source year."
+        },
+        {
+          "id": "LAO_SUBNATIONAL_BOUNDARIES",
+          "role": "boundary_catalog",
+          "title": "Lao PDR Subnational Administrative Boundaries",
+          "publisher": "OCHA / National Geographic Department, distributed by HDX",
+          "url": "https://data.humdata.org/dataset/cod-ab-lao",
+          "stage": "content_and_code_join_verified_for_reference_build",
+          "note": "Reference boundaries are not legal boundary certification. Retain edition and exact code joins and record unmatched statistical areas."
+        },
+        {
+          "id": "LAO_GOVERNANCE_LAW",
+          "role": "planning_law",
+          "title": "Law on Governance",
+          "publisher": "Lao Official Gazette / Ministry of Justice",
+          "url": "https://laoofficialgazette.gov.la/kcfinder/upload/files/draft%20%E0%BA%81%E0%BA%BB%E0%BA%94%E0%BB%9D%E0%BA%B2%E0%BA%8D%E0%BA%A7%E0%BB%88%E0%BA%B2%E0%BA%94%E0%BB%89%E0%BA%A7%E0%BA%8D%E0%BA%81%E0%BA%B2%E0%BA%99%E0%BA%9B%E0%BA%BB%E0%BA%81%E0%BA%84%E0%BA%AD%E0%BA%87.pdf",
+          "stage": "content_verified_for_reference_build",
+          "note": "Use for governance context and recheck current status, amendments and exact provisions for the selected planning level."
+        },
+        {
+          "id": "LAO_MAKING_LEGISLATION_LAW",
+          "role": "planning_law",
+          "title": "Law on Making Legislation (English translation)",
+          "publisher": "Lao Official Gazette / Ministry of Justice",
+          "url": "https://laoofficialgazette.gov.la/kcfinder/upload/files/Making%20Legislation%20Law%20Eng.pdf",
+          "stage": "content_verified_for_reference_build",
+          "note": "Supporting legal-process context; it does not by itself prescribe the territorial diagnostic index."
+        },
+        {
+          "id": "LAO_MPI_PLANNING",
+          "role": "planning_institution",
+          "title": "Ministry of Planning and Investment — Department of Planning",
+          "publisher": "Lao PDR Ministry of Planning and Investment",
+          "url": "https://mpi.gov.la/en/about-mpi/department-of-planning/",
+          "stage": "location_and_content_verified_for_reference_build",
+          "note": "Reconfirm current institutional responsibilities and applicable subnational guidance at project time."
+        },
+        {
+          "id": "LAO_NSEDP_9",
+          "role": "planning_documents",
+          "title": "Ninth National Socio-Economic Development Plan 2021–2025",
+          "publisher": "Lao PDR Ministry of Planning and Investment",
+          "url": "https://mpi.gov.la/en/%E0%BB%81%E0%BA%9C%E0%BA%99%E0%BA%9E%E0%BA%B1%E0%BA%94%E0%BA%97%E0%BA%B0%E0%BA%99%E0%BA%B2%E0%BB%80%E0%BA%AA%E0%BA%94%E0%BA%96%E0%BA%B0%E0%BA%81%E0%BA%B4%E0%BA%94%E0%BA%AA%E0%BA%B1%E0%BA%87%E0%BA%84/",
+          "stage": "location_and_content_verified_for_reference_build",
+          "note": "National reference only. Do not label the generated territorial diagnostic as an official SEDP or infer a local plan from this national document."
+        }
+      ]
+    }
+  ],
+  "reference_country_cases": [
+    {
+      "iso3": "DOM",
+      "role": "origin_ux_and_planning_reference",
+      "lesson": "Use DDPT to preserve the purpose and interaction contract of territorial diagnosis, thematic comparison and planning materials while removing Dominican-only institutions and claims.",
+      "guides": [
+        "docs/01_DDPT_REFERENCE.md",
+        "docs/research/ddpt-uganda-template-comparison-2026-09-14.md"
+      ]
+    },
+    {
+      "iso3": "UGA",
+      "role": "country_adaptation_and_planning_evidence_reference",
+      "lesson": "Use the Uganda work for complete source-table inventory, legal planning-unit adaptation, internal analysis geography, Word evidence and regression checks.",
+      "guides": [
+        "docs/research/uganda-lessons-2026-09-14.md",
+        "docs/UGANDA_LESSONS.md"
+      ]
+    },
+    {
+      "iso3": "LAO",
+      "role": "failure_recovery_and_hierarchy_ux_reference",
+      "lesson": "Use the Laos work for recovering omitted acquired data, latest-per-indicator display, sparse-level handling, comparison scope and level coupling, map behavior, population pyramids and Word quality.",
+      "guides": [
+        "docs/ANTIGRAVITY_LAOS_AUDIT_2026-09-15.md",
+        "docs/LAOS_IDEAL_SAMPLE_LESSONS_2026-09-15.md"
+      ]
+    },
+    {
+      "iso3": "BGD",
+      "role": "nationwide_catalogue_closure_reference",
+      "lesson": "Use the Bangladesh work to prevent a representative district file from being mistaken for national completion and to require disposition of every official catalogue item before delivery.",
+      "guides": [
+        "docs/COUNTRY_COMPLETION_CONTRACT.md",
+        "docs/REFERENCE_COUNTRY_CASES.md"
+      ]
     }
   ]
 }

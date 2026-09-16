@@ -2,7 +2,7 @@
 
 **Give a local coding AI one country name and this repository URL. The AI must research, build and verify a usable country dashboard before it returns the result.**
 
-国名とこのPublicリポジトリのURLをAntigravity、Gemini、Claude Code、Codex等へ渡し、各国の公式資料を調査して国別ダッシュボードを作るためのOSSキットです。DDPT（ドミニカ共和国の地域情報・計画策定ダッシュボード）とウガンダ版から得た操作・制作上の教訓を、国別に適応できる形へまとめています。
+国名とこのPublicリポジトリのURLをAntigravity、Gemini、Claude Code、Codex等へ渡し、各国の公式資料を調査して国別ダッシュボードを作るためのOSSキットです。ドミニカ共和国、ウガンダ、ラオス、バングラデシュの実作業から得た役割の異なる教訓を、国別に適応できる形へまとめています。
 
 > [!IMPORTANT]
 > 利用者が行う依頼は一回です。AIは内部で作業場所の準備、公式資料調査、データ取得・統合、3ページの制作、ブラウザー操作、出力照合、納品ゲートまで連続して実行します。途中の生成サイト、全国値だけの画面、リンク一覧、緑のGitHub Actionsを利用者への成果として返してはいけません。
@@ -10,7 +10,7 @@
 「完成」は、公開されている全資料が無条件に入手できるという意味ではありません。取得不能・未公開・利用制限がある国では、確認した根拠を残し、取得済み資料で3ページの業務を完結できる代替表示と出力を作った状態を**制約付き完成品**とします。空欄が大量に並ぶ画面や「後で追加調査してください」という引継ぎだけでは完成になりません。
 
 > [!NOTE]
-> 1.0系で作られたラオス試作のように、人口ファイル一つと全国WDIだけを入れ、取得済みExcelの大半を使わず、境界のない大きな地図と「データなし」を並べたものは完成品ではありません。1.5.1では、取得資料の全表・数値列、6分野の探索、各選択階層の境界、指標ごとの最新版と年、全国参考値の分離、表示言語に加え、段階式の地域選択、地図の表示範囲・50〜400%ズーム、図と診断文を含むWordを納品ゲートで確認します。詳しくは[汎用AIの失敗例と防止確認](docs/AI_FAILURE_MODE_REVIEW.md)を参照してください。
+> 1.0系で作られたラオス試作のように、人口ファイル一つと全国WDIだけを入れ、取得済みExcelの大半を使わず、境界のない大きな地図と「データなし」を並べたものは完成品ではありません。1.6.0では、JICA優先142か国・地域の根拠付き台帳と[ドミニカ共和国・ウガンダ・ラオス・バングラデシュの4つの基準国ケース](docs/REFERENCE_COUNTRY_CASES.md)を追加し、全表・数値列、6分野、地理、最新値、Word、実ブラウザーと納品ゲートの要件を同じ一発完成手順へ接続します。詳しくは[汎用AIの失敗例と防止確認](docs/AI_FAILURE_MODE_REVIEW.md)を参照してください。
 
 ## 作るもの
 
@@ -319,7 +319,7 @@ tests/                   選択、欠測、地理、計画、出力等の回帰�
 .github/workflows/       キットCIと管理者用の内部作業場所確認
 ```
 
-[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。実装時の主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[230か国の情報源・データ・サイト運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[汎用AIの失敗例と防止確認](docs/AI_FAILURE_MODE_REVIEW.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。最新の確認範囲は[キット1.4.0検証記録](docs/VALIDATION_1.4.0.md)、一つ前の収集・言語要件は[キット1.3.0検証記録](docs/VALIDATION_1.3.0.md)に分けています。
+[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。実装時の主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[4つの基準国ケース](docs/REFERENCE_COUNTRY_CASES.md)、[世界全体とJICA優先142か国・地域の運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[汎用AIの失敗例と防止確認](docs/AI_FAILURE_MODE_REVIEW.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。JICA優先台帳は[`config/jica-priority-country-registry.json`](config/jica-priority-country-registry.json)で機械判定します。1.6.0の確認範囲は[検証記録](docs/VALIDATION_v1.6.0.md)に記録します。
 
 ## ライセンスと第三者データ
 
