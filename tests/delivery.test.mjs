@@ -14,7 +14,7 @@ async function readyProject() {
   const root=await mkdtemp(path.join(os.tmpdir(),'census-delivery-')),data=planningFixture('integrated');
   for(const directory of ['data','evidence','raw','site/territorial','site/thematic','site/planning'])await mkdir(path.join(root,directory),{recursive:true});
   await writeFile(path.join(root,'data/dashboard.json'),JSON.stringify(data));
-  for(const file of ['SOURCES.md','INDICATOR_INVENTORY.csv','CODE_CROSSWALK.csv','PLANNING_CENSUS_AUDIT.md','VALIDATION.md','ACCEPTANCE.md','validation.json','WORD_RENDER_CHECK.md','GEOGRAPHY_REVIEW.md'])await writeFile(path.join(root,'evidence',file),'verified test evidence');
+  for(const file of ['SOURCES.md','INDICATOR_INVENTORY.csv','CODE_CROSSWALK.csv','PLANNING_CENSUS_AUDIT.md','VALIDATION.md','ACCEPTANCE.md','validation.json','WORD_RENDER_CHECK.md','GEOGRAPHY_REVIEW.md','COUNTRY_LESSON_AUDIT.md'])await writeFile(path.join(root,'evidence',file),'verified test evidence');
   await writeFile(path.join(root,'raw','test-fixture'),'synthetic source fields');
   await writeFile(path.join(root,'raw','international-data.pdf'),'synthetic international fields');
   await writeFile(path.join(root,'evidence','WORD_SAMPLE.docx'),planDocxBytes(data,'city','2024'));
@@ -25,6 +25,8 @@ async function readyProject() {
   for(const key of ['kit_check','kit_tests','country_validation','browser','outputs'])validation[key]={status:'passed',evidence_files:[key==='country_validation'?'evidence/validation.json':key==='browser'||key==='outputs'?'evidence/ACCEPTANCE.md':'evidence/VALIDATION.md']};
   const inventory={schema_version:'0.1',completed_at:'2026-09-15T00:00:00Z',sources:[{source_id:'test-source',raw_files:['raw/test-fixture'],redistribution_review:{status:'checked',terms:'Synthetic fixture may be redistributed in the test.',raw_publication_decision:'include_raw'},all_tables_checked:true,tables:[{locator:'Synthetic API response fields',geographic_levels:['city'],periods:['2024'],numeric_fields:data.indicators.map(indicator=>({name:indicator.id,meaning:indicator.definition,unit:indicator.unit,denominator:'Synthetic fixture',decision:'adopted',indicator_id:indicator.id,reason:'Used by the synthetic delivery fixture.'}))}]}]};
   await writeFile(path.join(root,'evidence/SOURCE_TABLE_INVENTORY.json'),JSON.stringify(inventory));
+  const resourceInventory={schema_version:'0.1',generated_at:'2026-09-15T00:00:00Z',catalogs:[{catalog_id:'synthetic-catalog',title:'Synthetic source catalogue',publisher:'Synthetic publisher',catalog_url:'https://example.org/catalog',expected_resource_count:1,discovered_resource_count:1,acquired_resource_count:1,integrated_resource_count:1,resources:[{resource_id:'synthetic-resource',url:'https://example.org/resource',status:'integrated',raw_path:'raw/test-fixture',sha256:'0'.repeat(64)}]}]};
+  await writeFile(path.join(root,'evidence/SOURCE_RESOURCE_INVENTORY.json'),JSON.stringify(resourceInventory));
   const checked=[{url:'https://example.org/catalog',result:'Synthetic catalogue checked.'},{url:'https://example.org/sector',result:'Synthetic sector source checked.'}];
   const themes=[
     {id:'population_demography',status:'local_data_integrated',source_ids:['test-source'],indicator_ids:['population'],levels:['city'],checked_locations:checked,note:'Synthetic population values integrated.'},
@@ -33,7 +35,7 @@ async function readyProject() {
   ];
   await writeFile(path.join(root,'evidence/THEME_COVERAGE.json'),JSON.stringify({schema_version:'0.1',completed_at:'2026-09-15T00:00:00Z',themes}));
   const levelRows=[...new Set(data.territories.filter(area=>area.level!=='national').map(area=>area.level))].map(level=>{const ids=new Set(data.territories.filter(area=>area.level===level).map(area=>area.id)),boundaryIds=new Set(data.boundaries.features.map(feature=>feature.properties.territory_id).filter(id=>ids.has(id)));return {level,territory_count:ids.size,boundary_count:boundaryIds.size,status:boundaryIds.size===0?'none':boundaryIds.size===ids.size?'complete':'partial',unjoined_ids_recorded:true};});
-  const delivery={schema_version:'0.3',status:'ready',country_id:'TST',completed_at:'2026-09-15T00:00:00Z',research,default_view:{territory_id:'TST',indicator_id:'population',period:'2024'},empty_comparisons:{collapsed_or_suppressed:true},coverage_claims:{qualified_by_indicator_period_level:true},source_table_inventory:{status:'passed',file:'evidence/SOURCE_TABLE_INVENTORY.json',all_adopted_indicators_traced:true,all_numeric_fields_decided:true},theme_coverage:{status:'passed',file:'evidence/THEME_COVERAGE.json',candidates_integrated_or_constrained:true},geography_review:{status:'passed',stable_url_identity_checked:true,no_geometry_layout_checked:true,selectable_levels:levelRows,evidence_file:'evidence/GEOGRAPHY_REVIEW.md'},period_and_language_review:{status:'passed',latest_value_per_indicator:true,source_year_shown_per_value:true,historical_period_controls_absent:true,national_context_separated_on_local_views:true,mixed_language_reviewed:true,evidence_file:'evidence/ACCEPTANCE.md'},word_plan:{status:'passed',outline_checked_against_law:true,sample_file:'evidence/WORD_SAMPLE.docx',render_evidence_file:'evidence/WORD_RENDER_CHECK.md'},validation,artifacts:['site/index.html','site/territorial/index.html','site/thematic/index.html','site/planning/index.html','data/dashboard.json','evidence/WORD_SAMPLE.docx','HANDOFF.md'],limitations:[]};
+  const delivery={schema_version:'0.3',status:'ready',country_id:'TST',completed_at:'2026-09-15T00:00:00Z',research,default_view:{territory_id:'TST',indicator_id:'population',period:'2024'},empty_comparisons:{collapsed_or_suppressed:true},coverage_claims:{qualified_by_indicator_period_level:true},source_table_inventory:{status:'passed',file:'evidence/SOURCE_TABLE_INVENTORY.json',all_adopted_indicators_traced:true,all_numeric_fields_decided:true},source_resource_inventory:{status:'passed',file:'evidence/SOURCE_RESOURCE_INVENTORY.json',all_expected_resources_dispositioned:true},theme_coverage:{status:'passed',file:'evidence/THEME_COVERAGE.json',candidates_integrated_or_constrained:true},geography_review:{status:'passed',stable_url_identity_checked:true,no_geometry_layout_checked:true,selectable_levels:levelRows,evidence_file:'evidence/GEOGRAPHY_REVIEW.md'},period_and_language_review:{status:'passed',latest_value_per_indicator:true,source_year_shown_per_value:true,historical_period_controls_absent:true,national_context_separated_on_local_views:true,mixed_language_reviewed:true,evidence_file:'evidence/ACCEPTANCE.md'},word_plan:{status:'passed',outline_checked_against_law:true,sample_file:'evidence/WORD_SAMPLE.docx',render_evidence_file:'evidence/WORD_RENDER_CHECK.md'},validation,artifacts:['site/index.html','site/territorial/index.html','site/thematic/index.html','site/planning/index.html','data/dashboard.json','evidence/WORD_SAMPLE.docx','HANDOFF.md'],limitations:[]};
   await writeFile(path.join(root,'evidence/DELIVERY.json'),JSON.stringify(delivery));
   return {root,data,delivery};
 }
@@ -88,6 +90,17 @@ test('delivery gate requires latest-per-indicator presentation evidence',async()
   await writeFile(path.join(root,'evidence/DELIVERY.json'),JSON.stringify(delivery));
   const result=await verifyDelivery(root);
   assert.equal(result.ready,false);assert.match(result.errors.join('\n'),/source_year_shown_per_value must be true/);
+});
+
+test('delivery gate rejects a catalogue when only one of 64 discovered resources is integrated',async()=>{
+  const {root}=await readyProject();
+  const inventory=JSON.parse(await readFile(path.join(root,'evidence/SOURCE_RESOURCE_INVENTORY.json'),'utf8'));
+  const first=inventory.catalogs[0].resources[0];
+  inventory.catalogs[0]={...inventory.catalogs[0],expected_resource_count:64,discovered_resource_count:1,acquired_resource_count:1,integrated_resource_count:1,resources:[first]};
+  await writeFile(path.join(root,'evidence/SOURCE_RESOURCE_INVENTORY.json'),JSON.stringify(inventory));
+  const result=await verifyDelivery(root);
+  assert.equal(result.ready,false);
+  assert.match(result.errors.join('\n'),/expected 64 resources but records 1/);
 });
 
 test('initial state prefers the best-covered local indicator and period',()=>{

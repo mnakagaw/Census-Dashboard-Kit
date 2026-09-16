@@ -211,9 +211,17 @@ function populationPyramid() {
 }
 function lowerAreaReference(indicator,result,period) {
   if(result.value!==null || indicator.aggregation!=='weighted_rate')return '';
-  const comparison=internalComparison(dataset,state.selected,indicator.id,period),stats=distribution(comparison.rows.filter(row=>row.comparable));
+  const selected=currentArea(),levels=localLevels(dataset),selectedIndex=selected.level==='national'?-1:levels.indexOf(selected.level);
+  let rows=[],referenceLevel='';
+  for(const level of levels.slice(selectedIndex+1)) {
+    const candidates=dataset.territories.filter(area=>area.level===level&&territoryLineage(dataset,area.id).slice(0,-1).some(parent=>parent.id===selected.id));
+    const observed=candidates.map(area=>{const row=observationState(dataset,area.id,indicator.id,period);return {...row,area,comparable:observationContext(dataset,area,indicator,row.row).comparable};}).filter(row=>row.comparable&&finite(row.value));
+    if(observed.length){rows=observed;referenceLevel=level;break;}
+  }
+  const stats=distribution(rows);
   if(!stats.count)return '';
-  const label=language==='ja'?`参考：下位地域の中央値 ${fmt(stats.median,indicator)} ${indicator.unit}（公表された0を含む観測 ${stats.count}/${comparison.rows.length}）。全国・上位地域の値ではありません。`:language==='es'?`Referencia: mediana de las áreas inferiores ${fmt(stats.median,indicator)} ${indicator.unit} (${stats.count}/${comparison.rows.length} observadas; incluye los ceros publicados). No es el valor del área superior.`:`Reference: median of lower areas ${fmt(stats.median,indicator)} ${indicator.unit} (${stats.count}/${comparison.rows.length} observed; published zeros included). This is not the higher-area value.`;
+  const level=levelLabel(referenceLevel).toLowerCase(),scope=selected.level==='national'?dataset.country.name:selected.name;
+  const label=language==='ja'?`参考：${scope}内の${level}にある出典公表値の中央値 ${fmt(stats.median,indicator)} ${indicator.unit}（観測 ${stats.count}件、公表された0を含む）。${scope}全体の値ではありません。`:language==='es'?`Referencia: mediana de ${stats.count} valores publicados de ${level} dentro de ${scope}: ${fmt(stats.median,indicator)} ${indicator.unit}; incluye los ceros publicados. No es el valor total de ${scope}.`:`Reference: median of ${stats.count} source-reported ${level} values inside ${scope}: ${fmt(stats.median,indicator)} ${indicator.unit}; published zeros are included. This is not the value for ${scope} as a whole.`;
   return `<small class="reference-value">${e(label)}</small>`;
 }
 function metricCard(indicator) {
@@ -261,7 +269,7 @@ function thematic() {
   const levels=comparisonLevelsFor(state);
   const rank=rankedRows(rows,rankOrder).find(row=>row.area.id===state.selected)?.rank;
   return `<section class="panel controls-panel"><div class="thematic-controls">${thematicScopeControl()}<label class="field" for="comparison-level"><span>Level shown inside this area</span><select id="comparison-level" data-control="level">${levels.length?levels.map(level=>`<option value="${e(level)}" ${level===state.level?'selected':''}>${e(levelLabel(level))}</option>`).join(''):'<option value="">No local areas acquired</option>'}</select></label>${indicatorControl()}${periodControl()}</div><p class="definition">${e(indicator.definition)} Unit: ${e(indicator.unit)}. ${latestMode()?`The newest source year available for the ${e(levelLabel(state.level).toLowerCase())} areas shown inside ${e(scope.name)} is used for the comparison: ${e(state.period || 'none')}. Every displayed value carries its own source year.`:'All comparisons use this indicator and period policy; changing an area retains both. Mixed-period rows show each area\'s actual source year.'}</p></section>
-  <div class="summary-grid"><article class="summary"><span>${worldMode()?'World':'National'} value · source-reported</span><strong>${fmt(national.value)}</strong><small>${e(dataset.country.name)} · ${e(national.row?.period || nationalPeriod || 'No source period')} · ${e(nationalMeaning.unit)}</small></article><article class="summary"><span>Median of comparable local areas</span><strong>${fmt(stats.median)}</strong><small>${e(levelLabel(state.level))} · ${e(state.period)}; observed values only</small></article><article class="summary"><span>Local data coverage</span><strong>${stats.count} / ${rows.length}</strong><small>${rows.length-stats.count} unranked or missing · ${e(state.period)}</small></article><article class="summary"><span>Observed local range</span><strong>${stats.count?`${fmt(stats.min)}–${fmt(stats.max)}`:'No data'}</strong><small>${e(indicator.unit)} · ${e(state.period)} comparison</small></article></div>
+  <div class="summary-grid"><article class="summary"><span>${worldMode()?'World':'National'} value · ${e(evidenceStatus(indicator,national.row,national.status).toLowerCase())}</span><strong>${fmt(national.value)}</strong><small>${e(dataset.country.name)} · ${e(national.row?.period || nationalPeriod || 'No source period')} · ${e(nationalMeaning.unit)}</small></article><article class="summary"><span>Median of comparable local areas</span><strong>${fmt(stats.median)}</strong><small>${e(levelLabel(state.level))} · ${e(state.period)}; observed values only</small></article><article class="summary"><span>Local data coverage</span><strong>${stats.count} / ${rows.length}</strong><small>${rows.length-stats.count} unranked or missing · ${e(state.period)}</small></article><article class="summary"><span>Observed local range</span><strong>${stats.count?`${fmt(stats.min)}–${fmt(stats.max)}`:'No data'}</strong><small>${e(indicator.unit)} · ${e(state.period)} comparison</small></article></div>
   ${!compatibility.comparable?`<p class="notice">${e(compatibility.reason)}</p>`:!stats.count?`<p class="notice"><strong>No comparable local observations for ${e(indicator.name)} · ${e(state.period)}.</strong> ${nationalOnly(dataset)?'Local statistics have not yet been collected.':'This level and period have no observed local values for the selected indicator.'} The national source value is shown separately; no local ranking or local estimates are created.</p>`:''}
   <div class="thematic-grid">${mapPanel({thematic:true})}<section class="panel explorer" aria-labelledby="ranking-title"><h2 id="ranking-title">Find and compare areas</h2><p class="small-note">${e(scope.name)} · ${e(levelLabel(state.level))} · ${e(indicator.name)} · ${e(state.period)} · ${e(indicator.unit)}</p>
   <label class="field" for="ranking-search"><span>Search ranking by name or code</span><input id="ranking-search" type="search" data-control="ranking-search" value="${e(rankSearch)}" placeholder="Name or code"></label><div class="control-row"><label class="field" for="ranking-order"><span>Order</span><select id="ranking-order" data-control="rank-order"><option value="desc" ${rankOrder==='desc'?'selected':''}>Highest first</option><option value="asc" ${rankOrder==='asc'?'selected':''}>Lowest first</option></select></label>${button('show-selected','Show selected in ranking','','text-button')}</div><div id="ranking-content">${rankingContent(rows)}</div></section></div>
@@ -364,6 +372,11 @@ function commit(next, {replace=false}={}) {
   history[replace?'replaceState':'pushState']({},'',url);
   render();
 }
+function navigate(next) {
+  state=normalizeLatestState(next);
+  const url=new URL(location.href);url.search=routeWithLanguage(state);
+  location.assign(url.href);
+}
 function revealRankingSelection({focus=false}={}) {
   const row=[...document.querySelectorAll('#ranking-content [data-ranking-id]')].find(node=>node.dataset.rankingId===state.selected);
   const container=row?.closest('.ranking-scroll');
@@ -425,7 +438,11 @@ app.addEventListener('change',event=>{
     mapExtent='selected';mapZoom=1;areaSearch='';rankSearch='';
     const next=selectTerritory(dataset,state,event.target.value);
     next.level=preferredThematicLevel(dataset,next.selected,next.metric,next.level);
-    commit(next);
+    // Country datasets can contain hundreds of local areas and large boundary
+    // payloads. Reload from the canonical URL when the comparison scope changes
+    // so a long synchronous render cannot leave the URL and visible dashboard
+    // on different areas.
+    navigate(next);
   }
   if(control==='hierarchy') {mapExtent='selected';mapZoom=1;areaSearch='';commit(selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value));}
   if(control==='metric') {const metric=event.target.value;commit({...state,metric,requestedMetric:undefined,sourceDataset:undefined,notices:[]});}

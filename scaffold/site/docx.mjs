@@ -49,8 +49,16 @@ function sourceLabel(dataset,id){const source=dataset.sources.find(row=>row.id==
 function basisLabel(dataset,basis){return `${sourceLabel(dataset,basis.source_id)}; ${basis.locator}; checked ${basis.checked_at}`;}
 function formattedValue(indicator,value){return displayValue(value,'en',indicator?.display_decimals ?? 2);}
 function dateOnly(value){const match=String(value||'').match(/^\d{4}-\d{2}-\d{2}/);return match?.[0]||String(value||'not recorded');}
-function evidenceTable(rows) {
-  return table([['Indicator','Latest value','Unit','Year / period','Status','Source'],...rows.map(({indicator,row,value,status,source,period})=>[englishText(indicator.name),finite(value)?formattedValue(indicator,value):'—',row?.unit||indicator.unit,row?.period||period||'Not recorded',evidenceStatus(indicator,row,status),englishText(source?.name||'No source acquired')])],[2600,1100,1000,1100,1300,2100]);
+function evidenceTable(dataset,area,rows) {
+  const displayed=rows.map(entry=>{
+    if(finite(entry.value)||englishText(entry.indicator.theme)!=='National context')return {entry,scope:''};
+    const broader=nearestBroaderReference(dataset,area,entry);
+    return broader?{entry:broader.entry,scope:`${broader.area.name} reference`}:{entry,scope:''};
+  });
+  return table([['Indicator and scope','Latest value','Unit','Year / period','Status','Source'],...displayed.map(({entry,scope})=>{
+    const {indicator,row,value,status,source,period}=entry;
+    return [`${englishText(indicator.name)}${scope?` — ${scope}`:''}`,finite(value)?formattedValue(indicator,value):'—',row?.unit||indicator.unit,row?.period||period||'Not recorded',`${scope?'National context · ':''}${evidenceStatus(indicator,row,status)}`,englishText(source?.name||'No source acquired')];
+  })],[2400,1000,1600,900,1200,1800]);
 }
 function comparablePeerSummary(dataset,area,entry) {
   if(!finite(entry.value))return null;
@@ -125,7 +133,10 @@ function comparisonChartSvg(dataset,area,entries) {
   }).filter(item=>item?.peer).slice(0,4);if(!charts.length)return null;
   // Reserve the right edge for complete value labels. The chart remains readable
   // when the unit is longer than a symbol (for example people/household).
-  const width=720,rowHeight=104,height=38+charts.length*rowHeight+18,barX=270,barWidth=320;
+  // Keep a fixed label gutter on the right. Long units such as
+  // "males per 100 females" must remain inside the exported page instead of
+  // extending past the SVG viewport after Word scales the image.
+  const width=720,rowHeight=104,height=38+charts.length*rowHeight+18,barX=245,barWidth=265;
   const rows=charts.map(({entry,chartArea,peer,context},index)=>{
     const y=38+index*rowHeight,max=Math.max(entry.value,peer.median,1),current=entry.value/max*barWidth,median=peer.median/max*barWidth,lines=chartTitleLines(entry.indicator.name),unit=entry.row?.unit||entry.indicator.unit||'';
     const title=`<text x="18" y="${y+13}" class="label">${lines.map((line,lineIndex)=>`<tspan x="18" dy="${lineIndex?15:0}">${xml(line)}</tspan>`).join('')}</text>`;
@@ -180,8 +191,11 @@ export function planDocxBytes(dataset,territoryId,period) {
     } else body.push(paragraph('No dashboard indicator is mapped to this index section. The heading remains because it is part of the source-checked planning index. Evidence and intended planning content must be added before this section can support a decision.'));
   }
   body.push(paragraph('Statistical evidence annex','Heading1',{pageBreak:true,keep:true}),paragraph('This annex lists each mapped indicator once. A dash means that no confirmed value exists for the selected area; it is not zero. Broader-area context mentioned in the narrative is not copied into the selected-area value column.'));
-  for(const [theme,rows] of byTheme)body.push(paragraph(theme,'Heading2',{keep:true}),evidenceTable(rows));
-  body.push(paragraph('Acquired planning materials','Heading1',{keep:true}));
+  for(const [theme,rows] of byTheme)body.push(paragraph(theme,'Heading2',{keep:true}),evidenceTable(dataset,area,rows));
+  // Keep the material register and the evidence-gap section together.  A
+  // page break avoids leaving only a continued table header at the top of the
+  // final page when a long statistical annex nearly fills the previous page.
+  body.push(paragraph('Acquired planning materials','Heading1',{pageBreak:true,keep:true}));
   if(documents.length)body.push(table([['Material','Period','Acquisition state','Source'],...documents.map(doc=>[doc.title,documentPeriod(doc),acquisitionLabel(doc),sourceName(dataset,doc.source_id)])],[3000,1500,1900,3100]));else body.push(paragraph('No selected-area planning material has been acquired. This does not establish that none exists.'));
   body.push(paragraph('Evidence gaps and next actions','Heading1',{keep:true}),...(gaps.length?gaps.map(gap=>listItem(`${gap.category} — ${statusLabel(gap.status)}: ${gap.detail||'Detail not recorded.'} Next: ${gap.next_action||'Verify with the responsible source.'}`)):[paragraph('No gaps are recorded. This is not a certification of complete evidence.') ]));
   const documentXml=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><w:body>${body.join('')}<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="708" w:footer="708"/><w:cols w:space="708"/><w:docGrid w:linePitch="360"/></w:sectPr></w:body></w:document>`;

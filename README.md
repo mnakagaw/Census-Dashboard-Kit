@@ -111,6 +111,9 @@ Antigravity公式の画面説明：[Projectの作成](https://antigravity.google
 
 ### ② コピペするプロンプト
 
+最新版の一発完成プロンプトは **[`prompts/ONE_COUNTRY_COMPLETE.md`](prompts/ONE_COUNTRY_COMPLETE.md)** です。変更する箇所は `COUNTRY_NAME` だけです。製品別の開始メモは [Antigravity](prompts/ANTIGRAVITY.md)、[Codex](prompts/CODEX.md)、[Claude Code](prompts/CLAUDE_CODE.md) にあります。3製品とも同じ [`COUNTRY_COMPLETION_CONTRACT`](docs/COUNTRY_COMPLETION_CONTRACT.md) と納品ゲートを使うため、製品別の短い指示で完成条件が弱くなることはありません。
+
+
 `［国名］`だけを、ウガンダ、ケニア、ネパールなどの対象国へ変更してください。**途中で別の追加プロンプトを送ることを前提にしません。**
 
 ```text
@@ -171,7 +174,7 @@ DOCXは実際に開けるファイルを出力し、隔離されたレンダラ�
 npm run check、npm test、
 node scripts/validate-country.mjs --project <国別プロジェクトのパス>
 node scripts/build-plan-docx.mjs --project <国別プロジェクトのパス> --territory <確認地域ID> --out <国別プロジェクトのパス>/evidence/WORD_SAMPLE.docx
-を実行してください。通常の不具合は修正し、再検証してください。templates/SOURCE_TABLE_INVENTORY.jsonとtemplates/THEME_COVERAGE.jsonを実結果でevidence/へ記入してください。最後にtemplates/DELIVERY.jsonを実結果でevidence/DELIVERY.jsonへ記入し、
+を実行してください。通常の不具合は修正し、再検証してください。templates/SOURCE_TABLE_INVENTORY.json、templates/SOURCE_RESOURCE_INVENTORY.json、templates/THEME_COVERAGE.jsonを実結果でevidence/へ記入してください。カタログに複数ファイルがある場合は、発見件数・取得件数・統合件数を分け、全件に最終的な採否と理由を付けます。1件だけを代表例として統合して完了扱いにはできません。最後にtemplates/DELIVERY.jsonを実結果でevidence/DELIVERY.jsonへ記入し、
 node scripts/verify-delivery.mjs --project <国別プロジェクトのパス>
 を実行してください。この納品ゲートが成功するまで完成報告をしないでください。
 

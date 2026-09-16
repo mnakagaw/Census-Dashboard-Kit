@@ -185,7 +185,7 @@ Windowsでは実行中のpreview serverが`site/`の安全な置換を妨げる�
 
 必要な資料が公開されていない、アクセス権がない等の制約は、確認した根拠と代替機能、未完了の業務を明示する。制約下で提供できるローカル版を作成し、全国参考データと境界のみの状態を「地方計画版完成」と呼ばない。
 
-`reference/templates/SOURCE_TABLE_INVENTORY.json`と`THEME_COVERAGE.json`を案件の`evidence/`へコピーして実結果で埋める。次に`reference/templates/DELIVERY.json`を`evidence/DELIVERY.json`へコピーし、プレースホルダーを実結果へ置き換える。`completed`は調査と取得・統合が完了した項目、`constrained`は取得不能等を根拠で確定し代替機能まで完成した項目だけに使う。未調査、調査途中、リンク発見のみを`constrained`へ逃がさない。`candidate_found_not_integrated`が一つでも残る場合は納品ゲートを通さない。
+`reference/templates/SOURCE_TABLE_INVENTORY.json`、`SOURCE_RESOURCE_INVENTORY.json`、`THEME_COVERAGE.json`を案件の`evidence/`へコピーして実結果で埋める。公式ページに列挙された別ファイル・別地域版・別階層版をresource単位で数え、expected／discovered／acquired／integratedを一致させる。統合しないresourceにも確認済みの理由を付け、代表1件だけの統合を全国調査の完了と扱わない。次に`reference/templates/DELIVERY.json`を`evidence/DELIVERY.json`へコピーし、プレースホルダーを実結果へ置き換える。`completed`は調査と取得・統合が完了した項目、`constrained`は取得不能等を根拠で確定し代替機能まで完成した項目だけに使う。未調査、調査途中、リンク発見のみを`constrained`へ逃がさない。`candidate_found_not_integrated`が一つでも残る場合は納品ゲートを通さない。
 
 テンプレートcloneのルートから次を実行する。
 

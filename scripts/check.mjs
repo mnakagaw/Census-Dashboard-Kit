@@ -19,6 +19,7 @@ JSON.parse(await readFile('package.json', 'utf8'));
 JSON.parse(await readFile('templates/country-profile.json', 'utf8'));
 JSON.parse(await readFile('templates/DELIVERY.json', 'utf8'));
 JSON.parse(await readFile('templates/SOURCE_TABLE_INVENTORY.json', 'utf8'));
+JSON.parse(await readFile('templates/SOURCE_RESOURCE_INVENTORY.json', 'utf8'));
 JSON.parse(await readFile('templates/THEME_COVERAGE.json', 'utf8'));
 JSON.parse(await readFile('config/common-subnational-sources.json', 'utf8'));
 JSON.parse(await readFile('config/country-source-registry.json', 'utf8'));
@@ -33,6 +34,20 @@ async function collectMarkdown(dir) {
   }
 }
 await collectMarkdown('.');
+const completionEntrypoints = [
+  'prompts/ONE_COUNTRY_COMPLETE.md',
+  'prompts/ANTIGRAVITY.md',
+  'prompts/CODEX.md',
+  'prompts/CLAUDE_CODE.md',
+  'docs/COUNTRY_COMPLETION_CONTRACT.md',
+  'AGENTS.md',
+  'GEMINI.md',
+  'CLAUDE.md'
+];
+for (const file of completionEntrypoints) {
+  const source = await readFile(file, 'utf8');
+  if (!source.includes('ready: true')) throw new Error(`Completion entrypoint must require ready: true: ${file}`);
+}
 const broken = [];
 for (const file of markdown) {
   const source = await readFile(file, 'utf8');

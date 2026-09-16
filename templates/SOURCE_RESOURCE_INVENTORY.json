@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "REPLACE_WITH_ISO_DATETIME",
+  "catalogs": [
+    {
+      "catalog_id": "REPLACE_WITH_STABLE_CATALOG_ID",
+      "title": "REPLACE_WITH_CATALOG_TITLE",
+      "publisher": "REPLACE_WITH_PUBLISHER",
+      "catalog_url": "https://example.org/replace",
+      "expected_resource_count": 1,
+      "discovered_resource_count": 1,
+      "acquired_resource_count": 0,
+      "integrated_resource_count": 0,
+      "resources": [
+        {
+          "resource_id": "REPLACE_WITH_STABLE_RESOURCE_ID",
+          "url": "https://example.org/replace-resource",
+          "status": "REPLACE_WITH_FINAL_STATUS",
+          "reason": "REPLACE_WITH_FINAL_ADOPTION_OR_EXCLUSION_REASON"
+        }
+      ]
+    }
+  ]
+}

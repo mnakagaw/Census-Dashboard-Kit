@@ -1,4 +1,6 @@
-# 国別版の開始依頼文
+# 国名だけで開始する完成版プロンプト
+
+> Canonical prompt: [`ONE_COUNTRY_COMPLETE.md`](ONE_COUNTRY_COMPLETE.md). Change only `COUNTRY_NAME`; this file remains a detailed Japanese reference.
 
 短い依頼で開始できる。利用者が指定するのは国名でよく、既存の案件指示がある場合は併せて使う。
 

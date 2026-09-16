@@ -84,7 +84,9 @@ export function resolvedObservation(data,territoryIds,indicatorId,period) {
     const weightedComplete=complete && !missingWeights.length && denominator>0;
     const value=weightedComplete?weighted.reduce((sum,item)=>sum+item.value*item.weight,0)/denominator:null,weightTotal=Number(denominator.toPrecision(12));
     return {value,status:weightedComplete?'calculated':'incomplete',provenance:'areadata_calculated',row:null,components:weighted,missing_ids:[...new Set([...missing_ids,...missingWeights])],covered_value:null,complete:weightedComplete,period_policy:rule.period_policy || 'same_period',component_periods,
-      note:(weightedComplete?`Dashboard calculation from ${weighted.length} non-overlapping source observations, weighted by ${rule.weight_indicator_id}; source weights sum to ${weightTotal}.`:`No full-coverage weighted value. Compatible source weights are missing for ${missingWeights.length} component areas.`)+periodNote};
+      note:(weightedComplete
+        ? `Dashboard calculation from ${weighted.length} non-overlapping source observations, weighted by ${rule.weight_indicator_id}; source weights sum to ${weightTotal}.`
+        : `No full-coverage weighted value. Source observations are missing for ${missing_ids.length} component areas; compatible ${rule.weight_indicator_id} weights are missing for ${missingWeights.length} observed component areas.`)+periodNote};
   }
   const covered_value=components.reduce((sum,item)=>sum+item.value,0);
   return {value:complete?covered_value:null,status:complete?'calculated':'incomplete',provenance:'areadata_calculated',row:null,components,missing_ids,covered_value,complete,period_policy:rule.period_policy || 'same_period',component_periods,

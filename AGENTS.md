@@ -2,6 +2,8 @@
 
 この公開キットはDDPTを基準に、国別条件へ適応した国勢調査・地域情報・計画策定ダッシュボードを作る。最初にREADME.mdと今回の依頼を読む。
 
+国名だけの依頼では、`prompts/ONE_COUNTRY_COMPLETE.md`と`docs/COUNTRY_COMPLETION_CONTRACT.md`を必須契約として扱う。Antigravityは`GEMINI.md`、Claude Codeは`CLAUDE.md`、Codexは本ファイルを入口にするが、いずれも公式目録の全resource処置、原表の全数値列監査、実ブラウザー、DOCX全ページ確認、42シナリオ、12ケース国別監査、`verify-delivery`の`ready: true`まで完了しなければ成果を返さない。代表1地域や初期生成は完成根拠にならない。
+
 ## 国名だけで始める案件
 
 - 「○○国版を作って」「このリポジトリを基に○○版」の依頼は、完成品を一回で作る実行依頼。`START_HERE.md`、`docs/COUNTRY_AGENT_WORKFLOW.md`を読み、国名の解決、内部作業場所の準備、国内公式資料の収集・統合、サイト作成、実画面・出力検証、納品ゲートまで同じ依頼内で進める。

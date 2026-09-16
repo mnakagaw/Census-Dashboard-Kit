@@ -161,6 +161,46 @@ export async function verifyDelivery(project) {
     for(const id of localIndicatorIds)if(!assigned.has(id))errors.push(`THEME_COVERAGE does not classify locally observed indicator: ${id}`);
   }
 
+  const resourceConfig=delivery.source_resource_inventory;
+  if(resourceConfig?.status!=='passed')errors.push('source_resource_inventory.status must be passed');
+  if(resourceConfig?.all_expected_resources_dispositioned!==true)errors.push('source_resource_inventory.all_expected_resources_dispositioned must be true');
+  const resourceInventory=await readProjectJson(projectDir,resourceConfig?.file,'source_resource_inventory.file',errors);
+  if(resourceInventory){
+    if(resourceInventory.schema_version!=='0.1')errors.push('SOURCE_RESOURCE_INVENTORY schema_version must be 0.1');
+    if(!/^[0-9]{4}-[0-9]{2}-[0-9]{2}T/.test(resourceInventory.generated_at||''))errors.push('SOURCE_RESOURCE_INVENTORY generated_at must be an ISO datetime');
+    if(!Array.isArray(resourceInventory.catalogs)||!resourceInventory.catalogs.length)errors.push('SOURCE_RESOURCE_INVENTORY must contain at least one inspected catalogue');
+    const finalStatuses=new Set(['integrated','inspected_not_adopted','not_applicable','unavailable_with_evidence']);
+    for(const catalog of resourceInventory.catalogs||[]){
+      const label=catalog.catalog_id||'unnamed catalogue',resources=catalog.resources||[];
+      if(!validEvidenceText(catalog.catalog_id)||!validEvidenceText(catalog.title)||!validEvidenceText(catalog.publisher)||!validHttpUrl(catalog.catalog_url))errors.push(`SOURCE_RESOURCE_INVENTORY ${label} needs final catalogue identity and URL`);
+      if(!Number.isInteger(catalog.expected_resource_count)||catalog.expected_resource_count<1)errors.push(`SOURCE_RESOURCE_INVENTORY ${label} expected_resource_count must be a positive integer`);
+      if(catalog.discovered_resource_count!==resources.length)errors.push(`SOURCE_RESOURCE_INVENTORY ${label} discovered_resource_count must equal resources.length`);
+      if(catalog.expected_resource_count!==resources.length)errors.push(`SOURCE_RESOURCE_INVENTORY ${label} expected ${catalog.expected_resource_count} resources but records ${resources.length}`);
+      const ids=new Set();let acquired=0,integrated=0;
+      for(const resource of resources){
+        if(!validEvidenceText(resource.resource_id)||ids.has(resource.resource_id))errors.push(`SOURCE_RESOURCE_INVENTORY ${label} has a missing or duplicate resource_id: ${resource.resource_id||''}`);ids.add(resource.resource_id);
+        if(!finalStatuses.has(resource.status))errors.push(`SOURCE_RESOURCE_INVENTORY ${label} resource ${resource.resource_id||''} is unfinished: ${resource.status||'missing status'}`);
+        if(!validHttpUrl(resource.url))errors.push(`SOURCE_RESOURCE_INVENTORY ${label} resource ${resource.resource_id||''} has an invalid URL`);
+        if(resource.status==='integrated'){
+          integrated+=1;acquired+=1;
+          const filename=safeProjectPath(projectDir,resource.raw_path);
+          if(!filename||!await exists(filename))errors.push(`SOURCE_RESOURCE_INVENTORY integrated raw file is missing or outside the project: ${resource.raw_path||''}`);
+          if(!/^[0-9a-f]{64}$/i.test(resource.sha256||''))errors.push(`SOURCE_RESOURCE_INVENTORY integrated resource ${resource.resource_id||''} needs a SHA-256 hash`);
+        } else if(resource.raw_path){acquired+=1;}
+        if(resource.status!=='integrated'&&!validEvidenceText(resource.reason))errors.push(`SOURCE_RESOURCE_INVENTORY non-integrated resource ${resource.resource_id||''} needs a final reason`);
+      }
+      if(catalog.acquired_resource_count!==acquired)errors.push(`SOURCE_RESOURCE_INVENTORY ${label} acquired_resource_count does not match resource dispositions`);
+      if(catalog.integrated_resource_count!==integrated)errors.push(`SOURCE_RESOURCE_INVENTORY ${label} integrated_resource_count does not match resource dispositions`);
+    }
+  }
+
+  const lessonAudit=safeProjectPath(projectDir,'evidence/COUNTRY_LESSON_AUDIT.md');
+  if(!lessonAudit||!await exists(lessonAudit))errors.push('Missing evidence/COUNTRY_LESSON_AUDIT.md');
+  else {
+    const lessonText=await readFile(lessonAudit,'utf8');
+    if(/\|\s*UA(?:0[1-9]|1[0-2])\s*\|[^\n]*\|\s*未実施\s*\|/u.test(lessonText))errors.push('COUNTRY_LESSON_AUDIT still contains unperformed UA checks');
+  }
+
   const geography=delivery.geography_review;
   if(geography?.status!=='passed')errors.push('geography_review.status must be passed');
   if(geography?.stable_url_identity_checked!==true)errors.push('geography_review.stable_url_identity_checked must be true');

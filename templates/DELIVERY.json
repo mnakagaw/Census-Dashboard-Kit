@@ -24,6 +24,11 @@
     "file": "evidence/THEME_COVERAGE.json",
     "candidates_integrated_or_constrained": true
   },
+  "source_resource_inventory": {
+    "status": "passed",
+    "file": "evidence/SOURCE_RESOURCE_INVENTORY.json",
+    "all_expected_resources_dispositioned": true
+  },
   "geography_review": {
     "status": "passed",
     "stable_url_identity_checked": true,
