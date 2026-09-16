@@ -212,7 +212,7 @@ test('mixed same-level types or boundary editions cannot silently become a compa
 test('map uses safe polygon coordinates, fits selection immediately and retains full national extent on return',()=>{
   const data=fixture();
   const all=mapGeometry(data.boundaries.features),selected=mapGeometry(data.boundaries.features,'a');
-  assert.equal(all.paths.length,2);assert.equal(selected.selectedHasGeometry,true);
+  assert.equal(all.paths.length,2);assert.equal(selected.paths.length,2,'Fitting one area keeps surrounding boundaries available for zoom-out');assert.equal(selected.selectedHasGeometry,true);
   assert.equal(all.bounds.maxX-all.bounds.minX,6);assert.equal(selected.bounds.maxX-selected.bounds.minX,1);
   assert.notEqual(all.paths[0].d,selected.paths[0].d);
   assert.equal(mapGeometry(data.boundaries.features,'c').selectedHasGeometry,false);
