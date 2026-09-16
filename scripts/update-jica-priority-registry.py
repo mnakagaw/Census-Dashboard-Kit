@@ -262,7 +262,7 @@ def main() -> None:
             match = m49_by_name.get(key(target))
             if not match:
                 raise RuntimeError(f"JICA country cannot be matched to UN M49: {jica_name}")
-            official_name, m49, iso3 = match[8], match[9], match[11]
+            official_name, m49, iso2, iso3 = match[8], match[9], match[10], match[11]
             dac_member = iso3 in dac_iso3
         if iso3 in used_iso3:
             raise RuntimeError(f"Duplicate ISO3 after normalization: {iso3}")
@@ -270,6 +270,7 @@ def main() -> None:
         country_url = country_parser.links.get(key(jica_name)) or country_parser.links.get(key(target))
         countries.append({
             "iso3": iso3,
+            "iso2": "XK" if iso3 == "XKX" else iso2,
             "m49": m49,
             "name_en": official_name,
             "jica_name": jica_name,

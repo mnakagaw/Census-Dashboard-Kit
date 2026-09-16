@@ -41,7 +41,7 @@ node scripts/create-country.mjs --country "ウガンダ" --out ../uganda-dashboa
 
 生成された`data/dashboard.json`、`raw/`、検証結果、`gaps`を読む。WDI全国値とgeoBoundaries ADM1の取得可否を確認し、取得失敗を欠測ゼロや未公開に読み替えない。国の正規化に失敗した場合は公式名称・ISO IDを調べて入力を直し、取得障害なら原因を記録して取得可能な別資料の作業へ進む。
 
-`evidence/SOURCE_PREFLIGHT.md`と`.json`を読む。`priority_context`はJICA優先142か国・地域の所管とコードを示すが、国勢調査や計画制度の調査済み証明ではない。`reference_country_cases`では[4つの基準国ケース](REFERENCE_COUNTRY_CASES.md)の役割別教訓を確認し、対象国へ制度名や階層をコピーしない。国別の事前調査があれば国勢調査、計画法・手引き、計画資料、境界・コードの所在を起点にし、リンク・最新版・内容を再確認する。事前調査がなければ同じ5区分の所在調査を最初に行い、案件の台帳とテンプレート側registryへ再利用可能な結果を残す。国際共通sourceはcountry availabilityを調べ、国勢調査・標本調査・人道観測・格子推計の違いを保持する。[台帳と保存方法](COMMON_DATA_AND_SOURCE_REGISTRY.md)を参照する。
+`evidence/SOURCE_PREFLIGHT.md`と`.json`を読む。`priority_context`はJICA優先142か国・地域の所管とコード、`priority_source_preflight`はその国の統計局・国勢調査、計画法・資料、地理・コード、国際データ候補の探索開始アドレスを示す。いずれも取得・本文確認・採用済みの証明ではない。`reference_country_cases`では[4つの基準国ケース](REFERENCE_COUNTRY_CASES.md)の役割別教訓を確認し、対象国へ制度名や階層をコピーしない。4基準国自身が指定された場合も保存済み見本を返さず、最新版を再確認して新規成果を作る。詳細な国別事前調査があれば国勢調査、計画法・手引き、計画資料、境界・コードの所在を起点にし、リンク・最新版・内容を再確認する。詳細記録がなければ`priority_source_preflight`の4区分をすべて開き、具体的な法令・目録・表・地域粒度・利用条件を確認して、案件の台帳とテンプレート側registryへ再利用可能な結果を残す。国際共通sourceはcountry availabilityを調べ、国勢調査・標本調査・人道観測・格子推計の違いを保持する。[台帳と保存方法](COMMON_DATA_AND_SOURCE_REGISTRY.md)を参照する。
 
 **この工程は利用者向けの版ではない。`evidence/WORK_STATUS.json`が`research_required`の間はサイトを成果として提示せず、同じターン／実行のまま次の公式資料調査へ進む。**
 

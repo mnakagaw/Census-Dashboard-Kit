@@ -23,6 +23,8 @@ JSON.parse(await readFile('templates/SOURCE_RESOURCE_INVENTORY.json', 'utf8'));
 JSON.parse(await readFile('templates/THEME_COVERAGE.json', 'utf8'));
 JSON.parse(await readFile('config/common-subnational-sources.json', 'utf8'));
 JSON.parse(await readFile('config/country-source-registry.json', 'utf8'));
+JSON.parse(await readFile('config/jica-priority-country-registry.json', 'utf8'));
+JSON.parse(await readFile('config/jica-priority-source-preflight.json', 'utf8'));
 
 const markdown = [];
 async function collectMarkdown(dir) {

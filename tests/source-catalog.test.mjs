@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadSourceCatalog, findCountrySourceRecord, findPriorityCountryRecord, buildSourcePreflight, renderSourcePreflightMarkdown } from '../lib/source-catalog.mjs';
+import { loadSourceCatalog, findCountrySourceRecord, findPriorityCountryRecord, findPrioritySourceRecord, buildSourcePreflight, renderSourcePreflightMarkdown } from '../lib/source-catalog.mjs';
 import { sourcePlan } from '../scripts/source-plan.mjs';
 
 test('source catalog combines reusable international candidates and pre-researched countries', async () => {
@@ -9,6 +9,7 @@ test('source catalog combines reusable international candidates and pre-research
   assert.equal(catalog.coverage.country_records, 24);
   assert.equal(catalog.coverage.jica_priority_countries, 142);
   assert.equal(catalog.coverage.jica_priority_dac_recipients, 132);
+  assert.equal(catalog.coverage.jica_priority_source_preflights, 142);
   assert.deepEqual(catalog.coverage.status_model, [
     'catalogued',
     'country_availability_checked',
@@ -43,6 +44,22 @@ test('JICA priority universe is source-backed, unique and retains cooperation pa
   assert.equal(findPriorityCountryRecord(catalog, 'Uruguay').iso3, 'URY');
   assert.equal(findPriorityCountryRecord(catalog, 'Bangladesh').dac_oda_recipient_2024, true);
   assert.equal(findPriorityCountryRecord(catalog, 'Cook Islands').dac_oda_recipient_2024, false);
+});
+
+test('all 142 priority countries have four-category source addresses and anti-shortcut rules', async () => {
+  const catalog = await loadSourceCatalog();
+  assert.equal(new Set(catalog.priority_source_records.map(record => record.iso3)).size, 142);
+  for (const country of catalog.priority_countries) {
+    const record = findPrioritySourceRecord(catalog, country.iso3);
+    assert.equal(record.iso3, country.iso3);
+    assert.ok(record.national_statistics_and_census.national_statistics_office.url);
+    assert.ok(record.planning_law_and_materials.legal_catalogue);
+    assert.ok(record.geography_and_codes.geoboundaries_adm1_api);
+    assert.ok(record.international_data_candidates.world_bank_country_api);
+    assert.ok(record.anti_shortcut_rules.length >= 5);
+  }
+  assert.equal(catalog.priority_source_records.filter(record => record.national_statistics_and_census.un_census_rounds.length).length, 141);
+  assert.deepEqual(catalog.priority_source_records.filter(record => !record.national_statistics_and_census.un_census_rounds.length).map(record => record.iso3), ['XKX']);
 });
 
 test('Uganda preflight separates planning level, internal analysis geography and acquisition status', async () => {
@@ -114,4 +131,6 @@ test('source plan accepts a JICA-priority name before national sources are resea
   assert.equal(json.country.iso3, 'NRU');
   assert.equal(json.priority_context.status, 'jica_priority_country_or_territory');
   assert.equal(json.country_research.status, 'source_locations_not_pre_researched');
+  assert.ok(json.priority_source_preflight.national_statistics_and_census.national_statistics_office.url);
+  assert.equal(json.summary.priority_source_address_categories, 4);
 });

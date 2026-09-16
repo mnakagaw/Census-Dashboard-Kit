@@ -4,6 +4,8 @@
 
 国名だけの依頼では、`prompts/ONE_COUNTRY_COMPLETE.md`と`docs/COUNTRY_COMPLETION_CONTRACT.md`を必須契約として扱う。Antigravityは`GEMINI.md`、Claude Codeは`CLAUDE.md`、Codexは本ファイルを入口にするが、いずれも公式目録の全resource処置、原表の全数値列監査、実ブラウザー、DOCX全ページ確認、42シナリオ、12ケース国別監査、`verify-delivery`の`ready: true`まで完了しなければ成果を返さない。代表1地域や初期生成は完成根拠にならない。
 
+`docs/REFERENCE_COUNTRY_CASES.md`を読む。DOM、UGA、LAO、BGDは教訓であると同時に新規対象国として指定できる。指定された場合も過去の見本を返さず、現在のsourceを再確認して新しい出力先へ完成品を作る。142か国すべてで`config/jica-priority-source-preflight.json`の国別入口を読み、入口の存在を取得・本文確認・採用済みと扱わない。
+
 ## 国名だけで始める案件
 
 - 「○○国版を作って」「このリポジトリを基に○○版」の依頼は、完成品を一回で作る実行依頼。`START_HERE.md`、`docs/COUNTRY_AGENT_WORKFLOW.md`を読み、国名の解決、内部作業場所の準備、国内公式資料の収集・統合、サイト作成、実画面・出力検証、納品ゲートまで同じ依頼内で進める。

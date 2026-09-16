@@ -194,6 +194,19 @@ test('unresolved countries and incomplete country directories fail before statis
   assert.ok(incomplete.requests.every((url) => url.pathname === '/v2/country'));
 });
 
+test('verified priority identity continues when the World Bank directory omits the country', async (t) => {
+  const data = await collectCountry({
+    country: 'COK', requestedCountry: 'Cook Islands', identity: { iso3: 'COK', iso2: 'CK', name: 'Cook Islands' },
+    rawDir: await rawDirectory(t), fetchImpl: fixtureFetch(),
+  });
+  assert.equal(data.country.id, 'COK');
+  assert.equal(data.country.iso2, 'CK');
+  assert.equal(data.country.requested_name, 'Cook Islands');
+  assert.equal(data.sources.find(source => source.id === 'world-bank-countries').status, 'unavailable');
+  assert.equal(data.observations.filter(item => item.status === 'observed').length, 0);
+  assert.ok(data.gaps.some(gap => gap.category === 'national_international_series' && /not an individual economy/.test(gap.detail)));
+});
+
 test('rejects boundary metadata URL escape, oversized downloads and mismatched features', async (t) => {
   const blocked = fixtureFetch({ boundaryMetadata: () => json({ ...metadata, simplifiedGeometryGeoJSON: 'http://127.0.0.1/private' }) });
   const first = await collectCountry({ country: 'UGA', rawDir: await rawDirectory(t), fetchImpl: blocked });

@@ -103,6 +103,7 @@
   "countries": [
     {
       "iso3": "AFG",
+      "iso2": "AF",
       "m49": "004",
       "name_en": "Afghanistan",
       "jica_name": "Afghanistan",
@@ -127,6 +128,7 @@
     },
     {
       "iso3": "AGO",
+      "iso2": "AO",
       "m49": "024",
       "name_en": "Angola",
       "jica_name": "Angola",
@@ -151,6 +153,7 @@
     },
     {
       "iso3": "ALB",
+      "iso2": "AL",
       "m49": "008",
       "name_en": "Albania",
       "jica_name": "Albania",
@@ -175,6 +178,7 @@
     },
     {
       "iso3": "ARG",
+      "iso2": "AR",
       "m49": "032",
       "name_en": "Argentina",
       "jica_name": "Argentine",
@@ -199,6 +203,7 @@
     },
     {
       "iso3": "ARM",
+      "iso2": "AM",
       "m49": "051",
       "name_en": "Armenia",
       "jica_name": "Armenia",
@@ -223,6 +228,7 @@
     },
     {
       "iso3": "ATG",
+      "iso2": "AG",
       "m49": "028",
       "name_en": "Antigua and Barbuda",
       "jica_name": "Antigua and Barbuda",
@@ -247,6 +253,7 @@
     },
     {
       "iso3": "AZE",
+      "iso2": "AZ",
       "m49": "031",
       "name_en": "Azerbaijan",
       "jica_name": "Azerbaijan",
@@ -271,6 +278,7 @@
     },
     {
       "iso3": "BDI",
+      "iso2": "BI",
       "m49": "108",
       "name_en": "Burundi",
       "jica_name": "Burundi",
@@ -295,6 +303,7 @@
     },
     {
       "iso3": "BEN",
+      "iso2": "BJ",
       "m49": "204",
       "name_en": "Benin",
       "jica_name": "Benin",
@@ -324,6 +333,7 @@
     },
     {
       "iso3": "BFA",
+      "iso2": "BF",
       "m49": "854",
       "name_en": "Burkina Faso",
       "jica_name": "Burkina Faso",
@@ -348,6 +358,7 @@
     },
     {
       "iso3": "BGD",
+      "iso2": "BD",
       "m49": "050",
       "name_en": "Bangladesh",
       "jica_name": "Bangladesh",
@@ -372,6 +383,7 @@
     },
     {
       "iso3": "BHS",
+      "iso2": "BS",
       "m49": "044",
       "name_en": "Bahamas",
       "jica_name": "Bahamas",
@@ -396,6 +408,7 @@
     },
     {
       "iso3": "BIH",
+      "iso2": "BA",
       "m49": "070",
       "name_en": "Bosnia and Herzegovina",
       "jica_name": "Bosnia and Herzegovina",
@@ -420,6 +433,7 @@
     },
     {
       "iso3": "BLZ",
+      "iso2": "BZ",
       "m49": "084",
       "name_en": "Belize",
       "jica_name": "Belize",
@@ -449,6 +463,7 @@
     },
     {
       "iso3": "BOL",
+      "iso2": "BO",
       "m49": "068",
       "name_en": "Bolivia (Plurinational State of)",
       "jica_name": "Bolivia",
@@ -473,6 +488,7 @@
     },
     {
       "iso3": "BRA",
+      "iso2": "BR",
       "m49": "076",
       "name_en": "Brazil",
       "jica_name": "Brazil",
@@ -497,6 +513,7 @@
     },
     {
       "iso3": "BRB",
+      "iso2": "BB",
       "m49": "052",
       "name_en": "Barbados",
       "jica_name": "Barbados",
@@ -521,6 +538,7 @@
     },
     {
       "iso3": "BTN",
+      "iso2": "BT",
       "m49": "064",
       "name_en": "Bhutan",
       "jica_name": "Bhutan",
@@ -545,6 +563,7 @@
     },
     {
       "iso3": "BWA",
+      "iso2": "BW",
       "m49": "072",
       "name_en": "Botswana",
       "jica_name": "Botswana",
@@ -574,6 +593,7 @@
     },
     {
       "iso3": "CAF",
+      "iso2": "CF",
       "m49": "140",
       "name_en": "Central African Republic",
       "jica_name": "Central African",
@@ -598,6 +618,7 @@
     },
     {
       "iso3": "CHL",
+      "iso2": "CL",
       "m49": "152",
       "name_en": "Chile",
       "jica_name": "Chile",
@@ -627,6 +648,7 @@
     },
     {
       "iso3": "CHN",
+      "iso2": "CN",
       "m49": "156",
       "name_en": "China",
       "jica_name": "China",
@@ -651,6 +673,7 @@
     },
     {
       "iso3": "CIV",
+      "iso2": "CI",
       "m49": "384",
       "name_en": "Côte d’Ivoire",
       "jica_name": "Côte d'Ivoire",
@@ -675,6 +698,7 @@
     },
     {
       "iso3": "CMR",
+      "iso2": "CM",
       "m49": "120",
       "name_en": "Cameroon",
       "jica_name": "Cameroon",
@@ -699,6 +723,7 @@
     },
     {
       "iso3": "COD",
+      "iso2": "CD",
       "m49": "180",
       "name_en": "Democratic Republic of the Congo",
       "jica_name": "Democratic Republic of Congo",
@@ -723,6 +748,7 @@
     },
     {
       "iso3": "COG",
+      "iso2": "CG",
       "m49": "178",
       "name_en": "Congo",
       "jica_name": "Republic of Congo",
@@ -747,6 +773,7 @@
     },
     {
       "iso3": "COK",
+      "iso2": "CK",
       "m49": "184",
       "name_en": "Cook Islands",
       "jica_name": "Cook Islands",
@@ -771,6 +798,7 @@
     },
     {
       "iso3": "COL",
+      "iso2": "CO",
       "m49": "170",
       "name_en": "Colombia",
       "jica_name": "Colombia",
@@ -800,6 +828,7 @@
     },
     {
       "iso3": "COM",
+      "iso2": "KM",
       "m49": "174",
       "name_en": "Comoros",
       "jica_name": "Comoros",
@@ -824,6 +853,7 @@
     },
     {
       "iso3": "CPV",
+      "iso2": "CV",
       "m49": "132",
       "name_en": "Cabo Verde",
       "jica_name": "Cape Verde",
@@ -848,6 +878,7 @@
     },
     {
       "iso3": "CRI",
+      "iso2": "CR",
       "m49": "188",
       "name_en": "Costa Rica",
       "jica_name": "Costa Rica",
@@ -877,6 +908,7 @@
     },
     {
       "iso3": "CUB",
+      "iso2": "CU",
       "m49": "192",
       "name_en": "Cuba",
       "jica_name": "Republic of Cuba",
@@ -901,6 +933,7 @@
     },
     {
       "iso3": "DJI",
+      "iso2": "DJ",
       "m49": "262",
       "name_en": "Djibouti",
       "jica_name": "Djibouti",
@@ -925,6 +958,7 @@
     },
     {
       "iso3": "DMA",
+      "iso2": "DM",
       "m49": "212",
       "name_en": "Dominica",
       "jica_name": "Dominica",
@@ -949,6 +983,7 @@
     },
     {
       "iso3": "DOM",
+      "iso2": "DO",
       "m49": "214",
       "name_en": "Dominican Republic",
       "jica_name": "Dominican Republic",
@@ -973,6 +1008,7 @@
     },
     {
       "iso3": "DZA",
+      "iso2": "DZ",
       "m49": "012",
       "name_en": "Algeria",
       "jica_name": "Algeria",
@@ -997,6 +1033,7 @@
     },
     {
       "iso3": "ECU",
+      "iso2": "EC",
       "m49": "218",
       "name_en": "Ecuador",
       "jica_name": "Ecuador",
@@ -1021,6 +1058,7 @@
     },
     {
       "iso3": "EGY",
+      "iso2": "EG",
       "m49": "818",
       "name_en": "Egypt",
       "jica_name": "Egypt",
@@ -1045,6 +1083,7 @@
     },
     {
       "iso3": "ERI",
+      "iso2": "ER",
       "m49": "232",
       "name_en": "Eritrea",
       "jica_name": "Eritrea",
@@ -1069,6 +1108,7 @@
     },
     {
       "iso3": "ETH",
+      "iso2": "ET",
       "m49": "231",
       "name_en": "Ethiopia",
       "jica_name": "Ethiopia",
@@ -1093,6 +1133,7 @@
     },
     {
       "iso3": "FJI",
+      "iso2": "FJ",
       "m49": "242",
       "name_en": "Fiji",
       "jica_name": "Fiji",
@@ -1117,6 +1158,7 @@
     },
     {
       "iso3": "FSM",
+      "iso2": "FM",
       "m49": "583",
       "name_en": "Micronesia (Federated States of)",
       "jica_name": "Federated States of Micronesia",
@@ -1146,6 +1188,7 @@
     },
     {
       "iso3": "GAB",
+      "iso2": "GA",
       "m49": "266",
       "name_en": "Gabon",
       "jica_name": "Gabon",
@@ -1175,6 +1218,7 @@
     },
     {
       "iso3": "GEO",
+      "iso2": "GE",
       "m49": "268",
       "name_en": "Georgia",
       "jica_name": "Georgia",
@@ -1204,6 +1248,7 @@
     },
     {
       "iso3": "GHA",
+      "iso2": "GH",
       "m49": "288",
       "name_en": "Ghana",
       "jica_name": "Ghana",
@@ -1228,6 +1273,7 @@
     },
     {
       "iso3": "GIN",
+      "iso2": "GN",
       "m49": "324",
       "name_en": "Guinea",
       "jica_name": "Guinea",
@@ -1252,6 +1298,7 @@
     },
     {
       "iso3": "GMB",
+      "iso2": "GM",
       "m49": "270",
       "name_en": "Gambia",
       "jica_name": "Gambia",
@@ -1276,6 +1323,7 @@
     },
     {
       "iso3": "GNB",
+      "iso2": "GW",
       "m49": "624",
       "name_en": "Guinea-Bissau",
       "jica_name": "Guinea-Bissau",
@@ -1300,6 +1348,7 @@
     },
     {
       "iso3": "GNQ",
+      "iso2": "GQ",
       "m49": "226",
       "name_en": "Equatorial Guinea",
       "jica_name": "Equatorial Guinea",
@@ -1324,6 +1373,7 @@
     },
     {
       "iso3": "GRD",
+      "iso2": "GD",
       "m49": "308",
       "name_en": "Grenada",
       "jica_name": "Grenada",
@@ -1348,6 +1398,7 @@
     },
     {
       "iso3": "GTM",
+      "iso2": "GT",
       "m49": "320",
       "name_en": "Guatemala",
       "jica_name": "Guatemala",
@@ -1372,6 +1423,7 @@
     },
     {
       "iso3": "GUY",
+      "iso2": "GY",
       "m49": "328",
       "name_en": "Guyana",
       "jica_name": "Guyana",
@@ -1396,6 +1448,7 @@
     },
     {
       "iso3": "HND",
+      "iso2": "HN",
       "m49": "340",
       "name_en": "Honduras",
       "jica_name": "Honduras",
@@ -1420,6 +1473,7 @@
     },
     {
       "iso3": "HTI",
+      "iso2": "HT",
       "m49": "332",
       "name_en": "Haiti",
       "jica_name": "Haiti",
@@ -1444,6 +1498,7 @@
     },
     {
       "iso3": "IDN",
+      "iso2": "ID",
       "m49": "360",
       "name_en": "Indonesia",
       "jica_name": "Indonesia",
@@ -1468,6 +1523,7 @@
     },
     {
       "iso3": "IND",
+      "iso2": "IN",
       "m49": "356",
       "name_en": "India",
       "jica_name": "India",
@@ -1492,6 +1548,7 @@
     },
     {
       "iso3": "IRN",
+      "iso2": "IR",
       "m49": "364",
       "name_en": "Iran (Islamic Republic of)",
       "jica_name": "Iran",
@@ -1516,6 +1573,7 @@
     },
     {
       "iso3": "IRQ",
+      "iso2": "IQ",
       "m49": "368",
       "name_en": "Iraq",
       "jica_name": "Iraq",
@@ -1540,6 +1598,7 @@
     },
     {
       "iso3": "JAM",
+      "iso2": "JM",
       "m49": "388",
       "name_en": "Jamaica",
       "jica_name": "Jamaica",
@@ -1569,6 +1628,7 @@
     },
     {
       "iso3": "JOR",
+      "iso2": "JO",
       "m49": "400",
       "name_en": "Jordan",
       "jica_name": "Jordan",
@@ -1593,6 +1653,7 @@
     },
     {
       "iso3": "KAZ",
+      "iso2": "KZ",
       "m49": "398",
       "name_en": "Kazakhstan",
       "jica_name": "Kazakhstan",
@@ -1617,6 +1678,7 @@
     },
     {
       "iso3": "KEN",
+      "iso2": "KE",
       "m49": "404",
       "name_en": "Kenya",
       "jica_name": "Kenya",
@@ -1641,6 +1703,7 @@
     },
     {
       "iso3": "KGZ",
+      "iso2": "KG",
       "m49": "417",
       "name_en": "Kyrgyzstan",
       "jica_name": "Kyrgyz Republic",
@@ -1665,6 +1728,7 @@
     },
     {
       "iso3": "KHM",
+      "iso2": "KH",
       "m49": "116",
       "name_en": "Cambodia",
       "jica_name": "Cambodia",
@@ -1689,6 +1753,7 @@
     },
     {
       "iso3": "KIR",
+      "iso2": "KI",
       "m49": "296",
       "name_en": "Kiribati",
       "jica_name": "Kiribati",
@@ -1713,6 +1778,7 @@
     },
     {
       "iso3": "KNA",
+      "iso2": "KN",
       "m49": "659",
       "name_en": "Saint Kitts and Nevis",
       "jica_name": "Saint Christopher and Nevis",
@@ -1737,6 +1803,7 @@
     },
     {
       "iso3": "LAO",
+      "iso2": "LA",
       "m49": "418",
       "name_en": "Lao People's Democratic Republic",
       "jica_name": "Laos",
@@ -1761,6 +1828,7 @@
     },
     {
       "iso3": "LBR",
+      "iso2": "LR",
       "m49": "430",
       "name_en": "Liberia",
       "jica_name": "Liberia",
@@ -1785,6 +1853,7 @@
     },
     {
       "iso3": "LCA",
+      "iso2": "LC",
       "m49": "662",
       "name_en": "Saint Lucia",
       "jica_name": "Saint Lucia",
@@ -1814,6 +1883,7 @@
     },
     {
       "iso3": "LKA",
+      "iso2": "LK",
       "m49": "144",
       "name_en": "Sri Lanka",
       "jica_name": "Sri Lanka",
@@ -1838,6 +1908,7 @@
     },
     {
       "iso3": "LSO",
+      "iso2": "LS",
       "m49": "426",
       "name_en": "Lesotho",
       "jica_name": "Lesotho",
@@ -1862,6 +1933,7 @@
     },
     {
       "iso3": "MAR",
+      "iso2": "MA",
       "m49": "504",
       "name_en": "Morocco",
       "jica_name": "Morocco",
@@ -1886,6 +1958,7 @@
     },
     {
       "iso3": "MDA",
+      "iso2": "MD",
       "m49": "498",
       "name_en": "Republic of Moldova",
       "jica_name": "Moldova",
@@ -1910,6 +1983,7 @@
     },
     {
       "iso3": "MDG",
+      "iso2": "MG",
       "m49": "450",
       "name_en": "Madagascar",
       "jica_name": "Madagascar",
@@ -1934,6 +2008,7 @@
     },
     {
       "iso3": "MDV",
+      "iso2": "MV",
       "m49": "462",
       "name_en": "Maldives",
       "jica_name": "Maldives",
@@ -1963,6 +2038,7 @@
     },
     {
       "iso3": "MEX",
+      "iso2": "MX",
       "m49": "484",
       "name_en": "Mexico",
       "jica_name": "Mexico",
@@ -1987,6 +2063,7 @@
     },
     {
       "iso3": "MHL",
+      "iso2": "MH",
       "m49": "584",
       "name_en": "Marshall Islands",
       "jica_name": "Marshall Islands",
@@ -2016,6 +2093,7 @@
     },
     {
       "iso3": "MKD",
+      "iso2": "MK",
       "m49": "807",
       "name_en": "North Macedonia",
       "jica_name": "Republic of North Macedonia",
@@ -2040,6 +2118,7 @@
     },
     {
       "iso3": "MLI",
+      "iso2": "ML",
       "m49": "466",
       "name_en": "Mali",
       "jica_name": "Mali",
@@ -2064,6 +2143,7 @@
     },
     {
       "iso3": "MMR",
+      "iso2": "MM",
       "m49": "104",
       "name_en": "Myanmar",
       "jica_name": "Myanmar",
@@ -2088,6 +2168,7 @@
     },
     {
       "iso3": "MNE",
+      "iso2": "ME",
       "m49": "499",
       "name_en": "Montenegro",
       "jica_name": "Montenegro",
@@ -2112,6 +2193,7 @@
     },
     {
       "iso3": "MNG",
+      "iso2": "MN",
       "m49": "496",
       "name_en": "Mongolia",
       "jica_name": "Mongolia",
@@ -2136,6 +2218,7 @@
     },
     {
       "iso3": "MOZ",
+      "iso2": "MZ",
       "m49": "508",
       "name_en": "Mozambique",
       "jica_name": "Mozambique",
@@ -2160,6 +2243,7 @@
     },
     {
       "iso3": "MRT",
+      "iso2": "MR",
       "m49": "478",
       "name_en": "Mauritania",
       "jica_name": "Mauritania",
@@ -2184,6 +2268,7 @@
     },
     {
       "iso3": "MUS",
+      "iso2": "MU",
       "m49": "480",
       "name_en": "Mauritius",
       "jica_name": "Mauritius",
@@ -2208,6 +2293,7 @@
     },
     {
       "iso3": "MWI",
+      "iso2": "MW",
       "m49": "454",
       "name_en": "Malawi",
       "jica_name": "Malawi",
@@ -2232,6 +2318,7 @@
     },
     {
       "iso3": "MYS",
+      "iso2": "MY",
       "m49": "458",
       "name_en": "Malaysia",
       "jica_name": "Malaysia",
@@ -2256,6 +2343,7 @@
     },
     {
       "iso3": "NAM",
+      "iso2": "NA",
       "m49": "516",
       "name_en": "Namibia",
       "jica_name": "Namibia",
@@ -2285,6 +2373,7 @@
     },
     {
       "iso3": "NER",
+      "iso2": "NE",
       "m49": "562",
       "name_en": "Niger",
       "jica_name": "Niger",
@@ -2309,6 +2398,7 @@
     },
     {
       "iso3": "NGA",
+      "iso2": "NG",
       "m49": "566",
       "name_en": "Nigeria",
       "jica_name": "Nigeria",
@@ -2333,6 +2423,7 @@
     },
     {
       "iso3": "NIC",
+      "iso2": "NI",
       "m49": "558",
       "name_en": "Nicaragua",
       "jica_name": "Nicaragua",
@@ -2357,6 +2448,7 @@
     },
     {
       "iso3": "NIU",
+      "iso2": "NU",
       "m49": "570",
       "name_en": "Niue",
       "jica_name": "Niue",
@@ -2381,6 +2473,7 @@
     },
     {
       "iso3": "NPL",
+      "iso2": "NP",
       "m49": "524",
       "name_en": "Nepal",
       "jica_name": "Nepal",
@@ -2405,6 +2498,7 @@
     },
     {
       "iso3": "NRU",
+      "iso2": "NR",
       "m49": "520",
       "name_en": "Naoero",
       "jica_name": "Nauru",
@@ -2429,6 +2523,7 @@
     },
     {
       "iso3": "PAK",
+      "iso2": "PK",
       "m49": "586",
       "name_en": "Pakistan",
       "jica_name": "Pakistan",
@@ -2453,6 +2548,7 @@
     },
     {
       "iso3": "PAN",
+      "iso2": "PA",
       "m49": "591",
       "name_en": "Panama",
       "jica_name": "Panama",
@@ -2477,6 +2573,7 @@
     },
     {
       "iso3": "PER",
+      "iso2": "PE",
       "m49": "604",
       "name_en": "Peru",
       "jica_name": "Peru",
@@ -2501,6 +2598,7 @@
     },
     {
       "iso3": "PHL",
+      "iso2": "PH",
       "m49": "608",
       "name_en": "Philippines",
       "jica_name": "Philippines",
@@ -2525,6 +2623,7 @@
     },
     {
       "iso3": "PLW",
+      "iso2": "PW",
       "m49": "585",
       "name_en": "Palau",
       "jica_name": "Palau",
@@ -2549,6 +2648,7 @@
     },
     {
       "iso3": "PNG",
+      "iso2": "PG",
       "m49": "598",
       "name_en": "Papua New Guinea",
       "jica_name": "Papua New Guinea",
@@ -2573,6 +2673,7 @@
     },
     {
       "iso3": "PRY",
+      "iso2": "PY",
       "m49": "600",
       "name_en": "Paraguay",
       "jica_name": "Paraguay",
@@ -2597,6 +2698,7 @@
     },
     {
       "iso3": "PSE",
+      "iso2": "PS",
       "m49": "275",
       "name_en": "State of Palestine",
       "jica_name": "Palestine",
@@ -2621,6 +2723,7 @@
     },
     {
       "iso3": "RWA",
+      "iso2": "RW",
       "m49": "646",
       "name_en": "Rwanda",
       "jica_name": "Rwanda",
@@ -2645,6 +2748,7 @@
     },
     {
       "iso3": "SAU",
+      "iso2": "SA",
       "m49": "682",
       "name_en": "Saudi Arabia",
       "jica_name": "Saudi Arabia",
@@ -2669,6 +2773,7 @@
     },
     {
       "iso3": "SDN",
+      "iso2": "SD",
       "m49": "729",
       "name_en": "Sudan",
       "jica_name": "Sudan",
@@ -2693,6 +2798,7 @@
     },
     {
       "iso3": "SEN",
+      "iso2": "SN",
       "m49": "686",
       "name_en": "Senegal",
       "jica_name": "Senegal",
@@ -2717,6 +2823,7 @@
     },
     {
       "iso3": "SLB",
+      "iso2": "SB",
       "m49": "090",
       "name_en": "Solomon Islands",
       "jica_name": "Solomon Islands",
@@ -2746,6 +2853,7 @@
     },
     {
       "iso3": "SLE",
+      "iso2": "SL",
       "m49": "694",
       "name_en": "Sierra Leone",
       "jica_name": "Sierra Leone",
@@ -2770,6 +2878,7 @@
     },
     {
       "iso3": "SLV",
+      "iso2": "SV",
       "m49": "222",
       "name_en": "El Salvador",
       "jica_name": "El Salvador",
@@ -2794,6 +2903,7 @@
     },
     {
       "iso3": "SOM",
+      "iso2": "SO",
       "m49": "706",
       "name_en": "Somalia",
       "jica_name": "Somalia",
@@ -2818,6 +2928,7 @@
     },
     {
       "iso3": "SRB",
+      "iso2": "RS",
       "m49": "688",
       "name_en": "Serbia",
       "jica_name": "Serbia",
@@ -2842,6 +2953,7 @@
     },
     {
       "iso3": "SSD",
+      "iso2": "SS",
       "m49": "728",
       "name_en": "South Sudan",
       "jica_name": "South Sudan",
@@ -2866,6 +2978,7 @@
     },
     {
       "iso3": "STP",
+      "iso2": "ST",
       "m49": "678",
       "name_en": "Sao Tome and Principe",
       "jica_name": "Sao Tome and Principe",
@@ -2890,6 +3003,7 @@
     },
     {
       "iso3": "SUR",
+      "iso2": "SR",
       "m49": "740",
       "name_en": "Suriname",
       "jica_name": "Suriname",
@@ -2914,6 +3028,7 @@
     },
     {
       "iso3": "SWZ",
+      "iso2": "SZ",
       "m49": "748",
       "name_en": "Eswatini",
       "jica_name": "Eswatini",
@@ -2938,6 +3053,7 @@
     },
     {
       "iso3": "SYC",
+      "iso2": "SC",
       "m49": "690",
       "name_en": "Seychelles",
       "jica_name": "Seychelles",
@@ -2962,6 +3078,7 @@
     },
     {
       "iso3": "SYR",
+      "iso2": "SY",
       "m49": "760",
       "name_en": "Syrian Arab Republic",
       "jica_name": "Syria",
@@ -2986,6 +3103,7 @@
     },
     {
       "iso3": "TCD",
+      "iso2": "TD",
       "m49": "148",
       "name_en": "Chad",
       "jica_name": "Chad",
@@ -3010,6 +3128,7 @@
     },
     {
       "iso3": "TGO",
+      "iso2": "TG",
       "m49": "768",
       "name_en": "Togo",
       "jica_name": "Togo",
@@ -3034,6 +3153,7 @@
     },
     {
       "iso3": "THA",
+      "iso2": "TH",
       "m49": "764",
       "name_en": "Thailand",
       "jica_name": "Thailand",
@@ -3058,6 +3178,7 @@
     },
     {
       "iso3": "TJK",
+      "iso2": "TJ",
       "m49": "762",
       "name_en": "Tajikistan",
       "jica_name": "Tajikistan",
@@ -3082,6 +3203,7 @@
     },
     {
       "iso3": "TLS",
+      "iso2": "TL",
       "m49": "626",
       "name_en": "Timor-Leste",
       "jica_name": "Timor-Leste",
@@ -3106,6 +3228,7 @@
     },
     {
       "iso3": "TON",
+      "iso2": "TO",
       "m49": "776",
       "name_en": "Tonga",
       "jica_name": "Tonga",
@@ -3135,6 +3258,7 @@
     },
     {
       "iso3": "TTO",
+      "iso2": "TT",
       "m49": "780",
       "name_en": "Trinidad and Tobago",
       "jica_name": "Trinidad and Tobago",
@@ -3159,6 +3283,7 @@
     },
     {
       "iso3": "TUN",
+      "iso2": "TN",
       "m49": "788",
       "name_en": "Tunisia",
       "jica_name": "Tunisia",
@@ -3183,6 +3308,7 @@
     },
     {
       "iso3": "TUR",
+      "iso2": "TR",
       "m49": "792",
       "name_en": "Türkiye",
       "jica_name": "Turkey",
@@ -3207,6 +3333,7 @@
     },
     {
       "iso3": "TUV",
+      "iso2": "TV",
       "m49": "798",
       "name_en": "Tuvalu",
       "jica_name": "Tuvalu",
@@ -3231,6 +3358,7 @@
     },
     {
       "iso3": "TZA",
+      "iso2": "TZ",
       "m49": "834",
       "name_en": "United Republic of Tanzania",
       "jica_name": "Tanzania",
@@ -3255,6 +3383,7 @@
     },
     {
       "iso3": "UGA",
+      "iso2": "UG",
       "m49": "800",
       "name_en": "Uganda",
       "jica_name": "Uganda",
@@ -3279,6 +3408,7 @@
     },
     {
       "iso3": "UKR",
+      "iso2": "UA",
       "m49": "804",
       "name_en": "Ukraine",
       "jica_name": "Ukraine",
@@ -3303,6 +3433,7 @@
     },
     {
       "iso3": "URY",
+      "iso2": "UY",
       "m49": "858",
       "name_en": "Uruguay",
       "jica_name": "Uruguay",
@@ -3332,6 +3463,7 @@
     },
     {
       "iso3": "UZB",
+      "iso2": "UZ",
       "m49": "860",
       "name_en": "Uzbekistan",
       "jica_name": "Uzbekistan",
@@ -3356,6 +3488,7 @@
     },
     {
       "iso3": "VCT",
+      "iso2": "VC",
       "m49": "670",
       "name_en": "Saint Vincent and the Grenadines",
       "jica_name": "Saint Vincent",
@@ -3380,6 +3513,7 @@
     },
     {
       "iso3": "VEN",
+      "iso2": "VE",
       "m49": "862",
       "name_en": "Venezuela (Bolivarian Republic of)",
       "jica_name": "Venezuela",
@@ -3409,6 +3543,7 @@
     },
     {
       "iso3": "VNM",
+      "iso2": "VN",
       "m49": "704",
       "name_en": "Viet Nam",
       "jica_name": "Viet Nam",
@@ -3433,6 +3568,7 @@
     },
     {
       "iso3": "VUT",
+      "iso2": "VU",
       "m49": "548",
       "name_en": "Vanuatu",
       "jica_name": "Vanuatu",
@@ -3462,6 +3598,7 @@
     },
     {
       "iso3": "WSM",
+      "iso2": "WS",
       "m49": "882",
       "name_en": "Samoa",
       "jica_name": "Samoa",
@@ -3491,6 +3628,7 @@
     },
     {
       "iso3": "XKX",
+      "iso2": "XK",
       "m49": null,
       "name_en": "Kosovo",
       "jica_name": "Kosovo",
@@ -3515,6 +3653,7 @@
     },
     {
       "iso3": "YEM",
+      "iso2": "YE",
       "m49": "887",
       "name_en": "Yemen",
       "jica_name": "Yemen",
@@ -3544,6 +3683,7 @@
     },
     {
       "iso3": "ZAF",
+      "iso2": "ZA",
       "m49": "710",
       "name_en": "South Africa",
       "jica_name": "South Africa",
@@ -3568,6 +3708,7 @@
     },
     {
       "iso3": "ZMB",
+      "iso2": "ZM",
       "m49": "894",
       "name_en": "Zambia",
       "jica_name": "Zambia",
@@ -3592,6 +3733,7 @@
     },
     {
       "iso3": "ZWE",
+      "iso2": "ZW",
       "m49": "716",
       "name_en": "Zimbabwe",
       "jica_name": "Zimbabwe",

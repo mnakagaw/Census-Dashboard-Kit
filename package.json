@@ -15,9 +15,10 @@
     "build:plan-docx": "node scripts/build-plan-docx.mjs",
     "validate:country": "node scripts/validate-country.mjs",
     "verify:delivery": "node scripts/verify-delivery.mjs",
+    "verify:kit": "node scripts/verify-kit-readiness.mjs",
     "serve": "node scripts/serve.mjs",
     "sources:plan": "node scripts/source-plan.mjs",
     "sources:acquire": "node scripts/acquire-country-sources.mjs",
-    "sources:jica-priority": "python scripts/update-jica-priority-registry.py"
+    "sources:jica-priority": "python scripts/update-jica-priority-registry.py && python scripts/update-priority-source-preflight.py"
   }
 }

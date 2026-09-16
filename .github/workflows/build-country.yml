@@ -19,6 +19,7 @@ jobs:
           node-version: 22
       - run: npm run check
       - run: npm test
+      - run: npm run verify:kit
       - name: Prepare internal country workspace
         env:
           CENSUS_COUNTRY_INPUT: ${{ inputs.country }}
