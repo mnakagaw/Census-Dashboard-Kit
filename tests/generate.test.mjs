@@ -135,6 +135,9 @@ test('thematic comparison keeps the selected parent as scope and shows only its 
   assert.ok(cityAreas.length>20);
   assert.ok(cityAreas.every(area=>territoryLineage(data,area.id).some(parent=>parent.id==='north')));
   assert.ok(cityAreas.some(area=>area.id==='other-city'),'all matching lower branches inside the selected region remain visible');
+  const declared=structuredClone(data);
+  declared.analysis={comparisons:[{parent_id:'north',member_ids:['other-city','city']}]};
+  assert.deepEqual(comparisonAreas(declared,region).map(area=>area.id),['other-city','city'],'an explicit country cohort excludes incompatible same-level areas while preserving its declared order');
   const inspected={...region,selected:'city'};
   assert.equal(comparisonScope(data,inspected).id,'nile','an inspected member remains within its parent cohort');
   assert.ok(comparisonRows(data,inspected).every(row=>row.area.parent_id==='nile'));

@@ -95,7 +95,7 @@ node scripts/create-country.mjs --country "ウガンダ" --out ../uganda-dashboa
 
 内部比較は[分析データ契約](ANALYSIS_DATA_CONTRACT.md)へ次のように対応付ける。
 
-- 任意の`analysis`を追加する場合は`kind: "country"`、`terminal_territory_ids`、`comparisons`を用意する。明示比較に親ID・構成ID全件・説明・所属根拠のsource IDを登録する。旧データで直接の子を使う既定と、市・自治体型等で停止する既定が、その国で妥当か確認する。
+- 任意の`analysis`を追加する場合は`kind: "country"`、`terminal_territory_ids`、`comparisons`を用意する。明示比較に親ID・構成ID全件・説明・所属根拠のsource IDを登録する。画面・地図・順位表・CSVは、その親の同階層の子を自動追加せず、`member_ids`の順序と集合をそのまま使う。これにより、同じADM番号でも統計区分や地域型が違う独立市等を比較へ混入させない。旧データで直接の子を使う既定と、市・自治体型等で停止する既定が、その国で妥当か確認する。
 - 定義・単位・母集団・方法が違う観測は、元のmetadataと値・比較不可理由を保持する。概念の異なる国際／国内系列を別指標IDにし、率の平均で親を埋めない。色尺度は選択内の再計算か根拠のある固定閾値かを明示する。
 - 診断Markdown、各指標の最新版を使う内部地図・全件表を含むHTML、指標別最新版と出典年・全比較行を含むCSVを提供する。Markdownは編集用の根拠資料で、合意・公式承認済みの計画書として扱わない。計画ページの出力設定は独立して保持する。
 

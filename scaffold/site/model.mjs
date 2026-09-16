@@ -221,6 +221,11 @@ export function comparisonAreas(dataset,state) {
   const scope=comparisonScope(dataset,state);
   const candidates=dataset.territories.filter(area=>area.level!=='national'&&area.level===state.level);
   if(!scope || scope.level==='national')return candidates;
+  const explicit=(dataset.analysis?.comparisons || []).find(item=>item?.parent_id===scope.id);
+  if(explicit?.member_ids?.length) {
+    const byId=new Map(candidates.map(area=>[area.id,area]));
+    return explicit.member_ids.map(id=>byId.get(id)).filter(area=>area&&territoryLineage(dataset,area.id).slice(0,-1).some(parent=>parent.id===scope.id));
+  }
   return candidates.filter(area=>territoryLineage(dataset,area.id).slice(0,-1).some(parent=>parent.id===scope.id));
 }
 export function preferredThematicLevel(dataset,selectedId,indicatorId,fallback='') {

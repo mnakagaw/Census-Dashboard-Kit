@@ -113,7 +113,7 @@ IDは資料・指標・地域を区別できる安定した文字列を使う。
 
 比較用の追加設定は[分析データ契約](ANALYSIS_DATA_CONTRACT.md)に合わせ、設計profileや研究台帳を直接runtimeへ流し込まない。国別の候補datasetへ、次の順で反映する。
 
-1. 任意`analysis`を追加する場合は`kind: "country"`、`terminal_territory_ids`と`comparisons`の配列を設定する。各比較は`parent_id`、登録済みの配下地域の全`member_ids`、`label`、`membership_note`、所属の根拠を指す`source_ids`を持つ。省略した旧datasetでは直接の子を使うため、国別台帳の型・粒度・境界版がそのまま比較集合として妥当か確認する。
+1. 任意`analysis`を追加する場合は`kind: "country"`、`terminal_territory_ids`と`comparisons`の配列を設定する。各比較は`parent_id`、登録済みの配下地域の全`member_ids`、`label`、`membership_note`、所属の根拠を指す`source_ids`を持つ。`member_ids`は単なる注記ではなく実行時の比較集合であり、画面・地図・順位表・CSVはこの順序と集合を厳守する。同じ親・階層でも、統計区分、地域型、定義または境界版が違う地域を自動追加しない。省略した旧datasetでは直接の子を使うため、国別台帳の型・粒度・境界版がそのまま比較集合として妥当か確認する。
 2. `terminal_territory_ids`へ根拠を確認した基礎自治体IDを登録する。city／municipality等の型・levelも実装の停止対象なので照合する。ADM番号だけを停止根拠にしない。
 3. 指標辞書に定義・単位・母集団・測定方法を記録する。原観測に差があれば任意の`definition_id`、`definition`、`unit`、`population`、`measurement_method`で保持する。異なる概念は別指標IDにし、差を消して同じ色尺度に載せない。比較できない行も元の値・状態・出典・理由を残す。
 4. 地図の閾値は既定の`within_selection`か、根拠を記した`color_scale: { mode: "fixed", breaks: [4個の昇順閾値], label: "説明" }`を選ぶ。固定閾値は親の全指標へ適用されるため、単位の違う指標へ共通の数値閾値を置かない。
