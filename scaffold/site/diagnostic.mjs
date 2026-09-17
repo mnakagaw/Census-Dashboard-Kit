@@ -1,7 +1,7 @@
 import {escapeHtml as e, displayValue, finite, areaObservationState, latestDisplayPeriod, statusLabel, evidenceStatus, territoryLineage, mapGeometry, seriesFor, seriesGeometry, observedValue, makeCsv, safeUrl, documentMarkdown} from './model.mjs';
 import {internalComparison, colorForComparison, observationContext} from './analysis.mjs';
 import {planningDocuments, selectedGaps} from './planning.mjs';
-import {sourceSeriesLabel} from './i18n.mjs';
+import {sourceSeriesLabel,localizedIndicator,translateText} from './i18n.mjs';
 
 const md = value => String(value ?? '').replaceAll('\\','\\\\').replace(/[|<>\[\]]/g,c=>'\\'+c).replace(/[\r\n]+/g,' ');
 const externalLink = (url,label,classes='') => safeUrl(url) ? `<a class="${e(classes)}" href="${e(safeUrl(url))}" target="_blank" rel="noopener noreferrer">${e(label)}<span class="sr-only"> (opens a new tab)</span></a>` : e(label);
@@ -36,7 +36,7 @@ export function comparisonSummary(data,comparison) {
 }
 
 export function renderInternalComparison(data,parentId,indicatorId,period,{interactive=true,language='en'}={}) {
-  const comparison=internalComparison(data,parentId,indicatorId,period),indicator=comparison.indicator;
+  const comparison=internalComparison(data,parentId,indicatorId,period),indicator=localizedIndicator(comparison.indicator,language);
   if(!indicator)return '';
   if(comparison.set.terminal)return '<p class="internal-stop small-note">Internal comparison stops at this area. Its own observations remain the diagnostic evidence.</p>';
   if(!comparison.rows.length)return `<p class="internal-unavailable missing-note">${e(comparison.reason || 'No lower-area comparison set is configured. Overall evidence is retained.')}</p>`;
@@ -65,14 +65,15 @@ function seriesReport(data,area,indicator) {
   }).join('')}</tbody></table>`;
 }
 
-export function diagnosticMarkdown(data,territoryId,period) {
+export function diagnosticMarkdown(data,territoryId,period,language='en') {
   const area=data.territories.find(row=>row.id===territoryId);
   if(!area)throw new Error('Unknown diagnostic area');
   const latestMode=period==null;
   const lines=[`# Territorial diagnostic — ${md(area.name)}`,'',`Analysis area: ${md(identityText(area))}`,`Hierarchy: ${territoryLineage(data,territoryId).map(row=>md(row.name)).join(' → ')}`,`${latestMode?'Display policy: latest confirmed value for each indicator; source year shown per item':`Selected period: ${md(period)}`}. Data edition: ${md(data.generated_at)}. Schema: ${md(data.schema_version)}.`, '',
     'This is an editable diagnostic evidence report. The analysis area does not establish a legal planning or approval authority. Observations, priority hypotheses, resident agreements and formal approvals are different records. No priorities, consent or approval are inferred.', '',
     'An exact whole-area observation has priority. A calculated value is allowed only for an approved indicator and a complete, source-backed, non-overlapping membership cover. Exact country or province totals are used before lower-area values, so missing municipalities beneath an available total do not distort a larger-area total. Percentages and non-additive measures are never simply averaged.',''];
-  for(const indicator of data.indicators) {
+  for(const rawIndicator of data.indicators) {
+    const indicator=localizedIndicator(rawIndicator,language);
     const displayPeriod=latestMode?latestDisplayPeriod(data,territoryId,indicator.id):period;
     const result=overallEntry(data,area,indicator,displayPeriod),source=result.source,comparison=internalComparison(data,territoryId,indicator.id,displayPeriod);
     lines.push(`## ${md(indicator.theme)} — ${md(indicator.name)}`,'',`Overall: ${md(valueText(data,result.value,indicator))} ${md(result.unit)} · ${md(evidenceStatus(indicator,result.observation,result.status))} · ${md(result.observation?.period || displayPeriod || 'No source period')}`,result.provenance==='areadata_calculated'?`Aggregation: ${md(result.note)} Components: ${md(result.components.map(item=>`${item.territory_id}@${item.period}${finite(item.weight)?` weight=${item.weight}`:''}`).join(', '))}. Missing areas: ${md(result.missing_ids.join(', ') || 'none')}. Covered subtotal: ${md(result.covered_value)}.`:'Exact-area observation or explicit gap.',md(meaningText(result)),`Observation boundary edition: ${md(observedBoundary(result.observation))}.`,`Source: ${md(source?.name)} · ${md(source?.url)} · retrieved ${md(source?.retrieved_at)}`);
@@ -100,28 +101,30 @@ export function diagnosticMarkdown(data,territoryId,period) {
   return lines.join('\n');
 }
 
-export function diagnosticCsv(data,territoryId,period) {
+export function diagnosticCsv(data,territoryId,period,language='en') {
   const parent=data.territories.find(row=>row.id===territoryId);
   if(!parent)throw new Error('Unknown diagnostic area');
-  const rows=[['Dataset','Analysis area ID','Analysis area','Record scope','Territory ID','Territory','Type','Code system','Official code','Parent ID','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status','Value provenance','Aggregation note','Aggregation components','Aggregation component periods','Aggregation weights','Missing area IDs','Covered subtotal','Comparable','Comparison reason','Definition ID','Definition','Population','Method','Meaning matches indicator','Observation boundary edition','Boundary join','Source ID','Source name','Source URL','Retrieved at','Data edition']];
-  for(const indicator of data.indicators){
+  const rows=[['Dataset','Analysis area ID','Analysis area','Record scope','Territory ID','Territory','Type','Code system','Official code','Parent ID','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status','Value provenance','Aggregation note','Aggregation components','Aggregation component periods','Aggregation weights','Missing area IDs','Covered subtotal','Comparable','Comparison reason','Definition ID','Definition','Population','Method','Meaning matches indicator','Observation boundary edition','Boundary join','Source ID','Source name','Source URL','Retrieved at','Data edition'].map(value=>translateText(value,language))];
+  for(const rawIndicator of data.indicators){
+    const indicator=localizedIndicator(rawIndicator,language);
     const displayPeriod=period==null?latestDisplayPeriod(data,territoryId,indicator.id):period;
     const overall=overallEntry(data,parent,indicator,displayPeriod);
-    for(const [scope,entry] of [['overall',overall],...internalComparison(data,territoryId,indicator.id,displayPeriod).rows.map(row=>['within_area',row])])rows.push([data.country.id,territoryId,parent.name,scope,entry.area.id,entry.area.name,entry.area.type,entry.area.code_system,entry.area.official_code,entry.area.parent_id,entry.area.boundary_version,indicator.id,indicator.name,entry.period || entry.observation?.period || displayPeriod,entry.value,rowUnit(entry,indicator),entry.status,entry.provenance,entry.note,entry.components?.map(item=>item.territory_id).join('; '),entry.components?.map(item=>`${item.territory_id}@${item.period}`).join('; '),entry.components?.map(item=>finite(item.weight)?`${item.territory_id}=${item.weight}`:'').filter(Boolean).join('; '),entry.missing_ids?.join('; '),entry.covered_value,entry.comparable,entry.reason,entry.definition_id,rowDefinition(entry,indicator),entry.population,entry.method,entry.meaning_comparable,observedBoundary(entry.observation),scope==='overall'?'Not applicable to an overall statistical record':entry.boundary_reason || 'Matched geometry',entry.source?.id,entry.source?.name,entry.source?.url,entry.source?.retrieved_at,data.generated_at]);
+    for(const [scope,entry] of [['overall',overall],...internalComparison(data,territoryId,indicator.id,displayPeriod).rows.map(row=>['within_area',row])])rows.push([data.country.id,territoryId,parent.name,translateText(scope,language),entry.area.id,entry.area.name,translateText(entry.area.type,language),entry.area.code_system,entry.area.official_code,entry.area.parent_id,entry.area.boundary_version,indicator.id,indicator.name,entry.period || entry.observation?.period || displayPeriod,entry.value,rowUnit(entry,indicator),translateText(entry.status,language),translateText(entry.provenance,language),translateText(entry.note,language),entry.components?.map(item=>item.territory_id).join('; '),entry.components?.map(item=>`${item.territory_id}@${item.period}`).join('; '),entry.components?.map(item=>finite(item.weight)?`${item.territory_id}=${item.weight}`:'').filter(Boolean).join('; '),entry.missing_ids?.join('; '),entry.covered_value,entry.comparable==null?'':translateText(String(entry.comparable),language),translateText(entry.reason,language),entry.definition_id,rowDefinition(entry,indicator),translateText(entry.population,language),translateText(entry.method,language),entry.meaning_comparable==null?'':translateText(String(entry.meaning_comparable),language),translateText(observedBoundary(entry.observation),language),translateText(scope==='overall'?'Not applicable to an overall statistical record':entry.boundary_reason || 'Matched geometry',language),entry.source?.id,entry.source?.name,entry.source?.url,entry.source?.retrieved_at,data.generated_at]);
   }
   return makeCsv(rows);
 }
 
 export const diagnosticPrintCss=`body{font:15px/1.5 system-ui,sans-serif;color:#19342c;margin:32px auto;max-width:1100px;padding:0 20px}h1{font-size:27px}h2{border-bottom:2px solid #abcbbd;margin-top:30px}h3{margin-top:24px}p,td,th{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:12px}td,th{border:1px solid #cad5d0;padding:7px;text-align:left;vertical-align:top}td small,th small{display:block;font-weight:normal}a{color:#216453}svg{max-width:100%;height:auto}.internal-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:15px}.internal-area{stroke:white;stroke-width:.8px}.internal-table-scroll{overflow:visible}.internal-legend,.small-note,.source-note{font-size:12px}.diagnostic-history{max-height:170px}.material-report{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.5 system-ui}details>*{display:block!important}summary{font-weight:600}.internal-inspection{display:none}@media(max-width:700px){body{margin:16px auto;padding:0 12px}.internal-grid{grid-template-columns:1fr}}@media print{body{margin:0;padding:0;font-size:10pt;max-width:none}.internal-grid{display:block}.internal-map{max-height:200px}.internal-table-scroll{max-height:none!important;overflow:visible!important}table{font-size:8pt}thead{display:table-header-group}tr{break-inside:avoid}section,article,.internal-comparison{break-inside:auto}h2,h3,h4{break-after:avoid}svg{print-color-adjust:exact;-webkit-print-color-adjust:exact}a{color:inherit}@page{size:A4;margin:14mm}}`;
 
-export function diagnosticHtml(data,territoryId,period) {
+export function diagnosticHtml(data,territoryId,period,language='en') {
   const area=data.territories.find(row=>row.id===territoryId);
   if(!area)throw new Error('Unknown diagnostic area');
   const latestMode=period==null;
-  const sections=data.indicators.map(indicator=>{
+  const sections=data.indicators.map(rawIndicator=>{
+    const indicator=localizedIndicator(rawIndicator,language);
     const displayPeriod=latestMode?latestDisplayPeriod(data,territoryId,indicator.id):period;
     const result=overallEntry(data,area,indicator,displayPeriod);
-    return `<section><h2>${e(indicator.theme)} — ${e(indicator.name)}</h2><p><strong>Overall: ${e(valueText(data,result.value,indicator))} ${e(result.unit)}</strong> · ${e(evidenceStatus(indicator,result.observation,result.status))} · ${e(result.observation?.period || displayPeriod || 'No source period')}</p><p>${e(meaningText(result))}</p><p>Observation boundary edition: ${e(observedBoundary(result.observation))}.</p><p>Source: ${sourceLink(result.source)} · Retrieved ${e(result.source?.retrieved_at || 'not recorded')}.</p>${latestMode?'':`<h3>Acquired history</h3>${seriesReport(data,area,indicator)}`}${renderInternalComparison(data,territoryId,indicator.id,displayPeriod,{interactive:false})}</section>`;
+    return `<section><h2>${e(indicator.theme)} — ${e(indicator.name)}</h2><p><strong>Overall: ${e(valueText(data,result.value,indicator))} ${e(result.unit)}</strong> · ${e(evidenceStatus(indicator,result.observation,result.status))} · ${e(result.observation?.period || displayPeriod || 'No source period')}</p><p>${e(meaningText(result))}</p><p>Observation boundary edition: ${e(observedBoundary(result.observation))}.</p><p>Source: ${sourceLink(result.source)} · Retrieved ${e(result.source?.retrieved_at || 'not recorded')}.</p>${latestMode?'':`<h3>Acquired history</h3>${seriesReport(data,area,indicator)}`}${renderInternalComparison(data,territoryId,indicator.id,displayPeriod,{interactive:false,language})}</section>`;
   }).join('');
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Territorial diagnostic — ${e(area.name)}</title><style>${diagnosticPrintCss}</style></head><body><h1>Territorial diagnostic — ${e(area.name)}</h1><p>${e(territoryLineage(data,territoryId).map(row=>row.name).join(' → '))}</p><p>${e(identityText(area))}</p><p>${latestMode?'Latest confirmed value for each indicator; source year shown per item':`Selected period ${e(period)}`} · Data edition ${e(data.generated_at)} · Schema ${e(data.schema_version)}</p><p>This diagnostic describes the selected analysis area. It does not establish a legal planning authority, resident agreement or official approval. Exact whole-area observations have priority. Approved calculations require a complete, non-overlapping cover and remain labelled separately. Recorded statistical differences and hypotheses for local review remain separate.</p>${sections}<h2>Selected-area official materials</h2><div class="material-report">${e(planningDocuments(data,territoryId).map(doc=>documentMarkdown(data,doc)).join('\n\n') || 'No selected-area material collected; plan existence and approval remain unverified.')}</div><h2>Evidence gaps and next actions</h2><ul>${selectedGaps(data,territoryId).map(gap=>`<li>${e(gap.category)} · ${e(gap.status)}: ${e(gap.detail)} Next: ${e(gap.next_action)}</li>`).join('')}</ul><h2>Priority hypotheses and agreements</h2><p>Use these source-grounded differences to prepare questions for local review. Proposed causes, priorities, meeting evidence and approvals must be recorded separately. No such agreement is generated from a colour or rank.</p></body></html>`;
 }

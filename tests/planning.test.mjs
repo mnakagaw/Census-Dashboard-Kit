@@ -46,6 +46,25 @@ test('configuration rejects unknown categories, unsupported outputs and malforme
   assert.match(errorText(data=>data.planning.source_groups[1].source_ids=[]),/at least one/);
 });
 
+test('legal evidence preserves mandatory, permissive and mixed modalities',()=>{
+  assert.match(errorText(data=>data.planning.document_template.sections[0].legal_basis.modality='compulsory'),/modality must be/);
+  assert.match(errorText(data=>data.planning.document_template.sections[0].legal_basis.modality='mixed'),/modality_note must distinguish/);
+  assert.match(errorText(data=>data.planning.document_template.sections[0].legal_basis.modality='permissive'),/required cannot be true/);
+  const data=planningFixture();
+  const section=data.planning.document_template.sections[0];
+  section.required=false;section.legal_basis.modality='permissive';
+  assert.deepEqual(validateDataset(data).errors,[]);
+});
+
+test('a provisional evidence outline validates only with an explicit review date, gap and evidence basis',()=>{
+  const data=planningFixture('integrated'),template=data.planning.document_template;
+  template.status='provisional_evidence_outline';template.reviewed_at=template.verified_at;delete template.verified_at;
+  template.research_gap='Current competent-authority manual verification remains outstanding.';
+  template.sections=template.sections.map(section=>{const next={...section,evidence_basis:section.legal_basis};delete next.legal_basis;return next;});
+  assert.deepEqual(validateDataset(data).errors,[]);
+  delete template.research_gap;assert.match(validateDataset(data).errors.join('\n'),/research_gap/);
+});
+
 test('official-state maps require exact document-period category and controlled local status definitions',()=>{
   assert.match(errorText(data=>delete data.planning.map.category),/requires a document category/);
   assert.match(errorText(data=>delete data.planning.map.period),/requires an exact document-period/);

@@ -5,6 +5,8 @@ import {comparisonSet,isDescendant,observationContext} from './analysis.mjs';
 
 const list=value=>Array.isArray(value)?value:[];
 const finite=value=>typeof value==='number' && Number.isFinite(value);
+const observationIndexCache=new WeakMap();
+function areaIndicatorRows(data,territoryId,indicatorId){const observations=list(data?.observations);let index=observationIndexCache.get(observations);if(!index){index=new Map();for(const row of observations){const key=`${row?.territory_id}\u0000${row?.indicator_id}`;if(!index.has(key))index.set(key,[]);index.get(key).push(row);}observationIndexCache.set(observations,index);}return index.get(`${territoryId}\u0000${indicatorId}`)||[];}
 export const LATEST_AVAILABLE_PERIOD='latest-available';
 
 export function aggregationRule(data,indicatorId) {
@@ -18,7 +20,7 @@ function latestObserved(rows) {
 function direct(data,territoryId,indicatorId,period,rule=null) {
   const area=list(data?.territories).find(item=>item?.id===territoryId) || null;
   const indicator=list(data?.indicators).find(item=>item?.id===indicatorId) || null;
-  const areaRows=list(data?.observations).filter(item=>item?.territory_id===territoryId && item.indicator_id===indicatorId);
+  const areaRows=areaIndicatorRows(data,territoryId,indicatorId);
   const mixed=String(period)===LATEST_AVAILABLE_PERIOD && rule?.period_policy==='latest_available_by_component';
   const row=mixed?latestObserved(areaRows):areaRows.find(item=>String(item.period)===String(period)) || null;
   const value=row?.status==='observed' && finite(row.value)?row.value:null;

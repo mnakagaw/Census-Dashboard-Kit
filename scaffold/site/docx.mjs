@@ -1,5 +1,6 @@
 import {displayValue, evidenceRows, observedValue, safeUrl, statusLabel, evidenceStatus, finite, territoryLineage, mapGeometry, pyramidBands} from './model.mjs';
 import {planningDocuments, planningSettings, planningSourceGroups, selectedGaps, documentPeriod, acquisitionLabel} from './planning.mjs';
+import {localizedIndicator,translateText} from './i18n.mjs';
 
 const encoder=new TextEncoder();
 const xml=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[char]));
@@ -10,8 +11,39 @@ const englishText=value=>{
   return [...parts].reverse().find(part=>/[A-Za-z]/.test(part))||original;
 };
 const spanishCountry=dataset=>/^es(?:-|$)/i.test(dataset?.country?.locale||'') || (dataset?.country?.languages||[]).some(value=>/^es(?:-|$)/i.test(String(value)));
-export const planningDiagnosticTitle=dataset=>spanishCountry(dataset)?'Diagnóstico Territorial para la Planificación del Desarrollo':'Territorial Development Planning Diagnostic';
-export const planningDiagnosticFilename=(dataset,territoryId)=>`${dataset.country.id}-${territoryId}-${spanishCountry(dataset)?'diagnostico-territorial-planificacion-desarrollo':'territorial-development-planning-diagnostic'}.docx`;
+export const planningDiagnosticTitle=(dataset,language='')=>language==='ja'?'地域開発計画用の診断資料':(language==='es'||(!language&&spanishCountry(dataset)))?'Diagnóstico Territorial para la Planificación del Desarrollo':'Territorial Development Planning Diagnostic';
+export const planningDiagnosticFilename=(dataset,territoryId,language='')=>`${dataset.country.id}-${territoryId}-${language==='ja'?'chiiki-kaihatsu-keikaku-shindan':(language==='es'||(!language&&spanishCountry(dataset)))?'diagnostico-territorial-planificacion-desarrollo':'territorial-development-planning-diagnostic'}.docx`;
+
+const wordTranslate=(value,language)=>{
+  if(language==='en')return String(value??'');
+  const original=String(value??'');
+  const es=language==='es';
+  const patterns=[
+    [/^This is a provisional territorial evidence outline for (.+)\. It is not a legally applicable planning index or a compliance template\. A current competent-authority provincial or district planning manual, or an authoritative statement that no fixed index applies, remains to be verified\.$/,(m)=>es?`Este es un esquema provisional de evidencia territorial para ${m[1]}. No es un índice de planificación jurídicamente aplicable ni una plantilla de cumplimiento. Aún debe verificarse un manual provincial o distrital vigente de la autoridad competente, o una declaración autorizada de que no se aplica un índice fijo.`:`これは${m[1]}の暫定的な地域根拠整理案です。法的に適用される計画目次や適合確認用テンプレートではありません。所管機関の現行の県・郡計画マニュアル、または固定目次が適用されないことを示す正式見解の確認が必要です。`],
+    [/^Territorial evidence organized with the source-verified planning structure applicable to (.+)\.(.*)$/,(m)=>es?`Evidencia territorial organizada según la estructura de planificación verificada en las fuentes aplicable a ${m[1]}.${m[2]}`:`${m[1]}に適用される、出典で確認済みの計画構成に沿って地域根拠を整理しています。${m[2]}`],
+    [/^Latest confirmed value for each indicator; source year shown per row$/,(m)=>translateText(m[0],language)],
+    [/^Selected period (.+)$/,(m)=>es?`Período seleccionado ${m[1]}`:`選択期間 ${m[1]}`],
+    [/^(\d+) of (\d+) mapped indicators have a confirmed or fully calculated value for (.+)\. The chapter narratives below compare like areas only where the indicator, unit and source period support that comparison\.$/,(m)=>es?`${m[3]} tiene un valor confirmado o completamente calculado para ${m[1]} de ${m[2]} indicadores vinculados. Los textos siguientes comparan áreas equivalentes solo cuando el indicador, la unidad y el período de fuente permiten esa comparación.`:`${m[3]}では、対応付けた${m[2]}指標のうち${m[1]}指標に確認済み値または完全被覆による算出値があります。以下の記述では、指標・単位・出典期間が比較を支える場合に限って同種地域を比較します。`],
+    [/^(.+) · (.+) · (.+)$/,(m)=>`${m[1]} · ${translateText(m[2],language)} · ${m[3]}`],
+    [/^No statistical observation is mapped to this territorial diagnostic\.$/,()=>es?'No se ha vinculado ninguna observación estadística a este diagnóstico territorial.':'この地域診断に対応付けられた統計観測値はありません。'],
+    [/^Confirmed local evidence is available for (\d+) of (\d+) indicators mapped to this section\. Values retain their individual source years and should not be read as a single-year composite\.$/,(m)=>es?`Hay evidencia local confirmada para ${m[1]} de los ${m[2]} indicadores vinculados a esta sección. Los valores conservan sus años de fuente individuales y no deben interpretarse como un compuesto de un solo año.`:`この節に対応する${m[2]}指標のうち、${m[1]}指標で地方の確認済み根拠があります。各値は個別の出典年を保持しており、単一年の合成値として解釈しません。`],
+    [/^No confirmed value at (.+)'s administrative level is available for the (\d+) indicators mapped to this section\.$/,(m)=>es?`No hay valores confirmados en el nivel administrativo de ${m[1]} para los ${m[2]} indicadores vinculados a esta sección.`:`この節に対応する${m[2]}指標について、${m[1]}の行政階層に確認済み値はありません。`],
+    [/^Local evidence gap: (.+)\. These indicators remain excluded from local comparison and are not inferred from another area\.$/,(m)=>es?`Vacío de evidencia local: ${m[1]}. Estos indicadores se excluyen de la comparación local y no se infieren a partir de otra área.`:`地方根拠の不足：${m[1]}。これらの指標は地域比較から除外し、他地域から推定しません。`],
+    [/^Broader-area context is available separately: (.+)\. These broader values are not assigned to (.+)\.$/,(m)=>es?`El contexto de un área más amplia está disponible por separado: ${m[1]}. Estos valores más amplios no se asignan a ${m[2]}.`:`より広域の参考値は別に示します：${m[1]}。これらの広域値は${m[2]}へ割り当てません。`],
+    [/^(.+?) is ([\d,.]+)(.*?) for (.+?) \((.+?)\)\. Among (\d+) comparable (.+?) areas in the same parent area, this value ranks (\d+) and the median is ([\d,.]+)(.*?)\. Source: (.+)\.$/,(m)=>es?`${m[1]} es ${m[2]}${m[3]} para ${m[4]} (${m[5]}). Entre ${m[6]} áreas comparables de tipo ${translateText(m[7],language)} dentro de la misma área superior, este valor ocupa el puesto ${m[8]} y la mediana es ${m[9]}${m[10]}. Fuente: ${m[11]}.`:`${m[4]}の${m[1]}は${m[2]}${m[3]}（${m[5]}）です。同じ上位地域に属する比較可能な${translateText(m[7],language)} ${m[6]}地域のうち第${m[8]}位で、中央値は${m[9]}${m[10]}です。出典：${m[11]}。`],
+    [/^(.+?) is ([\d,.]+)(.*?) for (.+?) \((.+?)\)\. Source: (.+)\.$/,(m)=>es?`${m[1]} es ${m[2]}${m[3]} para ${m[4]} (${m[5]}). Fuente: ${m[6]}.`:`${m[4]}の${m[1]}は${m[2]}${m[3]}（${m[5]}）です。出典：${m[6]}。`],
+    [/^No gaps are recorded\.(.*)$/,(m)=>es?`No se registran vacíos.${m[1]}`:`不足は記録されていません。${m[1]}`],
+    [/^Evidence in the cited source: (.+)$/,(m)=>es?`Evidencia en la fuente citada: ${m[1]}`:`引用出典における根拠：${m[1]}`],
+    [/^Basis in the cited source: (.+)$/,(m)=>es?`Base en la fuente citada: ${m[1]}`:`引用出典における根拠：${m[1]}`],
+    [/^Source: (.+)$/,(m)=>es?`Fuente: ${m[1]}`:`出典：${m[1]}`],
+    [/^(.+) — (.+); (.+); retrieved (.+)$/,(m)=>`${m[1]} — ${m[2]}; ${translateText(m[3],language)}; ${es?'recuperado':'取得日'} ${m[4]}`]
+    ,[/^• (.+) — (.+): (.+) Next: (.+)$/,(m)=>`• ${translateText(m[1],language)} — ${translateText(m[2],language)}: ${translateText(m[3],language)} ${translateText('Next:',language)} ${translateText(m[4],language)}`]
+  ];
+  for(const [pattern,render] of patterns){const match=original.match(pattern);if(match)return render(match);}
+  const direct=translateText(original,language);if(direct!==original)return direct;
+  return original;
+};
+const localizeXml=(value,language)=>language==='en'?value:String(value).replace(/<w:t\b([^>]*)>([\s\S]*?)<\/w:t>/g,(_m,attrs,body)=>`<w:t${attrs}>${xml(wordTranslate(body.replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&'),language))}</w:t>`).replace(/<text\b([^>]*)>([\s\S]*?)<\/text>/g,(match,attrs,body)=>body.includes('<')?match:`<text${attrs}>${xml(wordTranslate(body,language))}</text>`);
 const run=(value,{bold=false,italic=false}={})=>`<w:r><w:rPr><w:rFonts w:ascii="Aptos" w:hAnsi="Aptos" w:eastAsia="Yu Gothic"/>${bold?'<w:b/>':''}${italic?'<w:i/>':''}</w:rPr><w:t xml:space="preserve">${xml(text(value))}</w:t></w:r>`;
 const paragraph=(value,style='Normal',options={})=>`<w:p><w:pPr><w:pStyle w:val="${style}"/>${options.keep?'<w:keepNext/>':''}${options.pageBreak?'<w:pageBreakBefore/>':''}</w:pPr>${run(value,options)}</w:p>`;
 const listItem=value=>`<w:p><w:pPr><w:pStyle w:val="Normal"/><w:ind w:left="420" w:hanging="220"/></w:pPr>${run(`• ${value}`)}</w:p>`;
@@ -41,12 +73,15 @@ function zipStore(entries) {
 }
 function requiredTemplate(dataset) {
   const template=planningSettings(dataset).document_template;
-  if(!template || !['verified_prescribed_index','verified_requirements_based_outline'].includes(template.status) || !Array.isArray(template.sections) || !template.sections.length)throw new Error('A verified country planning document template is required before DOCX generation');
+  if(!template || !['verified_prescribed_index','verified_requirements_based_outline','provisional_evidence_outline'].includes(template.status) || !Array.isArray(template.sections) || !template.sections.length)throw new Error('A verified country planning document template or explicitly provisional evidence outline is required before DOCX generation');
   return template;
 }
 function sourceName(dataset,id){return dataset.sources.find(row=>row.id===id)?.name||`Unresolved source ${id}`;}
 function sourceLabel(dataset,id){const source=dataset.sources.find(row=>row.id===id);return source?`${source.name}${safeUrl(source.url)?` — ${source.url}`:''}`:`Unresolved source ${id}`;}
-function basisLabel(dataset,basis){return `${sourceLabel(dataset,basis.source_id)}; ${basis.locator}; checked ${basis.checked_at}`;}
+function basisLabel(dataset,basis,language='en'){
+  const checked=language==='es'?'verificado':language==='ja'?'確認日':'checked';
+  return `${sourceName(dataset,basis.source_id)}; ${translateText(basis.locator,language)}; ${checked} ${basis.checked_at}`;
+}
 function formattedValue(indicator,value){return displayValue(value,'en',indicator?.display_decimals ?? 2);}
 function dateOnly(value){const match=String(value||'').match(/^\d{4}-\d{2}-\d{2}/);return match?.[0]||String(value||'not recorded');}
 function evidenceTable(dataset,area,rows) {
@@ -125,11 +160,12 @@ function chartTitleLines(value,maxLength=52) {
   if(lines.length===2&&lines[1].length>maxLength)lines[1]=`${lines[1].slice(0,maxLength-1).trim()}…`;
   return lines.length?lines:['Indicator'];
 }
-function comparisonChartSvg(dataset,area,entries) {
+function comparisonChartSvg(dataset,area,entries,language='en') {
+  const localizedEntry=entry=>({...entry,indicator:localizedIndicator(entry.indicator,language)});
   const charts=entries.map(entry=>{
-    if(finite(entry.value))return {entry,chartArea:area,peer:comparablePeerSummary(dataset,area,entry),context:'Selected-area value'};
+    if(finite(entry.value))return {entry:localizedEntry(entry),chartArea:area,peer:comparablePeerSummary(dataset,area,entry),context:translateText('Selected-area value',language)};
     const broader=nearestBroaderReference(dataset,area,entry);
-    return broader?{entry:broader.entry,chartArea:broader.area,peer:comparablePeerSummary(dataset,broader.area,broader.entry),context:`Broader-area context for missing ${area.name} value`}:null;
+    return broader?{entry:localizedEntry(broader.entry),chartArea:broader.area,peer:comparablePeerSummary(dataset,broader.area,broader.entry),context:translateText(`Broader-area context for missing ${area.name} value`,language)}:null;
   }).filter(item=>item?.peer).slice(0,4);if(!charts.length)return null;
   // Reserve the right edge for complete value labels. The chart remains readable
   // when the unit is longer than a symbol (for example people/household).
@@ -140,19 +176,22 @@ function comparisonChartSvg(dataset,area,entries) {
   const rows=charts.map(({entry,chartArea,peer,context},index)=>{
     const y=38+index*rowHeight,max=Math.max(entry.value,peer.median,1),current=entry.value/max*barWidth,median=peer.median/max*barWidth,lines=chartTitleLines(entry.indicator.name),unit=entry.row?.unit||entry.indicator.unit||'';
     const title=`<text x="18" y="${y+13}" class="label">${lines.map((line,lineIndex)=>`<tspan x="18" dy="${lineIndex?15:0}">${xml(line)}</tspan>`).join('')}</text>`;
-    return `${title}<text x="18" y="${y+43}" class="small">${xml(context)} · ${xml(peer.period)} · ${peer.count} comparable areas</text><text x="${barX-8}" y="${y+64}" text-anchor="end" class="small">${xml(chartArea.name)}</text><rect x="${barX}" y="${y+51}" width="${current}" height="16" fill="#267966"/><text x="${Math.min(width-10,barX+current+6)}" y="${y+64}" class="value">${xml(formattedValue(entry.indicator,entry.value))} ${xml(unit)}</text><text x="${barX-8}" y="${y+88}" text-anchor="end" class="small">Peer median</text><rect x="${barX}" y="${y+75}" width="${median}" height="16" fill="#9db7c1"/><text x="${Math.min(width-10,barX+median+6)}" y="${y+88}" class="value">${xml(formattedValue(entry.indicator,peer.median))} ${xml(unit)}</text>`;
+    return `${title}<text x="18" y="${y+43}" class="small">${xml(context)} · ${xml(peer.period)} · ${peer.count} ${xml(translateText('comparable areas',language))}</text><text x="${barX-8}" y="${y+64}" text-anchor="end" class="small">${xml(chartArea.name)}</text><rect x="${barX}" y="${y+51}" width="${current}" height="16" fill="#267966"/><text x="${Math.min(width-10,barX+current+6)}" y="${y+64}" class="value">${xml(formattedValue(entry.indicator,entry.value))} ${xml(translateText(unit,language))}</text><text x="${barX-8}" y="${y+88}" text-anchor="end" class="small">${xml(translateText('Peer median',language))}</text><rect x="${barX}" y="${y+75}" width="${median}" height="16" fill="#9db7c1"/><text x="${Math.min(width-10,barX+median+6)}" y="${y+88}" class="value">${xml(formattedValue(entry.indicator,peer.median))} ${xml(translateText(unit,language))}</text>`;
   }).join('');
-  return svgBase(width,height,`<text x="18" y="24" class="label">Available area values and same-level medians</text>${rows}`,`Indicator comparison for ${area.name}`);
+  return svgBase(width,height,`<text x="18" y="24" class="label">${xml(translateText('Available area values and same-level medians',language))}</text>${rows}`,`Indicator comparison for ${area.name}`);
 }
 function imageParagraph(relationshipId,width,height,alt) {
   const cx=Math.round(width*9525),cy=Math.round(height*9525);
   return `<w:p><w:pPr><w:spacing w:before="120" w:after="160"/></w:pPr><w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="${cx}" cy="${cy}"/><wp:docPr id="${relationshipId.replace(/\D/g,'')||1}" name="${xml(alt)}" descr="${xml(alt)}"/><a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:pic><pic:nvPicPr><pic:cNvPr id="0" name="${xml(alt)}"/><pic:cNvPicPr/></pic:nvPicPr><pic:blipFill><a:blip r:embed="${relationshipId}"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill><pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="${cx}" cy="${cy}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p>`;
 }
 
-export function planDocxBytes(dataset,territoryId,period) {
+export function planDocxBytes(dataset,territoryId,period,language='en') {
   const area=dataset.territories.find(row=>row.id===territoryId);if(!area)throw new Error('Unknown planning territory');
-  const template=requiredTemplate(dataset),settings=planningSettings(dataset),sourceGroups=planningSourceGroups(dataset),evidence=evidenceRows(dataset,territoryId,period),documents=planningDocuments(dataset,territoryId),gaps=selectedGaps(dataset,territoryId);
-  const diagnosticTitle=planningDiagnosticTitle(dataset);
+  const template=requiredTemplate(dataset),settings=planningSettings(dataset),sourceGroups=planningSourceGroups(dataset),documents=planningDocuments(dataset,territoryId),gaps=selectedGaps(dataset,territoryId);
+  const mappedIndicatorIds=[...new Set(template.sections.flatMap(section=>section.indicator_ids||[]))];
+  const evidenceById=new Map(evidenceRows(dataset,territoryId,period).map(entry=>[entry.indicator.id,{...entry,indicator:localizedIndicator(entry.indicator,language)}]));
+  const evidence=mappedIndicatorIds.map(id=>evidenceById.get(id)).filter(Boolean);
+  const diagnosticTitle=planningDiagnosticTitle(dataset,language);
   const byTheme=new Map();
   for(const entry of evidence){const theme=englishText(entry.indicator.theme||'Other');if(!byTheme.has(theme))byTheme.set(theme,[]);byTheme.get(theme).push(entry);}
   const body=[],images=[];
@@ -163,15 +202,21 @@ export function planDocxBytes(dataset,territoryId,period) {
     return imageParagraph(relationshipId,displayWidth,displayHeight,name);
   };
   const areaLabel=area.id===dataset.country.national_territory_id?dataset.country.name:`${area.name}, ${dataset.country.name}`;
-  body.push(paragraph(diagnosticTitle,'Title',{keep:true}),paragraph(areaLabel,'Subtitle'),paragraph(`Territorial evidence organized with the planning index applicable to ${dataset.country.name}. This diagnostic assembles the selected area's confirmed statistics, source years, planning references and evidence gaps for local analysis and consultation.`));
+  const provisional=template.status==='provisional_evidence_outline';
+  const basisSummary=template.status==='verified_prescribed_index'?'Prescribed index verified in the cited source':template.status==='verified_requirements_based_outline'?'Requirements-based outline verified in the cited official planning sources':'Provisional evidence outline; current competent-authority manual or an authoritative no-fixed-index basis has not been verified';
+  const basisDate=provisional?template.reviewed_at:template.verified_at;
+  const intro=provisional
+    ? `This is a provisional territorial evidence outline for ${dataset.country.name}. It is not a legally applicable planning index or a compliance template. A current competent-authority provincial or district planning manual, or an authoritative statement that no fixed index applies, remains to be verified.`
+    : `Territorial evidence organized with the source-verified planning structure applicable to ${dataset.country.name}. This diagnostic assembles the selected area's confirmed statistics, source years, planning references and evidence gaps for local analysis and consultation.`;
+  body.push(paragraph(diagnosticTitle,'Title',{keep:true}),paragraph(areaLabel,'Subtitle'),paragraph(intro));
   body.push(paragraph('Document basis','Heading1',{keep:true}),table([
-    ['Field','Source-checked or selected value'],['Index title',englishText(template.title)],['Planning reference',englishText(template.authority)],['Planning framework',englishText(settings.system?.label||'Not recorded')],['Planning cycle',englishText(settings.system?.cycle||'Not recorded')],['Area',`${area.name} · ${area.type} · ${area.official_code||'administrative code not recorded'}`],['Statistical evidence policy',period==null?'Latest confirmed value for each indicator; source year shown per row':`Selected period ${period}`],['Index basis',template.status==='verified_prescribed_index'?'Prescribed index verified in the cited source':'Diagnostic structure aligned to the cited governance and planning sources']
+    ['Field','Source-checked or selected value'],['Outline title',englishText(template.title)],['Institutional reference',englishText(template.authority)],['Planning framework',englishText(settings.system?.label||'Not recorded')],['Planning cycle',englishText(settings.system?.cycle||'Not recorded')],['Area',`${area.name} · ${area.type} · ${area.official_code||'administrative code not recorded'}`],['Statistical evidence policy',period==null?'Latest confirmed value for each indicator; source year shown per row':`Selected period ${period}`],['Outline status',basisSummary]
   ],[2600,6500]));
-  body.push(paragraph('Document control','Heading2',{keep:true}),table([['Item','Value'],['Country and area',`${dataset.country.name} · ${area.name}`],['Dataset edition',dataset.generated_at],['Index basis checked',template.verified_at],['Document type',diagnosticTitle]],[2600,6500]));
-  body.push(paragraph('Legal and procedural sources','Heading2',{keep:true}),...template.source_ids.map(id=>listItem(sourceLabel(dataset,id))));
+  body.push(paragraph('Document control','Heading2',{keep:true}),table([['Item','Value'],['Country and area',`${dataset.country.name} · ${area.name}`],['Dataset edition',dataset.generated_at],[provisional?'Evidence outline reviewed':'Planning basis verified',basisDate],['Document type',diagnosticTitle]],[2600,6500]));
+  body.push(paragraph(provisional?'Planning-system research sources':'Legal and procedural sources','Heading2',{keep:true}),...template.source_ids.map(id=>listItem(sourceLabel(dataset,id))));
   body.push(paragraph('Source register','Heading1',{keep:true}));
   for(const group of sourceGroups){body.push(paragraph(englishText(group.label),'Heading2',{keep:true}),paragraph(englishText(group.note),'Caption'),...(group.sources.length?group.sources.map(source=>listItem(`${englishText(source.name)} — ${source.url}; ${statusLabel(source.status)}; retrieved ${dateOnly(source.retrieved_at)}`)):[paragraph('No source is registered in this category.') ]));}
-  body.push(paragraph('Index based on the applicable law or guidance','Heading1',{keep:true}),...template.sections.map(section=>paragraph(`${section.number} ${englishText(section.title)}`,'TOC1')));
+  body.push(paragraph(provisional?'Working evidence outline':'Index based on the applicable law or guidance','Heading1',{keep:true}),...template.sections.map(section=>paragraph(`${section.number} ${englishText(section.title)}`,'TOC1')));
   body.push(paragraph('Territorial Diagnostic','Heading1',{pageBreak:true,keep:true}),paragraph(period==null?'The figures and diagnostic readings use the latest confirmed value available for each indicator and retain every source year. Missing local values remain missing; broader-area values are labelled as context rather than assigned to this area.':'The figures and diagnostic readings use the selected period. Missing values remain missing.'));
   const availableCount=evidence.filter(entry=>finite(entry.value)).length;
   body.push(paragraph('Evidence overview','Heading2',{keep:true}),paragraph(`${availableCount} of ${evidence.length} mapped indicators have a confirmed or fully calculated value for ${area.name}. The chapter narratives below compare like areas only where the indicator, unit and source period support that comparison.`));
@@ -181,14 +226,15 @@ export function planDocxBytes(dataset,territoryId,period) {
   for(const [sectionIndex,section] of template.sections.entries()) {
     body.push(paragraph(`${section.number} ${englishText(section.title)}`,'Heading1',{pageBreak:sectionIndex===0,keep:true}));
     body.push(paragraph(englishText(section.guidance),'Caption'));
-    body.push(paragraph(`Basis in the cited source: ${basisLabel(dataset,section.legal_basis)}`,'Caption'));
+    body.push(paragraph(`${provisional?'Evidence':'Basis'} in the cited source: ${basisLabel(dataset,provisional?section.evidence_basis:section.legal_basis,language)}`,'Caption'));
     const mapped=(section.indicator_ids||[]).map(id=>evidence.find(entry=>entry.indicator.id===id)).filter(Boolean);
     body.push(paragraph('Diagnostic reading','Heading2',{keep:true}));
     if(mapped.length){
       body.push(...sectionNarrative(dataset,area,mapped).map(value=>paragraph(value)));
-      const comparisonChart=comparisonChartSvg(dataset,area,mapped);if(comparisonChart)body.push(addSvg(comparisonChart,`${englishText(section.title)} comparison for ${area.name}`));
-      body.push(paragraph('Interpretation boundary','Heading2',{keep:true}),paragraph(`These figures describe recorded conditions and geographic differences. They do not by themselves establish causes, resident priorities, targets or approved interventions. ${section.required?'This subject is retained because the cited framework requires it in the planning evidence base.':'The cited framework treats this subject as optional.'}`));
-    } else body.push(paragraph('No dashboard indicator is mapped to this index section. The heading remains because it is part of the source-checked planning index. Evidence and intended planning content must be added before this section can support a decision.'));
+      const comparisonChart=comparisonChartSvg(dataset,area,mapped,language);if(comparisonChart)body.push(addSvg(comparisonChart,`${englishText(section.title)} comparison for ${area.name}`));
+      const sectionStatus=provisional?'This subject is retained as an analytical topic; it is not presented as a legally required chapter.':section.required?'This subject is retained because the cited framework requires it in the planning evidence base.':'The cited framework treats this subject as optional.';
+      body.push(paragraph('Interpretation boundary','Heading2',{keep:true}),paragraph(`These figures describe recorded conditions and geographic differences. They do not by themselves establish causes, resident priorities, targets or approved interventions. ${sectionStatus}`));
+    } else body.push(paragraph(provisional?'No dashboard indicator is mapped to this working-outline section. Evidence and intended planning content must be added before the section can support a decision; its presence does not imply a legal requirement.':'No dashboard indicator is mapped to this index section. The heading remains because it is part of the source-checked planning index. Evidence and intended planning content must be added before this section can support a decision.'));
   }
   body.push(paragraph('Statistical evidence annex','Heading1',{pageBreak:true,keep:true}),paragraph('This annex lists each mapped indicator once. A dash means that no confirmed value exists for the selected area; it is not zero. Broader-area context mentioned in the narrative is not copied into the selected-area value column.'));
   for(const [theme,rows] of byTheme)body.push(paragraph(theme,'Heading2',{keep:true}),evidenceTable(dataset,area,rows));
@@ -198,7 +244,7 @@ export function planDocxBytes(dataset,territoryId,period) {
   body.push(paragraph('Acquired planning materials','Heading1',{pageBreak:true,keep:true}));
   if(documents.length)body.push(table([['Material','Period','Acquisition state','Source'],...documents.map(doc=>[doc.title,documentPeriod(doc),acquisitionLabel(doc),sourceName(dataset,doc.source_id)])],[3000,1500,1900,3100]));else body.push(paragraph('No selected-area planning material has been acquired. This does not establish that none exists.'));
   body.push(paragraph('Evidence gaps and next actions','Heading1',{keep:true}),...(gaps.length?gaps.map(gap=>listItem(`${gap.category} — ${statusLabel(gap.status)}: ${gap.detail||'Detail not recorded.'} Next: ${gap.next_action||'Verify with the responsible source.'}`)):[paragraph('No gaps are recorded. This is not a certification of complete evidence.') ]));
-  const documentXml=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><w:body>${body.join('')}<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="708" w:footer="708"/><w:cols w:space="708"/><w:docGrid w:linePitch="360"/></w:sectPr></w:body></w:document>`;
+  const documentXml=localizeXml(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><w:body>${body.join('')}<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="708" w:footer="708"/><w:cols w:space="708"/><w:docGrid w:linePitch="360"/></w:sectPr></w:body></w:document>`,language);
   const styles=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Aptos" w:hAnsi="Aptos" w:eastAsia="Yu Gothic"/><w:sz w:val="22"/><w:color w:val="000000"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="140" w:line="300" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/></w:style><w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:basedOn w:val="Normal"/><w:next w:val="Subtitle"/><w:pPr><w:spacing w:before="0" w:after="180"/><w:keepNext/></w:pPr><w:rPr><w:b/><w:sz w:val="34"/><w:color w:val="000000"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Subtitle"><w:name w:val="Subtitle"/><w:basedOn w:val="Normal"/><w:pPr><w:spacing w:after="260"/></w:pPr><w:rPr><w:sz w:val="24"/><w:color w:val="000000"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/><w:basedOn w:val="Normal"/><w:next w:val="Normal"/><w:qFormat/><w:pPr><w:keepNext/><w:spacing w:before="280" w:after="120"/><w:outlineLvl w:val="0"/></w:pPr><w:rPr><w:b/><w:sz w:val="28"/><w:color w:val="000000"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading2"><w:name w:val="heading 2"/><w:basedOn w:val="Normal"/><w:next w:val="Normal"/><w:qFormat/><w:pPr><w:keepNext/><w:spacing w:before="220" w:after="100"/><w:outlineLvl w:val="1"/></w:pPr><w:rPr><w:b/><w:sz w:val="24"/><w:color w:val="000000"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="TOC1"><w:name w:val="toc 1"/><w:basedOn w:val="Normal"/><w:pPr><w:ind w:left="240"/><w:spacing w:after="80"/></w:pPr></w:style><w:style w:type="paragraph" w:styleId="Caption"><w:name w:val="Caption"/><w:basedOn w:val="Normal"/><w:pPr><w:keepNext/><w:spacing w:after="100"/></w:pPr><w:rPr><w:i/><w:sz w:val="18"/><w:color w:val="404040"/></w:rPr></w:style></w:styles>`;
   const contentTypes=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="svg" ContentType="image/svg+xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/><Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/><Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/></Types>`;
   const rootRels=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>`;
@@ -206,7 +252,7 @@ export function planDocxBytes(dataset,territoryId,period) {
   const created=new Date(dataset.generated_at).toISOString();
   const core=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${xml(diagnosticTitle)}</dc:title><dc:subject>${xml(`Territorial evidence for ${area.name}, ${dataset.country.name}`)}</dc:subject><dc:creator>Census Dashboard Kit</dc:creator><cp:keywords>territorial development planning diagnostic; territorial evidence; ${xml(dataset.country.id)}</cp:keywords><dcterms:created xsi:type="dcterms:W3CDTF">${created}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">${created}</dcterms:modified></cp:coreProperties>`;
   const app=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>Census Dashboard Kit</Application><AppVersion>1.2</AppVersion></Properties>`;
-  return zipStore([['[Content_Types].xml',contentTypes],['_rels/.rels',rootRels],['word/document.xml',documentXml],['word/styles.xml',styles],['word/_rels/document.xml.rels',docRels],...images.map(image=>[`word/media/${image.name}`,image.svg]),['docProps/core.xml',core],['docProps/app.xml',app]]);
+  return zipStore([['[Content_Types].xml',contentTypes],['_rels/.rels',rootRels],['word/document.xml',documentXml],['word/styles.xml',styles],['word/_rels/document.xml.rels',docRels],...images.map(image=>[`word/media/${image.name}`,localizeXml(image.svg,language)]),['docProps/core.xml',core],['docProps/app.xml',app]]);
 }
 
-export function planDocxBlob(dataset,territoryId,period){return new Blob([planDocxBytes(dataset,territoryId,period)],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});}
+export function planDocxBlob(dataset,territoryId,period,language='en'){return new Blob([planDocxBytes(dataset,territoryId,period,language)],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});}

@@ -15,6 +15,7 @@ export function periodText(period) {
 export function planningSettings(dataset) {
   const config=dataset.planning || {};
   return {title:config.title || 'Development plan materials',purpose:config.purpose || 'Review official materials for the selected area and prepare evidence for plan preparation or revision.',
+    translations:config.translations || {},
     sections:config.sections || documentCategories.map(id=>({id,label:categoryLabels[id]})),
     explicitSections:Array.isArray(config.sections),outputs:config.outputs || ['markdown','html','evidence_csv'],
     map:config.map || {mode:'coverage'},related_links:config.related_links || [],system:config.system,document_template:config.document_template,source_groups:config.source_groups || [],update:config.update};

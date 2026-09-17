@@ -113,6 +113,17 @@ test('history with unrecorded boundary versions retains legacy line behavior',()
   const data=analysisFixture(),html=metricBlock(diagnosticHtml(data,'city','2024'));
   const graph=html.match(/<svg[^>]*class="diagnostic-history"[\s\S]*?<\/svg>/)?.[0];assert.ok(graph);assert.equal((graph.match(/<circle /g)||[]).length,2);assert.match(graph,/>2023: 90/);assert.match(graph,/>2024: 0/);assert.doesNotMatch(html,/Observation boundary edition does not match/);
 });
+test('Japanese and Spanish diagnostic CSV localize semantic values as well as headers',()=>{
+  const data=analysisFixture(),row=statistic(data,'city');
+  Object.assign(row,{method:'calculated_from_source_fields'});
+  Object.assign(data.sources.find(source=>source.id==='local'),{geographic_level:'national',country_id:'OTH'});
+  for(const language of ['ja','es']) {
+    const csv=diagnosticCsv(data,'city','2024',language);
+    assert.doesNotMatch(csv,/not recorded|calculated_from_source_fields|National source country identity does not match this area\./);
+    assert.match(csv,language==='ja'?/出典項目から算出/:/calculado_a_partir_de_campos_de_fuente/);
+    assert.match(csv,language==='ja'?/全国出典の国識別情報がこの地域と一致しません。/:/La identidad nacional de la fuente no coincide con esta área\./);
+  }
+});
 test('boundary mismatch remains distinct from value absence in all internal outputs',()=>{
   const data=analysisFixture();data.boundaries.features.find(feature=>feature.properties.territory_id==='city').properties.boundary_version='wrong-map-edition';
   const html=renderInternalComparison(data,'river','people','2024',{interactive:false}),markdown=diagnosticMarkdown(data,'river','2024'),csv=csvRecords(diagnosticCsv(data,'river','2024'));

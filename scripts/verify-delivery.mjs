@@ -105,7 +105,7 @@ export async function verifyDelivery(project) {
   if(inventoryConfig?.all_numeric_fields_decided!==true)errors.push('source_table_inventory.all_numeric_fields_decided must be true');
   const inventory=await readProjectJson(projectDir,inventoryConfig?.file,'source_table_inventory.file',errors);
   if(inventory){
-    if(inventory.schema_version!=='0.1')errors.push('SOURCE_TABLE_INVENTORY schema_version must be 0.1');
+    if(!['0.1','0.2'].includes(inventory.schema_version))errors.push('SOURCE_TABLE_INVENTORY schema_version must be 0.1 or 0.2');
     if(!/^\d{4}-\d{2}-\d{2}T/.test(inventory.completed_at||''))errors.push('SOURCE_TABLE_INVENTORY completed_at must be an ISO datetime');
     const sourceIds=new Set((data.sources||[]).map(source=>source.id)),indicatorIds=new Set((data.indicators||[]).map(indicator=>indicator.id));
     const traced=new Set(),seenSources=new Set();
@@ -133,6 +133,16 @@ export async function verifyDelivery(project) {
       }
     }
     for(const id of indicatorIds)if(!traced.has(id))errors.push(`SOURCE_TABLE_INVENTORY does not trace adopted indicator: ${id}`);
+    if(inventory.schema_version==='0.2'){
+      const summary=inventory.summary||{},classes=summary.classifications||{},sourceSummaries=Array.isArray(summary.sources)?summary.sources:[];
+      const classificationTotal=['adopted','component','excluded','helper'].reduce((sum,key)=>sum+(Number.isInteger(classes[key])?classes[key]:0),0);
+      if(summary.source_count!==inventory.sources.length)errors.push('SOURCE_TABLE_INVENTORY 0.2 summary.source_count must match inspected sources');
+      if(!Number.isInteger(summary.table_count)||summary.table_count<=0)errors.push('SOURCE_TABLE_INVENTORY 0.2 summary.table_count must be a positive integer');
+      if(!Number.isInteger(summary.numeric_field_count)||summary.numeric_field_count<=0)errors.push('SOURCE_TABLE_INVENTORY 0.2 summary.numeric_field_count must be a positive integer');
+      if(classificationTotal!==summary.numeric_field_count)errors.push('SOURCE_TABLE_INVENTORY 0.2 classification counts must sum to numeric_field_count');
+      if(sourceSummaries.length!==inventory.sources.length)errors.push('SOURCE_TABLE_INVENTORY 0.2 summary.sources must count every inspected source');
+      if(!validEvidenceText(inventory.reproduction?.command))errors.push('SOURCE_TABLE_INVENTORY 0.2 must record a reproduction command');
+    }
   }
 
   const themeConfig=delivery.theme_coverage;
@@ -226,12 +236,18 @@ export async function verifyDelivery(project) {
 
   const planning=data.planning,documentTemplate=planning?.document_template;
   if(!planning?.outputs?.includes('docx'))errors.push('Country delivery must adopt the docx planning output');
-  if(!documentTemplate || !['verified_prescribed_index','verified_requirements_based_outline'].includes(documentTemplate.status))errors.push('Country delivery needs a verified law-aligned planning.document_template');
+  const provisionalOutline=documentTemplate?.status==='provisional_evidence_outline';
+  if(!documentTemplate || !['verified_prescribed_index','verified_requirements_based_outline','provisional_evidence_outline'].includes(documentTemplate.status))errors.push('Country delivery needs a verified planning template or an explicitly provisional evidence outline');
+  if(provisionalOutline && delivery.research?.planning_system?.status!=='constrained')errors.push('A provisional evidence outline requires research.planning_system.status constrained');
   const sourceGroups=new Map((planning?.source_groups || []).map(group=>[group.id,group]));
   for(const id of ['law','census','international'])if(!sourceGroups.get(id)?.source_ids?.length)errors.push(`planning.source_groups must list at least one ${id} source link`);
   const word=delivery.word_plan;
   if(word?.status!=='passed')errors.push('word_plan.status must be passed');
-  if(word?.outline_checked_against_law!==true)errors.push('word_plan.outline_checked_against_law must be true');
+  if(provisionalOutline){
+    if(word?.provisional_outline!==true)errors.push('word_plan.provisional_outline must be true for a provisional evidence outline');
+    if(word?.overclaim_review_passed!==true)errors.push('word_plan.overclaim_review_passed must be true for a provisional evidence outline');
+    if(word?.outline_checked_against_law!==false)errors.push('word_plan.outline_checked_against_law must be false until the competent-authority basis is verified');
+  } else if(word?.outline_checked_against_law!==true)errors.push('word_plan.outline_checked_against_law must be true');
   for(const key of ['sample_file','render_evidence_file']){
     const value=word?.[key],filename=safeProjectPath(projectDir,value);
     if(!filename || !await exists(filename))errors.push(`word_plan.${key} is missing or outside the project: ${value || ''}`);

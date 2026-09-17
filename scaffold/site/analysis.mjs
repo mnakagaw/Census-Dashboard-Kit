@@ -4,6 +4,8 @@ const own=(value,key)=>value!=null && Object.prototype.hasOwnProperty.call(value
 const finite=value=>typeof value==='number' && Number.isFinite(value);
 const normalized=value=>String(value??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[ -]+/g,'_');
 const terminalTypes=new Set(['city','municipality','municipio','municipalidad','commune','comuna','municipal_district','distrito_municipal','town','town_council','village']);
+const observationIndexCache=new WeakMap();
+function observationIndex(data) {const observations=list(data?.observations);let cached=observationIndexCache.get(observations);if(cached)return cached;cached=new Map();for(const row of observations){const key=`${row?.territory_id}\u0000${row?.indicator_id}`;if(!cached.has(key))cached.set(key,[]);cached.get(key).push(row);}observationIndexCache.set(observations,cached);return cached;}
 export const COMPARISON_COLORS=['#e7f1e8','#b6d7be','#79b58e','#3b8763','#155d46'];
 export const NO_COMPARISON_COLOR='#dce1e6';
 
@@ -128,14 +130,14 @@ export function colorForComparison(comparison,row) {
 
 export function internalComparison(data,parentId,indicatorId,period) {
   const set=comparisonSet(data,parentId),indicator=list(data?.indicators).find(item=>item?.id===indicatorId)||null;
-  const commonReason=cohortReason(set),sources=list(data?.sources),observations=list(data?.observations),boundaries=list(data?.boundaries?.features);
+  const commonReason=cohortReason(set),sources=list(data?.sources),observations=list(data?.observations),indexedObservations=observationIndex(data),boundaries=list(data?.boundaries?.features);
   const mixed=String(period)==='latest-available'&&indicator?.period_policy==='latest_available_by_component';
   const membershipUnavailable=set.source_ids.some(id=>!['ready','partial'].includes(sources.find(source=>source?.id===id)?.status));
   const rows=set.members.map(area=>{
-    const areaObservations=observations.filter(row=>row?.territory_id===area.id&&row.indicator_id===indicatorId);
+    const areaObservations=indexedObservations.get(`${area.id}\u0000${indicatorId}`)||[];
     const observation=mixed?[...areaObservations].filter(row=>row?.status==='observed'&&finite(row.value)).sort((a,b)=>String(b.period).localeCompare(String(a.period),'en',{numeric:true}))[0]||null:areaObservations.find(row=>String(row.period)===String(period))||null;
     const value=observation?.status==='observed' && finite(observation.value)?observation.value:null;
-    const status=observation?.status || (observations.some(row=>row?.territory_id===area.id && row.indicator_id===indicatorId)?'missing':'not_collected');
+    const status=observation?.status || (areaObservations.length?'missing':'not_collected');
     const candidates=boundaries.filter(feature=>feature?.properties?.territory_id===area.id);
     const match=candidates.length===1?boundaryIdentity(candidates[0],area):null;
     const boundary=match?.matches?candidates[0]:null;

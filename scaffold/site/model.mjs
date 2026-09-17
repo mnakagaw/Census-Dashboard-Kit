@@ -2,7 +2,16 @@
 import {planningSettings, planningDocuments, documentPeriod, periodText, categoryFor, categoryLabels, findingLabels, officialStatus, documentEvidence, findingValue, selectedGaps, acquisitionLabel} from './planning.mjs';
 import {observationMeaning,observationContext,isTerminalTerritory} from './analysis.mjs';
 import {resolvedObservation,aggregationRule,LATEST_AVAILABLE_PERIOD} from './aggregation.mjs';
+import {localizedIndicator,translateText} from './i18n.mjs';
 export const finite = value => typeof value === 'number' && Number.isFinite(value);
+const observationIndexCache=new WeakMap();
+function observationIndex(dataset) {
+  const observations=dataset.observations||[];
+  let cached=observationIndexCache.get(observations);if(cached)return cached;
+  const byAreaIndicator=new Map(),byIndicator=new Map(),byExact=new Map(),observedIndicatorIds=new Set();
+  for(const row of observations){const areaKey=`${row.territory_id}\u0000${row.indicator_id}`;if(!byAreaIndicator.has(areaKey))byAreaIndicator.set(areaKey,[]);byAreaIndicator.get(areaKey).push(row);if(!byIndicator.has(row.indicator_id))byIndicator.set(row.indicator_id,[]);byIndicator.get(row.indicator_id).push(row);byExact.set(`${areaKey}\u0000${row.period}`,row);if(row?.status==='observed'&&finite(row.value))observedIndicatorIds.add(row.indicator_id);}
+  cached={observations,byAreaIndicator,byIndicator,byExact,observedIndicatorIds};observationIndexCache.set(observations,cached);return cached;
+}
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 export function safeUrl(value) {
   try { const url = new URL(String(value)); return ['https:', 'http:'].includes(url.protocol) && !url.username && !url.password ? url.href : ''; }
@@ -25,13 +34,14 @@ export function sourceFor(dataset, indicator, observation) {
   return dataset.sources.find(source => source.id === (observation?.source_id || indicator?.source_id));
 }
 export function periodsFor(dataset, indicatorId) {
-  const periods=[...new Set(dataset.observations.filter(row => !indicatorId || row.indicator_id === indicatorId).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
+  const index=observationIndex(dataset),rows=indicatorId?(index.byIndicator.get(indicatorId)||[]):index.observations;
+  const periods=[...new Set(rows.map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
   if(indicatorId && aggregationRule(dataset,indicatorId)?.period_policy==='latest_available_by_component')periods.unshift(LATEST_AVAILABLE_PERIOD);
   return periods;
 }
 export function observedPeriodsForArea(dataset, territoryId, indicatorId) {
-  return [...new Set(dataset.observations
-    .filter(row => row.territory_id === territoryId && row.indicator_id === indicatorId && observedValue(row) !== null)
+  return [...new Set((observationIndex(dataset).byAreaIndicator.get(`${territoryId}\u0000${indicatorId}`)||[])
+    .filter(row => observedValue(row) !== null)
     .map(row => String(row.period)))]
     .sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
 }
@@ -39,12 +49,13 @@ export function latestDisplayPeriod(dataset, territoryId, indicatorId) {
   const periods=periodsFor(dataset,indicatorId).filter(period=>period!==LATEST_AVAILABLE_PERIOD);
   for(const period of periods)if(areaObservationState(dataset,territoryId,indicatorId,period).value!==null)return period;
   const childIds=new Set(dataset.territories.filter(area=>area.parent_id===territoryId).map(area=>area.id));
-  for(const period of periods)if(dataset.observations.some(row=>childIds.has(row.territory_id)&&row.indicator_id===indicatorId&&String(row.period)===period&&observedValue(row)!==null))return period;
+  const indicatorRows=observationIndex(dataset).byIndicator.get(indicatorId)||[];
+  for(const period of periods)if(indicatorRows.some(row=>childIds.has(row.territory_id)&&String(row.period)===period&&observedValue(row)!==null))return period;
   return observedPeriodsForArea(dataset,territoryId,indicatorId)[0] || periods[0] || '';
 }
 export function latestComparisonPeriod(dataset, indicatorId, level, selectedId=dataset.country.national_territory_id) {
   const ids=new Set(comparisonAreas(dataset,{selected:selectedId,level}).map(area=>area.id));
-  const periods=[...new Set(dataset.observations.filter(row=>ids.has(row.territory_id)&&row.indicator_id===indicatorId&&observedValue(row)!==null).map(row=>String(row.period)))]
+  const periods=[...new Set((observationIndex(dataset).byIndicator.get(indicatorId)||[]).filter(row=>ids.has(row.territory_id)&&observedValue(row)!==null).map(row=>String(row.period)))]
     .sort((a,b)=>b.localeCompare(a,'en',{numeric:true}));
   return periods[0] || latestObservedPeriod(dataset,indicatorId);
 }
@@ -64,15 +75,15 @@ export function themeLatestCoverage(dataset, territoryId, indicators) {
   return {total:indicators.length,available:available.length};
 }
 export function latestObservedPeriod(dataset, indicatorId) {
-  return [...new Set(dataset.observations.filter(row => row.indicator_id === indicatorId && observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
+  return [...new Set((observationIndex(dataset).byIndicator.get(indicatorId)||[]).filter(row => observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
 }
 export function observationFor(dataset, territoryId, indicatorId, period) {
-  return dataset.observations.find(row => row.territory_id === territoryId && row.indicator_id === indicatorId && String(row.period) === String(period));
+  return observationIndex(dataset).byExact.get(`${territoryId}\u0000${indicatorId}\u0000${period}`);
 }
 export function observedValue(observation) { return observation?.status === 'observed' && finite(observation.value) ? observation.value : null; }
 export function observationState(dataset, territoryId, indicatorId, period) {
   const indicator=dataset.indicators.find(item=>item.id===indicatorId);
-  const rows=dataset.observations.filter(item=>item.territory_id===territoryId&&item.indicator_id===indicatorId);
+  const rows=observationIndex(dataset).byAreaIndicator.get(`${territoryId}\u0000${indicatorId}`)||[];
   const mixed=String(period)===LATEST_AVAILABLE_PERIOD&&indicator?.period_policy==='latest_available_by_component';
   const row = mixed?[...rows].filter(item=>observedValue(item)!==null).sort((a,b)=>String(b.period).localeCompare(String(a.period),'en',{numeric:true}))[0] || null:observationFor(dataset, territoryId, indicatorId, period);
   if (row) return {row, value:observedValue(row), status:row.status || 'unverified'};
@@ -123,7 +134,7 @@ export function initialState(dataset, search = '') {
   const localDefault=bestObservedLocalView(dataset);
   const configuredMetric=dataset.analysis?.default_indicator_id;
   const configuredIndicator=dataset.indicators.find(item=>item.id===configuredMetric);
-  const firstObservedIndicator = dataset.indicators.find(item => dataset.observations.some(row => row.indicator_id === item.id && observedValue(row) !== null));
+  const firstObservedIndicator = dataset.indicators.find(item => observationIndex(dataset).observedIndicatorIds.has(item.id));
   const fallbackMetric = requestedMetric
     ? configuredIndicator?.id || firstObservedIndicator?.id || dataset.indicators[0]?.id || ''
     : configuredIndicator?.id || localDefault?.indicator_id || firstObservedIndicator?.id || dataset.indicators[0]?.id || '';
@@ -298,7 +309,7 @@ export function distribution(rows) {
   return {count:values.length, min:values[0], max:values.at(-1), median:values.length % 2 ? values[middle] : (values[middle - 1] + values[middle]) / 2};
 }
 export function seriesFor(dataset, territoryId, indicatorId) {
-  return dataset.observations.filter(row => row.territory_id === territoryId && row.indicator_id === indicatorId).sort((a,b) => String(a.period).localeCompare(String(b.period), 'en', {numeric:true}));
+  return [...(observationIndex(dataset).byAreaIndicator.get(`${territoryId}\u0000${indicatorId}`)||[])].sort((a,b) => String(a.period).localeCompare(String(b.period), 'en', {numeric:true}));
 }
 
 // Treat downloaded strings as spreadsheet text, including formulas hidden behind whitespace.
@@ -316,16 +327,21 @@ export function evidenceRows(dataset, territoryId, period, indicatorIds = datase
     return {area, indicator, ...current, source, period:current.row?.period || displayPeriod};
   });
 }
-export function evidenceCsv(dataset, territoryId, period, indicatorIds) {
+export function evidenceCsv(dataset, territoryId, period, indicatorIds, language='en') {
   const rows=evidenceRows(dataset, territoryId, period, indicatorIds);
   const extended=!!dataset.analysis || rows.some(({indicator,row})=>indicator.definition_id || indicator.population || ['definition_id','definition','unit','population','method','measurement_method'].some(key=>row?.[key]!==undefined));
   const aggregation=!!dataset.analysis?.aggregation;
+  const header=['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status',...(aggregation?['Value provenance','Aggregation note','Component IDs','Component periods','Component weights','Missing area IDs','Covered subtotal']:[]),'Definition','Source','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Population','Measurement method','Comparable concept','Comparison note']:[])].map(value=>translateText(value,language));
   return makeCsv([
-    ['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status',...(aggregation?['Value provenance','Aggregation note','Component IDs','Component periods','Component weights','Missing area IDs','Covered subtotal']:[]),'Definition','Source','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Population','Measurement method','Comparable concept','Comparison note']:[])],
+    header,
     ...rows.map(({area, indicator, row, value, status, source,period:displayPeriod}) => {
+      const localized=localizedIndicator(indicator,language);
       const meaning=observationContext(dataset,area,indicator,row);
       const aggregate=areaObservationState(dataset,area.id,indicator.id,displayPeriod);
-      return [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, displayPeriod, value, meaning.unit, status,...(aggregation?[aggregate.provenance, aggregate.note, aggregate.components.map(item=>item.territory_id).join('; '), aggregate.components.map(item=>`${item.territory_id}@${item.period}`).join('; '), aggregate.components.map(item=>finite(item.weight)?`${item.territory_id}=${item.weight}`:'').filter(Boolean).join('; '), aggregate.missing_ids.join('; '), aggregate.covered_value]:[]), meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,meaning.population,meaning.method,meaning.comparable,meaning.reason]:[])];
+      const displayUnit=meaning.unit===indicator.unit?localized.unit:translateText(meaning.unit,language);
+      const displayDefinition=meaning.definition===indicator.definition?localized.definition:translateText(meaning.definition,language);
+      const displayPopulation=meaning.population===indicator.population?localized.population:translateText(meaning.population,language);
+      return [dataset.country.name, area?.id, area?.name, translateText(area?.level,language), area?.official_code, area?.code_system, area?.boundary_version, indicator.id, localized.name, displayPeriod, value, displayUnit || meaning.unit, translateText(status,language),...(aggregation?[translateText(aggregate.provenance,language), translateText(aggregate.note,language), aggregate.components.map(item=>item.territory_id).join('; '), aggregate.components.map(item=>`${item.territory_id}@${item.period}`).join('; '), aggregate.components.map(item=>finite(item.weight)?`${item.territory_id}=${item.weight}`:'').filter(Boolean).join('; '), aggregate.missing_ids.join('; '), aggregate.covered_value]:[]), displayDefinition || meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,displayPopulation || meaning.population,translateText(meaning.method,language),translateText(String(meaning.comparable),language),translateText(meaning.reason,language)]:[])];
     })
   ]);
 }
@@ -349,17 +365,30 @@ export function documentMarkdown(dataset,doc) {
     ...(match?[`Territory match: ${markdownText(match.country_id)} / ${markdownText(match.type)} / ${markdownText(match.code_system)} / ${markdownText(match.official_code??'official code not verified')} / ${markdownText(match.boundary_version??'boundary edition not verified')}; validity ${markdownText(match.valid_from||'not recorded')} to ${markdownText(match.valid_to||'not recorded')}; ${markdownText(match.method)}. ${markdownText(documentEvidence(dataset,match))}`]:['Legacy record: identity matching evidence has not been recorded in the extended contract.']), '');
   return lines.join('\n');
 }
-export function documentsCsv(dataset,territoryId) {
+export function documentsCsv(dataset,territoryId,language='en') {
   const area=dataset.territories.find(row=>row.id===territoryId);
   const columns=['Country','Territory ID','Territory','Type','Code system','Official code','Boundary edition','Document ID','Document','Category','Document period','Period kind','Period start','Period end','Acquisition','Institutional state','State evidence verified','Document URL','Source','Source URL','State evidence','Content summary','Reported priorities','Reported objectives','Content evidence','Finding kind','Finding','Value','Value status','Unit','Finding statement','Finding period','Finding period kind','Finding start','Finding end','Definition','Scope','Scale','Finding evidence','Identity evidence','Data edition'];
+  if(language==='en'){
+    const englishRows=planningDocuments(dataset,territoryId).flatMap(doc=>{
+      const source=dataset.sources.find(row=>row.id===doc.source_id),official=officialStatus(dataset,doc);
+      return (doc.findings?.length?doc.findings:[null]).map(finding=>[
+        dataset.country.id,area?.id,area?.name,area?.type,area?.code_system,area?.official_code,area?.boundary_version,doc.id,doc.title,categoryFor(doc),documentPeriod(doc),doc.target_period?.kind,doc.target_period?.start,doc.target_period?.end,doc.availability,official.label,official.verified,doc.url,source?.name,source?.url,official.verified?documentEvidence(dataset,official.evidence):'Unverified',doc.content?.summary,doc.content?.priorities?.join('; '),doc.content?.objectives?.join('; '),doc.content?documentEvidence(dataset,doc.content.evidence):'',finding?.kind,finding?.label,finding?.value_status==='observed'?finding.value:null,finding?.value_status,finding?.unit,finding?.statement,finding?.period?.label,finding?.period?.kind,finding?.period?.start,finding?.period?.end,finding?.definition,finding?.scope,finding?.scale?`${finding.scale.label} (${finding.scale.min}–${finding.scale.max})`:'',finding?documentEvidence(dataset,finding.evidence):'',doc.territory_match?documentEvidence(dataset,doc.territory_match):'Not recorded',dataset.generated_at]);
+    });
+    return makeCsv([columns,...englishRows]);
+  }
+  const localizedEvidence=evidence=>{
+    const source=dataset.sources.find(row=>row.id===evidence?.source_id);
+    if(!source)return translateText('Evidence not recorded',language);
+    return `${source.name}; ${translateText(evidence.locator,language)}; ${translateText('Checked',language)} ${evidence.checked_at}${evidence.authority?`; ${translateText('Authority',language)}: ${evidence.authority}`:''}; ${source.url}`;
+  };
   const rows=planningDocuments(dataset,territoryId).flatMap(doc=>{
     const source=dataset.sources.find(row=>row.id===doc.source_id),official=officialStatus(dataset,doc);
     return (doc.findings?.length?doc.findings:[null]).map(finding=>[
-      dataset.country.id,area?.id,area?.name,area?.type,area?.code_system,area?.official_code,area?.boundary_version,doc.id,doc.title,categoryFor(doc),documentPeriod(doc),doc.target_period?.kind,doc.target_period?.start,doc.target_period?.end,doc.availability,official.label,official.verified,doc.url,source?.name,source?.url,official.verified?documentEvidence(dataset,official.evidence):'Unverified',doc.content?.summary,doc.content?.priorities?.join('; '),doc.content?.objectives?.join('; '),doc.content?documentEvidence(dataset,doc.content.evidence):'',finding?.kind,finding?.label,finding?.value_status==='observed'?finding.value:null,finding?.value_status,finding?.unit,finding?.statement,finding?.period?.label,finding?.period?.kind,finding?.period?.start,finding?.period?.end,finding?.definition,finding?.scope,finding?.scale?`${finding.scale.label} (${finding.scale.min}–${finding.scale.max})`:'',finding?documentEvidence(dataset,finding.evidence):'',doc.territory_match?documentEvidence(dataset,doc.territory_match):'Not recorded',dataset.generated_at]);
+      dataset.country.id,area?.id,area?.name,translateText(area?.type,language),area?.code_system,area?.official_code,area?.boundary_version,doc.id,doc.title,translateText(categoryLabels[categoryFor(doc)] || categoryFor(doc),language),translateText(documentPeriod(doc),language),translateText(doc.target_period?.kind,language),doc.target_period?.start,doc.target_period?.end,translateText(acquisitionLabel(doc),language),translateText(official.label,language),translateText(String(official.verified),language),doc.url,source?.name,source?.url,official.verified?localizedEvidence(official.evidence):translateText('Unverified',language),translateText(doc.content?.summary,language),doc.content?.priorities?.map(value=>translateText(value,language)).join('; '),doc.content?.objectives?.map(value=>translateText(value,language)).join('; '),doc.content?localizedEvidence(doc.content.evidence):'',translateText(finding?findingLabels[finding.kind] || finding.kind:'',language),translateText(finding?.label,language),finding?.value_status==='observed'?finding.value:null,translateText(finding?.value_status,language),translateText(finding?.unit,language),translateText(finding?.statement,language),translateText(finding?.period?.label,language),translateText(finding?.period?.kind,language),finding?.period?.start,finding?.period?.end,translateText(finding?.definition,language),translateText(finding?.scope,language),finding?.scale?`${translateText(finding.scale.label,language)} (${finding.scale.min}–${finding.scale.max})`:'',finding?localizedEvidence(finding.evidence):'',doc.territory_match?localizedEvidence(doc.territory_match):translateText('Not recorded',language),dataset.generated_at]);
   });
-  return makeCsv([columns,...rows]);
+  return makeCsv([columns.map(value=>translateText(value,language)),...rows]);
 }
-export function planningMarkdown(dataset, territoryId, period) {
+export function planningMarkdown(dataset, territoryId, period, language='en') {
   const area = dataset.territories.find(row => row.id === territoryId);
   if (!area) throw new Error('Unknown planning territory');
   const documents = planningDocuments(dataset,territoryId), settings=planningSettings(dataset);
@@ -379,11 +408,13 @@ export function planningMarkdown(dataset, territoryId, period) {
     '## 2. Acquired statistical evidence', '',
     `${period==null?'The latest confirmed observation for each indicator appears below, with its own source year.':'Only observations for this area and selected period appear below.'} National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.`, '',
     '| Indicator | Value | Unit | Year / period | Status | Source |', '|---|---:|---|---|---|---|',
-    ...evidence.map(({indicator, row, value, status, source,period:displayPeriod}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(row?.unit || indicator.unit)} | ${markdownText(row?.period || displayPeriod || 'Not recorded')} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
-    ...evidence.map(({indicator, row, source}) => `- ${markdownText(indicator.name)}: ${markdownText(row?.definition || indicator.definition || 'Definition not acquired')}. ${safeUrl(source?.url) ? `Source: <${safeUrl(source.url)}>.` : 'No verified source link.'} Retrieved: ${markdownText(source?.retrieved_at || 'Not recorded')}.`), '',
+    ...evidence.map(({indicator, row, value, status, source,period:displayPeriod}) => {const localized=localizedIndicator(indicator,language);return `| ${markdownText(localized.name)} | ${value === null ? '—' : String(value)} | ${markdownText(row?.unit || localized.unit)} | ${markdownText(row?.period || displayPeriod || 'Not recorded')} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`;}), '',
+    ...evidence.map(({indicator, row, source}) => {const localized=localizedIndicator(indicator,language);return `- ${markdownText(localized.name)}: ${markdownText(row?.definition || localized.definition || 'Definition not acquired')}. ${safeUrl(source?.url) ? `Source: <${safeUrl(source.url)}>.` : 'No verified source link.'} Retrieved: ${markdownText(source?.retrieved_at || 'Not recorded')}.`;}), '',
     ...evidence.flatMap(({indicator,row})=>{
       const meaning=observationContext(dataset,area,indicator,row);
-      return dataset.analysis || !meaning.comparable || indicator.definition_id || indicator.population ? [`- Meaning of ${markdownText(indicator.name)}: definition ID ${markdownText(meaning.definition_id || 'Not recorded')}; population ${markdownText(meaning.population || 'Not recorded')}; method ${markdownText(meaning.method || 'Not recorded')}. ${markdownText(meaning.reason || 'No explicit concept difference recorded; verify source compatibility.')}`]:[];
+      const localized=localizedIndicator(indicator,language);
+      const displayPopulation=meaning.population===indicator.population?localized.population:translateText(meaning.population,language);
+      return dataset.analysis || !meaning.comparable || indicator.definition_id || indicator.population ? [`- Meaning of ${markdownText(localized.name)}: definition ID ${markdownText(meaning.definition_id || 'Not recorded')}; population ${markdownText(displayPopulation || meaning.population || 'Not recorded')}; method ${markdownText(meaning.method || 'Not recorded')}. ${markdownText(meaning.reason || 'No explicit concept difference recorded; verify source compatibility.')}`]:[];
     }),
     '## Official materials and verified findings', '',
     'Document plan periods, fiscal years and quarters below are their own source periods. They are not filtered or relabelled as the statistical evidence period. Published materials remain distinct from this generated working outline.', '',
@@ -407,9 +438,9 @@ export function planningMarkdown(dataset, territoryId, period) {
   ];
   return lines.join('\n');
 }
-export function planningHtml(dataset, territoryId, period) {
+export function planningHtml(dataset, territoryId, period, language='en') {
   const area = dataset.territories.find(row => row.id === territoryId);
-  const markdown = planningMarkdown(dataset, territoryId, period);
+  const markdown = planningMarkdown(dataset, territoryId, period,language);
   // Render the exact downloadable Markdown as readable pre-wrapped text; no unsafe Markdown HTML execution.
   return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Planning base — ${escapeHtml(area.name)}</title><style>body{font:15px/1.6 system-ui,sans-serif;color:#172d3e;max-width:1000px;margin:28px auto;padding:0 20px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}h1{font-size:24px}.note{border-left:4px solid #267868;padding:10px 16px;background:#eff6f3}@media print{body{margin:0;max-width:none;font-size:11pt}pre{white-space:pre-wrap}@page{margin:18mm}}</style><body><h1>Planning base — ${escapeHtml(area.name)}</h1><p class="note">Generic, unapproved working outline. Use your browser’s Print command to print or save as PDF. Its evidence and content match the editable Markdown download.</p><pre>${escapeHtml(markdown)}</pre></body></html>`;
 }
