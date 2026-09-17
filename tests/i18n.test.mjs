@@ -62,6 +62,10 @@ test('dynamic map, brand, chart and ranking accessibility strings are localized'
   assert.equal(translateText('Namtha: 64.530 personas for 2024','es'),'Namtha: 64.530 personas en 2024');
   assert.equal(translateText('Full ranking and unranked areas','ja'),'全順位と順位なし地域');
   assert.equal(translateText('Full ranking and unranked areas','es'),'Clasificación completa y áreas sin clasificación');
+  assert.equal(translateText('No comparable local observations for Total population · 2025.','ja'),'Total population・2025には比較可能な地方観測値がありません。');
+  assert.equal(translateText('No comparable local observations for Población total · 2025.','es'),'No hay observaciones locales comparables para Población total · 2025.');
+  assert.equal(translateText('This level and period have no observed local values for the selected indicator.','ja'),'選択した指標について、この行政階層・期間の地方観測値はありません。');
+  assert.equal(translateText('The national source value is shown separately; no local ranking or local estimates are created.','es'),'El valor de la fuente nacional se muestra por separado; no se crean una clasificación local ni estimaciones locales.');
   assert.equal(translateText('source blank','ja'),'出典空欄');
 });
 
@@ -70,6 +74,9 @@ test('runtime map and ranking accessibility names pass through localization',asy
   assert.match(source,/rawLabel=.*label=translateText\(rawLabel,language\)/s);
   assert.match(source,/aria-label="\$\{e\(translateText\('Full ranking and unranked areas',language\)\)\}"/);
   assert.equal((source.match(/<optgroup label="\$\{e\(translateText\(levelLabel\(level\),language\)\)\}">/g)||[]).length,2);
+  assert.match(source,/noComparableTitle=translateText\(`/);
+  assert.match(source,/noComparableReason=translateText\(/);
+  assert.match(source,/noComparableConsequence=translateText\(/);
   assert.doesNotMatch(source,/aria-label="Full ranking and unranked areas"/);
 });
 
