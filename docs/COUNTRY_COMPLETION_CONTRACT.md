@@ -23,6 +23,8 @@ Completion is therefore a closure problem, not a page-generation event.
 
 The completion decision is valid only when `verify-delivery` reports `ready: true`.
 
+The delivery gate also requires one current A01-A42 result row per scenario, matching dataset counts, exact Kit version/commit provenance, and SHA-256/page records for every reviewed Word output. Historical reports do not satisfy this current-build record.
+
 ## Non-completion states
 
 The agent must continue working when any of these remains:

@@ -1,4 +1,5 @@
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { access, readFile, writeFile } from 'node:fs/promises';
 import { isMain, parseArgs, reportError } from '../lib/cli.mjs';
 import { validateDataset } from '../lib/validate.mjs';
@@ -35,6 +36,10 @@ function validHttpUrl(value) {
 
 function validEvidenceText(value) {
   return typeof value === 'string' && value.trim().length > 0 && !/(?:REPLACE(?:_WITH)?(?:_|$)|\b(?:TODO|TBD)\b)/i.test(value);
+}
+
+function normalizedEvidenceNumber(value) {
+  return String(value).replaceAll(',', '');
 }
 
 export async function verifyDelivery(project) {
@@ -83,6 +88,36 @@ export async function verifyDelivery(project) {
       const filename = safeProjectPath(projectDir, value);
       if (!filename || !await exists(filename)) errors.push(`validation.${key} evidence file is missing or outside the project: ${value}`);
     }
+  }
+
+  const acceptancePath = path.join(projectDir, 'evidence', 'ACCEPTANCE.md');
+  if (!await exists(acceptancePath)) errors.push('Missing evidence/ACCEPTANCE.md');
+  else {
+    const acceptanceText = await readFile(acceptancePath, 'utf8');
+    const rows = [...acceptanceText.matchAll(/^\|\s*(A(?:0[1-9]|[1-3][0-9]|4[0-2]))\s*\|\s*([^|]+)\|/gmu)];
+    const byId = new Map();
+    for (const match of rows) byId.set(match[1], [...(byId.get(match[1]) || []), match[2].trim()]);
+    for (let index = 1; index <= 42; index += 1) {
+      const id = `A${String(index).padStart(2, '0')}`, results = byId.get(id) || [];
+      if (results.length !== 1) errors.push(`ACCEPTANCE must contain exactly one current result row for ${id}`);
+      else if (/(?:未実施|未確認|未完了|fail(?:ed)?|reject(?:ed)?|not performed|pending)/iu.test(results[0])) errors.push(`ACCEPTANCE ${id} is not a final pass or justified not-applicable result: ${results[0]}`);
+    }
+    const counts = [data.territories?.length || 0, data.indicators?.length || 0, data.observations?.length || 0, data.documents?.length || 0];
+    const normalizedAcceptance = normalizedEvidenceNumber(acceptanceText);
+    for (const count of counts) if (!normalizedAcceptance.includes(String(count))) errors.push(`ACCEPTANCE does not record current dataset count: ${count}`);
+  }
+
+  const templateReferencePath = path.join(projectDir, 'TEMPLATE_REFERENCE.json');
+  let templateReference = null;
+  if (!await exists(templateReferencePath)) errors.push('Missing TEMPLATE_REFERENCE.json');
+  else {
+    try { templateReference = JSON.parse(await readFile(templateReferencePath, 'utf8')); }
+    catch { errors.push('TEMPLATE_REFERENCE.json is not valid JSON'); }
+  }
+  if (!delivery.template || !validEvidenceText(delivery.template.version) || !validEvidenceText(delivery.template.commit)) errors.push('DELIVERY.template must record the exact Kit version and commit');
+  else if (templateReference) {
+    if (templateReference.package_version !== delivery.template.version) errors.push('DELIVERY.template.version must match TEMPLATE_REFERENCE.package_version');
+    if (templateReference.git_commit !== delivery.template.commit) errors.push('DELIVERY.template.commit must match TEMPLATE_REFERENCE.git_commit');
   }
 
   const localIds = new Set((data.territories || []).filter(area => area.id !== data.country?.national_territory_id).map(area => area.id));
@@ -254,6 +289,19 @@ export async function verifyDelivery(project) {
     else if(key==='sample_file'){
       const bytes=await readFile(filename);
       if(bytes.length<4||bytes[0]!==0x50||bytes[1]!==0x4b||bytes[2]!==0x03||bytes[3]!==0x04)errors.push('word_plan.sample_file is not a DOCX ZIP package');
+    }
+  }
+  if (!Array.isArray(word?.artifacts) || !word.artifacts.length) errors.push('word_plan.artifacts must record every reviewed Word output');
+  for (const artifact of word?.artifacts || []) {
+    const filename = safeProjectPath(projectDir, artifact.file);
+    if (!filename || !await exists(filename)) { errors.push(`word_plan artifact is missing or outside the project: ${artifact.file || ''}`); continue; }
+    const bytes = await readFile(filename), actualHash = createHash('sha256').update(bytes).digest('hex');
+    if (!/^[0-9a-f]{64}$/i.test(artifact.sha256 || '') || actualHash !== String(artifact.sha256).toLowerCase()) errors.push(`word_plan artifact SHA-256 does not match: ${artifact.file}`);
+    if (!Number.isInteger(artifact.rendered_pages) || artifact.rendered_pages < 1) errors.push(`word_plan artifact rendered_pages must be a positive integer: ${artifact.file}`);
+    if (await exists(acceptancePath)) {
+      const acceptanceText = await readFile(acceptancePath, 'utf8');
+      if (!acceptanceText.toLowerCase().includes(actualHash)) errors.push(`ACCEPTANCE does not record the current Word SHA-256: ${artifact.file}`);
+      if (!acceptanceText.includes(String(artifact.rendered_pages))) errors.push(`ACCEPTANCE does not record the current Word page count: ${artifact.file}`);
     }
   }
 

@@ -14,7 +14,7 @@ async function readyProject() {
   const root=await mkdtemp(path.join(os.tmpdir(),'census-delivery-')),data=planningFixture('integrated');
   for(const directory of ['data','evidence','raw','site/territorial','site/thematic','site/planning'])await mkdir(path.join(root,directory),{recursive:true});
   await writeFile(path.join(root,'data/dashboard.json'),JSON.stringify(data));
-  for(const file of ['SOURCES.md','INDICATOR_INVENTORY.csv','CODE_CROSSWALK.csv','PLANNING_CENSUS_AUDIT.md','VALIDATION.md','ACCEPTANCE.md','validation.json','WORD_RENDER_CHECK.md','GEOGRAPHY_REVIEW.md','COUNTRY_LESSON_AUDIT.md'])await writeFile(path.join(root,'evidence',file),'verified test evidence');
+  for(const file of ['SOURCES.md','INDICATOR_INVENTORY.csv','CODE_CROSSWALK.csv','PLANNING_CENSUS_AUDIT.md','VALIDATION.md','validation.json','WORD_RENDER_CHECK.md','GEOGRAPHY_REVIEW.md','COUNTRY_LESSON_AUDIT.md'])await writeFile(path.join(root,'evidence',file),'verified test evidence');
   await writeFile(path.join(root,'raw','test-fixture'),'synthetic source fields');
   await writeFile(path.join(root,'raw','international-data.pdf'),'synthetic international fields');
   await writeFile(path.join(root,'evidence','WORD_SAMPLE.docx'),planDocxBytes(data,'city','2024'));
@@ -35,7 +35,12 @@ async function readyProject() {
   ];
   await writeFile(path.join(root,'evidence/THEME_COVERAGE.json'),JSON.stringify({schema_version:'0.1',completed_at:'2026-09-15T00:00:00Z',themes}));
   const levelRows=[...new Set(data.territories.filter(area=>area.level!=='national').map(area=>area.level))].map(level=>{const ids=new Set(data.territories.filter(area=>area.level===level).map(area=>area.id)),boundaryIds=new Set(data.boundaries.features.map(feature=>feature.properties.territory_id).filter(id=>ids.has(id)));return {level,territory_count:ids.size,boundary_count:boundaryIds.size,status:boundaryIds.size===0?'none':boundaryIds.size===ids.size?'complete':'partial',unjoined_ids_recorded:true};});
-  const delivery={schema_version:'0.3',status:'ready',country_id:'TST',completed_at:'2026-09-15T00:00:00Z',research,default_view:{territory_id:'TST',indicator_id:'population',period:'2024'},empty_comparisons:{collapsed_or_suppressed:true},coverage_claims:{qualified_by_indicator_period_level:true},source_table_inventory:{status:'passed',file:'evidence/SOURCE_TABLE_INVENTORY.json',all_adopted_indicators_traced:true,all_numeric_fields_decided:true},source_resource_inventory:{status:'passed',file:'evidence/SOURCE_RESOURCE_INVENTORY.json',all_expected_resources_dispositioned:true},theme_coverage:{status:'passed',file:'evidence/THEME_COVERAGE.json',candidates_integrated_or_constrained:true},geography_review:{status:'passed',stable_url_identity_checked:true,no_geometry_layout_checked:true,selectable_levels:levelRows,evidence_file:'evidence/GEOGRAPHY_REVIEW.md'},period_and_language_review:{status:'passed',latest_value_per_indicator:true,source_year_shown_per_value:true,historical_period_controls_absent:true,national_context_separated_on_local_views:true,mixed_language_reviewed:true,evidence_file:'evidence/ACCEPTANCE.md'},word_plan:{status:'passed',outline_checked_against_law:true,sample_file:'evidence/WORD_SAMPLE.docx',render_evidence_file:'evidence/WORD_RENDER_CHECK.md'},validation,artifacts:['site/index.html','site/territorial/index.html','site/thematic/index.html','site/planning/index.html','data/dashboard.json','evidence/WORD_SAMPLE.docx','HANDOFF.md'],limitations:[]};
+  const sampleBytes=await readFile(path.join(root,'evidence/WORD_SAMPLE.docx'));
+  const sampleHash=(await import('node:crypto')).createHash('sha256').update(sampleBytes).digest('hex');
+  const acceptanceRows=Array.from({length:42},(_,index)=>`| A${String(index+1).padStart(2,'0')} | Pass | Synthetic current-build evidence |`).join('\n');
+  await writeFile(path.join(root,'evidence/ACCEPTANCE.md'),`# Acceptance\n\nDataset counts: ${data.territories.length}, ${data.indicators.length}, ${data.observations.length}, ${data.documents.length}. Word SHA-256 ${sampleHash}; 1 page.\n\n${acceptanceRows}\n`);
+  await writeFile(path.join(root,'TEMPLATE_REFERENCE.json'),JSON.stringify({package_version:'test',git_commit:'a'.repeat(40)}));
+  const delivery={schema_version:'0.3',status:'ready',country_id:'TST',completed_at:'2026-09-15T00:00:00Z',research,default_view:{territory_id:'TST',indicator_id:'population',period:'2024'},empty_comparisons:{collapsed_or_suppressed:true},coverage_claims:{qualified_by_indicator_period_level:true},source_table_inventory:{status:'passed',file:'evidence/SOURCE_TABLE_INVENTORY.json',all_adopted_indicators_traced:true,all_numeric_fields_decided:true},source_resource_inventory:{status:'passed',file:'evidence/SOURCE_RESOURCE_INVENTORY.json',all_expected_resources_dispositioned:true},theme_coverage:{status:'passed',file:'evidence/THEME_COVERAGE.json',candidates_integrated_or_constrained:true},geography_review:{status:'passed',stable_url_identity_checked:true,no_geometry_layout_checked:true,selectable_levels:levelRows,evidence_file:'evidence/GEOGRAPHY_REVIEW.md'},period_and_language_review:{status:'passed',latest_value_per_indicator:true,source_year_shown_per_value:true,historical_period_controls_absent:true,national_context_separated_on_local_views:true,mixed_language_reviewed:true,evidence_file:'evidence/ACCEPTANCE.md'},word_plan:{status:'passed',outline_checked_against_law:true,sample_file:'evidence/WORD_SAMPLE.docx',render_evidence_file:'evidence/WORD_RENDER_CHECK.md',artifacts:[{language:'en',file:'evidence/WORD_SAMPLE.docx',sha256:sampleHash,rendered_pages:1}]},validation,artifacts:['site/index.html','site/territorial/index.html','site/thematic/index.html','site/planning/index.html','data/dashboard.json','evidence/WORD_SAMPLE.docx','HANDOFF.md'],limitations:[],template:{version:'test',commit:'a'.repeat(40)}};
   await writeFile(path.join(root,'evidence/DELIVERY.json'),JSON.stringify(delivery));
   return {root,data,delivery};
 }
@@ -90,6 +95,15 @@ test('delivery gate requires latest-per-indicator presentation evidence',async()
   await writeFile(path.join(root,'evidence/DELIVERY.json'),JSON.stringify(delivery));
   const result=await verifyDelivery(root);
   assert.equal(result.ready,false);assert.match(result.errors.join('\n'),/source_year_shown_per_value must be true/);
+});
+
+test('delivery gate rejects incomplete acceptance and inconsistent template provenance',async()=>{
+  const {root,delivery}=await readyProject();
+  await writeFile(path.join(root,'evidence/ACCEPTANCE.md'),'| A01 | Pass | only one row |\n');
+  delivery.template.commit='b'.repeat(40);
+  await writeFile(path.join(root,'evidence/DELIVERY.json'),JSON.stringify(delivery));
+  const result=await verifyDelivery(root),errors=result.errors.join('\n');
+  assert.equal(result.ready,false);assert.match(errors,/A02/);assert.match(errors,/must match TEMPLATE_REFERENCE.git_commit/);
 });
 
 test('delivery gate rejects a catalogue when only one of 64 discovered resources is integrated',async()=>{

@@ -51,7 +51,10 @@
     "status": "passed",
     "outline_checked_against_law": true,
     "sample_file": "evidence/WORD_SAMPLE.docx",
-    "render_evidence_file": "evidence/WORD_RENDER_CHECK.md"
+    "render_evidence_file": "evidence/WORD_RENDER_CHECK.md",
+    "artifacts": [
+      {"language": "REPLACE", "file": "evidence/WORD_SAMPLE.docx", "sha256": "REPLACE_WITH_64_HEX_SHA256", "rendered_pages": 0}
+    ]
   },
   "validation": {
     "kit_check": {"status": "passed", "evidence_files": ["evidence/VALIDATION.md"]},
@@ -60,6 +63,7 @@
     "browser": {"status": "passed", "evidence_files": ["evidence/ACCEPTANCE.md"]},
     "outputs": {"status": "passed", "evidence_files": ["evidence/ACCEPTANCE.md"]}
   },
+  "template": {"version": "REPLACE_WITH_PACKAGE_VERSION", "commit": "REPLACE_WITH_GIT_COMMIT"},
   "artifacts": ["site/index.html", "site/territorial/index.html", "site/thematic/index.html", "site/planning/index.html", "data/dashboard.json", "evidence/WORD_SAMPLE.docx", "HANDOFF.md"],
   "limitations": []
 }
