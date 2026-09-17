@@ -144,6 +144,7 @@ const COPY={
   'Time series CSV':['CSV de serie temporal','時系列CSV'],
   'Selected-area history':['Historial del área seleccionada','選択地域の履歴'],
   'Find and compare areas':['Buscar y comparar áreas','地域を検索・比較'],
+  'Full ranking and unranked areas':['Clasificación completa y áreas sin clasificación','全順位と順位なし地域'],
   'Search ranking by name or code':['Buscar en la clasificación por nombre o código','ランキングを名称・コードで検索'],
   'Order':['Orden','並び順'],
   'Highest first':['Mayor primero','高い順'],
@@ -432,6 +433,7 @@ const COPY={
   'missing':['faltante','欠測'],
   'not_collected':['no_recopilado','未収集'],
   'incomplete':['incompleto','不完全'],
+  'source blank':['vacío en la fuente','出典空欄'],
   'source_reported':['publicado_por_fuente','出典公表値'],
   'calculated_from_source_fields':['calculado_a_partir_de_campos_de_fuente','出典項目から算出'],
   'areadata_calculated':['calculado_por_tablero','ダッシュボード算出値'],
@@ -523,6 +525,7 @@ export function resolveLanguage({query='',stored='',browserLanguages=[]}={}){
 export function languageLocale(language){return language==='es'?'es':language==='ja'?'ja-JP':'en-US';}
 
 const patternTranslations=[
+  [/^(.+): (.+) for (\d{4})$/,(m,l)=>l==='es'?`${m[1]}: ${m[2]} en ${m[3]}`:`${m[1]}：${m[2]}・${m[3]}年`],
   [/^(.+) · return to the national territorial diagnostic$/,(m,l)=>l==='es'?`${m[1]} · volver al diagnóstico territorial nacional`:`${m[1]}・全国の地域診断へ戻る`],
   [/^(.+)\. Select an area with Enter\. Arrow keys move between boundaries\.$/,(m,l)=>`${translateText(m[1],l)}. ${translateText('Select an area with Enter. Arrow keys move between boundaries.',l)}`],
   [/^(.+) — (.+); view fitted to (.+)$/,(m,l)=>l==='es'?`${translateText(m[1],l)} — ${m[2]}; vista ajustada a ${m[3]}`:`${translateText(m[1],l)} — ${m[2]}（${m[3]}に表示範囲を調整）`],

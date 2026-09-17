@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
 import {resolveLanguage,languageLocale,translateText,sourceSeriesLabel,localizedIndicator} from '../scaffold/site/i18n.mjs';
 
 test('browser language chooses Japanese, Spanish or English when no preference exists',()=>{
@@ -55,6 +56,18 @@ test('dynamic map, brand, chart and ranking accessibility strings are localized'
   assert.equal(translateText('Namtha · population by age group and sex · 2024','ja'),'Namtha・年齢階級・性別人口・2024');
   assert.equal(translateText('Rank 1 of 5 observed areas (highest first).','es'),'Posición 1 de 5 áreas observadas (de mayor a menor).');
   assert.equal(translateText('Diagnostic sections','ja'),'診断セクション');
+  assert.equal(translateText('Namtha: 64,530 people for 2024','ja'),'Namtha：64,530 people・2024年');
+  assert.equal(translateText('Namtha: 64.530 personas for 2024','es'),'Namtha: 64.530 personas en 2024');
+  assert.equal(translateText('Full ranking and unranked areas','ja'),'全順位と順位なし地域');
+  assert.equal(translateText('Full ranking and unranked areas','es'),'Clasificación completa y áreas sin clasificación');
+  assert.equal(translateText('source blank','ja'),'出典空欄');
+});
+
+test('runtime map and ranking accessibility names pass through localization',async()=>{
+  const source=await readFile(new URL('../scaffold/site/app.mjs',import.meta.url),'utf8');
+  assert.match(source,/rawLabel=.*label=translateText\(rawLabel,language\)/s);
+  assert.match(source,/aria-label="\$\{e\(translateText\('Full ranking and unranked areas',language\)\)\}"/);
+  assert.doesNotMatch(source,/aria-label="Full ranking and unranked areas"/);
 });
 
 test('dynamic thematic navigation notices and scope labels are localized',()=>{
