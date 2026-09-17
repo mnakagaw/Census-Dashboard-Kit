@@ -122,7 +122,42 @@ AIやPCが予期せず終了した場合だけ、同じ作業フォルダーで�
 取得済み原資料と実装を再利用し、残る公式地方データの統合、3ページ、実画面と出力の検証を完了してください。
 ```
 
-### ③ Codex Sitesで公開したい人だけ
+### ③ 別スレッドで独立監査する
+
+制作を担当したスレッドを**A**とします。Aが完成報告した後、同じ国別Projectまたは同じ成果フォルダーを開ける**別の新規スレッド**を作り、監査だけを依頼します。Antigravityでは同じProjectの`New Conversation`、Codexでは同じProjectを指定した`New Task`、Claude Codeでは同じフォルダーを開く別セッションです。Aと監査スレッドを同時に編集させず、まずAの作業完了を待ってください。
+
+監査項目と報告形式は[独立完成監査](docs/INDEPENDENT_AUDIT.md)にまとめています。監査スレッドは修正を行わず、実データ、出典、画面操作、地理、出力を独自に確認して、国別成果の`evidence/INDEPENDENT_AUDIT.md`へ結果を保存します。自動テストやAの自己申告を、そのまま合格根拠にしません。
+
+#### 監査スレッドへ貼るプロンプト
+
+```text
+この国別ダッシュボードの独立完成監査をしてください。制作や修正はせず、実物と原資料から問題を検出してください。
+
+監査基準：
+https://github.com/mnakagaw/Census-Dashboard-Kit/blob/main/docs/INDEPENDENT_AUDIT.md
+
+同じ国別Projectのdata、raw、evidence、site、実ブラウザー、CSV・印刷・DOCXを確認してください。
+evidence/DELIVERY.jsonやテスト成功をそのまま信用せず、監査基準に従って代表地域と例外地域を実操作し、元資料の表・列・値・年・地域・出典まで照合してください。
+
+修正は行わず、BLOCKING、MAJOR、MINORの順に、再現手順、期待結果、実結果、根拠、修正後の受入条件を記録してください。
+結果を国別Projectのevidence/INDEPENDENT_AUDIT.mdへ保存し、最後にACCEPT、REJECT、INCOMPLETE AUDITのいずれかを明記してください。
+```
+
+監査が`REJECT`または`INCOMPLETE AUDIT`なら、Aへ戻り、次を貼ります。監査報告が同じ成果フォルダーに保存されていない環境では、報告全文も一緒に貼り付けます。
+
+```text
+別スレッドの独立監査結果を確認してください。
+対象：evidence/INDEPENDENT_AUDIT.md
+監査基準：https://github.com/mnakagaw/Census-Dashboard-Kit/blob/main/docs/INDEPENDENT_AUDIT.md
+
+指摘を重大度にかかわらず一件ずつ再現し、原因を修正してください。説明やDELIVERY.jsonの合格欄だけを書き換えて解決扱いにせず、データ、出典、地理、画面、出力の実物を直してください。
+修正後に通常の検証、実ブラウザー確認、DOCXレンダリング、納品ゲートを再実行し、対応結果をevidence/INDEPENDENT_AUDIT_REMEDIATION.mdへ残してください。
+すべて終わったら、同じ監査基準で再監査できる状態にしてください。
+```
+
+Aの修正後は、監査スレッドへ「修正版を同じ基準で再監査し、前回指摘の再現結果と最終判定を更新してください」と送ります。監査が`ACCEPT`になるまで、完成品として公開しません。
+
+### ④ Codex Sitesで公開したい人だけ
 
 この節は、上の共通プロンプトで国別ダッシュボードが完成した後、**Codex SitesのURLで公開したい人だけ**が行います。Antigravity、Gemini、Claude CodeでPC内の完成品を作る手順には不要です。共通プロンプトの「外部公開は別途依頼」という条件に対する、明示的な公開依頼になります。
 
@@ -247,7 +282,7 @@ tests/                   選択、欠測、地理、計画、出力等の回帰�
 .github/workflows/       キットCIと管理者用の内部作業場所確認
 ```
 
-[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。利用者向けの主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[世界全体とJICA優先142か国・地域の運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。JICA優先台帳は[`config/jica-priority-country-registry.json`](config/jica-priority-country-registry.json)、全142件の探索開始アドレスは[`config/jica-priority-source-preflight.json`](config/jica-priority-source-preflight.json)で機械判定します。生成後のサイトとWordは利用者自身の成果物であり、国別作業ディレクトリで文言、テーマ、資料、公開先を修正・再生成できます。
+[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。利用者向けの主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[独立完成監査](docs/INDEPENDENT_AUDIT.md)、[世界全体とJICA優先142か国・地域の運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。JICA優先台帳は[`config/jica-priority-country-registry.json`](config/jica-priority-country-registry.json)、全142件の探索開始アドレスは[`config/jica-priority-source-preflight.json`](config/jica-priority-source-preflight.json)で機械判定します。生成後のサイトとWordは利用者自身の成果物であり、国別作業ディレクトリで文言、テーマ、資料、公開先を修正・再生成できます。
 
 ## ライセンスと第三者データ
 
