@@ -61,6 +61,7 @@ test('dynamic thematic navigation notices and scope labels are localized',()=>{
   assert.equal(translateText('Lao PDR · Thematic diagnostic','es'),'Lao PDR · Diagnóstico temático');
   assert.equal(translateText('Comparing administrative level 1 areas across Lao PDR.','es'),'Comparando áreas de Nivel administrativo 1 en Lao PDR.');
   assert.equal(translateText('The linked indicator “OLD_ID” is unavailable in this edition. The first available indicator is shown.','ja'),'リンクされた指標「OLD_ID」はこのデータ版では利用できません。利用可能な最初の指標を表示します。');
+  assert.equal(translateText('Dhaka · division · BD30 · boundaries 2020','ja'),'Dhaka · 管区 · BD30 · boundaries 2020');
 });
 
 test('country indicators use explicit language records without bilingual leakage',()=>{
