@@ -48,6 +48,15 @@ test('core interface and source-series labels have all three display languages',
   assert.equal(sourceSeriesLabel({series_family:'international_reference',series_stage_by_period:{2026:'medium_projection'}},null,'2026','en'),'UN medium projection 2026');
 });
 
+test('dynamic map, brand, chart and ranking accessibility strings are localized',()=>{
+  assert.equal(translateText('Lao PDR · return to the national territorial diagnostic','ja'),'Lao PDR・全国の地域診断へ戻る');
+  assert.equal(translateText('Location. Select an area with Enter. Arrow keys move between boundaries.','ja'),'位置. Enterで地域を選択します。矢印キーで境界間を移動します。');
+  assert.equal(translateText('Location — Lao PDR; view fitted to Namtha','es'),'Ubicación — Lao PDR; vista ajustada a Namtha');
+  assert.equal(translateText('Namtha · population by age group and sex · 2024','ja'),'Namtha・年齢階級・性別人口・2024');
+  assert.equal(translateText('Rank 1 of 5 observed areas (highest first).','es'),'Posición 1 de 5 áreas observadas (de mayor a menor).');
+  assert.equal(translateText('Diagnostic sections','ja'),'診断セクション');
+});
+
 test('country indicators use explicit language records without bilingual leakage',()=>{
   const indicator={id:'population',name:'Population estimate',theme:'Population and demography',definition:'Estimated resident population.',population:'Resident population',unit:'people',translations:{ja:{name:'推計人口',theme:'人口・動態',definition:'推計居住人口。',population:'居住人口',unit:'人'},es:{name:'Estimación de población',theme:'Población y demografía',definition:'Población residente estimada.',population:'Población residente',unit:'personas'}}};
   assert.deepEqual(localizedIndicator(indicator,'en'),indicator);

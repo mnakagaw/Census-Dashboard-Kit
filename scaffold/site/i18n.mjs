@@ -116,6 +116,9 @@ const COPY={
   'Show whole country':['Mostrar todo el país','国全体を表示'],
   'Map extent':['Extensión del mapa','地図の表示範囲'],
   'Map zoom':['Zoom del mapa','地図の拡大・縮小'],
+  'Diagnostic sections':['Secciones del diagnóstico','診断セクション'],
+  'Select an area with Enter. Arrow keys move between boundaries.':['Seleccione un área con Enter. Las teclas de flecha recorren los límites.','Enterで地域を選択します。矢印キーで境界間を移動します。'],
+  'whole available boundary layer':['toda la capa de límites disponible','利用可能な境界レイヤー全体'],
   'Zoom in':['Acercar','拡大'],
   'Zoom out':['Alejar','縮小'],
   'Reset map zoom':['Restablecer zoom','拡大率をリセット'],
@@ -517,6 +520,12 @@ export function resolveLanguage({query='',stored='',browserLanguages=[]}={}){
 export function languageLocale(language){return language==='es'?'es':language==='ja'?'ja-JP':'en-US';}
 
 const patternTranslations=[
+  [/^(.+) · return to the national territorial diagnostic$/,(m,l)=>l==='es'?`${m[1]} · volver al diagnóstico territorial nacional`:`${m[1]}・全国の地域診断へ戻る`],
+  [/^(.+)\. Select an area with Enter\. Arrow keys move between boundaries\.$/,(m,l)=>`${translateText(m[1],l)}. ${translateText('Select an area with Enter. Arrow keys move between boundaries.',l)}`],
+  [/^(.+) — (.+); view fitted to (.+)$/,(m,l)=>l==='es'?`${translateText(m[1],l)} — ${m[2]}; vista ajustada a ${m[3]}`:`${translateText(m[1],l)} — ${m[2]}（${m[3]}に表示範囲を調整）`],
+  [/^(.+) — (.+); whole available boundary layer$/,(m,l)=>l==='es'?`${translateText(m[1],l)} — ${m[2]}; toda la capa de límites disponible`:`${translateText(m[1],l)} — ${m[2]}（利用可能な境界レイヤー全体）`],
+  [/^(.+) · population by age group and sex · (.+)$/,(m,l)=>l==='es'?`${m[1]} · población por grupo de edad y sexo · ${m[2]}`:`${m[1]}・年齢階級・性別人口・${m[2]}`],
+  [/^Rank (\d+) of (\d+) observed areas \((highest|lowest) first\)\.$/,(m,l)=>l==='es'?`Posición ${m[1]} de ${m[2]} áreas observadas (${m[3]==='highest'?'de mayor a menor':'de menor a mayor'}).`:`観測済み${m[2]}地域中${m[1]}位（${m[3]==='highest'?'高い順':'低い順'}）。`],
   [/^Prepared (.+) for (.+)\.$/,(m,l)=>l==='es'?`Se preparó ${m[1]} para ${m[2]}.`:`${m[2]}用の${m[1]}を準備しました。`],
   [/^Selected (.+), (.+), newest comparable year (.+)\.$/,(m,l)=>l==='es'?`Seleccionado: ${m[1]}, ${translateText(m[2],l)}; año comparable más reciente ${m[3]}.`:`選択中：${m[1]}、${translateText(m[2],l)}。比較可能な最新年は${m[3]}年です。`],
   [/^(.+) · national$/,(m,l)=>l==='es'?`${m[1]} · nacional`:`${m[1]}・全国`],
