@@ -57,6 +57,12 @@ test('dynamic map, brand, chart and ranking accessibility strings are localized'
   assert.equal(translateText('Diagnostic sections','ja'),'診断セクション');
 });
 
+test('dynamic thematic navigation notices and scope labels are localized',()=>{
+  assert.equal(translateText('Lao PDR · Thematic diagnostic','es'),'Lao PDR · Diagnóstico temático');
+  assert.equal(translateText('Comparing administrative level 1 areas across Lao PDR.','es'),'Comparando áreas de Nivel administrativo 1 en Lao PDR.');
+  assert.equal(translateText('The linked indicator “OLD_ID” is unavailable in this edition. The first available indicator is shown.','ja'),'リンクされた指標「OLD_ID」はこのデータ版では利用できません。利用可能な最初の指標を表示します。');
+});
+
 test('country indicators use explicit language records without bilingual leakage',()=>{
   const indicator={id:'population',name:'Population estimate',theme:'Population and demography',definition:'Estimated resident population.',population:'Resident population',unit:'people',translations:{ja:{name:'推計人口',theme:'人口・動態',definition:'推計居住人口。',population:'居住人口',unit:'人'},es:{name:'Estimación de población',theme:'Población y demografía',definition:'Población residente estimada.',population:'Población residente',unit:'personas'}}};
   assert.deepEqual(localizedIndicator(indicator,'en'),indicator);
