@@ -47,6 +47,8 @@ test('core interface and source-series labels have all three display languages',
   assert.equal(sourceSeriesLabel({series_family:'census'},{period:'2022'},'2022','es'),'Censo 2022');
   assert.equal(sourceSeriesLabel({series_family:'international_reference'},{series_stage:'medium_projection'},'2026','ja'),'国連中位推計 2026年');
   assert.equal(sourceSeriesLabel({series_family:'international_reference',series_stage_by_period:{2026:'medium_projection'}},null,'2026','en'),'UN medium projection 2026');
+  assert.match(translateText('All comparisons use this indicator and period policy; changing an area retains both. Mixed-period rows show each area\'s actual source year.','ja'),/すべての比較/);
+  assert.match(translateText('All comparisons use this indicator and period policy; changing an area retains both. Mixed-period rows show each area\'s actual source year.','es'),/Todas las comparaciones/);
 });
 
 test('dynamic map, brand, chart and ranking accessibility strings are localized',()=>{

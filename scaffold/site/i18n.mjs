@@ -158,6 +158,7 @@ const COPY={
   'Source reported.':['Publicado por la fuente.','出典公表値。'],
   'Unit:':['Unidad:','単位：'],
   'Every displayed value carries its own source year.':['Cada valor mostrado conserva su propio año de fuente.','表示する各値にそれぞれの出典年を示します。'],
+  'All comparisons use this indicator and period policy; changing an area retains both. Mixed-period rows show each area\'s actual source year.':['Todas las comparaciones usan este indicador y esta política de período; al cambiar de área se conservan ambos. Las filas con períodos distintos muestran el año real de la fuente de cada área.','すべての比較でこの指標と期間方針を使用し、地域を変更しても両方を保持します。期間が異なる行には、各地域の実際の出典年を示します。'],
   'Median of comparable local areas':['Mediana de áreas locales comparables','比較可能な地域の中央値'],
   'Local data coverage':['Cobertura de datos locales','地方データ被覆'],
   'Observed local range':['Rango local observado','観測済み地域の範囲'],
