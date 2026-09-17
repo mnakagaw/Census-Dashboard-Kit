@@ -1,8 +1,27 @@
 # Census Dashboard Kit
 
-**Give a local coding AI one country name and this repository URL. The AI must research, build and verify a usable country dashboard before it returns the result.**
+国名とこのPublicリポジトリのURLをCodex、Antigravity、Claude Codeへ渡し、各国の公式資料を調査して国別ダッシュボードを作るためのOSSキットです。
 
-国名とこのPublicリポジトリのURLをAntigravity、Gemini、Claude Code、Codex等へ渡し、各国の公式資料を調査して国別ダッシュボードを作るためのOSSキットです。
+## 最短手順：これだけ！
+
+1. 国別ダッシュボードを保存する**空のフォルダー**を作ります。
+2. 使用するAIで、そのフォルダーをローカルのProjectとして開きます。
+   - [① Codexの設定](#codex-settings)
+   - [② Antigravityの設定](#antigravity-settings)
+   - [③ Claude Codeの設定](#claude-code-settings)
+3. 次の一発作成プロンプトで`［XX国］`だけを書き換え、AIへ送ります。
+
+```text
+以下のGitHubを参照して、［XX国］のCensusダッシュボードを作成してください。
+https://github.com/mnakagaw/Census-Dashboard-Kit/blob/main/prompts/ONE_COUNTRY_COMPLETE.md
+```
+
+4. AIが調査・作成・検証を終えるまで待ちます。作成後は、次の順に進めます。
+   - [① 別スレッドで監査する](#post-build-audit)
+   - [② スクリーンショットで修正を依頼する](#post-build-fix)
+   - [③ Codex Sitesで公開する](#codex-sites-publish)
+
+詳しい完成条件は[一発完成プロンプト](prompts/ONE_COUNTRY_COMPLETE.md)に含まれています。通常は長い指示を自分でコピーしたり、制作工程を一つずつ指示したりする必要はありません。
 
 > [!IMPORTANT]
 > 利用者が行う依頼は一回です。AIは内部で作業場所の準備、公式資料調査、データ取得・統合、3ページの制作、ブラウザー操作、出力照合、納品ゲートまで連続して実行します。途中の生成サイト、全国値だけの画面、リンク一覧、緑のGitHub Actionsを利用者への成果として返してはいけません。
@@ -19,27 +38,49 @@
 
 国ごとに行政階層、法定の計画主体、言語、指標、統計年、地図、図表、資料形式が違うため、画面を一律に複製しません。共通化するのはページの役割、地域選択の意味、欠測と出典の扱い、取得・検証手順です。
 
-## AIで作る手順
+## 環境ごとの設定
 
-### ① 準備・設定
+### 共通の準備
 
-Antigravity、Codex、Claude Codeのいずれかにログイン済みで、アプリを使える状態から始めます。ここではインストール方法は説明しません。
+Codex、Antigravity、Claude Codeのいずれかにログイン済みで、アプリを使える状態から始めます。ここではインストール方法は説明しません。
 
 1. 国別成果を保存する**空の作業フォルダー**を一つ用意します。既存の業務リポジトリやこのキットの原本を直接編集する場所は避けます。
    国別成果のフォルダー名と公開URLは、ISO 3166-1 alpha-3の小文字で統一します（例：バングラデシュ=`bgd`、ラオス=`lao`）。
 2. 使用するAIで、そのフォルダーをローカルのプロジェクトまたはワークスペースとして開きます。
 3. 下表の権限を設定します。このリポジトリはPublicなので、読むだけならGitHub連携やGitHubの有料契約は不要です。作成物を自分のGitHubへpushする段階では、その利用者のGitHub認証が必要です。
-4. ②のプロンプトで`［国名］`だけを変更し、AIのチャット欄へ貼り付けます。
+4. [一発作成プロンプト](#one-shot-prompt)で`［XX国］`だけを変更し、AIのチャット欄へ貼り付けます。
 
 | AI | 開始時の設定 |
 |---|---|
-| **Google Antigravity** | 空フォルダーを`Local`プロジェクトとして開きます。**その国別Projectの設定**で`Security Preset: Full Machine`、コマンドと成果物の自動続行に相当する設定を選びます。Web・Chrome操作の接続要求が出たら許可します。別Project名の`Modified in ...`は今回の設定ではありません。 |
 | **Codex** | 新しいローカルタスクを作り、空フォルダーまたは保存済みプロジェクトを作業場所に指定します。作業フォルダーの読み書き、ターミナル、ネット接続、ブラウザー確認を許可します。クラウドの会話だけではなく、ローカルファイルとコマンドを扱える実行環境を使います。 |
+| **Google Antigravity** | 空フォルダーを`Local`プロジェクトとして開きます。国別Projectの設定で、フォルダー外へのアクセスを`Deny`、Project内のコマンドと成果物の確認を`Always Proceed`にします。Web・Chrome操作の接続要求が出たら許可します。 |
 | **Claude Code** | 空フォルダーを作業ディレクトリとして開き、そのフォルダーを信頼します。プロジェクト内のRead・Edit、コマンド実行、Web検索・取得を許可します。確認を省略したい場合は許可済み操作の自動承認を使えますが、PC全体を無制限に許可する設定は必須ではありません。 |
 
 3製品とも、必要なのは**Public GitHubの読取、作業フォルダーへの書込、ターミナル、ネット接続、生成サイトを確認するブラウザー**です。プロンプトへ「フルアクセス」と書くだけでは権限は変わらないため、実際の許可画面で設定してください。秘密情報や再配布できない資料をPublic GitHubへ保存する権限は含みません。
 
-#### Antigravityで、最初に押す場所
+<a id="codex-settings"></a>
+
+### ① Codexを使う人：Localタスクで空フォルダーを開く
+
+<details>
+<summary><strong>Codexの具体的な開始手順を開く</strong></summary>
+
+
+1. Codexで`New Task`を押します。
+2. 作業場所として、国別成果を保存する空フォルダーまたはそのフォルダーを登録したProjectを選びます。
+3. 実行環境は`Local`を選びます。
+4. ファイル、ターミナル、ネット、ブラウザーの確認が出た場合は、この国別Projectについて許可します。
+5. [一発作成プロンプト](#one-shot-prompt)を貼り付けます。
+
+</details>
+
+<a id="antigravity-settings"></a>
+
+### ② Antigravityを使う人：Project外を拒否して自動実行を設定する
+
+<details>
+<summary><strong>AntigravityのProject作成・権限設定・確認画面の説明を開く</strong></summary>
+
 
 Antigravityを開いた後は、次の順番だけで開始できます。すでに別のProjectを使っている場合も、国別ダッシュボード用に新しいProjectを作ります。
 
@@ -51,13 +92,16 @@ Antigravityを開いた後は、次の順番だけで開始できます。すで
 6. `Create`を押します。Project名は国名が分かる名前にします。例：`Kenya Dashboard`。
 7. 作成したProjectを開き、`New Conversation`を押します。
 8. 開始時にModeを聞かれたら`Local`を選びます。これで、選んだフォルダーへ成果が保存されます。
-9. 歯車から`Settings`を開き、左側の`Projects`の下にある今作ったProject名を押してから`General`を開きます。設定はProjectごとに分かれています。`Security Preset`の説明に`Modified in AIFX07`など別のProject名が表示されている場合は、国別Projectの設定画面ではありません。
-10. `Security Preset`を確認します。最も簡単に進める場合は`Full Machine`を選びます。画面にすでに`Full Machine`と表示されていれば変更不要です。
-11. `Artifact Review Policy`は`Always Ask`のままで開始できます。成果物の確認画面が出た場合は、内容を確認して承認します。確認で止めたくない場合は、プルダウンに表示される「常に続行する」設定を選べます。
-12. `Tool Permissions`、`Network Access Rules`、`Commands Outside Sandbox`は、`Full Machine`で開始する場合は最初に一件ずつ編集する必要はありません。実行中に確認が出た場合は、このProjectのファイル操作、コマンド実行、調査先Webサイトへの接続を許可します。
-13. 右上の`×`で設定を閉じます。
-14. チャット入力欄へ`/browser`と入力し、Chromeとの接続確認が出たら許可します。これは最後に生成サイトを実画面で検証するためです。
-15. 続けて、下の「② コピペするプロンプト」を貼り付けます。入力後にModeを再度聞かれたら`Local`を選びます。
+9. 歯車から`Settings`を開き、左側の`Projects`の下にある今作ったProject名を押します。設定はProjectごとに分かれています。別のProject名が選択されていないことを確認します。
+10. `Security Preset`を`Custom`にし、次のように設定します。
+    - `Outside of folders file access policy`: `Deny`
+    - `Terminal Command Auto Execution`: `Always Proceed`
+    - `Enable Sandbox Mode`: `Disabled`
+    - `Artifact Review Policy`: `Always Proceed`
+11. この設定は国別Project内では自動で作業を進め、Project外のファイルアクセスを拒否するためのものです。空の専用フォルダーを使い、認証情報や重要な原本は置かないでください。
+12. 右上の`×`で設定を閉じます。
+13. チャット入力欄へ`/browser`と入力し、Chromeとの接続確認が出たら許可します。これは最後に生成サイトを実画面で検証するためです。
+14. 続けて、[一発作成プロンプト](#one-shot-prompt)を貼り付けます。入力後にModeを再度聞かれたら`Local`を選びます。
 
 #### `Waiting for user input`と表示された場合
 
@@ -91,29 +135,44 @@ URLが上と同じで、作成した空フォルダー内で実行しようと�
 
 Antigravity公式の画面説明：[Projectの作成](https://antigravity.google/docs/getting-started)、[Projectごとの設定](https://antigravity.google/docs/projects)、[権限の仕組み](https://antigravity.google/docs/permissions)。
 
-#### Codexで、最初に押す場所
+</details>
 
-1. Codexで`New Task`を押します。
-2. 作業場所として、国別成果を保存する空フォルダーまたはそのフォルダーを登録したProjectを選びます。
-3. 実行環境は`Local`を選びます。
-4. ファイル、ターミナル、ネット、ブラウザーの確認が出た場合は、この国別Projectについて許可します。
-5. 下の「② コピペするプロンプト」を貼り付けます。
+<a id="claude-code-settings"></a>
 
-#### Claude Codeで、最初に行うこと
+### ③ Claude Codeを使う人：空フォルダーを信頼して必要な操作を許可する
+
+<details>
+<summary><strong>Claude Codeの具体的な開始手順を開く</strong></summary>
+
 
 1. 国別成果を保存する空フォルダーをClaude Codeの作業フォルダーとして開きます。
 2. フォルダーを信頼するか聞かれた場合は、作成した国別フォルダーであることを確認して許可します。
 3. Read、Edit、コマンド実行、Web検索・取得の確認が出た場合は、この国別フォルダーについて許可します。
-4. 下の「② コピペするプロンプト」を貼り付けます。
+4. [一発作成プロンプト](#one-shot-prompt)を貼り付けます。
 
-### ② コピペするプロンプト
+</details>
 
-最新版の一発完成プロンプトは **[`prompts/ONE_COUNTRY_COMPLETE.md`](prompts/ONE_COUNTRY_COMPLETE.md)** です。変更する箇所は `COUNTRY_NAME` だけです。製品別の開始メモは [Antigravity](prompts/ANTIGRAVITY.md)、[Codex](prompts/CODEX.md)、[Claude Code](prompts/CLAUDE_CODE.md) にあります。3製品とも同じ完成条件と納品ゲートを使います。
+<a id="one-shot-prompt"></a>
+
+## 一発作成プロンプト
+
+`［XX国］`だけを対象国名に変えて送ります。
+
+```text
+以下のGitHubを参照して、［XX国］のCensusダッシュボードを作成してください。
+https://github.com/mnakagaw/Census-Dashboard-Kit/blob/main/prompts/ONE_COUNTRY_COMPLETE.md
+```
+
+<details>
+<summary><strong>完全版プロンプト、情報源台帳、中断後の再開方法について読む</strong></summary>
+
+
+最新版の完全な作業指示は **[`prompts/ONE_COUNTRY_COMPLETE.md`](prompts/ONE_COUNTRY_COMPLETE.md)** です。AIは上の短い依頼からこのファイルを読み、同じ完成条件と納品ゲートを使います。製品別の開始メモは [Codex](prompts/CODEX.md)、[Antigravity](prompts/ANTIGRAVITY.md)、[Claude Code](prompts/CLAUDE_CODE.md) にあります。
 
 142か国・地域それぞれについて、統計局・国勢調査、計画法と関連資料、行政コード・境界、国際データ候補の探索開始アドレスを[`config/jica-priority-source-preflight.json`](config/jica-priority-source-preflight.json)に記録しています。人が読める全件表は[`docs/research/jica-priority-2026/SOURCE_PREFLIGHT_142.md`](docs/research/jica-priority-2026/SOURCE_PREFLIGHT_142.md)です。これはAIが探索を省略しないための案内であり、法令本文や統計表を取得・確認済みとする証拠ではありません。AIは国別案件の中で最新版、本文、表、粒度、利用条件を確認し、取得・地理照合・採用まで進めます。
 
 
-`prompts/ONE_COUNTRY_COMPLETE.md`を開き、コードブロックをすべてコピーします。`COUNTRY_NAME`の一か所だけを対象国名へ変更し、AIのチャットへ一度貼り付けてください。途中で追加プロンプトを送ることを前提にしません。
+通常は上の短い一発作成プロンプトだけで開始します。使用するAIがGitHubのリンクを読めない場合に限り、`prompts/ONE_COUNTRY_COMPLETE.md`を開き、コードブロック全体の`COUNTRY_NAME`を対象国名へ変更して貼り付けます。
 
 AIやPCが予期せず終了した場合だけ、同じ作業フォルダーで次の再開用プロンプトを送ります。
 
@@ -122,7 +181,18 @@ AIやPCが予期せず終了した場合だけ、同じ作業フォルダーで�
 取得済み原資料と実装を再利用し、残る公式地方データの統合、3ページ、実画面と出力の検証を完了してください。
 ```
 
-### ③ 別スレッドで独立監査する
+</details>
+
+## 作成後に行うこと
+
+<a id="post-build-audit"></a>
+
+### ① 公開前に読む：別スレッドで完成品を監査する
+
+制作を担当したAIとは別の新規スレッドで監査し、`ACCEPT`になってから公開します。
+
+<details>
+<summary><strong>監査の実施方法、監査用プロンプト、再監査の流れを開く</strong></summary>
 
 制作を担当したスレッドを**A**とします。Aが完成報告した後、同じ国別Projectまたは同じ成果フォルダーを開ける**別の新規スレッド**を作り、監査だけを依頼します。Antigravityでは同じProjectの`New Conversation`、Codexでは同じProjectを指定した`New Task`、Claude Codeでは同じフォルダーを開く別セッションです。Aと監査スレッドを同時に編集させず、まずAの作業完了を待ってください。
 
@@ -157,15 +227,48 @@ evidence/DELIVERY.jsonやテスト成功をそのまま信用せず、監査基�
 
 Aの修正後は、監査スレッドへ「修正版を同じ基準で再監査し、前回指摘の再現結果と最終判定を更新してください」と送ります。監査が`ACCEPT`になるまで、完成品として公開しません。
 
-### ④ Codex Sitesで公開したい人だけ
+</details>
 
-この節は、上の共通プロンプトで国別ダッシュボードが完成した後、**Codex SitesのURLで公開したい人だけ**が行います。Antigravity、Gemini、Claude CodeでPC内の完成品を作る手順には不要です。共通プロンプトの「外部公開は別途依頼」という条件に対する、明示的な公開依頼になります。
+<a id="post-build-fix"></a>
+
+### ② 見た目や内容を直したい人：スクリーンショットで修正を依頼する
+
+直したい画面をスクリーンショットに撮り、必要なら枠・矢印・短いメモを書き込み、その画像を**制作したスレッド**へ添付します。変更箇所と、変更後にどう見せたいかを具体的に伝えてください。
+
+#### 例1：特定部分の文字・表示を直す
+
+```text
+添付したスクリーンショットの赤枠部分を修正してください。
+見出しを「地域診断」に変更し、文字を現在より大きくしてください。
+他のレイアウトや機能は変更しないでください。
+修正後、実際の画面を開いて表示を確認してください。
+```
+
+#### 例2：レイアウトを横3カラムにする
+
+```text
+添付したスクリーンショットのカード部分を、PCでは横3カラムにしてください。
+スマートフォンでは1カラムに戻し、文字やカードが画面外にはみ出さないようにしてください。
+データ、地域選択、リンク、ダウンロード機能は変更しないでください。
+修正後、PC幅とスマートフォン幅の両方で確認してください。
+```
+
+修正が終わったら、通常の検証を再実行し、必要に応じて[①の独立監査](#post-build-audit)もやり直します。
+
+<a id="codex-sites-publish"></a>
+
+### ③ 公開したい人だけ：Codex Sitesで完成版を公開する
+
+この節は、上の共通プロンプトで国別ダッシュボードが完成した後、**Codex SitesのURLで公開したい人だけ**が行います。AntigravityやClaude CodeでPC内の完成品を作る手順には不要です。共通プロンプトの「外部公開は別途依頼」という条件に対する、明示的な公開依頼になります。
 
 Codex SitesはChatGPTがサイトを保存・配信する機能です。GitHubへpushしなくても使えるため、**Sitesで公開するだけならGitHubアカウントは不要**です。公式案内では現在、ChatGPT Plus、Pro、Business、Enterprise、Eduで利用できます。契約や組織の設定によっては、インターネット一般公開が使えない場合があります。最新条件は[OpenAI公式のSites説明](https://learn.chatgpt.com/docs/sites)を確認してください。
 
+<details>
+<summary><strong>Codex Sitesへの公開手順と、貼り付ける公開用プロンプトを開く</strong></summary>
+
 #### 公開する順番
 
-1. 上の「② コピペするプロンプト」で国別ダッシュボードを作り、Codexが納品ゲート、実画面、DOCXまで確認して完成報告するのを待ちます。
+1. 上の[一発作成プロンプト](#one-shot-prompt)で国別ダッシュボードを作り、Codexが納品ゲート、実画面、DOCXまで確認して完成報告するのを待ちます。
 2. **同じCodexタスクと同じ国別Projectを開いたまま**にします。新しい空のタスクへ移動しません。
 3. 下の「Codex Sites公開用プロンプト」で`［国名］`だけを変更し、そのまま同じチャットへ貼り付けます。
 4. SitesまたはHostingの利用確認が表示されたら、今回の国別Projectを対象にしていることを確認して許可します。CLIまたはIDE拡張だけを使っている場合はSitesの公開画面がないため、ChatGPTのデスクトップアプリまたはWeb版で同じローカルProjectを開いて実行します。
@@ -206,7 +309,12 @@ Codex Sitesとの互換性を確認し、必要な設定と公開用出力だけ
 バージョンを保存しただけ、ローカルプレビューが動いただけ、URLがまだ発行されていない状態を公開完了としないでください。
 ```
 
-## 人が手元で開始する場合
+</details>
+
+## 開発者向け：コマンドで国別作業場所を作る場合
+
+<details>
+<summary><strong>Git、Node.js、生成・検証コマンドを使う手順を開く</strong></summary>
 
 必要条件はGit、Node.js 22以上、ネット接続です。実行時の外部npmパッケージやAPIキーは不要です。Excel・PDF等の抽出には、資料に応じてPythonと対応ライブラリを追加します。
 
@@ -233,7 +341,12 @@ npm run sources:plan -- --country UGA
 node scripts/verify-delivery.mjs --project ../uganda-dashboard
 ```
 
-## 地域選択の重要な契約
+</details>
+
+## 実装・レビュー担当向け：地域選択の必須動作
+
+<details>
+<summary><strong>地図、指標、資料、URL、出力を連動させる規則を開く</strong></summary>
 
 - 最後に明示選択した地域が、上部の分析対象です。
 - 市や下位地域を選んだ後、ドロップダウンで同じ所属先の上位地域を選び直すと、下位選択を解除して上位全体へ即時に切り替えます。
@@ -244,7 +357,12 @@ node scripts/verify-delivery.mjs --project ../uganda-dashboard
 - 各指標の下部にある内部比較地図や表への注目は、上部の分析対象を変えません。
 - 親自身の値がなければ欠測を示します。完全で重複のない被覆と承認済み集計規則がある場合だけ、計算値として明示します。率は単純平均しません。
 
-## データの原則
+</details>
+
+## 調査・データ担当向け：値・地域・出典の原則
+
+<details>
+<summary><strong>欠測、ゼロ、地域結合、法定計画主体の扱いを開く</strong></summary>
 
 - 全国値を地方値へ配分しません。
 - 欠測、ゼロ、非該当、未確認、取得失敗、利用制限を区別します。
@@ -255,7 +373,12 @@ node scripts/verify-delivery.mjs --project ../uganda-dashboard
 
 `config/country-source-registry.json`には国別sourceの出発点、`config/common-subnational-sources.json`には地域粒度を持ち得る国際・複数国source候補を収録しています。すべて案件時点で再確認が必要です。登録だけで、その国のデータ取得や採用が完了したとは扱いません。
 
-## GitHub Actions（通常の利用者には不要）
+</details>
+
+## リポジトリ管理者向け：GitHub Actions
+
+<details>
+<summary><strong>キットの自動テストと管理者用Actionsの説明を開く</strong></summary>
 
 Antigravity、Codex、Claude CodeへこのPublicリポジトリのURLを渡し、PC内に国別ダッシュボードを作るだけなら、**GitHubアカウントは不要**です。この節はリポジトリ管理者向けで、一般利用者の完成品制作手順ではありません。
 
@@ -266,7 +389,12 @@ GitHubアカウントが必要になるのは、自分のGitHubへリポジト�
 
 Actionsの`success`は、キットのテストまたは内部作業場所の準備が成功したという意味だけです。国別完成品は、AIがローカルで調査・統合・実画面検証を行い、`verify-delivery.mjs`に合格して初めて完成扱いにできます。
 
-## 主な構成
+</details>
+
+## 開発者向け：Kitのフォルダー構成と詳細文書
+
+<details>
+<summary><strong>主要フォルダーと仕様書へのリンクを開く</strong></summary>
 
 ```text
 START_HERE.md            AIが最初に読む入口
@@ -284,7 +412,9 @@ tests/                   選択、欠測、地理、計画、出力等の回帰�
 
 [START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。利用者向けの主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[独立完成監査](docs/INDEPENDENT_AUDIT.md)、[世界全体とJICA優先142か国・地域の運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。JICA優先台帳は[`config/jica-priority-country-registry.json`](config/jica-priority-country-registry.json)、全142件の探索開始アドレスは[`config/jica-priority-source-preflight.json`](config/jica-priority-source-preflight.json)で機械判定します。生成後のサイトとWordは利用者自身の成果物であり、国別作業ディレクトリで文言、テーマ、資料、公開先を修正・再生成できます。
 
-## ライセンスと第三者データ
+</details>
+
+## 公開前に確認：ライセンスと第三者データ
 
 コードとこのキット独自の文書は[MIT License](LICENSE)です。取得する国勢調査、境界、計画書、国際データには各提供元の利用条件が適用されます。大容量資料、再配布不可の原本、個票、APIキーはこの公開リポジトリへcommitしません。原本、取得receipt、正規化データ、国別bundleを分け、source ID、上流版、取得条件、hash、地理対応、利用条件を保存してください。
 
