@@ -69,6 +69,7 @@ test('runtime map and ranking accessibility names pass through localization',asy
   const source=await readFile(new URL('../scaffold/site/app.mjs',import.meta.url),'utf8');
   assert.match(source,/rawLabel=.*label=translateText\(rawLabel,language\)/s);
   assert.match(source,/aria-label="\$\{e\(translateText\('Full ranking and unranked areas',language\)\)\}"/);
+  assert.equal((source.match(/<optgroup label="\$\{e\(translateText\(levelLabel\(level\),language\)\)\}">/g)||[]).length,2);
   assert.doesNotMatch(source,/aria-label="Full ranking and unranked areas"/);
 });
 
