@@ -17,10 +17,12 @@ Save the result as `evidence/INDEPENDENT_AUDIT.md` in the country project. End w
 1. Resolve the country, ISO identifiers, official administrative hierarchy, code systems, boundary editions, legal planning unit, and internal diagnostic levels from cited sources.
 2. Open the official census catalogue and every acquired workbook, CSV/API payload, and relevant PDF table. Reconcile the actual numeric columns with `SOURCE_TABLE_INVENTORY.json`, adopted indicators, exclusions, and reasons.
 3. Check all six themes. Search beyond one population file and beyond national WDI. Confirm whether apparent gaps are truly unavailable, incompatible, restricted, or simply not yet acquired.
+   When `SOURCE_PREFLIGHT` contains a `verified_source_recipe`, confirm that the builder replayed and refreshed it, acquired current objects, and recorded exact hashes and locators. A copied recipe or URL list is not evidence.
 4. Trace sample values from the screen and exports back to an exact source table, row/column or PDF page. Verify definition, unit, population, period, geography, status, and source ID.
 5. Distinguish zero, missing, suppressed, not applicable, unverified, unavailable, and acquisition failure. Confirm that national values are not shown as local values.
 6. Verify every calculated value from its components. Require complete, non-overlapping coverage and an approved aggregation rule. Never accept a simple average of rates as a parent rate.
 7. Check that country overview facts and national population have registered sources. Administrative counts must match the territory register and must not imply legal planning authority by themselves.
+8. Recalculate the completion depth from integrated local observations. Do not count `unavailable`, `restricted`, `failed_with_evidence`, `not_adopted` or other terminal gaps as observed indicators or diagnostic groups.
 
 ## Geography and interaction checks
 

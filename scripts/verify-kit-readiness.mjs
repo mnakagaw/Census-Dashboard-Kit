@@ -12,6 +12,7 @@ const requiredFiles = [
   'templates/DELIVERY.json', 'templates/SOURCE_RESOURCE_INVENTORY.json', 'templates/SOURCE_TABLE_INVENTORY.json',
   'templates/THEME_COVERAGE.json', 'config/jica-priority-country-registry.json',
   'config/jica-priority-source-preflight.json', 'config/country-source-registry.json',
+  'config/americas-verified-source-recipes.json', 'docs/research/americas-2026/VERIFIED_SOURCE_RECIPES_28.md',
   'scripts/create-country.mjs', 'scripts/source-plan.mjs', 'scripts/verify-delivery.mjs',
 ];
 const completionEntrypoints = ['AGENTS.md', 'CLAUDE.md', 'GEMINI.md', 'prompts/ANTIGRAVITY.md', 'prompts/CODEX.md', 'prompts/CLAUDE_CODE.md'];
@@ -40,6 +41,7 @@ export async function verifyKitReadiness(base = root) {
   const catalog = await loadSourceCatalog(base);
   assert(catalog.priority_countries.length === 142, 'Priority registry must contain 142 records');
   assert(catalog.priority_source_records.length === 142, 'Priority source-address preflight must contain 142 records');
+  assert(catalog.verified_source_recipes.length === 28, 'Americas verified recipe registry must contain 28 records');
   const names = new Set(), sourceIds = new Set();
   for (const country of catalog.priority_countries) {
     assert(findPriorityCountryRecord(catalog, country.iso3)?.iso3 === country.iso3, `${country.iso3} is not resolvable by ISO3`);
@@ -60,11 +62,19 @@ export async function verifyKitReadiness(base = root) {
     const preflight = buildSourcePreflight(catalog, { id: iso3, name: findPriorityCountryRecord(catalog, iso3).name_en });
     assert(preflight.reference_country_cases.filter(item => item.requested_country).length === 1, `${iso3} must be selectable as a fresh target, not only a lesson`);
   }
+  for (const iso3 of ['ARG', 'BRA', 'CAN', 'DOM', 'JAM', 'SGS', 'USA', 'VEN']) {
+    const recipe = catalog.verified_source_recipes.find(item => item.iso3 === iso3);
+    assert(recipe, `${iso3} must retain its verified Americas source recipe`);
+    const preflight = buildSourcePreflight(catalog, { id: iso3, name: recipe.name_en });
+    assert(preflight.verified_source_recipe?.current_project_evidence_status === 'not_acquired_by_source_preflight',
+      `${iso3} recipe must not be promoted to current-project evidence`);
+  }
   return {
     ready: true,
     country_name_only: true,
     priority_countries_and_territories: 142,
     priority_source_address_preflights: 142,
+    verified_americas_source_recipes: 28,
     reference_countries_selectable_as_targets: references,
     canonical_prompt_placeholders: 1,
     required_files_checked: requiredFiles.length,

@@ -6,10 +6,11 @@ import { sourcePlan } from '../scripts/source-plan.mjs';
 test('source catalog combines reusable international candidates and pre-researched countries', async () => {
   const catalog = await loadSourceCatalog();
   assert.equal(catalog.coverage.common_sources, 10);
-  assert.equal(catalog.coverage.country_records, 24);
+  assert.equal(catalog.coverage.country_records, 32);
   assert.equal(catalog.coverage.jica_priority_countries, 142);
   assert.equal(catalog.coverage.jica_priority_dac_recipients, 132);
   assert.equal(catalog.coverage.jica_priority_source_preflights, 142);
+  assert.equal(catalog.coverage.verified_source_recipes, 28);
   assert.deepEqual(catalog.coverage.status_model, [
     'catalogued',
     'country_availability_checked',
@@ -19,6 +20,25 @@ test('source catalog combines reusable international candidates and pre-research
   ]);
   assert.equal(new Set(catalog.common_sources.map(source => source.id)).size, 10);
   assert.ok(catalog.common_sources.every(source => source.catalog_url.startsWith('https://')));
+});
+
+test('strict Americas recipes are reusable without becoming current-project acquisitions', async () => {
+  const catalog = await loadSourceCatalog();
+  assert.equal(catalog.verified_source_recipes.length, 28);
+  assert.equal(new Set(catalog.verified_source_recipes.map(recipe => recipe.iso3)).size, 28);
+  const brazil = buildSourcePreflight(catalog, { id: 'BRA', name: 'Brazil' });
+  assert.equal(brazil.verified_source_recipe.recipe_status, 'verified_broad_local_statistical_recipe');
+  assert.equal(brazil.verified_source_recipe.current_project_evidence_status, 'not_acquired_by_source_preflight');
+  assert.equal(brazil.summary.acquired_sources, 0);
+  assert.match(brazil.verified_source_recipe.semantic_cautions.join(' '), /Never use one age-sex table/i);
+  assert.ok(brazil.verified_source_recipe.source_entrypoints.machine_readable_data.length);
+  const usa = findCountrySourceRecord(catalog, 'United States');
+  assert.equal(usa.iso3, 'USA');
+  assert.equal(usa.origin_registry, 'americas-verified-source-recipes');
+  const sgs = buildSourcePreflight(catalog, { id: 'SGS', name: 'South Georgia and the South Sandwich Islands' });
+  assert.equal(sgs.verified_source_recipe.recipe_status, 'verified_structural_nonresident_exception');
+  assert.equal(sgs.verified_source_recipe.planning_readiness.status, 'incomplete');
+  assert.match(renderSourcePreflightMarkdown(brazil), /Verified Americas reuse recipe/);
 });
 
 test('four completed-country lessons are registered without becoming universal country rules', async () => {

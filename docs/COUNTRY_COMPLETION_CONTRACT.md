@@ -25,6 +25,8 @@ The completion decision is valid only when `verify-delivery` reports `ready: tru
 
 The delivery gate also requires one current A01-A42 result row per scenario, matching dataset counts, exact Kit version/commit provenance, and SHA-256/page records for every reviewed Word output. Historical reports do not satisfy this current-build record.
 
+Source review and statistical-edition completion are separate decisions. A source-specific `unavailable`, `restricted`, `failed_with_evidence`, `incompatible` or `not_adopted` disposition may close the investigation of that item, but it does not create an observation, increase indicator or theme depth, or make a resident country edition complete. Tests must assert adequate integrated local depth independently of terminal gap records. A historical source recipe accelerates research but begins every new build with zero acquired sources.
+
 ## Non-completion states
 
 The agent must continue working when any of these remains:

@@ -4,7 +4,7 @@ A request naming a country and asking for its dashboard is an execution request.
 
 Read and follow `README.md`, `START_HERE.md`, `AGENTS.md`, `docs/COUNTRY_AGENT_WORKFLOW.md`, `docs/COUNTRY_COMPLETION_CONTRACT.md`, `docs/AI_FAILURE_MODE_REVIEW.md` and `templates/ACCEPTANCE.md`. The canonical user prompt is `prompts/ONE_COUNTRY_COMPLETE.md`.
 
-Read `docs/REFERENCE_COUNTRY_CASES.md` and the target's record in `config/jica-priority-source-preflight.json`. DOM, UGA, LAO and BGD may themselves be requested as fresh targets; refresh and rebuild them instead of returning an old example. The 142 source-address records are starting points, never proof of acquisition or content verification.
+Read `docs/REFERENCE_COUNTRY_CASES.md`, the target's record in `config/jica-priority-source-preflight.json`, and any matching record in `config/americas-verified-source-recipes.json`. Replay a matching Americas recipe before generic search, including its acquisition method, semantic cautions and geography exceptions, but re-acquire and re-hash the current sources. DOM, UGA, LAO and BGD may themselves be requested as fresh targets; refresh and rebuild them instead of returning an old example. Source-address records and historical recipes are starting points, never proof of current-project acquisition or content verification.
 
 Do not return after cloning, scaffolding, the first API response, one representative local file, a local server, or green unit tests. Close official catalogues resource by resource, inspect every acquired table/field, build and browser-test all three pages and the rendered Word diagnostic, complete the 42 scenarios and twelve-case audit, and require `verify-delivery` to return `ready: true`.
 

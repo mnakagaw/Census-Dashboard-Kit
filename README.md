@@ -371,7 +371,7 @@ node scripts/verify-delivery.mjs --project ../uganda-dashboard
 - 法定の計画策定単位と、その内部を診断する下位単位を分けます。District計画でSubcountyを分析しても、Subcountyを法定主体と推定しません。
 - リンク発見、本文取得、内容確認、公式な承認状態を別々に記録します。
 
-`config/country-source-registry.json`には国別sourceの出発点、`config/common-subnational-sources.json`には地域粒度を持ち得る国際・複数国source候補を収録しています。すべて案件時点で再確認が必要です。登録だけで、その国のデータ取得や採用が完了したとは扱いません。
+`config/country-source-registry.json`には国別sourceの出発点、`config/common-subnational-sources.json`には地域粒度を持ち得る国際・複数国source候補を収録しています。加えて、[`config/americas-verified-source-recipes.json`](config/americas-verified-source-recipes.json)には米大陸28国・地域で実際に確認した取得方法・表の意味・地理上の注意を再利用レシピとして収録しています。すべて案件時点で再確認が必要です。登録や過去の成功だけで、その国のデータ取得や採用が完了したとは扱いません。
 
 </details>
 

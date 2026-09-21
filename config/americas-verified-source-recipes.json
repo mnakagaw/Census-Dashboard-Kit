@@ -1,0 +1,3012 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-09-21",
+  "scope": "Reusable public source locations, acquisition methods, semantic cautions and geography lessons from 28 strict Americas statistical editions, including the SGS structural nonresident exception.",
+  "status_boundary": "These recipes record where and how sources were previously inspected. They do not mean that a new project has acquired the files, verified current availability, completed planning research, accepted indicators or passed delivery.",
+  "completion_rule": "For resident editions, all 15 themes were terminally reviewed and the completed statistical edition had retained evidence for required statistical domains, local population and age-sex, a domestic hierarchy, at least 10 distinct local observed indicators and at least 6 of 8 local diagnostic groups. A gap closes source review only and never counts as integrated data. SGS uses the explicit nonresident exception.",
+  "countries": [
+    {
+      "iso3": "ARG",
+      "m49": "032",
+      "name_en": "Argentina",
+      "aliases": [
+        "Argentina",
+        "アルゼンチン"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "domestic_scope": "24 provinces and 529 departments; products use different reference years and universes.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 553,
+        "local_observed_indicator_count": 11,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "drinking_water",
+          "education_literacy",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "population_total",
+          "sanitation"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-165?lang=es"
+        ],
+        "latest_census": [
+          "https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-165?lang=es"
+        ],
+        "census_results": [
+          "https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-165?lang=es"
+        ],
+        "table_catalog": [
+          "https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-165?lang=es"
+        ],
+        "machine_readable_data": [
+          "https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-165?lang=es",
+          "https://apis.datos.gob.ar/georef/api"
+        ],
+        "administrative_codes": [
+          "https://apis.datos.gob.ar/georef/api"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://apis.datos.gob.ar/georef/api"
+        ],
+        "planning_law": [
+          "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-19-2020-337510/actualizacion",
+          "https://www.argentina.gob.ar/normativa/nacional/554/actualizacion"
+        ],
+        "planning_guidance": [
+          "https://www.argentina.gob.ar/sites/default/files/guia-de-planificacion-territorial-ministerio-del-interior_0.pdf"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.argentina.gob.ar/datos-pnasu",
+          "https://www.argentina.gob.ar/normativa/nacional/554/actualizacion"
+        ]
+      },
+      "dominant_failure_class": "semantic_and_provenance_reconciliation",
+      "acquisition_methods": [
+        "Download and inventory the official INDEC census workbooks and publications.",
+        "Resolve official province and department codes with Argentina Georef."
+      ],
+      "semantic_cautions": [
+        "Population in private dwellings is not a household-universe water or sewer denominator.",
+        "Disability products limited to urban localities of 5,000 or more inhabitants cannot be generalized to every locality."
+      ],
+      "geography_cautions": [
+        "Join by verified INDEC/Georef codes; do not merge names alone.",
+        "Retain the period carried by each source instead of forcing one dashboard-wide year."
+      ],
+      "reuse_actions": [
+        "Record the exact workbook, sheet, field, denominator and Georef code for every adopted value."
+      ]
+    },
+    {
+      "iso3": "BOL",
+      "m49": "068",
+      "name_en": "Bolivia (Plurinational State of)",
+      "aliases": [
+        "Bolivia",
+        "Bolivia (Plurinational State of)",
+        "ボリビア"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2024
+      ],
+      "domestic_scope": "Nine departments are integrated; municipality and TIOC rows require a separate verified adoption.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 9,
+        "local_observed_indicator_count": 13,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "health",
+          "population_total",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.ine.gob.bo/index.php/estadisticas-sociales/poblacion-censo/"
+        ],
+        "latest_census": [
+          "https://www.ine.gob.bo/index.php/estadisticas-sociales/poblacion-censo/"
+        ],
+        "census_results": [
+          "https://www.ine.gob.bo/index.php/estadisticas-sociales/poblacion-censo/",
+          "https://www.ine.gob.bo/index.php/estadisticas-economicas/censos-indicadores/"
+        ],
+        "table_catalog": [
+          "https://www.ine.gob.bo/index.php/estadisticas-sociales/poblacion-censo/",
+          "https://www.ine.gob.bo/index.php/estadisticas-economicas/censos-indicadores/"
+        ],
+        "machine_readable_data": [
+          "https://www.ine.gob.bo/index.php/estadisticas-sociales/poblacion-censo/",
+          "https://www.ine.gob.bo/index.php/estadisticas-economicas/censos-indicadores/"
+        ],
+        "administrative_codes": [
+          "https://www.ine.gob.bo/index.php/estadisticas-sociales/poblacion-censo/"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.ine.gob.bo/index.php/estadisticas-sociales/poblacion-censo/"
+        ],
+        "planning_law": [
+          "https://sea.gob.bo/digesto/CompendioII/A/2_L_777.pdf"
+        ],
+        "planning_guidance": [
+          "https://www.planificacion.gob.bo/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.planificacion.gob.bo/"
+        ]
+      },
+      "dominant_failure_class": "scope_and_adoption_boundary",
+      "acquisition_methods": [
+        "Acquire the official INE CPV 2024 workbooks and preserve the complete sheet inventory."
+      ],
+      "semantic_cautions": [
+        "The existence of municipality or TIOC rows upstream does not mean they were integrated or geographically matched."
+      ],
+      "geography_cautions": [
+        "Keep department, municipality and TIOC classifications distinct."
+      ],
+      "reuse_actions": [
+        "Recheck whether municipality/TIOC tables and matching boundaries are available before claiming lower-level coverage."
+      ]
+    },
+    {
+      "iso3": "BRA",
+      "m49": "076",
+      "name_en": "Brazil",
+      "aliases": [
+        "Brazil",
+        "Brasil",
+        "ブラジル"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2022
+      ],
+      "domestic_scope": "States and municipalities using IBGE identifiers.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 5597,
+        "local_observed_indicator_count": 11,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "migration",
+          "population_total",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.ibge.gov.br/"
+        ],
+        "latest_census": [
+          "https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html"
+        ],
+        "census_results": [
+          "https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html"
+        ],
+        "table_catalog": [
+          "https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html"
+        ],
+        "machine_readable_data": [
+          "https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html"
+        ],
+        "administrative_codes": [
+          "https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.geoboundaries.org/api/current/gbOpen/BRA/ADM1/"
+        ],
+        "planning_law": [
+          "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10257.htm"
+        ],
+        "planning_guidance": [
+          "https://www.gov.br/cidades/pt-br"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.gov.br/planejamento/pt-br/assuntos/planejamento/plano-plurianual"
+        ]
+      },
+      "dominant_failure_class": "premature_catalogue_closure",
+      "acquisition_methods": [
+        "Query IBGE SIDRA by exact table, variable, classification, territorial level and period.",
+        "Retain the request parameters and response hashes for state and municipality queries."
+      ],
+      "semantic_cautions": [
+        "Never use one age-sex table to close housing, water, sanitation, education, employment, disability, migration, health, nutrition or poverty.",
+        "Store numerator, denominator, universe and classification IDs for calculated rates."
+      ],
+      "geography_cautions": [
+        "Use IBGE municipality codes and the boundary vintage stated by the adopted product."
+      ],
+      "reuse_actions": [
+        "Search the wider SIDRA catalogue after each table; begin with known useful tables 6326, 6803, 6805, 9605, 9543, 10125, 9923 and 9517, then refresh their current metadata."
+      ]
+    },
+    {
+      "iso3": "CAN",
+      "m49": "124",
+      "name_en": "Canada",
+      "aliases": [
+        "Canada",
+        "カナダ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2021,
+        2022
+      ],
+      "domestic_scope": "Province/territory, census division and census subdivision products with official StatCan codes.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 5467,
+        "local_observed_indicator_count": 10,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "education_literacy",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.statcan.gc.ca/en/start"
+        ],
+        "latest_census": [
+          "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm?Lang=E",
+          "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021006"
+        ],
+        "census_results": [
+          "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm?Lang=E",
+          "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021006"
+        ],
+        "table_catalog": [
+          "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021006"
+        ],
+        "machine_readable_data": [
+          "https://api.statcan.gc.ca/census-recensement/profile/sdmx/rest"
+        ],
+        "administrative_codes": [
+          "https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21"
+        ],
+        "planning_law": [
+          "https://laws-lois.justice.gc.ca/eng/acts/F-11/FullText.html"
+        ],
+        "planning_guidance": [
+          "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=31300",
+          "https://www.canada.ca/en/treasury-board-secretariat/services/planned-government-spending/expenditure-management-system.html"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.canada.ca/en/treasury-board-secretariat/services/planned-government-spending/reports-plans-priorities.html",
+          "https://www.canada.ca/en/treasury-board-secretariat/services/planned-government-spending/government-expenditure-plan-main-estimates/2026-27-estimates.html",
+          "https://www.canada.ca/en/treasury-board-secretariat/services/departmental-performance-reports.html"
+        ]
+      },
+      "dominant_failure_class": "large_file_and_evidence_binding",
+      "acquisition_methods": [
+        "Use the 2021 Census Profile catalogue or SDMX service and official PR/CD/CSD cartographic products.",
+        "Reject incomplete or corrupt catalogue ZIP files and retain the successful download receipt."
+      ],
+      "semantic_cautions": [
+        "Keep census measures and later disability estimates distinct by source and year."
+      ],
+      "geography_cautions": [
+        "Preserve the PR/CD/CSD hierarchy and official geographic identifiers."
+      ],
+      "reuse_actions": [
+        "Verify archive integrity before extraction and record exact member/table locators."
+      ]
+    },
+    {
+      "iso3": "CHL",
+      "m49": "152",
+      "name_en": "Chile",
+      "aliases": [
+        "Chile",
+        "チリ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2024,
+        2025
+      ],
+      "domestic_scope": "16 regions, 56 provinces and 346 communes using CUT codes.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 418,
+        "local_observed_indicator_count": 11,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "migration",
+          "population_total",
+          "sanitation"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://censo2024.ine.gob.cl/estadisticas/"
+        ],
+        "latest_census": [
+          "https://censo2024.ine.gob.cl/estadisticas/"
+        ],
+        "census_results": [
+          "https://censo2024.ine.gob.cl/estadisticas/",
+          "https://services5.arcgis.com/hUyD8u3TeZLKPe4T/ArcGIS/rest/services/Censo2024_v2/FeatureServer"
+        ],
+        "table_catalog": [
+          "https://censo2024.ine.gob.cl/estadisticas/"
+        ],
+        "machine_readable_data": [
+          "https://censo2024.ine.gob.cl/estadisticas/",
+          "https://services5.arcgis.com/hUyD8u3TeZLKPe4T/ArcGIS/rest/services/Censo2024_v2/FeatureServer"
+        ],
+        "administrative_codes": [
+          "https://services5.arcgis.com/hUyD8u3TeZLKPe4T/ArcGIS/rest/services/Censo2024_v2/FeatureServer"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://services5.arcgis.com/hUyD8u3TeZLKPe4T/ArcGIS/rest/services/Censo2024_v2/FeatureServer"
+        ],
+        "planning_law": [
+          "https://www.bcn.cl/leychile/navegar?idNorma=251693"
+        ],
+        "planning_guidance": [
+          "https://proactiva.subdere.gov.cl/bitstream/handle/123456789/608/Manual%20PLADECO%20-%20VD%20PROACTIVA.pdf?sequence=1"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.sinim.gov.cl/archivos/home/981/ENCUESTA_SINIM_2025.pdf",
+          "https://proactiva.subdere.gov.cl/bitstream/handle/123456789/608/Manual%20PLADECO%20-%20VD%20PROACTIVA.pdf?sequence=1"
+        ]
+      },
+      "dominant_failure_class": "full_table_inventory_and_boundary_exception",
+      "acquisition_methods": [
+        "Inventory every official 2024 census workbook and numeric field.",
+        "Use official geographic services and retain the service response used for each boundary layer."
+      ],
+      "semantic_cautions": [
+        "Do not infer uninspected themes from the absence of a field in one workbook."
+      ],
+      "geography_cautions": [
+        "Commune 12202 Antártica may retain values without geometry when the official service does not return a feature.",
+        "Treat later boundary geometry as display reference when it does not match the census year."
+      ],
+      "reuse_actions": [
+        "Keep CUT codes, census year and geometry vintage visible and separate."
+      ]
+    },
+    {
+      "iso3": "COL",
+      "m49": "170",
+      "name_en": "Colombia",
+      "aliases": [
+        "Colombia",
+        "コロンビア"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2018
+      ],
+      "domestic_scope": "DANE CNPV 2018 departmental products matched through DIVIPOLA.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 33,
+        "local_observed_indicator_count": 14,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018/informacion-tecnica"
+        ],
+        "latest_census": [
+          "https://systema59.dane.gov.co/redcol/CNPV2018/PERSONAS_DEMOGRAFICO_Cuadros%20CNPV_2018_archivos/sheet002.htm"
+        ],
+        "census_results": [
+          "https://systema59.dane.gov.co/redcol/CNPV2018/PERSONAS_DEMOGRAFICO_Cuadros%20CNPV_2018_archivos/sheet002.htm"
+        ],
+        "table_catalog": [
+          "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018/informacion-tecnica"
+        ],
+        "machine_readable_data": [
+          "https://systema59.dane.gov.co/redcol/CNPV2018/PERSONAS_DEMOGRAFICO_Cuadros%20CNPV_2018_archivos/sheet002.htm"
+        ],
+        "administrative_codes": [
+          "https://systema59.dane.gov.co/redcol/CNPV2018/PERSONAS_DEMOGRAFICO_Cuadros%20CNPV_2018_archivos/sheet002.htm"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.geoboundaries.org/api/current/gbOpen/COL/ADM1/"
+        ],
+        "planning_law": [
+          "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=327"
+        ],
+        "planning_guidance": [
+          "https://portalterritorial.dnp.gov.co/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.dnp.gov.co/plan-nacional-desarrollo/pnd-2022-2026"
+        ]
+      },
+      "dominant_failure_class": "cross_table_semantics",
+      "acquisition_methods": [
+        "Acquire the official CNPV HTML/XLSX products and inventory every table axis."
+      ],
+      "semantic_cautions": [
+        "Do not adopt the wrong cross-tab axis as an indicator.",
+        "Retain published numerators and denominators for percentages."
+      ],
+      "geography_cautions": [
+        "Require a one-to-one DIVIPOLA match before integration."
+      ],
+      "reuse_actions": [
+        "Record exact table and field locators rather than only the CNPV landing page."
+      ]
+    },
+    {
+      "iso3": "CRI",
+      "m49": "188",
+      "name_en": "Costa Rica",
+      "aliases": [
+        "Costa Rica",
+        "コスタリカ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2022
+      ],
+      "domestic_scope": "Seven provinces and 82 cantons in the 2022 statistical geography.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 89,
+        "local_observed_indicator_count": 13,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://admin.inec.cr/herramientas",
+          "https://app.powerbi.com/view?r=eyJrIjoiNGI2YjJlMjktMTNiZS00ZjRiLTk3OGYtMmFlY2QyN2Q5NzUyIiwidCI6ImYzZmI3MWE1LTNhZmYtNDcxNS1iMGZkLTk5MTVlYjA3ZWJjYSIsImMiOjR9&pageName=b2b04e99768d5d840c45",
+          "https://services8.arcgis.com/ODelaeFcU0U2CwoG/arcgis/rest/services/UGEC_F/FeatureServer/2"
+        ],
+        "latest_census": [
+          "https://admin.inec.cr/herramientas",
+          "https://admin.inec.cr/sites/default/files/2024-11/meSocialMetodologiaEstimacionesSocialesVivienda2022.pdf",
+          "https://app.powerbi.com/view?r=eyJrIjoiNGI2YjJlMjktMTNiZS00ZjRiLTk3OGYtMmFlY2QyN2Q5NzUyIiwidCI6ImYzZmI3MWE1LTNhZmYtNDcxNS1iMGZkLTk5MTVlYjA3ZWJjYSIsImMiOjR9&pageName=b2b04e99768d5d840c45"
+        ],
+        "census_results": [
+          "https://app.powerbi.com/view?r=eyJrIjoiNGI2YjJlMjktMTNiZS00ZjRiLTk3OGYtMmFlY2QyN2Q5NzUyIiwidCI6ImYzZmI3MWE1LTNhZmYtNDcxNS1iMGZkLTk5MTVlYjA3ZWJjYSIsImMiOjR9&pageName=b2b04e99768d5d840c45",
+          "https://admin.inec.cr/sites/default/files/2024-11/meSocialMetodologiaEstimacionesSocialesVivienda2022.pdf",
+          "https://sistemas.inec.cr/nada5.4/index.php/catalog/113/related-materials"
+        ],
+        "table_catalog": [
+          "https://app.powerbi.com/view?r=eyJrIjoiNGI2YjJlMjktMTNiZS00ZjRiLTk3OGYtMmFlY2QyN2Q5NzUyIiwidCI6ImYzZmI3MWE1LTNhZmYtNDcxNS1iMGZkLTk5MTVlYjA3ZWJjYSIsImMiOjR9&pageName=b2b04e99768d5d840c45",
+          "https://admin.inec.cr/sites/default/files/2024-11/meSocialMetodologiaEstimacionesSocialesVivienda2022.pdf"
+        ],
+        "machine_readable_data": [
+          "https://app.powerbi.com/view?r=eyJrIjoiNGI2YjJlMjktMTNiZS00ZjRiLTk3OGYtMmFlY2QyN2Q5NzUyIiwidCI6ImYzZmI3MWE1LTNhZmYtNDcxNS1iMGZkLTk5MTVlYjA3ZWJjYSIsImMiOjR9&pageName=b2b04e99768d5d840c45",
+          "https://sistemas.inec.cr/nada5.4/index.php/catalog/113/related-materials"
+        ],
+        "administrative_codes": [
+          "https://services8.arcgis.com/ODelaeFcU0U2CwoG/arcgis/rest/services/UGEC_F/FeatureServer/2"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://services8.arcgis.com/ODelaeFcU0U2CwoG/arcgis/rest/services/UGEC_F/FeatureServer/2"
+        ],
+        "planning_law": [
+          "https://www.pgrweb.go.cr/DOCS/NORMAS/1/VIGENTE/L/1990-1999/1995-1999/1998/9D05/17C506.HTML"
+        ],
+        "planning_guidance": [
+          "https://www.cgr.go.cr/05-tramites-ap-gl-26.html",
+          "https://www.pgrweb.go.cr/DOCS/NORMAS/1/VIGENTE/L/1990-1999/1995-1999/1998/9D05/17C506.HTML"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://repositorio-snp.mideplan.go.cr/bitstream/handle/123456789/580/DOCPLAN-03408.pdf?sequence=1",
+          "https://www.mideplan.go.cr/gobierno-de-costa-rica-consolida-avances-en-el-cumplimiento-del-plan-nacional-de-desarrollo-e",
+          "https://www.cgr.go.cr/05-tramites-ap-gl-26.html",
+          "https://www.cgr.go.cr/05-tramites-eye-presup.html",
+          "https://www.mideplan.go.cr/mideplan-y-hacienda-presentan-el-informe-del-cierre-del-ejercicio-presupuestario-2025"
+        ]
+      },
+      "dominant_failure_class": "dynamic_platform_and_estimate_interpretation",
+      "acquisition_methods": [
+        "Capture the official Power BI query objects and responses used for the 2022 results.",
+        "Retain official ArcGIS identifiers COD_UGEP and COD_UGEC."
+      ],
+      "semantic_cautions": [
+        "The 2022 results include adjusted estimates after partial census coverage; do not label every value as a full enumeration count."
+      ],
+      "geography_cautions": [
+        "Do not backcast later canton changes into the 2022 statistical geography."
+      ],
+      "reuse_actions": [
+        "Store the Power BI acquisition recipe, model object names and query parameters."
+      ]
+    },
+    {
+      "iso3": "CUB",
+      "m49": "192",
+      "name_en": "Cuba",
+      "aliases": [
+        "Cuba",
+        "キューバ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2012,
+        2023
+      ],
+      "domestic_scope": "Province-level census tables; later health products remain separate from Census 2012.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 16,
+        "local_observed_indicator_count": 13,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "education_literacy",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "nutrition",
+          "population_total",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "nutrition"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.onei.gob.cu/",
+          "https://cubamemorias.com/wp-content/uploads/2023/12/Cuba_INFORME_NACIONAL_CENSO_2012.pdf"
+        ],
+        "latest_census": [
+          "https://cubamemorias.com/wp-content/uploads/2023/12/Cuba_INFORME_NACIONAL_CENSO_2012.pdf"
+        ],
+        "census_results": [
+          "https://web.archive.org/web/20140603230434id_/http://www.one.cu/publicaciones/cepde/cpv2012/20140428informenacional/45_tabla_II_3.pdf",
+          "https://web.archive.org/web/20140603230038id_/http://www.one.cu/publicaciones/cepde/cpv2012/20140428informenacional/34_tabla_I_3.pdf"
+        ],
+        "table_catalog": [
+          "https://cubamemorias.com/wp-content/uploads/2023/12/Cuba_INFORME_NACIONAL_CENSO_2012.pdf",
+          "https://web.archive.org/cdx/search/cdx?url=www.one.cu/publicaciones/cepde/cpv2012/20140428informenacional/*&output=json&filter=statuscode:200"
+        ],
+        "machine_readable_data": [
+          "https://web.archive.org/web/20140603230434id_/http://www.one.cu/publicaciones/cepde/cpv2012/20140428informenacional/45_tabla_II_3.pdf"
+        ],
+        "administrative_codes": [
+          "https://cubamemorias.com/wp-content/uploads/2023/12/Cuba_INFORME_NACIONAL_CENSO_2012.pdf"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.geoboundaries.org/api/current/gbOpen/CUB/ADM1/"
+        ],
+        "planning_law": [
+          "https://www.mep.gob.cu/es/plan-nacional-de-desarrollo-economico-y-social-hasta-el-2030"
+        ],
+        "planning_guidance": [
+          "https://www.mfp.gob.cu/inicio/portada.php"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.mfp.gob.cu/inicio/portada.php"
+        ]
+      },
+      "dominant_failure_class": "official_archive_recovery",
+      "acquisition_methods": [
+        "Use the official ONEI catalogue first, then the preserved official table PDFs in web archives when current links are unavailable.",
+        "Record the exact archived URL, PDF page and table number."
+      ],
+      "semantic_cautions": [
+        "National urban/rural tables cannot be adopted as province observations.",
+        "Keep later MINSAP health/nutrition evidence separate from Census 2012."
+      ],
+      "geography_cautions": [
+        "Use the province codes and names documented in the adopted census product."
+      ],
+      "reuse_actions": [
+        "Do not stop after the national report; enumerate the table-by-table publication set."
+      ]
+    },
+    {
+      "iso3": "DOM",
+      "m49": "214",
+      "name_en": "Dominican Republic",
+      "aliases": [
+        "Dominican Republic",
+        "República Dominicana",
+        "ドミニカ共和国"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2022
+      ],
+      "domestic_scope": "Provinces and municipalities from Census 2022 with official geographic services.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 200,
+        "local_observed_indicator_count": 13,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "health",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.one.gob.do/datos-y-estadisticas/temas/censos/poblacion-y-vivienda/2022/"
+        ],
+        "latest_census": [
+          "https://www.one.gob.do/datos-y-estadisticas/temas/censos/poblacion-y-vivienda/2022/",
+          "https://www.one.gob.do/media/vw4cxetq/informe-general-xcnpv-version-digital.pdf"
+        ],
+        "census_results": [
+          "https://www.one.gob.do/datos-y-estadisticas/temas/censos/poblacion-y-vivienda/2022/"
+        ],
+        "table_catalog": [
+          "https://www.one.gob.do/datos-y-estadisticas/temas/censos/poblacion-y-vivienda/2022/"
+        ],
+        "machine_readable_data": [
+          "https://www.one.gob.do/datos-y-estadisticas/temas/censos/poblacion-y-vivienda/2022/"
+        ],
+        "administrative_codes": [
+          "https://services3.arcgis.com/1WxBjaucfKL4MjiW/arcgis/rest/services/DPA_Municipios_%28vista%29_/FeatureServer/28",
+          "https://services3.arcgis.com/1WxBjaucfKL4MjiW/arcgis/rest/services/DPA_Provincias_%28vista%29_/FeatureServer/27"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://services3.arcgis.com/1WxBjaucfKL4MjiW/arcgis/rest/services/DPA_Municipios_%28vista%29_/FeatureServer/28",
+          "https://services3.arcgis.com/1WxBjaucfKL4MjiW/arcgis/rest/services/DPA_Provincias_%28vista%29_/FeatureServer/27"
+        ],
+        "planning_law": [
+          "https://consultoria.gov.do/Consulta/Home/FileManagement?documentId=3345180&managementType=1",
+          "https://mepyd.gob.do/wp-content/uploads/drive/DIGEDES/Monitoreo%20y%20Evaluaci%C3%B3n/Publicaciones/Normativa/Ley-498-06%20Planificaci%C3%B3n%20e%20Inversi%C3%B3n%20P%C3%BAblica.pdf"
+        ],
+        "planning_guidance": [
+          "https://mepyd.gob.do/publicaciones/guia-para-la-formulacion-de-planes-de-desarrollo-municipales",
+          "https://mepyd.gob.do/wp-content/uploads/drive/VIOTDR/Publicaciones/Gu%C3%ADa%20metodol%C3%B3gica%20-%20C%C3%B3mo%20elaborar%20un%20plan%20municipal%20de%20desarrollo.pdf",
+          "https://mepyd.gob.do/asistencia-tecnica-en-temas-de-desarrollo-municipales/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://ayuntamientocomendador.gob.do/transparencia/wp-content/uploads/2026/01/PDM-Comendador-2025-2029.pdf",
+          "https://hist.digepres.gob.do/presupuesto/gobiernos-locales/?print=print",
+          "https://www.digepres.gob.do/digepres-presenta-nueva-herramienta-para-transparentar-ejecucion-presupuestaria-de-gobiernos-locales/?print=pdf",
+          "https://mepyd.gob.do/asistencia-tecnica-en-temas-de-desarrollo-municipales/"
+        ]
+      },
+      "dominant_failure_class": "origin_block_and_geography_duplicates",
+      "acquisition_methods": [
+        "Attempt the ONE origin, then use an Internet Archive id_ replay of the same official object when the origin returns 403.",
+        "Preserve both origin and replay URLs with hashes."
+      ],
+      "semantic_cautions": [
+        "A normalized DDPT snapshot is not a substitute for retaining the primary official evidence."
+      ],
+      "geography_cautions": [
+        "Resolve the duplicate municipality code 06001 and the 01001 alias explicitly; do not silently deduplicate features."
+      ],
+      "reuse_actions": [
+        "Recheck the ONE origin before using the recorded archive fallback."
+      ]
+    },
+    {
+      "iso3": "ECU",
+      "m49": "218",
+      "name_en": "Ecuador",
+      "aliases": [
+        "Ecuador",
+        "エクアドル"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2022
+      ],
+      "domestic_scope": "24 provinces; municipality coverage is not implied.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 24,
+        "local_observed_indicator_count": 14,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.censoecuador.gob.ec/resultados-censo/"
+        ],
+        "latest_census": [
+          "https://www.censoecuador.gob.ec/resultados-censo/"
+        ],
+        "census_results": [
+          "https://www.censoecuador.gob.ec/resultados-censo/"
+        ],
+        "table_catalog": [
+          "https://www.censoecuador.gob.ec/resultados-censo/"
+        ],
+        "machine_readable_data": [
+          "https://www.censoecuador.gob.ec/resultados-censo/"
+        ],
+        "administrative_codes": [
+          "https://www.censoecuador.gob.ec/resultados-censo/"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.censoecuador.gob.ec/resultados-censo/"
+        ],
+        "planning_law": [
+          "https://www.planificacion.gob.ec/wp-content/uploads/2021/10/Codigo-Org%C3%A1nico-de-Planificaci%C3%B3n-y-Finanzas-P%C3%BAblicas.pdf"
+        ],
+        "planning_guidance": [
+          "https://www.planificacion.gob.ec/wp-content/uploads/2023/06/PDOT-ACUERDO-Nro.-SNP-SNP-2023-0049-A.pdf"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.planificacion.gob.ec/plan-de-desarrollo-para-el-nuevo-ecuador-2024-2025/"
+        ]
+      },
+      "dominant_failure_class": "blocked_origin_and_adapter_identity_bug",
+      "acquisition_methods": [
+        "Use the official census-results host and a verified archived replay only when the live object is blocked."
+      ],
+      "semantic_cautions": [
+        "Keep only the explicitly integrated ADM1 products; do not infer municipal values."
+      ],
+      "geography_cautions": [
+        "Use a source-backed province crosswalk."
+      ],
+      "reuse_actions": [
+        "Key observations by territory, indicator and period; never include source_id in the observation identity.",
+        "Store arrays of source hashes in the declared plural field and test for duplicate observations."
+      ]
+    },
+    {
+      "iso3": "GTM",
+      "m49": "320",
+      "name_en": "Guatemala",
+      "aliases": [
+        "Guatemala",
+        "グアテマラ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2018
+      ],
+      "domestic_scope": "Departments and municipalities from Census 2018 with official supplemental sources.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 362,
+        "local_observed_indicator_count": 17,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "nutrition",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "nutrition",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.ine.gob.gt/",
+          "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados"
+        ],
+        "latest_census": [
+          "https://censo2018.ine.gob.gt/explorador",
+          "https://censo2018.ine.gob.gt/archivos/resultados_censo2018.pdf",
+          "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados"
+        ],
+        "census_results": [
+          "https://censo2018.ine.gob.gt/explorador",
+          "https://censo2018.ine.gob.gt/archivos/resultados_censo2018.pdf",
+          "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados"
+        ],
+        "table_catalog": [
+          "https://censo2018.ine.gob.gt/explorador",
+          "https://censo2018.ine.gob.gt/archivos/resultados_censo2018.pdf",
+          "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados"
+        ],
+        "machine_readable_data": [
+          "https://censo2018.ine.gob.gt/explorador",
+          "https://censo2018.ine.gob.gt/archivos/resultados_censo2018.pdf",
+          "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados"
+        ],
+        "administrative_codes": [
+          "https://censo2018.ine.gob.gt/explorador",
+          "https://censo2018.ine.gob.gt/archivos/resultados_censo2018.pdf",
+          "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://ideg.segeplan.gob.gt/geoserver/gwc/demo"
+        ],
+        "planning_law": [
+          "https://www.congreso.gob.gt/detalle_pdf/decretos/252",
+          "https://www.congreso.gob.gt/assets/uploads/info_legislativo/decretos/12-02.pdf",
+          "https://www.congreso.gob.gt/buscador_decretos/12-2002"
+        ],
+        "planning_guidance": [
+          "https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2023/03/3_GUIA_PARA_LA_IMPLEMENTACION_DEL_PDM-OT_EN_GUATEMALA.pdf"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://portal.segeplan.gob.gt/segeplan/?page_id=12333",
+          "https://datos.minfin.gob.gt/es/dataset/?_tags_limit=0&tags%25253Dtipo=",
+          "https://datos.segeplan.gob.gt/dataset/ranking-municipal-2020-2021-csv"
+        ]
+      },
+      "dominant_failure_class": "source_binding_and_name_aliases",
+      "acquisition_methods": [
+        "Use the official INE Census 2018 portal, report, open data and SEGEPLAN geography services.",
+        "Integrate supplemental health, nutrition and poverty products as distinct sources."
+      ],
+      "semantic_cautions": [
+        "Health cases are counts, not rates.",
+        "Small-area poverty estimates are not census counts."
+      ],
+      "geography_cautions": [
+        "Apply only reviewed department/municipality aliases; retain unmatched municipalities as explicit gaps."
+      ],
+      "reuse_actions": [
+        "Preserve the verified alias ledger and do not normalize names heuristically."
+      ]
+    },
+    {
+      "iso3": "GUY",
+      "m49": "328",
+      "name_en": "Guyana",
+      "aliases": [
+        "Guyana",
+        "ガイアナ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2022,
+        2012
+      ],
+      "domestic_scope": "Ten census regions using official region numbers and names.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 10,
+        "local_observed_indicator_count": 11,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "population_total",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://statisticsguyana.gov.gy/publications/"
+        ],
+        "latest_census": [
+          "https://statisticsguyana.gov.gy/publications/"
+        ],
+        "census_results": [
+          "https://statisticsguyana.gov.gy/publications/"
+        ],
+        "table_catalog": [
+          "https://statisticsguyana.gov.gy/publications/"
+        ],
+        "machine_readable_data": [
+          "https://statisticsguyana.gov.gy/publications/"
+        ],
+        "administrative_codes": [
+          "https://statisticsguyana.gov.gy/publications/"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://statisticsguyana.gov.gy/publications/"
+        ],
+        "planning_law": [
+          "https://parliament.gov.gy/constitution/"
+        ],
+        "planning_guidance": [
+          "https://finance.gov.gy/national-development-strategy/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://lcds.gov.gy/"
+        ]
+      },
+      "dominant_failure_class": "geographic_id_mismatch",
+      "acquisition_methods": [
+        "Use Bureau of Statistics 2022 preliminary products and 2012 compendia as separate rounds."
+      ],
+      "semantic_cautions": [
+        "Do not merge 2012 and 2022 observations into one period."
+      ],
+      "geography_cautions": [
+        "AreaData IDs 05–09 are not Census Region 5–9; join region number to official name and then to the internal ID.",
+        "Use the official spelling Barima-Waini."
+      ],
+      "reuse_actions": [
+        "Retain the explicit region-number/name crosswalk."
+      ]
+    },
+    {
+      "iso3": "HND",
+      "m49": "340",
+      "name_en": "Honduras",
+      "aliases": [
+        "Honduras",
+        "ホンジュラス"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2013
+      ],
+      "domestic_scope": "18 departments and 298 municipalities.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 316,
+        "local_observed_indicator_count": 13,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://ine.gob.hn/censo-de-poblacion-y-vivienda-2013/"
+        ],
+        "latest_census": [
+          "https://ine.gob.hn/censo-de-poblacion-y-vivienda-2013/"
+        ],
+        "census_results": [
+          "https://ine.gob.hn/censo-de-poblacion-y-vivienda-2013/",
+          "http://181.115.7.199/binhnd/RpWebEngine.exe/Portal"
+        ],
+        "table_catalog": [
+          "https://ine.gob.hn/censo-de-poblacion-y-vivienda-2013/",
+          "http://181.115.7.199/binhnd/RpWebEngine.exe/Portal"
+        ],
+        "machine_readable_data": [
+          "http://181.115.7.199/binhnd/RpWebEngine.exe/Portal"
+        ],
+        "administrative_codes": [
+          "https://ine.gob.hn/censo-de-poblacion-y-vivienda-2013/",
+          "http://181.115.7.199/binhnd/RpWebEngine.exe/Portal"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://data.humdata.org/dataset/cod-ab-hnd"
+        ],
+        "planning_law": [
+          "https://www.tsc.gob.hn/biblioteca/index.php/leyes/4-ley-de-municipalidades",
+          "https://sinit.hn/download/29/marco-legal/6045/ley-ordenamiento-territorial-honduras.pdf"
+        ],
+        "planning_guidance": [
+          "https://sinit.hn/download/28/recursos-digitales/10908/lineamientos-ot-final-version.pdf"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://sinit.hn/planes-municipales/",
+          "https://sinit.hn/renot/",
+          "https://www.sefin.gob.hn/sami/",
+          "https://www.sefin.gob.hn/wp-content/uploads/2026/04/Informe-de-Gobiernos-Locales-a-diciembre-2025.pdf",
+          "https://www.sefin.gob.hn/ejecucion-y-seguimiento/"
+        ]
+      },
+      "dominant_failure_class": "redatam_and_municipal_report_extraction",
+      "acquisition_methods": [
+        "Use the INE Census 2013 catalogue, Redatam and all municipality reports.",
+        "Retain the exact filtered table or report page supporting each zero."
+      ],
+      "semantic_cautions": [
+        "A displayed zero is valid only after confirming the relevant filtered source row."
+      ],
+      "geography_cautions": [
+        "Join with official census codes; older COD-AB/SINIT boundaries are reference geometry, not current legal certification."
+      ],
+      "reuse_actions": [
+        "Require full municipality inventory rather than a representative report."
+      ]
+    },
+    {
+      "iso3": "HTI",
+      "m49": "332",
+      "name_en": "Haiti",
+      "aliases": [
+        "Haiti",
+        "Haïti",
+        "ハイチ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2003,
+        2012,
+        2024
+      ],
+      "domestic_scope": "Ten departments using Census 2003, later estimates and survey products kept separate.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 10,
+        "local_observed_indicator_count": 15,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "education_literacy",
+          "employment",
+          "health",
+          "households_housing",
+          "nutrition",
+          "population_total",
+          "poverty",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "nutrition",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://ihsi.gouv.ht/"
+        ],
+        "latest_census": [
+          "https://ihsi.gouv.ht/recensement"
+        ],
+        "census_results": [
+          "https://ihsi.gouv.ht/recensement",
+          "https://ihsi.gouv.ht/public/storage/document-views/March2025/Oan4m17p5LEKtsGEnHgt.pdf"
+        ],
+        "table_catalog": [
+          "https://ihsi.gouv.ht/public/storage/document-views/March2025/Oan4m17p5LEKtsGEnHgt.pdf",
+          "https://mspp.gouv.ht/site/downloads/EMMUS%20V%20document%20final.pdf"
+        ],
+        "machine_readable_data": [
+          "https://ihsi.gouv.ht/public/storage/document-views/March2025/Oan4m17p5LEKtsGEnHgt.pdf",
+          "https://mspp.gouv.ht/site/downloads/EMMUS%20V%20document%20final.pdf"
+        ],
+        "administrative_codes": [
+          "https://ihsi.gouv.ht/public/storage/document-views/March2025/Oan4m17p5LEKtsGEnHgt.pdf"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.geoboundaries.org/api/current/gbOpen/HTI/ADM1/"
+        ],
+        "planning_law": [
+          "https://mpce.gouv.ht/cadre-juridique-et-legal/"
+        ],
+        "planning_guidance": [
+          "https://mpce.gouv.ht/formulaires-et-guides/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://mef.gouv.ht/budgets/lois"
+        ]
+      },
+      "dominant_failure_class": "old_census_and_incompatible_geographies",
+      "acquisition_methods": [
+        "Use IHSI Census 2003 products, IHSI 2024 estimates and EMMUS-V survey tables as separate source families."
+      ],
+      "semantic_cautions": [
+        "Describe 2024 figures as estimates based on the stated methodology, not as a new census.",
+        "Survey percentages with incompatible regional partitions cannot be recomposed from rounded values."
+      ],
+      "geography_cautions": [
+        "EMMUS-V separates Aire Métropolitaine and Reste-Ouest; do not fabricate one Ouest value."
+      ],
+      "reuse_actions": [
+        "Show old census, estimates and survey indicators with their own years and methods."
+      ]
+    },
+    {
+      "iso3": "JAM",
+      "m49": "388",
+      "name_en": "Jamaica",
+      "aliases": [
+        "Jamaica",
+        "ジャマイカ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2011
+      ],
+      "domestic_scope": "14 parishes from STATIN Census 2011 tables and publications.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 14,
+        "local_observed_indicator_count": 22,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "migration",
+          "population_total",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://statinja.gov.jm/Census/PopCensus/Popcensus2011Index.aspx"
+        ],
+        "latest_census": [
+          "https://statinja.gov.jm/Census/PopCensus/Popcensus2011Index.aspx",
+          "https://census.statinja.gov.jm/wp-content/themes/futurio-child/Census2011Reports/Population%20and%20Housing%20Census%202011%20Jamaica%20Ethnic%20Origin%20%26%20Religious%20Affiliation%20Vol%206%20%20.pdf"
+        ],
+        "census_results": [
+          "https://statinja.gov.jm/Census/PopCensus/Populationbyfiveyearsagegroup.aspx",
+          "https://census.statinja.gov.jm/wp-content/themes/futurio-child/Census2011Reports/Population%20and%20Housing%20Census%202011%20Jamaica%20Ethnic%20Origin%20%26%20Religious%20Affiliation%20Vol%206%20%20.pdf"
+        ],
+        "table_catalog": [
+          "https://statinja.gov.jm/Census/PopCensus/Popcensus2011Index.aspx"
+        ],
+        "machine_readable_data": [
+          "https://statinja.gov.jm/Census/PopCensus/Populationbyfiveyearsagegroup.aspx"
+        ],
+        "administrative_codes": [
+          "https://statinja.gov.jm/Census/PopCensus/Populationbyfiveyearsagegroup.aspx"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.geoboundaries.org/api/current/gbOpen/JAM/ADM1/"
+        ],
+        "planning_law": [
+          "https://laws.moj.gov.jm/library/act-of-parliament/8-of-2016-the-local-governance-act"
+        ],
+        "planning_guidance": [
+          "https://www.pioj.gov.jm/policies/vision-2030-jamaica-the-national-development-plan/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.mof.gov.jm/resources-annual-and-supplementary-estimates/"
+        ]
+      },
+      "dominant_failure_class": "universe_semantics_and_tls_acquisition",
+      "acquisition_methods": [
+        "Inventory the STATIN Census 2011 pages, tables and PDFs.",
+        "If an official legal host has a certificate-chain failure, record the host, retrieval method and content hash instead of silently substituting another document."
+      ],
+      "semantic_cautions": [
+        "Piped water into the dwelling is not JMP basic water.",
+        "Any toilet is not the same as improved sanitation.",
+        "Education and sight-difficulty fields have their own age and enrollment universes."
+      ],
+      "geography_cautions": [
+        "Use the 14-parish census geography."
+      ],
+      "reuse_actions": [
+        "Store every indicator universe and denominator alongside the table locator."
+      ]
+    },
+    {
+      "iso3": "MEX",
+      "m49": "484",
+      "name_en": "Mexico",
+      "aliases": [
+        "Mexico",
+        "México",
+        "メキシコ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2020,
+        2025
+      ],
+      "domestic_scope": "States and census municipalities from the INEGI 2020 ITER archive.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 2501,
+        "local_observed_indicator_count": 15,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "nutrition",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "nutrition",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.inegi.org.mx/"
+        ],
+        "latest_census": [
+          "https://www.inegi.org.mx/programas/ccpv/2020/#Datos_abiertos"
+        ],
+        "census_results": [
+          "https://www.inegi.org.mx/programas/ccpv/2020/#Datos_abiertos"
+        ],
+        "table_catalog": [
+          "https://www.inegi.org.mx/programas/ccpv/2020/#Datos_abiertos",
+          "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/doc/fd_iter_cpv2020.pdf"
+        ],
+        "machine_readable_data": [
+          "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip"
+        ],
+        "administrative_codes": [
+          "https://www.inegi.org.mx/servicios/catalogounico.html"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.inegi.org.mx/servicios/catalogounico.html"
+        ],
+        "planning_law": [
+          "https://www.diputados.gob.mx/LeyesBiblio/pdf/LPlan.pdf"
+        ],
+        "planning_guidance": [
+          "https://sidof.segob.gob.mx/notas/5755162",
+          "https://www.transparenciapresupuestaria.gob.mx/Sistema-Evaluacion-Desempeno"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://sidof.segob.gob.mx/notas/5755162",
+          "https://www.pef.hacienda.gob.mx/ae/",
+          "https://www.gob.mx/presidencia/articulos/version-estenografica-primer-informe-de-gobierno-de-la-presidenta-claudia-sheinbaum-pardo-palacio-nacional",
+          "https://www.transparenciapresupuestaria.gob.mx/Sistema-Evaluacion-Desempeno",
+          "https://www.coneval.org.mx/EvaluacionDS/PP/Programas/Paginas/Evaluacion_Programas.aspx"
+        ]
+      },
+      "dominant_failure_class": "large_table_and_boundary_vintage",
+      "acquisition_methods": [
+        "Use the INEGI 2020 ITER archive, its embedded dictionary and catalogue metadata."
+      ],
+      "semantic_cautions": [
+        "Exclude aggregate rows before municipal aggregation and keep the data dictionary definitions."
+      ],
+      "geography_cautions": [
+        "Join CVE_ENT, CVE_MUN and CVE_LOC exactly.",
+        "Do not add municipality codes created after Census 2020 merely because they appear in a later boundary service."
+      ],
+      "reuse_actions": [
+        "Label later geometry as display reference when it is not the census boundary vintage."
+      ]
+    },
+    {
+      "iso3": "NIC",
+      "m49": "558",
+      "name_en": "Nicaragua",
+      "aliases": [
+        "Nicaragua",
+        "ニカラグア"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2005
+      ],
+      "domestic_scope": "17 departments/autonomous regions and 153 municipalities.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 170,
+        "local_observed_indicator_count": 14,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.inide.gob.ni/docu/censos2005/censo2005.htm"
+        ],
+        "latest_census": [
+          "https://www.inide.gob.ni/docu/censos2005/censo2005.htm"
+        ],
+        "census_results": [
+          "https://www.inide.gob.ni/docu/censos2005/censo2005.htm",
+          "https://www.inide.gob.ni/docu/censos2005/CifrasMun/tablas_cifras.htm"
+        ],
+        "table_catalog": [
+          "https://www.inide.gob.ni/docu/censos2005/CifrasMun/tablas_cifras.htm"
+        ],
+        "machine_readable_data": [
+          "https://www.inide.gob.ni/docu/censos2005/CifrasMun/tablas_cifras.htm"
+        ],
+        "administrative_codes": [
+          "https://www.inide.gob.ni/docu/censos2005/CifrasMun/tablas_cifras.htm",
+          "https://www.ineter.gob.ni/geoportales/miacnicaragua/index.html"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.ineter.gob.ni/geoportales/miacnicaragua/index.html"
+        ],
+        "planning_law": [
+          "https://legislacion.asamblea.gob.ni/Normaweb.nsf/xpNorma.xsp?action=openDocument&documentId=67CC56A8B80761DA0625886F006DCDBC",
+          "https://legislacion.asamblea.gob.ni/SILEG/Iniciativas.nsf/c9a0faf9d8c5e28f062572c70052cde2/7ebe8ba4e242fa7b062579eb0064e3b6/%24FILE/Ley%20No.%20792%20reforma%20Ley%20de%20municipios.pdf",
+          "https://legislacion.asamblea.gob.ni/SILEG/Iniciativas.nsf/0/362c8026f915756806257ac6007facc6/%24FILE/Ley%20No.%20828%20Ley%20de%20Reforma%20a%20la%20Ley%20R%C3%A9gimen%20Presupuestario%20Municipal.pdf"
+        ],
+        "planning_guidance": [
+          "https://legislacion.asamblea.gob.ni/Normaweb.nsf/%28%24All%29/F78CA467F5C96D0306257257005FBADC",
+          "https://legislacion.asamblea.gob.ni/Normaweb.nsf/xpNorma.xsp?action=openDocument&documentId=67CC56A8B80761DA0625886F006DCDBC"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.hacienda.gob.ni/plan-nacional-de-lucha-contra-la-pobreza-2022-2026/",
+          "https://www.hacienda.gob.ni/presupuesto2026/",
+          "https://www.hacienda.gob.ni/wp-content/uploads/2026/05/INFORME-DE-EJECUCION-PRESUPUESTARIA-ENERO-MARZO-2026.pdf",
+          "https://www.hacienda.gob.ni/programa-de-inversion-publica/",
+          "https://www.hacienda.gob.ni/reportes-del-programa-de-inversion-publica/"
+        ]
+      },
+      "dominant_failure_class": "multi_volume_reconciliation",
+      "acquisition_methods": [
+        "Acquire the four Census 2005 volumes, all 153 municipal reports and INETER geography.",
+        "Retry timed-out assembly downloads with recorded receipts rather than marking the source absent."
+      ],
+      "semantic_cautions": [
+        "Preserve each table's own denominator when the national volume and local report differ."
+      ],
+      "geography_cautions": [
+        "Apply the reviewed name/code-vintage exceptions, including Waslala and Mulukukú; do not join by normalized name alone."
+      ],
+      "reuse_actions": [
+        "Keep the complete municipality-report manifest and the exception crosswalk."
+      ]
+    },
+    {
+      "iso3": "PAN",
+      "m49": "591",
+      "name_en": "Panama",
+      "aliases": [
+        "Panama",
+        "Panamá",
+        "パナマ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2023
+      ],
+      "domestic_scope": "13 provinces/comarcas, 82 districts and 699 corregimientos.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 794,
+        "local_observed_indicator_count": 18,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "http://www.contraloria.gob.pa/inec/"
+        ],
+        "latest_census": [
+          "https://www.inec.gob.pa/publicaciones/Default3.aspx?ID_CATEGORIA=19&ID_PUBLICACION=1231"
+        ],
+        "census_results": [
+          "https://www.inec.gob.pa/publicaciones/Default3.aspx?ID_CATEGORIA=19&ID_PUBLICACION=1231",
+          "https://www.inec.gob.pa/archivos/P0705547520240201165900Cuadro3.xlsx",
+          "https://www.inec.gob.pa/archivos/P0579518620240202083001Cuadro%204.xlsx"
+        ],
+        "table_catalog": [
+          "https://services5.arcgis.com/E1ALP94T33Es6ABz/ArcGIS/rest/services/Limites_administrativos/FeatureServer",
+          "https://www.inec.gob.pa/archivos/P0705547520240201165900Cuadro3.xlsx",
+          "https://www.inec.gob.pa/archivos/P0579518620240202083001Cuadro%204.xlsx"
+        ],
+        "machine_readable_data": [
+          "https://services5.arcgis.com/E1ALP94T33Es6ABz/ArcGIS/rest/services/Limites_administrativos/FeatureServer",
+          "https://www.inec.gob.pa/archivos/P0705547520240201165900Cuadro3.xlsx",
+          "https://www.inec.gob.pa/archivos/P0579518620240202083001Cuadro%204.xlsx"
+        ],
+        "administrative_codes": [
+          "https://services5.arcgis.com/E1ALP94T33Es6ABz/ArcGIS/rest/services/Limites_administrativos/FeatureServer"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://services5.arcgis.com/E1ALP94T33Es6ABz/ArcGIS/rest/services/Limites_administrativos/FeatureServer"
+        ],
+        "planning_law": [
+          "https://www.descentralizacion.gob.pa/page/ley-37-2009-descentralizacion",
+          "https://www.descentralizacion.gob.pa/uploads/ley-37-2009-descentralizacion.pdf"
+        ],
+        "planning_guidance": [
+          "https://www.mef.gob.pa/dire/",
+          "https://www.mef.gob.pa/wp-content/uploads/2024/05/5.-GUIA-PED-VF-Mayo-6.22.pdf",
+          "https://www.mef.gob.pa/2025/07/refuerzan-la-planificacion-municipal-con-la-guia-metodologica-para-la-formulacion-de-planes-estrategicos-de-desarrollo-territorial/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.mef.gob.pa/plan-estrategico-de-gobierno/",
+          "https://www.mef.gob.pa/wp-content/uploads/2024/12/GacetaNo_30186b_20241227.pdf",
+          "https://diprena.mef.gob.pa/monitoreo-y-evaluacion-de-programas-presupuestarios-2/",
+          "https://diprena.mef.gob.pa/wp-content/uploads/2026/01/Informe-Borrador-Cierre-2024-Consolidado.-Para-Publicacion.pdf",
+          "https://diprena.mef.gob.pa/wp-content/uploads/2024/06/Gu%C3%ADa-metodol%C3%B3gica-para-evaluar-la-calidad-del-gasto-p%C3%BAblico-en-Panam%C3%A1-junio2024.pdf",
+          "https://www.mef.gob.pa/2025/09/entrega-de-68-planes-estrategicos-distritales-fortalece-la-gestion-y-transparencia-de-los-recursos-publicos/"
+        ]
+      },
+      "dominant_failure_class": "mixed_geographic_granularity",
+      "acquisition_methods": [
+        "Use both official census workbooks and official ArcGIS services with exact parent codes."
+      ],
+      "semantic_cautions": [
+        "Urban, migration, nutrition and poverty products are published at different geographic levels; never promote them to a finer level."
+      ],
+      "geography_cautions": [
+        "Require full code-based parentage and reconcile every adopted area; do not use name-only joins."
+      ],
+      "reuse_actions": [
+        "Store the permitted level for every indicator family."
+      ]
+    },
+    {
+      "iso3": "PER",
+      "m49": "604",
+      "name_en": "Peru",
+      "aliases": [
+        "Peru",
+        "Perú",
+        "ペルー"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2017
+      ],
+      "domestic_scope": "Department-level reporting areas in the 2017 census volumes.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 26,
+        "local_observed_indicator_count": 12,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "population_total",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://censo2017.inei.gob.pe/resultados-definitivos-de-los-censos-nacionales-2017/"
+        ],
+        "latest_census": [
+          "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1544/cuadros/00TOMO_01.xlsx"
+        ],
+        "census_results": [
+          "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1544/cuadros/00TOMO_01.xlsx"
+        ],
+        "table_catalog": [
+          "https://censo2017.inei.gob.pe/resultados-definitivos-de-los-censos-nacionales-2017/"
+        ],
+        "machine_readable_data": [
+          "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1544/cuadros/00TOMO_01.xlsx"
+        ],
+        "administrative_codes": [
+          "https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1544/cuadros/00TOMO_01.xlsx"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.geoboundaries.org/api/current/gbOpen/PER/ADM1/"
+        ],
+        "planning_law": [
+          "https://www.gob.pe/96430-el-plan-de-desarrollo-municipal-concertado"
+        ],
+        "planning_guidance": [
+          "https://www.gob.pe/ceplan"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.gob.pe/institucion/ceplan/campa%C3%B1as/6243-conoce-las-normas-del-sinaplan"
+        ]
+      },
+      "dominant_failure_class": "table_interpretation",
+      "acquisition_methods": [
+        "Inventory the five official INEI Census 2017 XLSX volumes and their sheet structures."
+      ],
+      "semantic_cautions": [
+        "POB7–POB9 do not provide residence department by birthplace and cannot support the intended migration indicator.",
+        "An age-14-plus table is not automatically an employment rate."
+      ],
+      "geography_cautions": [
+        "Keep Provincia de Lima and Región Lima separate."
+      ],
+      "reuse_actions": [
+        "Record rejected tables and reasons so another agent does not repeat the same false derivation."
+      ]
+    },
+    {
+      "iso3": "PRI",
+      "m49": "630",
+      "name_en": "Puerto Rico",
+      "aliases": [
+        "Puerto Rico",
+        "プエルトリコ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2020,
+        2022,
+        2023
+      ],
+      "domestic_scope": "78 municipios using Puerto Rico and United States federal statistical identifiers.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 78,
+        "local_observed_indicator_count": 16,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "connectivity",
+          "disability",
+          "education_literacy",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "nutrition",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "nutrition",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.census.gov/programs-surveys/decennial-census/about/rdo/island-areas.html",
+          "https://www.census.gov/library/stories/2025/05/puerto-rico-community-survey.html"
+        ],
+        "latest_census": [
+          "https://www.census.gov/programs-surveys/decennial-census/about/rdo/island-areas.html"
+        ],
+        "census_results": [
+          "https://www.census.gov/programs-surveys/decennial-census/about/rdo/island-areas.html",
+          "https://www.census.gov/library/stories/2025/05/puerto-rico-community-survey.html"
+        ],
+        "table_catalog": [
+          "https://www.census.gov/library/stories/2025/05/puerto-rico-community-survey.html"
+        ],
+        "machine_readable_data": [
+          "https://www.census.gov/library/stories/2025/05/puerto-rico-community-survey.html"
+        ],
+        "administrative_codes": [
+          "https://www.census.gov/library/stories/2025/05/puerto-rico-community-survey.html",
+          "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
+        ],
+        "planning_law": [
+          "https://www.jp.pr.gov/planificacion-fisica"
+        ],
+        "planning_guidance": [
+          "https://www.jp.pr.gov/planificacion-fisica",
+          "https://jp.pr.gov/wp-content/uploads/2021/06/reg24.pdf"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.jp.pr.gov/planificacion-fisica",
+          "https://jp.pr.gov/wp-content/uploads/2026/04/JP-PT-70-05-Plan-Final.pdf",
+          "https://www.ogp.pr.gov/ogp/gerencia-municipal",
+          "https://www.ogp.pr.gov/ogp/servicios-esenciales"
+        ]
+      },
+      "dominant_failure_class": "multi_system_semantic_separation",
+      "acquisition_methods": [
+        "Use PRCS/ACS estimates, Census 2020 urban-rural products, EIA and PR-BRFSS as separate source families."
+      ],
+      "semantic_cautions": [
+        "Plumbing completeness is sanitation evidence, not drinking-water evidence.",
+        "Survey estimates and census counts must retain their different methods and years."
+      ],
+      "geography_cautions": [
+        "Restrict federal queries to Puerto Rico state FIPS 72 and validate municipio identifiers."
+      ],
+      "reuse_actions": [
+        "Keep each source family independently cited and labelled."
+      ]
+    },
+    {
+      "iso3": "PRY",
+      "m49": "600",
+      "name_en": "Paraguay",
+      "aliases": [
+        "Paraguay",
+        "パラグアイ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2022
+      ],
+      "domestic_scope": "Departments from Census 2022 and related official workbooks.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 18,
+        "local_observed_indicator_count": 11,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "ethnicity",
+          "households_housing",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.ine.gov.py/",
+          "https://www.ine.gov.py/resumen/257/resultados-finales-del-censo-nacional-de-poblacion-y-viviendas-2022"
+        ],
+        "latest_census": [
+          "https://www.ine.gov.py/resumen/257/resultados-finales-del-censo-nacional-de-poblacion-y-viviendas-2022"
+        ],
+        "census_results": [
+          "https://www.ine.gov.py/resumen/257/resultados-finales-del-censo-nacional-de-poblacion-y-viviendas-2022"
+        ],
+        "table_catalog": [
+          "https://www.ine.gov.py/resumen/257/resultados-finales-del-censo-nacional-de-poblacion-y-viviendas-2022"
+        ],
+        "machine_readable_data": [
+          "https://www.ine.gov.py/resumen/257/resultados-finales-del-censo-nacional-de-poblacion-y-viviendas-2022"
+        ],
+        "administrative_codes": [
+          "https://www.ine.gov.py/resumen/257/resultados-finales-del-censo-nacional-de-poblacion-y-viviendas-2022"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.geoboundaries.org/api/current/gbOpen/PRY/ADM1/"
+        ],
+        "planning_law": [
+          "https://www.bacn.gov.py/leyes-paraguayas/969/ley-n-3966-organica-municipall"
+        ],
+        "planning_guidance": [
+          "https://www.mef.gov.py/es/institucional/organigrama-y-funciones"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.stp.gov.py/pnd/"
+        ]
+      },
+      "dominant_failure_class": "narrow_initial_search",
+      "acquisition_methods": [
+        "Search beyond the first population product and acquire the official education, disability, urban, indigenous and NBI workbooks."
+      ],
+      "semantic_cautions": [
+        "When numerator and denominator come from different acquired tables, cite both and verify compatible universes.",
+        "Missing detailed indigenous rows are missing, not zero."
+      ],
+      "geography_cautions": [
+        "Use official department identifiers consistently across supplemental workbooks."
+      ],
+      "reuse_actions": [
+        "Require the six-theme catalogue search even after a population workbook is found."
+      ]
+    },
+    {
+      "iso3": "SGS",
+      "m49": "239",
+      "name_en": "South Georgia and the South Sandwich Islands",
+      "aliases": [
+        "South Georgia and the South Sandwich Islands",
+        "SGSSI",
+        "サウスジョージア・サウスサンドウィッチ諸島"
+      ],
+      "recipe_status": "verified_structural_nonresident_exception",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [],
+      "domestic_scope": "No permanent resident population; handled as a structural nonresident exception.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "structural_nonresident_exception",
+        "domestic_territory_count": 0,
+        "local_observed_indicator_count": 0,
+        "local_population_available": false,
+        "local_age_sex_available": false,
+        "local_integrated_themes": [],
+        "local_diagnostic_groups": []
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://gov.gs/frequently-asked-questions/",
+          "https://gov.gs/about-sgssi/"
+        ],
+        "latest_census": [
+          "https://gov.gs/frequently-asked-questions/"
+        ],
+        "census_results": [
+          "https://gov.gs/frequently-asked-questions/"
+        ],
+        "table_catalog": [
+          "https://gov.gs/frequently-asked-questions/"
+        ],
+        "machine_readable_data": [
+          "https://gov.gs/frequently-asked-questions/"
+        ],
+        "administrative_codes": [
+          "https://gov.gs/frequently-asked-questions/"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://gov.gs/frequently-asked-questions/"
+        ],
+        "planning_law": [
+          "https://laws.gov.gs/gazettes/"
+        ],
+        "planning_guidance": [
+          "https://gov.gs/stewardship-framework-for-sgssi/",
+          "https://gov.gs/marine-protected-area/",
+          "https://www.gov.gs/wp-content/uploads/2023/10/TPA-management-plan-FINAL-.pdf"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://gov.gs/stewardship-framework-for-sgssi/",
+          "https://laws.gov.gs/gazettes/",
+          "https://gov.gs/wp-content/uploads/2026/03/SGSSI-MPA-Management-Plan-2026_website.pdf"
+        ]
+      },
+      "dominant_failure_class": "structural_nonresident_exception",
+      "acquisition_methods": [
+        "Use the territorial government's population/residency FAQ and institutional description."
+      ],
+      "semantic_cautions": [
+        "Do not fabricate a resident census edition or interpret temporary personnel as a normal resident population hierarchy."
+      ],
+      "geography_cautions": [
+        "Reference geography is contextual and does not create local statistical areas."
+      ],
+      "reuse_actions": [
+        "Route this territory through the explicit nonresident exception contract."
+      ]
+    },
+    {
+      "iso3": "SLV",
+      "m49": "222",
+      "name_en": "El Salvador",
+      "aliases": [
+        "El Salvador",
+        "エルサルバドル"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2024
+      ],
+      "domestic_scope": "14 departments, 44 municipalities and 262 diagnostic districts.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 320,
+        "local_observed_indicator_count": 13,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "population_total",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://censo2024.bcr.gob.sv/",
+          "https://geoportal.bcr.gob.sv/"
+        ],
+        "latest_census": [
+          "https://censo2024.bcr.gob.sv/"
+        ],
+        "census_results": [
+          "https://censo2024.bcr.gob.sv/",
+          "https://geoportal.bcr.gob.sv/"
+        ],
+        "table_catalog": [
+          "https://censo2024.bcr.gob.sv/",
+          "https://geoportal.bcr.gob.sv/"
+        ],
+        "machine_readable_data": [
+          "https://censo2024.bcr.gob.sv/"
+        ],
+        "administrative_codes": [
+          "https://geoportal.bcr.gob.sv/",
+          "https://services8.arcgis.com/xSn1Pefr3M9zkw7Z/arcgis/rest/services/Selector_Distritos/FeatureServer/0"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://services8.arcgis.com/xSn1Pefr3M9zkw7Z/arcgis/rest/services/Selector_Distritos/FeatureServer/0"
+        ],
+        "planning_law": [
+          "https://www.asamblea.gob.sv/leyes-y-decretos/view/3896",
+          "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/81D2CE2F-EAF0-48D8-8C7B-10A8C9E84F65.pdf",
+          "https://www.asamblea.gob.sv/node/12819"
+        ],
+        "planning_guidance": [
+          "https://www.asamblea.gob.sv/sites/default/files/documents/decretos/81D2CE2F-EAF0-48D8-8C7B-10A8C9E84F65.pdf",
+          "https://www.transparencia.gob.sv/perfil/371"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.transparenciafiscal.gob.sv/downloads/pdf/SumLey2026GC001.pdf",
+          "https://www.transparenciafiscal.gob.sv/ptf/es/PresupuestosPublicos/PresupuestosEjecutados/Anio2025/",
+          "https://www.transparenciafiscal.gob.sv/ptf/es/PresupuestosPublicos/ReformadelSistemadePresupuestoPblico/",
+          "https://www.transparenciafiscal.gob.sv/ptf/es/PTF2-Gastos.html"
+        ]
+      },
+      "dominant_failure_class": "legal_vs_diagnostic_hierarchy",
+      "acquisition_methods": [
+        "Acquire the complete Census 2024 workbook catalogue and official geography services."
+      ],
+      "semantic_cautions": [
+        "Keep the national residual for people with unallocated residence at national level; never distribute it across local areas."
+      ],
+      "geography_cautions": [
+        "Municipalities are planning authorities; districts are diagnostic subdivisions and must not be relabelled as the legal planning unit."
+      ],
+      "reuse_actions": [
+        "Retain all three hierarchy levels and the unallocated national residual explicitly."
+      ]
+    },
+    {
+      "iso3": "SUR",
+      "m49": "740",
+      "name_en": "Suriname",
+      "aliases": [
+        "Suriname",
+        "スリナム"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2012
+      ],
+      "domestic_scope": "Ten districts from ABS Census 2012 volumes and official poverty methodology.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 10,
+        "local_observed_indicator_count": 14,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "electricity",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "population_total",
+          "poverty",
+          "sanitation"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://statistics-suriname.org/censusstatistieken-2012-2/"
+        ],
+        "latest_census": [
+          "https://statistics-suriname.org/censusstatistieken-2012-2/"
+        ],
+        "census_results": [
+          "https://statistics-suriname.org/censusstatistieken-2012-2/"
+        ],
+        "table_catalog": [
+          "https://statistics-suriname.org/censusstatistieken-2012-2/"
+        ],
+        "machine_readable_data": [
+          "https://statistics-suriname.org/censusstatistieken-2012-2/"
+        ],
+        "administrative_codes": [
+          "https://statistics-suriname.org/censusstatistieken-2012-2/"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://statistics-suriname.org/censusstatistieken-2012-2/"
+        ],
+        "planning_law": [
+          "https://dna.sr/wetgeving/"
+        ],
+        "planning_guidance": [
+          "https://www.planningofficesuriname.com/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.planningofficesuriname.com/meerjaren-ontwikkelingsplan/"
+        ]
+      },
+      "dominant_failure_class": "mixed_universes",
+      "acquisition_methods": [
+        "Acquire the relevant ABS Census 2012 volumes and the poverty methodology as separate products."
+      ],
+      "semantic_cautions": [
+        "Education fields with different universes must not be merged.",
+        "Use only a documented common household-deprivation definition across districts."
+      ],
+      "geography_cautions": [
+        "Use the census district geography associated with the adopted tables."
+      ],
+      "reuse_actions": [
+        "Persist table-specific universe and denominator metadata."
+      ]
+    },
+    {
+      "iso3": "TTO",
+      "m49": "780",
+      "name_en": "Trinidad and Tobago",
+      "aliases": [
+        "Trinidad and Tobago",
+        "トリニダード・トバゴ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2011
+      ],
+      "domestic_scope": "15 municipalities from CSO Census 2011 Redatam products.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 15,
+        "local_observed_indicator_count": 13,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "education_literacy",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://cso.gov.tt/"
+        ],
+        "latest_census": [
+          "https://cso.gov.tt/census/2011-census-data/"
+        ],
+        "census_results": [
+          "https://cso.gov.tt/census/2011-census-data/"
+        ],
+        "table_catalog": [
+          "https://cso.gov.tt/census/2011-census-data/"
+        ],
+        "machine_readable_data": [
+          "https://cso.gov.tt/census/2011-census-data/"
+        ],
+        "administrative_codes": [
+          "https://www.geoboundaries.org/api/current/gbOpen/TTO/ADM1/",
+          "https://cso.gov.tt/census/2011-census-data/"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.geoboundaries.org/api/current/gbOpen/TTO/ADM1/"
+        ],
+        "planning_law": [
+          "https://www.finance.gov.tt/legislation/"
+        ],
+        "planning_guidance": [
+          "https://www.finance.gov.tt/what-we-do/vision-2030/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.finance.gov.tt/publications/national-budget/budget-statements/"
+        ]
+      },
+      "dominant_failure_class": "redatam_parsing_and_boundary_gap",
+      "acquisition_methods": [
+        "Record the CSO Redatam form parameters, responses and exported tables."
+      ],
+      "semantic_cautions": [
+        "Preserve the published universe and valid-response denominator for every percentage.",
+        "Unsatisfied Basic Needs is not automatically monetary poverty; computer use is not an urban-rural indicator."
+      ],
+      "geography_cautions": [
+        "When the adopted general boundary source omits Arima, document the explicit display-only relation used instead."
+      ],
+      "reuse_actions": [
+        "Keep the Redatam request recipe and the one-off Arima geography decision."
+      ]
+    },
+    {
+      "iso3": "URY",
+      "m49": "858",
+      "name_en": "Uruguay",
+      "aliases": [
+        "Uruguay",
+        "ウルグアイ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2023
+      ],
+      "domestic_scope": "19 departments from Census 2023 microdata and metadata.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 19,
+        "local_observed_indicator_count": 13,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "education_literacy",
+          "employment",
+          "ethnicity",
+          "households_housing",
+          "migration",
+          "population_total",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://anda5.ine.gub.uy/index.php/catalog/781"
+        ],
+        "latest_census": [
+          "https://anda5.ine.gub.uy/index.php/catalog/781"
+        ],
+        "census_results": [
+          "https://www.gub.uy/instituto-nacional-estadistica/censos2023pvh"
+        ],
+        "table_catalog": [
+          "https://anda5.ine.gub.uy/index.php/catalog/781"
+        ],
+        "machine_readable_data": [
+          "https://anda5.ine.gub.uy/index.php/catalog/781/get-microdata"
+        ],
+        "administrative_codes": [
+          "https://anda5.ine.gub.uy/index.php/catalog/781"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.geoboundaries.org/api/current/gbOpen/URY/ADM1/"
+        ],
+        "planning_law": [
+          "https://www.impo.com.uy/bases/leyes/19272-2014"
+        ],
+        "planning_guidance": [
+          "https://www.opp.gub.uy/es/planificacion"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.opp.gub.uy/es/planificacion"
+        ]
+      },
+      "dominant_failure_class": "restricted_microdata_processing",
+      "acquisition_methods": [
+        "Use the INE ANDA catalogue and access-controlled person microdata only under its terms.",
+        "Aggregate locally, then remove restricted person records from the project."
+      ],
+      "semantic_cautions": [
+        "Publish only non-disclosive aggregates and retain the methodology, input fingerprint and aggregation code."
+      ],
+      "geography_cautions": [
+        "Use the department identifiers represented in the census metadata."
+      ],
+      "reuse_actions": [
+        "Never commit or redistribute restricted microdata; preserve reproducibility through hashes, metadata and code."
+      ]
+    },
+    {
+      "iso3": "USA",
+      "m49": "840",
+      "name_en": "United States of America",
+      "aliases": [
+        "United States",
+        "United States of America",
+        "USA",
+        "米国",
+        "アメリカ合衆国"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2020,
+        2022,
+        2023
+      ],
+      "domestic_scope": "States, counties and county equivalents using Census Bureau geographic identifiers.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 3195,
+        "local_observed_indicator_count": 17,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "drinking_water",
+          "education_literacy",
+          "employment",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "nutrition",
+          "population_total",
+          "poverty",
+          "sanitation",
+          "urban_rural"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "employment",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "nutrition",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_law",
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.census.gov/"
+        ],
+        "latest_census": [
+          "https://www.census.gov/data/tables/2023/dec/2020-census-dhc.html",
+          "https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural.html"
+        ],
+        "census_results": [
+          "https://www.census.gov/data/tables/2023/dec/2020-census-dhc.html",
+          "https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural.html"
+        ],
+        "table_catalog": [
+          "https://www.census.gov/programs-surveys/acs/data/summary-file.html",
+          "https://data.census.gov/table/ACSST5Y2023.B01003",
+          "https://data.census.gov/table/ACSST5Y2023.B01001",
+          "https://data.census.gov/table/ACSST5Y2023.B11001",
+          "https://data.census.gov/table/ACSST5Y2023.B25001",
+          "https://data.census.gov/table/ACSST5Y2023.B25047",
+          "https://data.census.gov/table/ACSST5Y2023.B15003",
+          "https://data.census.gov/table/ACSST5Y2023.B23025",
+          "https://data.census.gov/table/ACSST5Y2023.C18108",
+          "https://data.census.gov/table/ACSST5Y2023.B05002",
+          "https://data.census.gov/table/ACSST5Y2023.B03003",
+          "https://data.census.gov/table/ACSST5Y2023.B27010",
+          "https://data.census.gov/table/ACSST5Y2023.B17001",
+          "https://data.census.gov/table/ACSST5Y2023.B22003",
+          "https://data.census.gov/table/ACSST5Y2023.B28002"
+        ],
+        "machine_readable_data": [
+          "https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/"
+        ],
+        "administrative_codes": [
+          "https://www.census.gov/programs-surveys/acs/data/summary-file.html",
+          "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
+        ],
+        "planning_law": [
+          "https://uscode.house.gov/view.xhtml?req=%28title%3A31+section%3A1115+edition%3Aprelim%29"
+        ],
+        "planning_guidance": [
+          "https://www.whitehouse.gov/wp-content/uploads/2025/08/a11.pdf",
+          "https://www.whitehouse.gov/omb/information-resources/guidance/circulars"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://www.performance.gov/about/",
+          "https://www.whitehouse.gov/omb/information-resources/budget/appendix/"
+        ]
+      },
+      "dominant_failure_class": "large_bulk_processing_and_state_isolation",
+      "acquisition_methods": [
+        "Use Census/ACS bulk table-based summary files, data.census.gov table metadata and official cartographic boundaries.",
+        "Keep CDC and Census products as separately sourced indicator families."
+      ],
+      "semantic_cautions": [
+        "Keep Census 2020 counts, ACS 2023 five-year estimates, urban-rural classifications and CDC estimates separate."
+      ],
+      "geography_cautions": [
+        "Use Census geographic identifiers and the boundary vintage appropriate to the displayed level."
+      ],
+      "reuse_actions": [
+        "Filter indicators to the active country and normalize territory, metric, level, URL, documents and outputs atomically when switching country."
+      ]
+    },
+    {
+      "iso3": "VEN",
+      "m49": "862",
+      "name_en": "Venezuela (Bolivarian Republic of)",
+      "aliases": [
+        "Venezuela",
+        "Venezuela (Bolivarian Republic of)",
+        "ベネズエラ"
+      ],
+      "recipe_status": "verified_broad_local_statistical_recipe",
+      "verified_at": "2026-09-21",
+      "reuse_status": "historically_verified_location_and_method_refresh_required",
+      "current_project_evidence_status": "not_acquired_by_source_preflight",
+      "census_reference_years": [
+        2011
+      ],
+      "domestic_scope": "25 ADM1 reporting areas from Census 2011 and an explicitly sourced NBI table.",
+      "statistical_edition": {
+        "source_review_complete": true,
+        "classification": "broad_local_edition",
+        "domestic_territory_count": 25,
+        "local_observed_indicator_count": 15,
+        "local_population_available": true,
+        "local_age_sex_available": true,
+        "local_integrated_themes": [
+          "age_sex",
+          "disability",
+          "education_literacy",
+          "ethnicity",
+          "health",
+          "households_housing",
+          "migration",
+          "population_total",
+          "poverty"
+        ],
+        "local_diagnostic_groups": [
+          "housing_services",
+          "education",
+          "disability_health",
+          "migration_urban",
+          "ethnicity",
+          "poverty"
+        ]
+      },
+      "planning_readiness": {
+        "status": "incomplete",
+        "note": "The Americas statistical recipe does not establish a completed planning-law, guidance, plans, budgets, implementation and evaluation package. Re-research these domains for the new country build.",
+        "incomplete_domains": [
+          "planning_guidance",
+          "plans_budgets_implementation_evaluation"
+        ]
+      },
+      "source_entrypoints": {
+        "official_statistics_office": [
+          "https://www.ine.gov.ve/documentos/Demografia/CensodePoblacionyVivienda/pdf/nacional.pdf"
+        ],
+        "latest_census": [
+          "https://www.ine.gov.ve/documentos/Demografia/CensodePoblacionyVivienda/pdf/nacional.pdf"
+        ],
+        "census_results": [
+          "https://www.ine.gov.ve/documentos/Demografia/CensodePoblacionyVivienda/pdf/nacional.pdf"
+        ],
+        "table_catalog": [
+          "https://www.ine.gov.ve/documentos/Demografia/CensodePoblacionyVivienda/pdf/nacional.pdf"
+        ],
+        "machine_readable_data": [
+          "https://www.ine.gov.ve/documentos/Demografia/CensodePoblacionyVivienda/pdf/nacional.pdf"
+        ],
+        "administrative_codes": [
+          "https://www.ine.gov.ve/documentos/Demografia/CensodePoblacionyVivienda/pdf/nacional.pdf"
+        ],
+        "adm1_adm2_boundaries": [
+          "https://www.ine.gov.ve/documentos/Demografia/CensodePoblacionyVivienda/pdf/nacional.pdf"
+        ],
+        "planning_law": [
+          "https://mppp.gob.ve/marco-legal/leyes-y-reglamentos/"
+        ],
+        "planning_guidance": [
+          "https://mppp.gob.ve/"
+        ],
+        "plans_budgets_implementation_evaluation": [
+          "https://mppp.gob.ve/"
+        ]
+      },
+      "dominant_failure_class": "official_host_failure_and_adapter_identity_bug",
+      "acquisition_methods": [
+        "Use the official INE Census 2011 report and record any government-plan mirror used when the original NBI object cannot be recovered."
+      ],
+      "semantic_cautions": [
+        "Do not present 2011 evidence as current or infer municipality observations."
+      ],
+      "geography_cautions": [
+        "Keep the source-backed ADM1 crosswalk and boundary decision."
+      ],
+      "reuse_actions": [
+        "Apply the same duplicate-observation and plural-hash-field checks as Ecuador."
+      ]
+    }
+  ]
+}
