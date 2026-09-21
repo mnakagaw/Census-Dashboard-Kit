@@ -16,7 +16,7 @@ The generated country directory belongs to the user. The user is encouraged to e
 - Country-coded WDI queries and fixed catalogues for HDX, MICS, DHS, WorldPop, GHSL and UNDP human-development data.
 - Anti-shortcut rules that prevent an entrypoint, census date, first workbook, search result or national value from being treated as completed local evidence.
 
-The machine-readable registry is `config/jica-priority-source-preflight.json`; the human-readable 142-row audit is `docs/research/jica-priority-2026/SOURCE_PREFLIGHT_142.md`. These records are starting addresses. Country work must refresh links, inspect the actual release and legal text, inventory all resources/tables/fields, reconcile geography and record adoption decisions.
+The universal machine-readable registries are `config/world-country-area-registry.json` and `config/world-source-preflight.json`; the human-readable 250-row review is `docs/research/world-2026/WORLD_SOURCE_PREFLIGHT_250.md`. The JICA 142 registry is an additional priority and operational-context layer. These records are starting addresses, not stored country data. Country work must refresh links, inspect the actual release and legal text, inventory all resources/tables/fields, reconcile geography and record adoption decisions. Spain and Finland are required resolution examples for developed-country, devolved-law and register-based systems. Taiwan is a required operational-supplement example with its own official statistical, planning-law and geographic sources and an explicit status caution.
 
 ## Constrained completion
 

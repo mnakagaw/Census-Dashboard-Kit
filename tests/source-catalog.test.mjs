@@ -1,12 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadSourceCatalog, findCountrySourceRecord, findPriorityCountryRecord, findPrioritySourceRecord, buildSourcePreflight, renderSourcePreflightMarkdown } from '../lib/source-catalog.mjs';
+import { loadSourceCatalog, findCountrySourceRecord, findPriorityCountryRecord, findPrioritySourceRecord, findWorldCountryRecord, findWorldSourceRecord, buildSourcePreflight, renderSourcePreflightMarkdown } from '../lib/source-catalog.mjs';
 import { sourcePlan } from '../scripts/source-plan.mjs';
 
 test('source catalog combines reusable international candidates and pre-researched countries', async () => {
   const catalog = await loadSourceCatalog();
   assert.equal(catalog.coverage.common_sources, 10);
   assert.equal(catalog.coverage.country_records, 32);
+  assert.equal(catalog.coverage.world_countries_and_areas, 250);
+  assert.equal(catalog.coverage.world_source_preflights, 250);
+  assert.equal(catalog.coverage.un_m49_countries_and_areas, 248);
   assert.equal(catalog.coverage.jica_priority_countries, 142);
   assert.equal(catalog.coverage.jica_priority_dac_recipients, 132);
   assert.equal(catalog.coverage.jica_priority_source_preflights, 142);
@@ -134,8 +137,11 @@ test('unresearched country still receives common candidates and an explicit rese
   const preflight = buildSourcePreflight(catalog, { id: 'JPN', name: 'Japan' });
   assert.equal(preflight.country_research.status, 'source_locations_not_pre_researched');
   assert.equal(preflight.country_research.sources.length, 0);
+  assert.equal(preflight.world_context.status, 'world_country_or_area_registry_match');
+  assert.equal(preflight.summary.world_source_address_categories, 4);
+  assert.ok(preflight.world_source_preflight.national_statistics_and_census.national_statistics_office.url);
   assert.equal(preflight.common_candidates.length, 10);
-  assert.match(preflight.required_actions[0], /Locate and verify/);
+  assert.ok(preflight.required_actions.some(action => /world preflight/.test(action)));
   assert.match(renderSourcePreflightMarkdown(preflight), /does not mean the listed data were acquired/);
 });
 
@@ -143,7 +149,9 @@ test('source plan can narrow common candidates by theme without implying country
   const json = JSON.parse(await sourcePlan({ country: 'UGA', theme: 'refugees', format: 'json' }));
   assert.deepEqual(json.common_candidates.map(source => source.id), ['unhcr-refugee-data-finder']);
   assert.equal(json.common_candidates[0].country_status, 'availability_not_checked_for_country');
-  await assert.rejects(sourcePlan({ country: 'Japan', format: 'json' }), /outside the researched and JICA priority registries/);
+  const japan = JSON.parse(await sourcePlan({ country: 'Japan', format: 'json' }));
+  assert.equal(japan.country.iso3, 'JPN');
+  assert.equal(japan.summary.world_source_address_categories, 4);
 });
 
 test('source plan accepts a JICA-priority name before national sources are researched', async () => {
@@ -153,4 +161,60 @@ test('source plan accepts a JICA-priority name before national sources are resea
   assert.equal(json.country_research.status, 'source_locations_not_pre_researched');
   assert.ok(json.priority_source_preflight.national_statistics_and_census.national_statistics_office.url);
   assert.equal(json.summary.priority_source_address_categories, 4);
+});
+
+test('all 250 world identities have four source-address categories without claiming acquisition', async () => {
+  const catalog = await loadSourceCatalog();
+  assert.equal(new Set(catalog.world_countries_and_areas.map(area => area.iso3)).size, 250);
+  assert.equal(new Set(catalog.world_source_records.map(record => record.iso3)).size, 250);
+  for (const area of catalog.world_countries_and_areas) {
+    assert.equal(findWorldCountryRecord(catalog, area.iso3)?.iso3, area.iso3);
+    assert.equal(findWorldCountryRecord(catalog, area.name_en)?.iso3, area.iso3);
+    const record = findWorldSourceRecord(catalog, area.iso3);
+    assert.ok(record.national_statistics_and_census.national_statistics_office.url);
+    assert.ok(record.planning_law_and_materials.legal_catalogue);
+    assert.ok(record.geography_and_codes.geoboundaries_adm1_api);
+    assert.ok(record.international_data_candidates.world_bank_country_api);
+    assert.equal(Object.hasOwn(record, 'observations'), false);
+    const preflight = buildSourcePreflight(catalog, { id: area.iso3, name: area.name_en });
+    assert.equal(preflight.summary.world_source_address_categories, 4);
+    assert.equal(preflight.summary.acquired_sources, 0);
+  }
+});
+
+test('Spain, Finland and Taiwan resolve from Japanese names and retain country-system source packs', async () => {
+  const catalog = await loadSourceCatalog();
+  assert.equal(findWorldCountryRecord(catalog, 'スペイン').iso3, 'ESP');
+  assert.equal(findWorldCountryRecord(catalog, 'フィンランド').iso3, 'FIN');
+  assert.equal(findWorldCountryRecord(catalog, '台湾').iso3, 'TWN');
+  assert.equal(findWorldCountryRecord(catalog, '158').iso3, 'TWN');
+  const spain = JSON.parse(await sourcePlan({ country: 'スペイン', format: 'json' }));
+  const finland = JSON.parse(await sourcePlan({ country: 'フィンランド', format: 'json' }));
+  const taiwan = JSON.parse(await sourcePlan({ country: '台湾', format: 'json' }));
+  assert.equal(spain.country.iso3, 'ESP');
+  assert.equal(finland.country.iso3, 'FIN');
+  assert.equal(taiwan.country.iso3, 'TWN');
+  assert.ok(spain.summary.world_country_specific_entrypoints >= 9);
+  assert.ok(finland.summary.world_country_specific_entrypoints >= 9);
+  assert.ok(taiwan.summary.world_country_specific_entrypoints >= 9);
+  assert.match(JSON.stringify(spain.world_source_preflight), /ine\.es/i);
+  assert.match(JSON.stringify(spain.world_source_preflight), /boe\.es/i);
+  assert.match(spain.world_source_preflight.planning_law_and_materials.country_caution, /autonomous communities/i);
+  assert.match(JSON.stringify(finland.world_source_preflight), /pxdata\.stat\.fi/i);
+  assert.match(JSON.stringify(finland.world_source_preflight), /finlex\.fi/i);
+  assert.match(finland.world_source_preflight.national_statistics_and_census.country_system_note, /register[ -]based/i);
+  assert.match(JSON.stringify(taiwan.world_source_preflight), /eng\.stat\.gov\.tw/i);
+  assert.match(JSON.stringify(taiwan.world_source_preflight), /nlma\.gov\.tw/i);
+  assert.equal(spain.summary.acquired_sources, 0);
+  assert.equal(finland.summary.acquired_sources, 0);
+  assert.equal(taiwan.summary.acquired_sources, 0);
+});
+
+test('structural territories keep explicit exception notes instead of invented conventional systems', async () => {
+  const catalog = await loadSourceCatalog();
+  for (const iso3 of ['ATA', 'SGS', 'IOT']) {
+    const record = findWorldSourceRecord(catalog, iso3);
+    assert.match(JSON.stringify(record), /structural|non-resident|administering|no permanent/i);
+    assert.equal(buildSourcePreflight(catalog, { id: iso3, name: record.name_en }).summary.acquired_sources, 0);
+  }
 });

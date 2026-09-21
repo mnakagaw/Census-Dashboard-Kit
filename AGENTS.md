@@ -4,7 +4,7 @@
 
 国名だけの依頼では、`prompts/ONE_COUNTRY_COMPLETE.md`と`docs/COUNTRY_COMPLETION_CONTRACT.md`を必須契約として扱う。Antigravityは`GEMINI.md`、Claude Codeは`CLAUDE.md`、Codexは本ファイルを入口にするが、いずれも公式目録の全resource処置、原表の全数値列監査、実ブラウザー、DOCX全ページ確認、42シナリオ、12ケース国別監査、`verify-delivery`の`ready: true`まで完了しなければ成果を返さない。代表1地域や初期生成は完成根拠にならない。
 
-`docs/REFERENCE_COUNTRY_CASES.md`を読む。DOM、UGA、LAO、BGDは教訓であると同時に新規対象国として指定できる。指定された場合も過去の見本を返さず、現在のsourceを再確認して新しい出力先へ完成品を作る。142か国すべてで`config/jica-priority-source-preflight.json`の国別入口を読む。`config/americas-verified-source-recipes.json`に対象国があれば、過去に成功したURL・取得方法・意味・地理例外を先に再実行する。ただし入口や過去の成功を、当案件での取得・hash・本文確認・地理照合・採用済みと扱わない。
+`config/world-country-area-registry.json`と`config/world-source-preflight.json`を読み、UN M49 248件＋明示補足2件（台湾・Kosovo）の全250対象で世界台帳の国別入口を最初に使う。JICA優先142件では`config/jica-priority-source-preflight.json`も補足として読む。`docs/REFERENCE_COUNTRY_CASES.md`のDOM、UGA、LAO、BGDは教訓であると同時に新規対象国として指定できる。指定された場合も過去の見本を返さず、現在のsourceを再確認して新しい出力先へ完成品を作る。`config/americas-verified-source-recipes.json`に対象国があれば、過去に成功したURL・取得方法・意味・地理例外を先に再実行する。ただし入口や過去の成功を、当案件での取得・hash・本文確認・地理照合・採用済みと扱わない。登録統計、ローリングセンサス、連邦・自治州法、属領、非定住地域を通常の10年国勢調査と単一国法へ無理に当てはめない。
 
 ## 国名だけで始める案件
 

@@ -2,6 +2,8 @@
 
 国名とこのPublicリポジトリのURLをCodex、Antigravity、Claude Codeへ渡し、各国の公式資料を調査して国別ダッシュボードを作るためのOSSキットです。
 
+世界の国・地域は、UN M49の248件と明示的な運用補足2件（台湾・Kosovo）の計250件を事前台帳化しています。JICA優先142件はその中の優先タグ・補足情報であり、対象範囲の上限ではありません。スペイン、フィンランドを含む先進国も、台湾のような明示補足対象も、国名だけで開始できます。GitHubに保持するのは国・地域コード、公式統計／国勢調査、計画法制度、行政コード・境界、国際候補の探索開始アドレスと注意事項です。統計データ本体は事前収録せず、案件時点で公式資料を取得・確認します。
+
 ## 最短手順：これだけ！
 
 1. 国別ダッシュボードを保存する**空のフォルダー**を作ります。
@@ -22,6 +24,8 @@ https://github.com/mnakagaw/Census-Dashboard-Kit/blob/main/prompts/ONE_COUNTRY_C
    - [③ Codex Sitesで公開する](#codex-sites-publish)
 
 詳しい完成条件は[一発完成プロンプト](prompts/ONE_COUNTRY_COMPLETE.md)に含まれています。通常は長い指示を自分でコピーしたり、制作工程を一つずつ指示したりする必要はありません。
+
+例として`［XX国］`を`スペイン`または`フィンランド`へ変更しても、AIは[`config/world-source-preflight.json`](config/world-source-preflight.json)の公式入口から調査を開始します。スペインでは国の制度だけでなく自治州の現行法・計画手段を確認し、フィンランドでは質問票型の10年ごとの国勢調査を前提にせず、登録統計と年次自治体表を調べます。
 
 > [!IMPORTANT]
 > 利用者が行う依頼は一回です。AIは内部で作業場所の準備、公式資料調査、データ取得・統合、3ページの制作、ブラウザー操作、出力照合、納品ゲートまで連続して実行します。途中の生成サイト、全国値だけの画面、リンク一覧、緑のGitHub Actionsを利用者への成果として返してはいけません。
@@ -410,7 +414,7 @@ tests/                   選択、欠測、地理、計画、出力等の回帰�
 .github/workflows/       キットCIと管理者用の内部作業場所確認
 ```
 
-[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。利用者向けの主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[独立完成監査](docs/INDEPENDENT_AUDIT.md)、[世界全体とJICA優先142か国・地域の運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。JICA優先台帳は[`config/jica-priority-country-registry.json`](config/jica-priority-country-registry.json)、全142件の探索開始アドレスは[`config/jica-priority-source-preflight.json`](config/jica-priority-source-preflight.json)で機械判定します。生成後のサイトとWordは利用者自身の成果物であり、国別作業ディレクトリで文言、テーマ、資料、公開先を修正・再生成できます。
+[START_HERE.md](START_HERE.md)から詳しい手順へ進んでください。利用者向けの主要文書は[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[独立完成監査](docs/INDEPENDENT_AUDIT.md)、[世界250か国・地域とJICA優先142件の運用](docs/GLOBAL_SOURCE_AND_BUILD_OPERATING_MODEL.md)、[最新版表示方針](docs/LATEST_VALUE_POLICY.md)、[共通UX仕様](docs/02_COMMON_SPEC.md)、[国別データ適応](docs/03_COUNTRY_AND_DATA.md)、[ソースアダプター](docs/SOURCE_ADAPTER_GUIDE.md)、[計画資料契約](docs/PLANNING_DATA_CONTRACT.md)、[分析契約](docs/ANALYSIS_DATA_CONTRACT.md)です。世界250件の探索開始アドレスは[`config/world-source-preflight.json`](config/world-source-preflight.json)、JICA優先補足は[`config/jica-priority-source-preflight.json`](config/jica-priority-source-preflight.json)で機械判定します。生成後のサイトとWordは利用者自身の成果物であり、国別作業ディレクトリで文言、テーマ、資料、公開先を修正・再生成できます。
 
 </details>
 

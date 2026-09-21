@@ -1,6 +1,6 @@
 {
   "name": "census-dashboard-kit",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": true,
   "description": "Public AI-ready kit for building evidence-based country census and planning dashboards",
   "type": "module",
@@ -19,6 +19,7 @@
     "serve": "node scripts/serve.mjs",
     "sources:plan": "node scripts/source-plan.mjs",
     "sources:acquire": "node scripts/acquire-country-sources.mjs",
-    "sources:jica-priority": "python scripts/update-jica-priority-registry.py && python scripts/update-priority-source-preflight.py"
+    "sources:jica-priority": "python scripts/update-jica-priority-registry.py && python scripts/update-priority-source-preflight.py",
+    "sources:world": "python scripts/update-world-source-preflight.py"
   }
 }

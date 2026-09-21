@@ -28,7 +28,7 @@ node ./Census-Dashboard-Kit/scripts/create-country.mjs --country "ウガンダ" 
 
 CLIの準備工程が収集するのはWorld Bank WDIの**全国値**とgeoBoundariesの**参照境界**。これは利用者向けの初期版や納品物ではない。AIは画面を開いて利用者へ見せず、直ちに国内資料の調査・統合へ進む。geoBoundariesのIDは公式行政コードではなく、全国値を地方へ配分しない。
 
-生成された`evidence/SOURCE_PREFLIGHT.md`と`.json`を最初に読む。`priority_context`はJICA優先142か国・地域の所管・ISO/M49・DAC区分、`priority_source_preflight`は各国の統計局・国勢調査、計画法・資料、地理・コード、国際データの探索開始アドレスを示す。全142件にこの4区分を用意しているが、国別データや法令本文を取得・確認済みとする記録ではない。国勢調査目録、計画法・手引き・実計画、行政コード・境界の最新版と内容を再確認する。国際共通sourceは対象国・テーマ・年・粒度のavailabilityを確認してから取得する。所在の登録を取得済み・地理照合済み・採用済みと読み替えない。詳しくは[共通データと国別情報源の事前台帳](docs/COMMON_DATA_AND_SOURCE_REGISTRY.md)と[国名だけで完成させる受入条件](docs/COUNTRY_NAME_ONLY_ACCEPTANCE.md)を使う。
+生成された`evidence/SOURCE_PREFLIGHT.md`と`.json`を最初に読む。`world_context`はUN M49 248件と明示補足2件（台湾・Kosovo）からなる世界250件の国・地域同定、`world_source_preflight`は統計局／国勢調査、計画法・資料、地理・コード、国際データの探索開始アドレスを示す。スペインやフィンランドを含む全250件にこの4区分を用意している。`priority_context`と`priority_source_preflight`はJICA優先142件だけに加わる補足であり、世界台帳の代わりではない。いずれも国別データや法令本文を取得・確認済みとする記録ではない。国勢調査または登録統計の目録、計画法・手引き・実計画、行政コード・境界の最新版と内容を再確認する。連邦制・自治州制度・海外領域・登録統計型など、その国・地域の制度を十年ごとの質問票型国勢調査や単一の国法へ押し込まない。国際共通sourceは対象国・テーマ・年・粒度のavailabilityを確認してから取得する。所在の登録を取得済み・地理照合済み・採用済みと読み替えない。詳しくは[共通データと国別情報源の事前台帳](docs/COMMON_DATA_AND_SOURCE_REGISTRY.md)と[国名だけで完成させる受入条件](docs/COUNTRY_NAME_ONLY_ACCEPTANCE.md)を使う。
 
 AIは現地統計局、国勢調査、公式地域コード・境界、計画機関、地方計画様式、公開予算・事業を調べる。同条件で利用できる場合は国内の公式一次資料を優先する。データがAPI、Excel、PDF等に分かれていても、[ソース別アダプター手順](docs/SOURCE_ADAPTER_GUIDE.md)で再実行できる取得・抽出・結合を追加する。
 

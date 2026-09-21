@@ -26,6 +26,8 @@ JSON.parse(await readFile('config/country-source-registry.json', 'utf8'));
 JSON.parse(await readFile('config/americas-verified-source-recipes.json', 'utf8'));
 JSON.parse(await readFile('config/jica-priority-country-registry.json', 'utf8'));
 JSON.parse(await readFile('config/jica-priority-source-preflight.json', 'utf8'));
+JSON.parse(await readFile('config/world-country-area-registry.json', 'utf8'));
+JSON.parse(await readFile('config/world-source-preflight.json', 'utf8'));
 
 const markdown = [];
 async function collectMarkdown(dir) {

@@ -10,7 +10,7 @@ Completion is therefore a closure problem, not a page-generation event.
 
 ## Mandatory closure sequence
 
-1. **Resolve and isolate.** Resolve country identity and ISO alpha-3; create a new country directory and Task Contract.
+1. **Resolve and isolate.** Resolve country/area identity against the 250-entry world registry and ISO/M49 or explicit operational-supplement context; create a new country directory and Task Contract. Read its world source preflight first and the JICA supplement only when present.
 2. **Close official catalogues.** Record every expected resource from each official census/statistics catalogue. Every item ends as integrated, unavailable, restricted, failed with evidence, duplicate, superseded, incompatible, or excluded with a source-specific reason.
 3. **Audit original content.** Inspect every sheet, field, table, appendix and continued table. Record all numeric fields, including rejected ones.
 4. **Close six themes.** Finish the six-theme audit. `candidate_found_not_integrated` is a failed completion state.
