@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "as_of": "2026-09-21",
+  "as_of": "2026-09-23",
   "definition": "All 248 current UN M49 country-or-area rows plus Taiwan and Kosovo as two explicit operational supplements.",
   "use": "Country-name and code resolution plus discovery context only. Identity does not establish sovereignty, legal boundary status, planning authority, source acquisition or indicator availability.",
   "counts": {

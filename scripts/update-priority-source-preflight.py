@@ -47,6 +47,59 @@ def key(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", value.casefold())
 
 
+def census_country_label(value: str) -> str:
+    """Remove UNSD table headings and numeric footnotes from a country label."""
+    value = re.sub(r"\s*\(\d+\)\s*$", "", clean(value))
+    return re.sub(r"^(?:AFRICA|AMERICA|ASIA|EUROPE|OCEANIA)\s+Countries or areas\s+", "", value, flags=re.IGNORECASE)
+
+
+def census_label_key(value: str) -> str:
+    """Normalize UNSD country labels without treating headings/footnotes as identity."""
+    return key(census_country_label(value))
+
+
+ROUND_PERIODS = {
+    1990: "1985-1994",
+    2000: "1995-2004",
+    2010: "2005-2014",
+    2020: "2015-2024",
+    2030: "2025-2034",
+}
+
+
+def census_date_text(value: str) -> str:
+    value = clean(value)
+    return re.sub(r"^\d{4}\s+round\s*\(\d{4}-\d{4}\)\s*", "", value, flags=re.IGNORECASE)
+
+
+def completed_census_cell(value: str) -> bool:
+    value = census_date_text(value)
+    return bool(value and value != "..." and not re.fullmatch(r"\([^)]*\)", value))
+
+
+def census_summary(rows: list[dict[str, object]], *, linked_only: bool) -> dict[str, object] | None:
+    candidates: list[tuple[tuple[int, int, int], dict[str, object]]] = []
+    for row_index, row in enumerate(rows):
+        for round_year, period in ROUND_PERIODS.items():
+            cell = row[f"round_{round_year}"]
+            text = census_date_text(str(cell["text"]))
+            links = list(dict.fromkeys(str(url) for url in cell["links"] if url))
+            if not completed_census_cell(text) or (linked_only and not links):
+                continue
+            years = [int(year) for year in re.findall(r"(?<!\d)(?:18|19|20)\d{2}(?!\d)", text)]
+            sort_year = max(years, default=round_year)
+            candidates.append(((round_year, sort_year, row_index), {
+                "round": round_year,
+                "round_period": period,
+                "date_text": text,
+                "country_label": census_country_label(str(row["country_label"])),
+                "links": links,
+                "primary_url": links[0] if links else None,
+                "link_status": "unsd_link_listed" if links else "no_unsd_link_listed",
+            }))
+    return max(candidates, key=lambda item: item[0])[1] if candidates else None
+
+
 class NsoParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -174,11 +227,11 @@ def main() -> None:
     census_by_name: dict[str, list[dict[str, object]]] = {}
     previous_name = ""
     for cells in census_parser.rows:
-        name = clean(str(cells[0]["text"])) or previous_name
+        name = census_country_label(str(cells[0]["text"])) or previous_name
         if not name:
             continue
         previous_name = name
-        census_by_name.setdefault(key(name), []).append({
+        census_by_name.setdefault(census_label_key(name), []).append({
             "country_label": name,
             "round_1990": cells[1], "round_2000": cells[2], "round_2010": cells[3],
             "round_2020": cells[4], "round_2030": cells[5] if len(cells) > 5 else {"text": "", "links": []},
@@ -203,6 +256,8 @@ def main() -> None:
                 fuzzy.extend(rows for label, rows in census_by_name.items() if label.endswith(wanted) or label.startswith(wanted))
             if len({id(rows) for rows in fuzzy}) == 1:
                 census_rows = fuzzy[0]
+        latest_listing = census_summary(census_rows, linked_only=False)
+        latest_linked_listing = census_summary(census_rows, linked_only=True)
         iso3, iso2, name = country["iso3"], country["iso2"], country["name_en"]
         hdx_query = urllib.parse.quote(f"{name} census subnational administrative boundaries")
         records.append({
@@ -213,6 +268,8 @@ def main() -> None:
                 "national_statistics_office": {**nso, "origin": nso_origin, "directory_source": UNSD_NSO},
                 "un_census_rounds": census_rows,
                 "un_census_dates_source": UNSD_CENSUS,
+                "latest_un_census_listing": latest_listing,
+                "latest_un_census_linked_listing": latest_linked_listing,
                 "required_next_step": "Open the NSO census catalogue, inventory every current census release/resource/table, and preserve all administrative levels and age-sex tables before selecting indicators.",
             },
             "planning_law_and_materials": {
@@ -258,9 +315,13 @@ def main() -> None:
     if any(not record["national_statistics_and_census"]["national_statistics_office"]["url"] for record in records):
         raise RuntimeError("Every priority record must have a national statistics entrypoint")
     output = {
-        "schema_version": "1.0", "as_of": checked_at,
+        "schema_version": "1.1", "as_of": checked_at,
         "scope": "JICA overseas-office purview: 142 countries and territories",
         "meaning": "Source-address preflight only. Every link must be refreshed, acquired, inspected, geographically matched and accepted in the country task.",
+        "census_listing_semantics": {
+            "latest_un_census_listing": "Latest completed census date listed by UNSD, whether or not UNSD supplies a link. Wholly parenthesized future/scheduled entries are excluded.",
+            "latest_un_census_linked_listing": "Latest completed census listing for which UNSD supplies at least one link. This can be older than the latest UNSD listing and is not proof that the linked material was acquired or adopted.",
+        },
         "source_snapshots": {
             UNSD_NSO: {"sha256": hashlib.sha256(nso_payload).hexdigest(), "bytes": len(nso_payload)},
             UNSD_CENSUS: {"sha256": hashlib.sha256(census_payload).hexdigest(), "bytes": len(census_payload)},
@@ -273,12 +334,18 @@ def main() -> None:
         "# JICA priority 142 source-address preflight", "",
         f"Generated {checked_at}. All 142 records include a national statistics entrypoint, UNSD census-round evidence, a country-filtered legal catalogue, planning-material discovery entrypoints, geography/code candidates and international-data queries.", "",
         "These are discovery addresses. The country agent must inspect the current official release and legal text; this report never upgrades a link to acquired or adopted evidence.", "",
-        "| ISO3 | Country/territory | National statistics entrypoint | Census rows | Planning/legal starting points |", "|---|---|---|---:|---|",
+        "The latest UNSD listing and the latest listing with an UNSD link are separate fields. A newer unlinked census date must not be hidden by, or treated as acquired data from, an older linked edition.", "",
+        "| ISO3 | Country/territory | National statistics entrypoint | Census rows | Latest UNSD listing | Latest UNSD-linked listing | Planning/legal starting points |", "|---|---|---|---:|---|---|---|",
     ]
     for record in records:
         nso = record["national_statistics_and_census"]["national_statistics_office"]
         planning = record["planning_law_and_materials"]
-        lines.append(f'| {record["iso3"]} | {record["name_en"]} | [{nso["agency"]}]({nso["url"]}) | {len(record["national_statistics_and_census"]["un_census_rounds"])} | [FAOLEX]({planning["legal_catalogue"]}) / [JICA]({planning["jica_country_page"] or planning["jica_supervising_offices"][0]["source_url"]}) |')
+        census = record["national_statistics_and_census"]
+        latest = census["latest_un_census_listing"]
+        linked = census["latest_un_census_linked_listing"]
+        latest_text = f'{latest["round"]} / {latest["date_text"]} / {"link" if latest["links"] else "no UNSD link"}' if latest else "-"
+        linked_text = f'{linked["round"]} / [{linked["date_text"]}]({linked["primary_url"]})' if linked else "-"
+        lines.append(f'| {record["iso3"]} | {record["name_en"]} | [{nso["agency"]}]({nso["url"]}) | {len(census["un_census_rounds"])} | {latest_text} | {linked_text} | [FAOLEX]({planning["legal_catalogue"]}) / [JICA]({planning["jica_country_page"] or planning["jica_supervising_offices"][0]["source_url"]}) |')
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Wrote {OUTPUT} and {REPORT}: 142 complete source-address preflight records")
 

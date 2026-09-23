@@ -182,6 +182,44 @@ test('all 250 world identities have four source-address categories without claim
   }
 });
 
+test('UNSD latest listing is kept separate from the latest linked listing', async () => {
+  const catalog = await loadSourceCatalog();
+  const worldAlgeria = findWorldSourceRecord(catalog, 'DZA').national_statistics_and_census;
+  assert.deepEqual(worldAlgeria.latest_un_census_listing, {
+    round: 2020,
+    round_period: '2015-2024',
+    date_text: '25 September 2022',
+    country_label: 'Algeria',
+    links: [],
+    primary_url: null,
+    link_status: 'no_unsd_link_listed',
+  });
+  assert.equal(worldAlgeria.latest_un_census_linked_listing.round, 2010);
+  assert.equal(worldAlgeria.latest_un_census_linked_listing.date_text, '16-30 April 2008');
+  assert.equal(worldAlgeria.latest_un_census_linked_listing.primary_url, 'http://rgph2008.ons.dz/');
+
+  const priorityAlgeria = findPrioritySourceRecord(catalog, 'DZA').national_statistics_and_census;
+  assert.deepEqual(priorityAlgeria.latest_un_census_listing, worldAlgeria.latest_un_census_listing);
+  assert.deepEqual(priorityAlgeria.latest_un_census_linked_listing, worldAlgeria.latest_un_census_linked_listing);
+  const markdown = renderSourcePreflightMarkdown(buildSourcePreflight(catalog, { id: 'DZA', name: 'Algeria' }));
+  assert.match(markdown, /Latest completed census listed by UNSD: 2020 round \/ 25 September 2022 \/ no UNSD link/);
+  assert.match(markdown, /Latest completed listing with an UNSD link: 2010 round \/ \[16-30 April 2008\]\(http:\/\/rgph2008\.ons\.dz\/\) \/ UNSD link listed/);
+});
+
+test('current UNSD census labels resolve St., Sint Maarten and numeric footnotes', async () => {
+  const catalog = await loadSourceCatalog();
+  for (const iso3 of ['KNA', 'LCA', 'SPM', 'VCT', 'SXM', 'NLD']) {
+    assert.ok(findWorldSourceRecord(catalog, iso3).national_statistics_and_census.un_census_rounds.length,
+      `${iso3} must match its current UNSD census label`);
+  }
+  assert.deepEqual(
+    catalog.world_source_records
+      .filter(record => !record.national_statistics_and_census.un_census_rounds.length)
+      .map(record => record.iso3),
+    ['ALA', 'ATA', 'ATF', 'BVT', 'CCK', 'CXR', 'HMD', 'IOT', 'SGS', 'TWN', 'UMI', 'XKX'],
+  );
+});
+
 test('Spain, Finland and Taiwan resolve from Japanese names and retain country-system source packs', async () => {
   const catalog = await loadSourceCatalog();
   assert.equal(findWorldCountryRecord(catalog, 'スペイン').iso3, 'ESP');

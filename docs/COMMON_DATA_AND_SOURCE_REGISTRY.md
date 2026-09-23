@@ -8,6 +8,8 @@
 - `config/common-subnational-sources.json`：複数国で再利用できる国際機関・国際事業の地域別、地点別、格子別データ源。
 - `config/world-country-area-registry.json`：UN M49の248 country/areaと、別根拠で明示した運用補足2件（台湾・Kosovo）の同定台帳。ISO/M49、地域区分、別名、JICA優先タグを持つが、主権・法定計画主体・統計内容を推測しない。
 - `config/world-source-preflight.json`：世界250件について、統計機関／国勢調査、計画法・資料、行政コード・境界、国際候補の4区分を示す探索開始台帳。数値データ自体は収録しない。人が確認する一覧は`docs/research/world-2026/WORLD_SOURCE_PREFLIGHT_250.md`である。
+- `national_statistics_and_census.latest_un_census_listing`：リンクの有無とは無関係に、UNSDが掲載する最新の実施済み国勢調査roundと日付を示す。これは結果表の取得・公開・採用を意味しない。
+- `national_statistics_and_census.latest_un_census_linked_listing`：UNSDがリンクを付けている実施済み国勢調査のうち最新のものを示す。上記より古い場合があり、リンク先を当案件で取得・確認・採用した証拠にはならない。
 - `config/jica-priority-country-registry.json`：JICA事務所の現行Purviewによる142か国・地域、ISO/M49、所管事務所、JICA国別ページ、OECD DAC区分。国別sourceを取得済みとする台帳ではない。
 - `config/jica-priority-source-preflight.json`：JICA優先142か国・地域すべてについて、統計局・国勢調査、計画法・計画資料、行政コード・境界、国際データ候補の探索開始アドレスと、探索を省略させない必須次工程を記録する。人が確認する一覧は`docs/research/jica-priority-2026/SOURCE_PREFLIGHT_142.md`である。
 - `config/americas-verified-source-recipes.json`：米大陸で厳格な統計版基準を満たした27国と、定住人口を持たないSGSの構造的例外について、実際に機能した公式sourceの所在、取得方法、表の意味、行政コード・境界の注意、再実行時の必須確認を記録する。人が読む教訓は[`docs/research/americas-2026/VERIFIED_SOURCE_RECIPES_28.md`](research/americas-2026/VERIFIED_SOURCE_RECIPES_28.md)にある。

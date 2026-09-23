@@ -53,6 +53,59 @@ def key(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", value.casefold())
 
 
+def census_country_label(value: str) -> str:
+    """Remove UNSD table headings and numeric footnotes from a country label."""
+    value = re.sub(r"\s*\(\d+\)\s*$", "", clean(value))
+    return re.sub(r"^(?:AFRICA|AMERICA|ASIA|EUROPE|OCEANIA)\s+Countries or areas\s+", "", value, flags=re.IGNORECASE)
+
+
+def census_label_key(value: str) -> str:
+    """Normalize UNSD country labels without treating headings/footnotes as identity."""
+    return key(census_country_label(value))
+
+
+ROUND_PERIODS = {
+    1990: "1985-1994",
+    2000: "1995-2004",
+    2010: "2005-2014",
+    2020: "2015-2024",
+    2030: "2025-2034",
+}
+
+
+def census_date_text(value: str) -> str:
+    value = clean(value)
+    return re.sub(r"^\d{4}\s+round\s*\(\d{4}-\d{4}\)\s*", "", value, flags=re.IGNORECASE)
+
+
+def completed_census_cell(value: str) -> bool:
+    value = census_date_text(value)
+    return bool(value and value != "..." and not re.fullmatch(r"\([^)]*\)", value))
+
+
+def census_summary(rows: list[dict[str, object]], *, linked_only: bool) -> dict[str, object] | None:
+    candidates: list[tuple[tuple[int, int, int], dict[str, object]]] = []
+    for row_index, row in enumerate(rows):
+        for round_year, period in ROUND_PERIODS.items():
+            cell = row[f"round_{round_year}"]
+            text = census_date_text(str(cell["text"]))
+            links = list(dict.fromkeys(str(url) for url in cell["links"] if url))
+            if not completed_census_cell(text) or (linked_only and not links):
+                continue
+            years = [int(year) for year in re.findall(r"(?<!\d)(?:18|19|20)\d{2}(?!\d)", text)]
+            sort_year = max(years, default=round_year)
+            candidates.append(((round_year, sort_year, row_index), {
+                "round": round_year,
+                "round_period": period,
+                "date_text": text,
+                "country_label": census_country_label(str(row["country_label"])),
+                "links": links,
+                "primary_url": links[0] if links else None,
+                "link_status": "unsd_link_listed" if links else "no_unsd_link_listed",
+            }))
+    return max(candidates, key=lambda item: item[0])[1] if candidates else None
+
+
 class M49Parser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -172,7 +225,12 @@ M49_TO_UNSD_ALIASES = {
     "Netherlands (Kingdom of the)": ["Netherlands"],
     "Republic of Korea": ["Korea, Republic of"],
     "Republic of Moldova": ["Moldova"],
+    "Saint Kitts and Nevis": ["St. Kitts and Nevis"],
+    "Saint Lucia": ["St. Lucia"],
+    "Saint Pierre and Miquelon": ["St. Pierre and Miquelon"],
+    "Saint Vincent and the Grenadines": ["St. Vincent and the Grenadines"],
     "Saint Martin (French Part)": ["Saint Martin"],
+    "Sint Maarten (Dutch part)": ["Sint Maarten"],
     "State of Palestine": ["Palestine, State of"],
     "Syrian Arab Republic": ["Syrian Arab Repblic", "Syria"],
     "Türkiye": ["Turkey"],
@@ -343,11 +401,11 @@ def census_index(payload: bytes) -> dict[str, list[dict[str, object]]]:
     by_name: dict[str, list[dict[str, object]]] = {}
     previous_name = ""
     for cells in parser.rows:
-        name = clean(str(cells[0]["text"])) or previous_name
+        name = census_country_label(str(cells[0]["text"])) or previous_name
         if not name:
             continue
         previous_name = name
-        by_name.setdefault(key(name), []).append({
+        by_name.setdefault(census_label_key(name), []).append({
             "country_label": name,
             "round_1990": cells[1], "round_2000": cells[2], "round_2010": cells[3],
             "round_2020": cells[4], "round_2030": cells[5] if len(cells) > 5 else {"text": "", "links": []},
@@ -443,6 +501,8 @@ def main() -> None:
             nso = {"country": name, "agency": "UNSD national statistical office directory", "url": UNSD_NSO}
             nso_origin = "UNSD_DIRECTORY_FALLBACK_REQUIRES_COUNTRY_AUTHORITY_SEARCH"
         census_rows = matching_rows(census_by_name, candidates)
+        latest_listing = census_summary(census_rows, linked_only=False)
+        latest_linked_listing = census_summary(census_rows, linked_only=True)
         pack = COUNTRY_ENTRYPOINTS.get(iso3)
         hdx_query = urllib.parse.quote(f"{name} census subnational administrative boundaries")
         regional_candidates = []
@@ -465,6 +525,8 @@ def main() -> None:
                 "status": "official_entrypoint_catalogued_release_and_tables_not_yet_inspected",
                 "national_statistics_office": {**nso, "origin": nso_origin, "authority_relation": relation, "scope_note": note, "directory_source": UNSD_NSO},
                 "un_census_rounds": census_rows, "un_census_dates_source": UNSD_CENSUS,
+                "latest_un_census_listing": latest_listing,
+                "latest_un_census_linked_listing": latest_linked_listing,
                 "country_specific_entrypoints": pack["statistics_and_census"] if pack else [],
                 "country_system_note": pack["census_system_note"] if pack else None,
                 "required_next_step": "Open the official census or register-based population catalogue, inventory every current release/resource/table, and preserve every available administrative level, age-sex table, code list and metadata file before selecting indicators.",
@@ -532,9 +594,13 @@ def main() -> None:
         "snapshot_receipt": {UN_M49: snapshots[UN_M49]}, "countries_and_areas": identities,
     }
     preflight = {
-        "schema_version": "1.0", "as_of": checked_at,
+        "schema_version": "1.1", "as_of": checked_at,
         "scope": "248 UN M49 countries or areas plus explicit Taiwan and Kosovo operational supplements",
         "meaning": "Source-address preflight only. No linked law, census release, table, boundary or indicator is acquired, matched or adopted by this registry.",
+        "census_listing_semantics": {
+            "latest_un_census_listing": "Latest completed census date listed by UNSD, whether or not UNSD supplies a link. Wholly parenthesized future/scheduled entries are excluded.",
+            "latest_un_census_linked_listing": "Latest completed census listing for which UNSD supplies at least one link. This can be older than the latest UNSD listing and is not proof that the linked material was acquired or adopted.",
+        },
         "source_snapshots": snapshots, "records": records,
     }
     WORLD_REGISTRY.write_text(json.dumps(registry, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -546,13 +612,19 @@ def main() -> None:
         f"Generated {checked_at}. The machine registry contains 248 UN M49 country-or-area identities plus explicit Taiwan and Kosovo operational supplements (250 total).", "",
         "This file stores discovery addresses and system cautions, not statistical data. Every country build must refresh and inspect the current official catalogue, all resources/tables, governing law, geography and licences before adoption.", "",
         "Spain, Finland and Taiwan include additional verified official starting points so that developed-country, decentralised-law, register-based and non-M49 operational systems do not fall through the JICA-priority workflow.", "",
-        "| ISO3 | Country or area | UN region / subregion | Statistics authority or structural entrypoint | Census rows | Specific pack |", "|---|---|---|---|---:|---|",
+        "The latest UNSD listing and the latest listing with an UNSD link are separate fields. A newer unlinked census date must not be hidden by, or treated as acquired data from, an older linked edition.", "",
+        "| ISO3 | Country or area | UN region / subregion | Statistics authority or structural entrypoint | Census rows | Latest UNSD listing | Latest UNSD-linked listing | Specific pack |", "|---|---|---|---|---:|---|---|---|",
     ]
     for record in records:
         nso = record["national_statistics_and_census"]["national_statistics_office"]
         region = record["world_identity"]["region"]["name"] or "-"
         subregion = record["world_identity"]["subregion"]["name"] or "-"
-        lines.append(f'| {record["iso3"]} | {record["name_en"]} | {region} / {subregion} | [{nso["agency"]}]({nso["url"]}) ({nso["authority_relation"]}) | {len(record["national_statistics_and_census"]["un_census_rounds"])} | {"yes" if record["national_statistics_and_census"]["country_specific_entrypoints"] else "-"} |')
+        census = record["national_statistics_and_census"]
+        latest = census["latest_un_census_listing"]
+        linked = census["latest_un_census_linked_listing"]
+        latest_text = f'{latest["round"]} / {latest["date_text"]} / {"link" if latest["links"] else "no UNSD link"}' if latest else "-"
+        linked_text = f'{linked["round"]} / [{linked["date_text"]}]({linked["primary_url"]})' if linked else "-"
+        lines.append(f'| {record["iso3"]} | {record["name_en"]} | {region} / {subregion} | [{nso["agency"]}]({nso["url"]}) ({nso["authority_relation"]}) | {len(census["un_census_rounds"])} | {latest_text} | {linked_text} | {"yes" if census["country_specific_entrypoints"] else "-"} |')
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Wrote {WORLD_REGISTRY}, {WORLD_PREFLIGHT} and {REPORT}: 250 identities and 250 source preflights")
 
