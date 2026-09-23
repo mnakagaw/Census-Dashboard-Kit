@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-09-23",
+  "purpose": "Reviewed public source locations returned by AreaData country and regional work for reuse as Census Dashboard Kit discovery starting points.",
+  "status_boundary": "A feedback record is reusable discovery context only. It is never current-project proof of acquisition, content inspection, geography matching or indicator adoption.",
+  "records": []
+}

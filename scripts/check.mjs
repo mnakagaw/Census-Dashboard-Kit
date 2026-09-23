@@ -28,6 +28,8 @@ JSON.parse(await readFile('config/jica-priority-country-registry.json', 'utf8'))
 JSON.parse(await readFile('config/jica-priority-source-preflight.json', 'utf8'));
 JSON.parse(await readFile('config/world-country-area-registry.json', 'utf8'));
 JSON.parse(await readFile('config/world-source-preflight.json', 'utf8'));
+JSON.parse(await readFile('config/areadata-source-feedback.json', 'utf8'));
+JSON.parse(await readFile('schemas/areadata-source-feedback.schema.json', 'utf8'));
 
 const markdown = [];
 async function collectMarkdown(dir) {

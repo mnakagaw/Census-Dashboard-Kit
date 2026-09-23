@@ -15,6 +15,8 @@ const requiredFiles = [
   'config/world-country-area-registry.json', 'config/world-source-preflight.json',
   'docs/research/world-2026/WORLD_SOURCE_PREFLIGHT_250.md', 'scripts/update-world-source-preflight.py',
   'config/americas-verified-source-recipes.json', 'docs/research/americas-2026/VERIFIED_SOURCE_RECIPES_28.md',
+  'config/areadata-source-feedback.json', 'schemas/areadata-source-feedback.schema.json',
+  'scripts/import-areadata-source-feedback.mjs', 'docs/AREADATA_SOURCE_FEEDBACK.md',
   'scripts/create-country.mjs', 'scripts/source-plan.mjs', 'scripts/verify-delivery.mjs',
 ];
 const completionEntrypoints = ['AGENTS.md', 'CLAUDE.md', 'GEMINI.md', 'prompts/ANTIGRAVITY.md', 'prompts/CODEX.md', 'prompts/CLAUDE_CODE.md'];
@@ -48,6 +50,7 @@ export async function verifyKitReadiness(base = root) {
   assert(catalog.priority_countries.length === 142, 'Priority registry must contain 142 records');
   assert(catalog.priority_source_records.length === 142, 'Priority source-address preflight must contain 142 records');
   assert(catalog.verified_source_recipes.length === 28, 'Americas verified recipe registry must contain 28 records');
+  assert(Array.isArray(catalog.areadata_source_feedback), 'AreaData source-feedback registry must be available');
   for (const area of catalog.world_countries_and_areas) {
     assert(findWorldCountryRecord(catalog, area.iso3)?.iso3 === area.iso3, `${area.iso3} is not world-resolvable by ISO3`);
     assert(findWorldCountryRecord(catalog, area.name_en)?.iso3 === area.iso3, `${area.iso3} is not world-resolvable by English name`);
@@ -102,6 +105,8 @@ export async function verifyKitReadiness(base = root) {
     priority_countries_and_territories: 142,
     priority_source_address_preflights: 142,
     verified_americas_source_recipes: 28,
+    areadata_feedback_sources: catalog.areadata_source_feedback.length,
+    areadata_feedback_loop: true,
     reference_countries_selectable_as_targets: references,
     canonical_prompt_placeholders: 1,
     required_files_checked: requiredFiles.length,

@@ -13,6 +13,7 @@
 - `config/jica-priority-country-registry.json`：JICA事務所の現行Purviewによる142か国・地域、ISO/M49、所管事務所、JICA国別ページ、OECD DAC区分。国別sourceを取得済みとする台帳ではない。
 - `config/jica-priority-source-preflight.json`：JICA優先142か国・地域すべてについて、統計局・国勢調査、計画法・計画資料、行政コード・境界、国際データ候補の探索開始アドレスと、探索を省略させない必須次工程を記録する。人が確認する一覧は`docs/research/jica-priority-2026/SOURCE_PREFLIGHT_142.md`である。
 - `config/americas-verified-source-recipes.json`：米大陸で厳格な統計版基準を満たした27国と、定住人口を持たないSGSの構造的例外について、実際に機能した公式sourceの所在、取得方法、表の意味、行政コード・境界の注意、再実行時の必須確認を記録する。人が読む教訓は[`docs/research/americas-2026/VERIFIED_SOURCE_RECIPES_28.md`](research/americas-2026/VERIFIED_SOURCE_RECIPES_28.md)にある。
+- `config/areadata-source-feedback.json`：AreaDataのカバー拡張時に確認した公開公式sourceを、証拠段階・確認日・origin commit付きでKitへ戻す再利用台帳。取込方法と安全境界は[`AREADATA_SOURCE_FEEDBACK.md`](AREADATA_SOURCE_FEEDBACK.md)に定める。AreaDataでの取得・採用状態は、新しいKit案件の取得・採用状態へ引き継がない。
 
 台帳にURLがあることは、その国の数値を取得済み、地理を照合済み、DDPTへ採用済みという意味ではない。次の段階を順に記録する。
 
@@ -76,6 +77,7 @@ Gitには台帳、アダプター、スキーマ、取得手順、小規模で�
 2. 計画法・自治体法・州法、現行改正、所管、作成・協議・承認主体、計画手引き・様式、公開済み計画を確認する。
 3. 計画策定単位、その上位、および内部分析に必要な下位単位の公式コードと境界候補を確認する。
 4. 国別sourceをregistryへ追加し、`checked_at`と証拠段階を記録する。
+5. AreaDataで新しい公式sourceを確認した場合はfeedback bundleを生成し、Kit importerで`config/areadata-source-feedback.json`へmergeする。
 5. 共通候補の対象国availabilityを照会し、採用・非採用と理由を案件側の台帳へ保存する。
 6. 実取得と変換を再実行できるアダプターにし、代表地域で画面・表・出力まで照合する。
 

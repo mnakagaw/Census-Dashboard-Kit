@@ -14,6 +14,7 @@ test('source catalog combines reusable international candidates and pre-research
   assert.equal(catalog.coverage.jica_priority_dac_recipients, 132);
   assert.equal(catalog.coverage.jica_priority_source_preflights, 142);
   assert.equal(catalog.coverage.verified_source_recipes, 28);
+  assert.equal(catalog.coverage.areadata_feedback_sources, 0);
   assert.deepEqual(catalog.coverage.status_model, [
     'catalogued',
     'country_availability_checked',
@@ -143,6 +144,8 @@ test('unresearched country still receives common candidates and an explicit rese
   assert.equal(preflight.common_candidates.length, 10);
   assert.ok(preflight.required_actions.some(action => /world preflight/.test(action)));
   assert.match(renderSourcePreflightMarkdown(preflight), /does not mean the listed data were acquired/);
+  assert.equal(preflight.areadata_source_feedback.status, 'no_areadata_feedback_registered');
+  assert.match(renderSourcePreflightMarkdown(preflight), /AreaData source feedback/);
 });
 
 test('source plan can narrow common candidates by theme without implying country availability', async () => {

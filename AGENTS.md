@@ -6,6 +6,8 @@
 
 `config/world-country-area-registry.json`と`config/world-source-preflight.json`を読み、UN M49 248件＋明示補足2件（台湾・Kosovo）の全250対象で世界台帳の国別入口を最初に使う。JICA優先142件では`config/jica-priority-source-preflight.json`も補足として読む。`docs/REFERENCE_COUNTRY_CASES.md`のDOM、UGA、LAO、BGDは教訓であると同時に新規対象国として指定できる。指定された場合も過去の見本を返さず、現在のsourceを再確認して新しい出力先へ完成品を作る。`config/americas-verified-source-recipes.json`に対象国があれば、過去に成功したURL・取得方法・意味・地理例外を先に再実行する。ただし入口や過去の成功を、当案件での取得・hash・本文確認・地理照合・採用済みと扱わない。登録統計、ローリングセンサス、連邦・自治州法、属領、非定住地域を通常の10年国勢調査と単一国法へ無理に当てはめない。
 
+`config/areadata-source-feedback.json`に対象国の記録があれば一般検索より先に確認するが、新案件では未取得から始める。AreaDataのカバー拡張で新しい公開公式sourceを確認した場合、`docs/AREADATA_SOURCE_FEEDBACK.md`のbundleを生成し、`scripts/import-areadata-source-feedback.mjs`でKitへ戻す。資格情報、個票、観測値、raw原本をfeedbackへ入れず、AreaDataでの採用状態をKit案件の採用状態へ昇格させない。
+
 ## 国名だけで始める案件
 
 - 「○○国版を作って」「このリポジトリを基に○○版」の依頼は、完成品を一回で作る実行依頼。`START_HERE.md`、`docs/COUNTRY_AGENT_WORKFLOW.md`を読み、国名の解決、内部作業場所の準備、国内公式資料の収集・統合、サイト作成、実画面・出力検証、納品ゲートまで同じ依頼内で進める。
