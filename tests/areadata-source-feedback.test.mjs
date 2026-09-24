@@ -12,7 +12,12 @@ async function workspace() {
   const root = await mkdtemp(path.join(os.tmpdir(), 'kit-areadata-feedback-'));
   await mkdir(path.join(root, 'config'));
   await cp(path.join(repository, 'config', 'world-country-area-registry.json'), path.join(root, 'config', 'world-country-area-registry.json'), { recursive: true });
-  await cp(path.join(repository, 'config', 'areadata-source-feedback.json'), path.join(root, 'config', 'areadata-source-feedback.json'), { recursive: true });
+  await writeFile(path.join(root, 'config', 'areadata-source-feedback.json'), JSON.stringify({
+    schema_version: '1.0',
+    as_of: '2026-09-23',
+    status_boundary: 'Test registry only; imported sources are not current-project acquisitions.',
+    records: [],
+  }, null, 2) + '\n');
   return root;
 }
 

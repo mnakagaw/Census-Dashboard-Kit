@@ -14,7 +14,9 @@ test('source catalog combines reusable international candidates and pre-research
   assert.equal(catalog.coverage.jica_priority_dac_recipients, 132);
   assert.equal(catalog.coverage.jica_priority_source_preflights, 142);
   assert.equal(catalog.coverage.verified_source_recipes, 28);
-  assert.equal(catalog.coverage.areadata_feedback_sources, 0);
+  assert.equal(catalog.coverage.areadata_feedback_sources, catalog.areadata_source_feedback.length);
+  assert.deepEqual([...new Set(catalog.areadata_source_feedback.map(source => source.iso3))], ['BGD', 'LAO', 'UGA']);
+  assert.ok(catalog.areadata_source_feedback.every(source => source.current_project_evidence_status === 'not_acquired_by_kit_preflight'));
   assert.deepEqual(catalog.coverage.status_model, [
     'catalogued',
     'country_availability_checked',
