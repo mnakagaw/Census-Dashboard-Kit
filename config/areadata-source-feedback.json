@@ -35,6 +35,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -79,6 +86,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -120,6 +134,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -158,6 +179,48 @@
         {
           "origin_commit": "07251fd4d5724f8593b55298b7a664d0992dcff8",
           "exported_at": "2026-09-24T13:00:23.599Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_BFA_BA0ACC9297E6AE42",
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_GOVERNMENT_TRANSFER_DECREES_NOTICE_2026",
+      "role": "planning_law",
+      "title": "Government notice on 30 July 2026 territorial competence-transfer decrees",
+      "publisher": "Service d’information du Gouvernement du Burkina Faso",
+      "url": "https://gouvernement.gov.bf/conseil-des-ministres/conseil-des-ministres-n25-du-30-juillet-2026/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-24",
+      "last_verified_at": "2026-09-24",
+      "geographic_levels": [
+        "commune",
+        "region"
+      ],
+      "reference_periods": [
+        "30 July 2026 council adoption notice"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "New AreaData location: 30 July 2026 official council notice reports competence and resource transfer decrees under law 024-2025/ALT. Signed decree texts, numbers, commencement and selected-area application are not acquired; this is not a plan or budget.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -203,6 +266,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -240,6 +310,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -271,6 +348,13 @@
         {
           "origin_commit": "07251fd4d5724f8593b55298b7a664d0992dcff8",
           "exported_at": "2026-09-24T13:00:23.599Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -317,6 +401,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -356,6 +447,13 @@
         {
           "origin_commit": "07251fd4d5724f8593b55298b7a664d0992dcff8",
           "exported_at": "2026-09-24T13:00:23.599Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -403,6 +501,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -445,6 +550,48 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_BFA_72448717D3626B65",
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_INSD_REGIONAL_YEARBOOK_CATALOGUE_2026",
+      "role": "table_catalog",
+      "title": "INSD regional statistical yearbooks catalogue, including 2024 editions",
+      "publisher": "Institut national de la statistique et de la démographie (INSD)",
+      "url": "https://www.insd.bf/fr/statistiques/autres-statitiques/annuaires-statistiques-regionaux?combine=&items_per_page=10&page=1",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-24",
+      "last_verified_at": "2026-09-24",
+      "geographic_levels": [
+        "region (historical)"
+      ],
+      "reference_periods": [
+        "2023 and 2024 regional yearbook listings; individual coverage varies"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "New AreaData location: official INSD regional yearbook catalogue lists 2024 and 2023 editions. Individual PDFs, numeric tables, terms and 2025 geography correspondence are not audited or adopted.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -479,6 +626,13 @@
         {
           "origin_commit": "07251fd4d5724f8593b55298b7a664d0992dcff8",
           "exported_at": "2026-09-24T13:00:23.599Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -542,6 +696,13 @@
         {
           "origin_commit": "07251fd4d5724f8593b55298b7a664d0992dcff8",
           "exported_at": "2026-09-24T13:00:23.599Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -609,6 +770,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -663,6 +831,13 @@
         {
           "origin_commit": "07251fd4d5724f8593b55298b7a664d0992dcff8",
           "exported_at": "2026-09-24T13:00:23.599Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -766,6 +941,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -833,6 +1015,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -893,6 +1082,13 @@
         {
           "origin_commit": "07251fd4d5724f8593b55298b7a664d0992dcff8",
           "exported_at": "2026-09-24T13:00:23.599Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -958,6 +1154,13 @@
         {
           "origin_commit": "07251fd4d5724f8593b55298b7a664d0992dcff8",
           "exported_at": "2026-09-24T13:00:23.599Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "709adc2e13968ef3159bff40075f1da6ca824776",
+          "exported_at": "2026-09-24T15:05:59.620Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null

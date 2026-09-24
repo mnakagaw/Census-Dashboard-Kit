@@ -17,9 +17,11 @@ test('source catalog combines reusable international candidates and pre-research
   assert.equal(catalog.coverage.areadata_feedback_sources, catalog.areadata_source_feedback.length);
   for (const iso3 of ['BFA', 'BGD', 'LAO', 'UGA']) assert.ok(catalog.areadata_source_feedback.some(source => source.iso3 === iso3));
   const burkina = buildSourcePreflight(catalog, { id: 'BFA', name: 'Burkina Faso' });
-  assert.equal(burkina.areadata_source_feedback.sources.length, 12);
+  assert.equal(burkina.areadata_source_feedback.sources.length, 14);
   assert.ok(burkina.areadata_source_feedback.sources.some(source => source.url.includes('cns.bf/publications/matm/')));
   assert.ok(burkina.areadata_source_feedback.sources.some(source => source.url.includes('insd.bf/sites/default/files/2026-01/Annuaire')));
+  assert.ok(burkina.areadata_source_feedback.sources.some(source => source.url.includes('annuaires-statistiques-regionaux') && source.role === 'table_catalog'));
+  assert.ok(burkina.areadata_source_feedback.sources.some(source => source.url.includes('conseil-des-ministres-n25-du-30-juillet-2026') && source.role === 'planning_law'));
   assert.ok(burkina.areadata_source_feedback.sources.every(source => source.evidence_stage === 'official_location_identified'
     && source.current_project_evidence_status === 'not_acquired_by_kit_preflight'));
   assert.match(renderSourcePreflightMarkdown(burkina), /GMPL_PCD_Version_definitive_1\.pdf/);
