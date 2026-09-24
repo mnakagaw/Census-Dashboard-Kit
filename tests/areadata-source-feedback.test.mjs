@@ -92,3 +92,28 @@ test('AreaData feedback dry-run does not write and unsafe identities or URLs are
     await rm(root, { recursive: true, force: true });
   }
 });
+
+test('a corrected URL preserves the old record but removes it from active leads', async () => {
+  const root = await workspace();
+  try {
+    const input = path.join(root, 'bundle.json');
+    const oldUrl = 'https://www.ons.dz/old-census-page';
+    const newUrl = 'https://www.ons.dz/spip.php?rubrique390';
+    await writeFile(input, `${JSON.stringify(bundle({ url: oldUrl }))}\n`);
+    await importAreaDataSourceFeedback({ root, input });
+    await writeFile(input, `${JSON.stringify(bundle({ url: newUrl, supersedes_url: oldUrl }))}\n`);
+    const result = await importAreaDataSourceFeedback({ root, input });
+    assert.equal(result.total, 2);
+    const registry = JSON.parse(await readFile(path.join(root, 'config', 'areadata-source-feedback.json'), 'utf8'));
+    const oldRecord = registry.records.find(record => record.url === oldUrl);
+    const newRecord = registry.records.find(record => record.url === newUrl);
+    assert.equal(oldRecord.superseded_by, newRecord.feedback_id);
+    assert.equal(newRecord.supersedes_feedback_id, oldRecord.feedback_id);
+    const again = await importAreaDataSourceFeedback({ root, input });
+    assert.equal(again.changed, false);
+    await writeFile(input, `${JSON.stringify(bundle({ url: 'https://www.ons.dz/another', supersedes_url: 'https://www.ons.dz/missing' }))}\n`);
+    await assert.rejects(() => importAreaDataSourceFeedback({ root, input, dryRun: true }), /unknown feedback record/);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});

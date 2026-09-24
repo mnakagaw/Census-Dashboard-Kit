@@ -16,6 +16,9 @@ test('source catalog combines reusable international candidates and pre-research
   assert.equal(catalog.coverage.verified_source_recipes, 28);
   assert.equal(catalog.coverage.areadata_feedback_sources, catalog.areadata_source_feedback.length);
   for (const iso3 of ['BGD', 'LAO', 'UGA']) assert.ok(catalog.areadata_source_feedback.some(source => source.iso3 === iso3));
+  assert.ok(!catalog.areadata_source_feedback.some(source => source.url === 'https://www.lsb.gov.la/sdg/en/17-19-2/'));
+  assert.ok(catalog.areadata_source_feedback.some(source => source.iso3 === 'LAO'
+    && source.url === 'https://lao.unfpa.org/en/publications/results-population-and-housing-census-2015-english-version'));
   assert.ok(catalog.areadata_source_feedback.every(source => source.current_project_evidence_status === 'not_acquired_by_kit_preflight'));
   assert.deepEqual(catalog.coverage.status_model, [
     'catalogued',

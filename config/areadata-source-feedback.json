@@ -36,6 +36,20 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "6b19c6160bf5b0ffbdf1e8ee9b1a2bb576a0d654",
+          "exported_at": "2026-09-24T04:11:02.507Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "31a0986014701f23793f32e4503a1eb3a793fc17",
+          "exported_at": "2026-09-24T04:13:47.522Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -72,8 +86,66 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "6b19c6160bf5b0ffbdf1e8ee9b1a2bb576a0d654",
+          "exported_at": "2026-09-24T04:11:02.507Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "31a0986014701f23793f32e4503a1eb3a793fc17",
+          "exported_at": "2026-09-24T04:13:47.522Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
+    },
+    {
+      "feedback_id": "AREADATA_LAO_07089C02C16E643E",
+      "iso3": "LAO",
+      "source_id": "LAO_LAO_PHC_2015",
+      "role": "census_results",
+      "title": "Results of Population and Housing Census 2015",
+      "publisher": "Lao Statistics Bureau / UNFPA Lao PDR",
+      "url": "https://lao.unfpa.org/en/publications/results-population-and-housing-census-2015-english-version",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-24",
+      "last_verified_at": "2026-09-24",
+      "geographic_levels": [
+        "district",
+        "national",
+        "province"
+      ],
+      "reference_periods": [
+        "2015"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Source-site public access terms; redistribution status reviewed per retained file",
+      "reuse_note": "Reused from the Kit Lao project, not newly discovered by AreaData. This is the detailed 2015 census, not published 2025 local census results. Recheck report and geography; AreaData independent audit is pending.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "6b19c6160bf5b0ffbdf1e8ee9b1a2bb576a0d654",
+          "exported_at": "2026-09-24T04:11:02.507Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "31a0986014701f23793f32e4503a1eb3a793fc17",
+          "exported_at": "2026-09-24T04:13:47.522Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ],
+      "supersedes_feedback_id": "AREADATA_LAO_3153B6937F8B9B44"
     },
     {
       "feedback_id": "AREADATA_LAO_3153B6937F8B9B44",
@@ -109,7 +181,8 @@
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
         }
-      ]
+      ],
+      "superseded_by": "AREADATA_LAO_07089C02C16E643E"
     },
     {
       "feedback_id": "AREADATA_LAO_9C774926F7C1FDFB",
@@ -139,6 +212,20 @@
         {
           "origin_commit": "1658b44ca98dbccc3fcd9b3c82fbdca5a8852389",
           "exported_at": "2026-09-24T03:35:17.182Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "6b19c6160bf5b0ffbdf1e8ee9b1a2bb576a0d654",
+          "exported_at": "2026-09-24T04:11:02.507Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "31a0986014701f23793f32e4503a1eb3a793fc17",
+          "exported_at": "2026-09-24T04:13:47.522Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -181,6 +268,20 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "6b19c6160bf5b0ffbdf1e8ee9b1a2bb576a0d654",
+          "exported_at": "2026-09-24T04:11:02.507Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "31a0986014701f23793f32e4503a1eb3a793fc17",
+          "exported_at": "2026-09-24T04:13:47.522Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -213,6 +314,20 @@
         {
           "origin_commit": "1658b44ca98dbccc3fcd9b3c82fbdca5a8852389",
           "exported_at": "2026-09-24T03:35:17.182Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "6b19c6160bf5b0ffbdf1e8ee9b1a2bb576a0d654",
+          "exported_at": "2026-09-24T04:11:02.507Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "31a0986014701f23793f32e4503a1eb3a793fc17",
+          "exported_at": "2026-09-24T04:13:47.522Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -250,6 +365,20 @@
         {
           "origin_commit": "1658b44ca98dbccc3fcd9b3c82fbdca5a8852389",
           "exported_at": "2026-09-24T03:35:17.182Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "6b19c6160bf5b0ffbdf1e8ee9b1a2bb576a0d654",
+          "exported_at": "2026-09-24T04:11:02.507Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "31a0986014701f23793f32e4503a1eb3a793fc17",
+          "exported_at": "2026-09-24T04:13:47.522Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null

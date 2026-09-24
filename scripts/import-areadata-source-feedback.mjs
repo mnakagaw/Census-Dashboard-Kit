@@ -10,6 +10,7 @@ const allowedTopLevel = new Set(['schema_version', 'produced_by', 'exported_at',
 const allowedSourceFields = new Set([
   'iso3', 'source_id', 'role', 'title', 'publisher', 'url', 'authority_type', 'evidence_stage', 'checked_at',
   'geographic_levels', 'reference_periods', 'formats', 'license_or_terms', 'reuse_note', 'origin_evidence_path', 'artifact_sha256',
+  'supersedes_url',
 ]);
 const roles = new Set([
   'official_statistics_office', 'census_catalog', 'census_results', 'table_catalog', 'machine_readable_data',
@@ -116,7 +117,9 @@ function normalizeSource(source, bundle, worldIds, index) {
     reuse_note: text(source.reuse_note, `sources[${index}].reuse_note`),
     origin_evidence_path: safeEvidencePath(source.origin_evidence_path, `sources[${index}].origin_evidence_path`),
     artifact_sha256: artifactSha256,
+    supersedes_url: source.supersedes_url ? publicUrl(source.supersedes_url, `sources[${index}].supersedes_url`) : null,
   };
+  invariant(normalized.supersedes_url !== normalized.url, `sources[${index}].supersedes_url must differ from url`);
   invariant(/^[A-Z0-9][A-Z0-9_.-]+$/.test(normalized.source_id), `sources[${index}].source_id is invalid`);
   const event = {
     origin_commit: bundle.origin_commit,
@@ -144,6 +147,7 @@ function normalizeSource(source, bundle, worldIds, index) {
     reuse_note: normalized.reuse_note,
     current_project_evidence_status: 'not_acquired_by_kit_preflight',
     origin_events: [event],
+    ...(normalized.supersedes_url ? { supersedes_feedback_id: feedbackId({ ...normalized, url: normalized.supersedes_url }) } : {}),
   };
 }
 
@@ -202,6 +206,15 @@ export async function importAreaDataSourceFeedback({ root = defaultRoot, input, 
   const records = new Map(registry.records.map(record => [record.feedback_id, record]));
   let inserted = 0, updated = 0, unchanged = 0;
   for (const source of incoming) {
+    if (source.supersedes_feedback_id) {
+      const previous = records.get(source.supersedes_feedback_id);
+      invariant(previous, `${source.feedback_id} supersedes an unknown feedback record`);
+      invariant(previous.iso3 === source.iso3 && previous.role === source.role && previous.source_id === source.source_id,
+        `${source.feedback_id} superseded record identity mismatch`);
+      invariant(!previous.superseded_by || previous.superseded_by === source.feedback_id,
+        `${source.feedback_id} conflicts with an existing correction`);
+      records.set(previous.feedback_id, { ...previous, superseded_by: source.feedback_id });
+    }
     const existing = records.get(source.feedback_id);
     if (!existing) {
       records.set(source.feedback_id, source); inserted++;

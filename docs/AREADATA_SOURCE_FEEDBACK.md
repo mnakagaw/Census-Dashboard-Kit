@@ -22,6 +22,7 @@ AreaDataが国・地域のカバー範囲を広げる過程で確認した公式
    ```
 
 5. import結果は[`config/areadata-source-feedback.json`](../config/areadata-source-feedback.json)へ決定的なIDでmergeされる。同じ国・role・URLの再取込は重複を作らず、確認日、証拠段階、対象期間、formatとorigin履歴を更新する。
+   誤URLの訂正では、AreaData側の選択に`supersedes_url`を付ける。Kitは同じ国・role・source IDの旧記録を`superseded_by`付きの履歴として残し、次回案件の出典候補から除く。存在しない旧記録や別sourceの訂正は拒否する。
 6. 次回の国別生成では`SOURCE_PREFLIGHT.json`と`.md`の`areadata_source_feedback`に該当国の記録が自動表示される。担当者は一般検索より先に確認するが、URL再確認、原本取得、本文・表検査、地理照合、指標採用を新案件でやり直す。
 
 ## 証拠段階
