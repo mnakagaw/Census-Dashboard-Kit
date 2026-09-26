@@ -45,6 +45,13 @@
           "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -83,6 +90,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -127,6 +141,13 @@
           "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -165,6 +186,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -209,6 +237,13 @@
           "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -247,6 +282,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -390,6 +432,13 @@
           "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -527,6 +576,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -669,6 +725,13 @@
           "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -808,6 +871,13 @@
           "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -883,6 +953,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -968,6 +1045,13 @@
           "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1049,6 +1133,13 @@
           "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1122,6 +1213,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1201,6 +1299,13 @@
           "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1277,6 +1382,13 @@
           "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1350,6 +1462,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1487,6 +1606,13 @@
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1620,6 +1746,13 @@
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1750,6 +1883,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1887,6 +2027,13 @@
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2017,6 +2164,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2155,6 +2309,13 @@
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2284,6 +2445,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2419,6 +2587,13 @@
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2549,6 +2724,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2751,6 +2933,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2966,6 +3155,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3172,6 +3368,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3384,6 +3587,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3577,6 +3787,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3790,6 +4007,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3995,6 +4219,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4194,6 +4425,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4408,6 +4646,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4615,6 +4860,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4830,6 +5082,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5040,6 +5299,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5233,6 +5499,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5438,6 +5711,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5669,6 +5949,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5904,6 +6191,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5972,6 +6266,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6045,6 +6346,13 @@
           "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6112,6 +6420,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6185,6 +6500,13 @@
           "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6251,6 +6573,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6323,6 +6652,13 @@
           "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6389,6 +6725,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6461,6 +6804,13 @@
           "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6530,6 +6880,13 @@
           "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6592,6 +6949,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6662,6 +7026,13 @@
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6725,6 +7096,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6793,6 +7171,13 @@
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6855,6 +7240,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6923,6 +7315,13 @@
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6985,6 +7384,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7053,6 +7459,13 @@
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7115,6 +7528,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7182,6 +7602,13 @@
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7242,6 +7669,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7310,6 +7744,13 @@
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7372,6 +7813,13 @@
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7431,6 +7879,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7524,6 +7979,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7612,6 +8074,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7708,6 +8177,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7797,6 +8273,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7892,6 +8375,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7981,6 +8471,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8076,6 +8573,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8163,6 +8667,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8256,6 +8767,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8343,6 +8861,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8436,6 +8961,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8523,6 +9055,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8616,6 +9155,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8674,6 +9220,13 @@
           "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8728,6 +9281,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8791,6 +9351,13 @@
           "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8846,6 +9413,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8907,6 +9481,13 @@
           "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8960,6 +9541,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -9020,6 +9608,13 @@
           "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -9072,6 +9667,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -9243,6 +9845,13 @@
           "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -9408,6 +10017,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -9593,6 +10209,13 @@
           "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -9763,6 +10386,13 @@
           "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -9885,6 +10515,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -10013,6 +10650,13 @@
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -10135,6 +10779,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -10263,6 +10914,13 @@
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -10386,6 +11044,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -10516,6 +11181,13 @@
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -10638,6 +11310,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -10766,6 +11445,13 @@
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -10888,6 +11574,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -11042,6 +11735,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -11206,6 +11906,13 @@
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -11364,6 +12071,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -11531,6 +12245,13 @@
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -11688,6 +12409,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -11849,6 +12577,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -12015,6 +12750,13 @@
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -12112,6 +12854,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -12206,6 +12955,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -12309,6 +13065,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -12406,6 +13169,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -12509,6 +13279,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -12606,6 +13383,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -12709,6 +13493,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -12806,6 +13597,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -12909,6 +13707,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -13009,6 +13814,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -13106,6 +13918,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -13200,6 +14019,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -13425,6 +14251,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -13696,6 +14529,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -13812,6 +14652,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -13935,6 +14782,13 @@
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -14050,6 +14904,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -14171,6 +15032,13 @@
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -14286,6 +15154,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -14405,6 +15280,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -14528,6 +15410,1217 @@
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_FFFFCC0EE40A1B8A",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_ADMIN_CODES",
+      "role": "administrative_codes",
+      "title": "DCS CPH 2024 admin-codes official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/qlink/AdminDivCodes_Excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "district",
+        "Divisional Secretary division",
+        "GN",
+        "province"
+      ],
+      "reference_periods": [
+        "official code register, edition not yet confirmed"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS code workbook acquired. Its 14,008 GN code-component keys match the provisional GN population workbook; 2024 legal boundary edition and compatible polygons remain unverified.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_1FDB92ACF76DAA1A",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_HOUSING_PROVISIONAL",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-housing-provisional official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GN_housing_excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_A5F262C115744818",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_POPULATION_PROVISIONAL",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-population-provisional official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GN_population_excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "district",
+        "Divisional Secretary division",
+        "GN"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "DCS GN population workbook says Provisional. Code keys match the official register, but age totals differ from final DS age counts in eight divisions. No GN observation adopted by AreaData; Kit must resolve edition and terms.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_CAD1B6679C8D0819",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_ETHNICITY",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-ethnicity official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Ethnic_Group",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_288EC7769AAB011E",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_FIVE_YEAR_AGE",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-five-year-age official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_6603DC87A44A3C73",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_LOCAL_GOVERNMENT_AREA",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-local-government-area official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Local_Government_Area",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_CC65C416BEEDA106",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_RELIGION",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-religion official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Religion",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_19A8586986980234",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_SECTOR",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-sector official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Sector",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_BB108F5221050801",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_HOUSEHOLDS",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-households official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HH_GND_excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_F312A3F6401ECB21",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A1",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a1 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A1",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_253BA8B0FA7C133B",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A10",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a10 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A10",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_C123BE72002756F7",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A11",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a11 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A11",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_6AE79E404131AB58",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A12",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a12 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A12",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_CAC3BB6C9416E50A",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A13",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a13 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A13",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_FDB2593E3129B84C",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A14",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a14 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A14",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "district",
+        "Divisional Secretary division"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Final DCS CPH 2024 housing A14. AreaData audited household denominator and 15 drinking-water source counts; source categories are not JMP service levels. Kit must independently inspect original and terms.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_E529B3BB4F0901F2",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A15",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a15 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A15",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_7CC89501A8D27FF2",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A16",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a16 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A16",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "district",
+        "Divisional Secretary division"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Final DCS CPH 2024 housing A16. AreaData audited toilet categories and cross-checked its duplicate household denominator against A14; no sanitation rate was inferred. Kit must independently inspect original and terms.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_3EE8D315D55C5703",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A2",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a2 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A2",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_5A2F0304FF123707",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A3",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a3 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A3",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_D13BFBF3D57A16B4",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A4",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a4 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A4",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_5A2B9044DEE3D517",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A5",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a5 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A5",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_164FB6148873BC02",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A6",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a6 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A6",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_81FD179E40055EF4",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A7",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a7 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A7",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_A8A4E6EF3FDFA8E8",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A8",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a8 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A8",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_4CFB5448A1B94C0D",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A9",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a9 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A9",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_364A7CB8947C542B",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_OCCUPIED_HOUSING",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-occupied-housing official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/OHU_GN_excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_336E3ED1177ABC78",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A1",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a1 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A1",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_14A0ED9A1630A207",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A2",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a2 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A2",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_23953D58B7431A1A",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A3",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a3 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A3",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_758BEE1160768E9E",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A4",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a4 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A4",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_ED151D22129ADBE8",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A5",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a5 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A5",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "district",
+        "Divisional Secretary division"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Final DCS CPH 2024 population A5. AreaData audited selected direct population/sex/age counts for country, 25 districts and 340 DS divisions; Kit must independently inspect original and terms.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_CE4720F2A413B4ED",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A6",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a6 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A6",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_796977C5FC209B3D",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A7",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a7 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A7",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_7F6E41973DE58D14",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_FINAL_REPORT_EN",
+      "role": "census_results",
+      "title": "DCS CPH 2024 final-report-en official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Resource/en/Population/CPH_2024/CPH2024_Final_Eng.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "other report tables unassessed",
+        "province"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official 266-page final census report acquired. AreaData adopted only Table 3.2 province population from PDF p68 (printed p51); all other tables and terms require independent audit.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LKA_5C55B5B1E066D7EB",
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_MUNICIPAL_BUDGET_RULES_2020",
+      "role": "planning_law",
+      "title": "Sri Lanka Gazette Extraordinary 2199/15 municipal budget and development-plan rules",
+      "publisher": "Department of Government Printing, Sri Lanka",
+      "url": "https://documents.gov.lk/view/extra-gazettes/2020/10/2199-15_E.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "municipal councils only; not census DS areas"
+      ],
+      "reference_periods": [
+        "2020 publication; current applicability unverified"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public Gazette; terms unverified",
+      "reuse_note": "Official Gazette location only. PDF body, current legal force, detailed provisions, jurisdiction and terms were not audited or adopted; this is not an approved local plan or budget.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -14562,6 +16655,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -14601,6 +16701,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -14634,6 +16741,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -14674,6 +16788,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -14707,6 +16828,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -14746,6 +16874,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -14779,6 +16914,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -14819,6 +16961,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -14852,6 +17001,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -14891,6 +17047,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -14924,6 +17087,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -14964,6 +17134,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -14997,6 +17174,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15036,6 +17220,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15069,6 +17260,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15109,6 +17307,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15142,6 +17347,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15181,6 +17393,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15214,6 +17433,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15254,6 +17480,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15287,6 +17520,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15326,6 +17566,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15359,6 +17606,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15399,6 +17653,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15432,6 +17693,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15471,6 +17739,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15504,6 +17779,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15544,6 +17826,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15577,6 +17866,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15615,6 +17911,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15647,6 +17950,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15685,6 +17995,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15720,6 +18037,13 @@
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15752,6 +18076,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -15859,6 +18190,13 @@
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -15960,6 +18298,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -16067,6 +18412,13 @@
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -16171,6 +18523,13 @@
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -16272,6 +18631,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -16381,6 +18747,13 @@
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -16427,6 +18800,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -16482,6 +18862,13 @@
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -16530,6 +18917,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -16585,6 +18979,13 @@
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -16636,6 +19037,13 @@
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -16682,6 +19090,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -16736,6 +19151,13 @@
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -16781,6 +19203,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -16831,6 +19260,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -16885,6 +19321,13 @@
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -16930,6 +19373,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -16982,6 +19432,13 @@
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -17031,6 +19488,13 @@
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -17076,6 +19540,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -17128,6 +19599,13 @@
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -17173,6 +19651,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -17223,6 +19708,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -17337,6 +19829,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -17445,6 +19944,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -17557,6 +20063,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -17674,6 +20187,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -17783,6 +20303,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -17899,6 +20426,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -18007,6 +20541,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -18121,6 +20662,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -18229,6 +20777,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -18343,6 +20898,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -18427,6 +20989,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -18507,6 +21076,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -18597,6 +21173,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -18679,6 +21262,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -18765,6 +21355,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -18845,6 +21442,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -18931,6 +21535,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -19011,6 +21622,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -19097,6 +21715,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -19178,6 +21803,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -19356,6 +21988,13 @@
           "evidence_path": "docs/evidence/saudi-census-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/saudi-census-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -19503,6 +22142,13 @@
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -19647,6 +22293,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -19799,6 +22452,13 @@
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -19945,6 +22605,13 @@
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -20088,6 +22755,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -20271,6 +22945,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/turkey-adnks-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/turkey-adnks-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -20509,6 +23190,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -20737,6 +23425,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -20973,6 +23668,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -21138,6 +23840,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -21309,6 +24018,13 @@
           "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
+          "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -21474,6 +24190,13 @@
         {
           "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
           "exported_at": "2026-09-26T21:13:08.172Z",
+          "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+          "exported_at": "2026-09-26T21:51:04.772Z",
           "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
