@@ -92,6 +92,13 @@
           "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -180,6 +187,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -273,6 +287,13 @@
           "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -363,6 +384,264 @@
           "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_ARM_0F1D052879FD470F",
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ARLIS_HD002_2025",
+      "role": "administrative_codes",
+      "title": "HD 002-2021 territorial classifier, 2025 ARLIS incorporation",
+      "publisher": "Armenian Legal Information System (ARLIS)",
+      "url": "https://www.arlis.am/hy/acts/208945",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "community",
+        "marz",
+        "Yerevan district"
+      ],
+      "reference_periods": [
+        "2025 incorporation"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "2025 ARLIS classifier incorporation supplies codes, not polygons; verify the 2022 census geography against this edition and investigate the narrative's 72-versus-71 community discrepancy.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_ARM_5DA330A080D99684",
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ARMSTAT_CENSUS2022_RESULTS_CATALOG",
+      "role": "census_catalog",
+      "title": "ArmStat Population Census 2022 official results catalogue",
+      "publisher": "Statistical Committee of the Republic of Armenia",
+      "url": "https://armstat.am/en/?nid=82&id=2623",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "community",
+        "marz",
+        "national",
+        "Yerevan district"
+      ],
+      "reference_periods": [
+        "2022 census, nine English chapters"
+      ],
+      "formats": [
+        "7Z",
+        "DOCX",
+        "HTML",
+        "XLSX"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official 2022 census results directory. AreaData acquired all nine chapter archives but only selected population cells of two Chapter 1 tables were adopted; Kit must audit the other fields and source terms independently.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_ARM_4B9A28D4B64076FB",
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ARMSTAT_CENSUS2022_TABLE_1_1_2",
+      "role": "census_results",
+      "title": "ArmStat RA Population Census 2022, Section 1 Table 1.1.2",
+      "publisher": "Statistical Committee of the Republic of Armenia",
+      "url": "https://armstat.am/file/article/section_1.7z",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "70 enlarged marz communities",
+        "national",
+        "ten marzes",
+        "Yerevan and districts"
+      ],
+      "reference_periods": [
+        "2022 census; 2001 and 2011 columns unadopted"
+      ],
+      "formats": [
+        "7Z",
+        "DOCX",
+        "XLSX"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Chapter 1 archive has both present and usual-resident population workbooks, plus a narrative. AreaData adopted only selected 2022 D/G/J cells of 94 rows; other years and tables remain unassessed. Keep definitions and the Shirak published sex-subtotal discrepancy.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_ARM_2C605FDE9A5A1301",
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ARLIS_LSG_2026",
+      "role": "planning_law",
+      "title": "Law on Local Self-Government, current ARLIS incorporation",
+      "publisher": "Armenian Legal Information System (ARLIS)",
+      "url": "https://www.arlis.am/hy/acts/231070",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "Armenian communities; Yerevan has separate provisions"
+      ],
+      "reference_periods": [
+        "checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Articles 82, 82.1 and 83 distinguish community development programme, annual work plan and budget. Check current amendments and applicable Yerevan rules; this law is not proof of an individual approved plan.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_ARM_151F60AD2A18029E",
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ASHTARAK_PLAN_CATALOG_2022_2026",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ashtarak Municipality development programme catalogue entry",
+      "publisher": "Ashtarak Municipality",
+      "url": "https://ashtarak.am/Pages/DocFlow/Def.aspx?a=d&dt=Projects&g=3832faaa-dce7-460b-878f-6c5655668340",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "Ashtarak community"
+      ],
+      "reference_periods": [
+        "2022-2026 programme listing"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Municipal catalogue entry identifies a 2022-2026 plan PDF. AreaData did not acquire the full PDF locally; check document body, amendments and boundary scope before adopting contents.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_ARM_440F1C48FB61F77D",
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ASHTARAK_PLAN_2022_2026_PDF",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ashtarak five-year development plan 2022-2026 PDF",
+      "publisher": "Ashtarak Municipality",
+      "url": "https://ashtarak.am/upload/DocFlow/Projects/Tu2321411511531797_2022-2026.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "Ashtarak community"
+      ],
+      "reference_periods": [
+        "2022-2026"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official 59-page plan PDF location. Direct local retrieval timed out for AreaData, so no raw PDF hash, page extraction, plan findings or current-revision confirmation is transferred.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_ARM_1A806362BC8A4473",
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ARLIS_ASHTARAK_194_N",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ashtarak Council Decision N 194-N, 28 December 2022",
+      "publisher": "Armenian Legal Information System (ARLIS)",
+      "url": "https://www.arlis.am/hy/acts/173115",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "Ashtarak community"
+      ],
+      "reference_periods": [
+        "2022-2026 plan approval"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Council decision N 194-N, clause 1, approves the 2022-2026 Ashtarak plan. It does not supply the plan body, subsequent revisions, budget, execution or evaluation.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -445,6 +724,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -532,6 +818,13 @@
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -613,6 +906,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -701,6 +1001,13 @@
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -782,6 +1089,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -871,6 +1185,13 @@
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -951,6 +1272,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1037,6 +1365,13 @@
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1118,6 +1453,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1271,6 +1613,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1437,6 +1786,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1594,6 +1950,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1757,6 +2120,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1901,6 +2271,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2065,6 +2442,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2221,6 +2605,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2371,6 +2762,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2536,6 +2934,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2694,6 +3099,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2860,6 +3272,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3021,6 +3440,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3165,6 +3591,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3321,6 +3754,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3503,6 +3943,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3689,6 +4136,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3727,6 +4181,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3769,6 +4230,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3816,6 +4284,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3856,6 +4331,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3902,6 +4384,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3942,6 +4431,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3988,6 +4484,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4026,6 +4529,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4070,6 +4580,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4108,6 +4625,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4152,6 +4676,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4193,6 +4724,13 @@
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4231,6 +4769,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4353,6 +4898,13 @@
           "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4469,6 +5021,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4605,6 +5164,13 @@
           "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4726,6 +5292,13 @@
           "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4799,6 +5372,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4878,6 +5458,13 @@
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4951,6 +5538,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5030,6 +5624,13 @@
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5104,6 +5705,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5185,6 +5793,13 @@
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5258,6 +5873,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5337,6 +5959,13 @@
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5410,6 +6039,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5515,6 +6151,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5630,6 +6273,13 @@
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5739,6 +6389,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5857,6 +6514,13 @@
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5965,6 +6629,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6077,6 +6748,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6194,6 +6872,13 @@
           "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6242,6 +6927,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6287,6 +6979,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6341,6 +7040,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6389,6 +7095,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6443,6 +7156,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6491,6 +7211,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6545,6 +7272,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6593,6 +7327,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6647,6 +7388,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6698,6 +7446,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6746,6 +7501,13 @@
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -6791,6 +7553,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -6967,6 +7736,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7189,6 +7965,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7256,6 +8039,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7330,6 +8120,13 @@
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7396,6 +8193,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7468,6 +8272,13 @@
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7534,6 +8345,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7604,6 +8422,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7678,6 +8503,13 @@
           "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7730,6 +8562,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7788,6 +8627,13 @@
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7840,6 +8686,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -7898,6 +8751,13 @@
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -7950,6 +8810,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8007,6 +8874,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8072,6 +8946,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8131,6 +9012,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8194,6 +9082,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8262,6 +9157,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8322,6 +9224,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8389,6 +9298,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8448,6 +9364,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8513,6 +9436,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8572,6 +9502,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8637,6 +9574,13 @@
           "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8672,6 +9616,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8703,6 +9654,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8744,6 +9702,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8777,6 +9742,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8814,6 +9786,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8845,6 +9824,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8882,6 +9868,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8913,6 +9906,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -8950,6 +9950,13 @@
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -8982,6 +9989,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -9111,6 +10125,13 @@
           "evidence_path": "docs/evidence/saudi-census-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/saudi-census-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -9209,6 +10230,13 @@
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -9304,6 +10332,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -9407,6 +10442,13 @@
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -9504,6 +10546,13 @@
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -9598,6 +10647,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -9732,6 +10788,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/turkey-adnks-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/turkey-adnks-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -9921,6 +10984,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -10100,6 +11170,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -10287,6 +11364,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -10403,6 +11487,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -10525,6 +11616,13 @@
           "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
+          "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -10641,6 +11739,13 @@
         {
           "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
           "exported_at": "2026-09-26T13:53:18.949Z",
+          "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+          "exported_at": "2026-09-26T14:33:53.907Z",
           "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
