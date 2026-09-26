@@ -1372,6 +1372,42 @@
       ]
     },
     {
+      "feedback_id": "AREADATA_QAT_59BFC875DF1C6EBB",
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_GIS_CENSUS_ZONE_2020",
+      "role": "administrative_codes",
+      "title": "Official Census_Zone_2020 polygons and municipality codes",
+      "publisher": "Qatar GIS service",
+      "url": "https://services.gisqatar.org.qa/server/rest/services/Vector/Census_Zone/MapServer/0/query?where=1%3D1&outFields=OBJECTID%2CZONE_NO%2CMUNICIPAL_CODE%2CMUNICIPALITY_NAME_EN&returnGeometry=true&outSR=4326&f=geojson",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "91 Census_Zone_2020 polygons",
+        "eight 2020 census municipalities"
+      ],
+      "reference_periods": [
+        "Census 2020 geographic edition"
+      ],
+      "formats": [
+        "ArcGIS REST GeoJSON",
+        "ArcGIS REST JSON"
+      ],
+      "license_or_terms": "Qatar GIS service reuse terms require review before external release",
+      "reuse_note": "A separate official GIS layer identifies 2020 zone polygons and municipality codes. AreaData reconciled eight historical municipal population controls, but Kit must reacquire, audit and review GIS reuse terms and later legal boundary changes independently. No numeric values or adopted polygons are transferred by this lead.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
+          "exported_at": "2026-09-26T16:10:15.725Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
       "feedback_id": "AREADATA_QAT_F6DEA2B5F3689485",
       "iso3": "QAT",
       "source_id": "QAT_QAT_GIS_MUNICIPALITY_CURRENT",
@@ -1400,6 +1436,13 @@
           "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
           "exported_at": "2026-09-26T15:39:36.26Z",
           "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
+          "exported_at": "2026-09-26T16:10:15.725Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
         }
@@ -1439,6 +1482,13 @@
           "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
+          "exported_at": "2026-09-26T16:10:15.725Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1474,6 +1524,47 @@
           "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
+          "exported_at": "2026-09-26T16:10:15.725Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_QAT_9BF68750F0ADBDC5",
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_QNMP_MSDP_EIGHT",
+      "role": "planning_guidance",
+      "title": "QNMP page describing eight municipality spatial development plans",
+      "publisher": "Ministry of Municipality (Qatar)",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/English/MSDP-Municipalities.aspx?panel=about",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "eight named municipalities on QNMP page"
+      ],
+      "reference_periods": [
+        "Website statement acquired 2026-09-26; current plan editions not established"
+      ],
+      "formats": [
+        "HTML page"
+      ],
+      "license_or_terms": "Ministry website reuse terms require review before external release",
+      "reuse_note": "QNMP page says an MSDP was completed for each of eight municipalities. Current operative plan editions, approvals, budgets, implementation and evaluation remain unverified; do not treat the page as adopted plan documents.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
+          "exported_at": "2026-09-26T16:10:15.725Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1506,6 +1597,13 @@
           "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
           "exported_at": "2026-09-26T15:39:36.26Z",
           "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
+          "exported_at": "2026-09-26T16:10:15.725Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
         }
@@ -1543,6 +1641,13 @@
           "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
+          "exported_at": "2026-09-26T16:10:15.725Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1575,6 +1680,13 @@
           "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
           "exported_at": "2026-09-26T15:39:36.26Z",
           "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
+          "exported_at": "2026-09-26T16:10:15.725Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
         }
