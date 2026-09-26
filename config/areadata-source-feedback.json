@@ -1372,6 +1372,215 @@
       ]
     },
     {
+      "feedback_id": "AREADATA_QAT_F6DEA2B5F3689485",
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_GIS_MUNICIPALITY_CURRENT",
+      "role": "administrative_codes",
+      "title": "MunicipalityAT GIS service current municipality attributes",
+      "publisher": "Qatar GIS service",
+      "url": "https://services.gisqatar.org.qa/server/rest/services/Vector/MunicipalityAT/MapServer/0/query?where=1%3D1&outFields=OBJECTID%2CCODE%2CGFCODE%2CMNCP_KEY%2CMNCP_NO%2CENAME%2CSTARTDATE%2CENDDATE%2CSOURCE%2CRELIABLE&returnGeometry=false&f=json",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "current municipality attributes; historical 2020 match unverified"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "ArcGIS REST JSON"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "Current MunicipalityAT records contain code candidates but all eight STARTDATE values postdate December 2020. Do not attach them to Census 2020 cells or polygons without a dated crosswalk.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
+          "exported_at": "2026-09-26T15:39:36.26Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_QAT_8BF2A5F7064B8450",
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_NPC_CENSUS2020_CATALOGUE",
+      "role": "census_catalog",
+      "title": "Census 2020 detailed results catalogue",
+      "publisher": "Qatar National Planning Council",
+      "url": "https://www.npc.qa/en/statistics/census2020/Pages/results/default.aspx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "eight December 2020 census municipalities",
+        "national"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "PDF",
+        "XLSX"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "NPC official Census 2020 catalogue location. AreaData acquired a 209-sheet workbook and selected a partial cell candidate; no independent country acceptance exists. Kit must reacquire and audit all tables, terms and geography.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
+          "exported_at": "2026-09-26T15:39:36.26Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_QAT_224B620C2AA00264",
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_NPC_CENSUS2020_TABLE_1",
+      "role": "census_results",
+      "title": "Census 2020 Table 1: Population by Sex and Municipality",
+      "publisher": "Qatar National Planning Council, Census 2020 results",
+      "url": "https://www.npc.qa/en/statistics/census2020/results/Documents/Census_Final_Results.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "eight December 2020 census municipalities",
+        "national"
+      ],
+      "reference_periods": [
+        "December 2020 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official NPC website reuse terms require review before external release",
+      "reuse_note": "Official workbook includes population Table 1 and many other municipal/zone tables. The URL is a source location, not a transfer of AreaData values or the current 2020 boundary crosswalk.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
+          "exported_at": "2026-09-26T15:39:36.26Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_QAT_17D1AB1A9188CA0F",
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_QNMP_ZONING",
+      "role": "planning_guidance",
+      "title": "Municipality spatial development plan zoning page",
+      "publisher": "Ministry of Municipality (Qatar)",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/English/msdp-zoning.aspx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "six named zoning municipalities; two future extensions on source page"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "HTML page"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "Source names six MSDP zoning municipalities and calls Al Khor and Al Wakra future extensions. Page currency and 2026 operative coverage are unverified.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
+          "exported_at": "2026-09-26T15:39:36.26Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_QAT_AAB8EA9EC0510DD7",
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_QNMP_PRODUCTS",
+      "role": "planning_guidance",
+      "title": "Qatar National Master Plan product catalogue",
+      "publisher": "Ministry of Municipality (Qatar)",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/English/Product.html",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "municipality planning products",
+        "national"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "HTML catalogue"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "Official QNMP product location. Current municipality plan editions, approvals and applicable law require fresh source review.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
+          "exported_at": "2026-09-26T15:39:36.26Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_QAT_BEB8B2D520701F78",
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_DOHA_MSDP_VOLUME1_2014",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Doha Municipality Vision and Development Strategy, Volume 1",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads-qnmp/MunicipalityStrategy/English/Doha%20Dec%202017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "Doha municipality in the historical plan"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "Official PDF Volume 1 cover says 1 June 2014 although URL filename says Dec 2017. Current revision, legal effect, 2020 area match and fiscal/implementation evidence are unverified.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
+          "exported_at": "2026-09-26T15:39:36.26Z",
+          "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
       "feedback_id": "AREADATA_SAU_81A899C77FFA7A0F",
       "iso3": "SAU",
       "source_id": "SAU_SAU_MOH_YEARBOOK_2022_CENSUS_REGIONS",
