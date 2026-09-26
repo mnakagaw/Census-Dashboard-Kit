@@ -41,6 +41,42 @@
       ]
     },
     {
+      "feedback_id": "AREADATA_ARM_55638C33FB5DBD23",
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_GEOPORTAL_ADMIN_BOUNDARY_MAP",
+      "role": "boundaries",
+      "title": "National Geoportal administrative-boundary map",
+      "publisher": "Cadastre Committee of Armenia",
+      "url": "https://geoportal.am/map_geoportal",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "community layer location unverified",
+        "marz map lead"
+      ],
+      "reference_periods": [
+        "edition not verified"
+      ],
+      "formats": [
+        "GeoJSON lead",
+        "HTML map"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Official geoportal map page points to an 11-feature marz GeoJSON with only Province_N names, no official codes or dated validity. Its referenced community_settlement endpoint returned HTTP 404. Copyright/redistribution and boundary edition need review; no polygons are transferred or adopted.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "e1bf0878e06c01fb93f72f9cb977002c48d4fa43",
+          "exported_at": "2026-09-26T19:12:44.615Z",
+          "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
       "feedback_id": "AREADATA_ARM_938CE5E76C40A4F1",
       "iso3": "ARM",
       "source_id": "ARM_ARMSTAT_CENSUS_2022_PXWEB_MARZES",
