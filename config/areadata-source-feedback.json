@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "as_of": "2026-09-24",
+  "as_of": "2026-09-26",
   "purpose": "Reviewed public source locations returned by AreaData country and regional work for reuse as Census Dashboard Kit discovery starting points.",
   "status_boundary": "A feedback record is reusable discovery context only. It is never current-project proof of acquisition, content inspection, geography matching or indicator adoption.",
   "records": [
@@ -15,7 +15,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune"
       ],
@@ -49,6 +49,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -63,7 +70,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune (2019)",
         "national",
@@ -107,6 +114,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -121,7 +135,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune"
       ],
@@ -162,6 +176,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -176,7 +197,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "region"
       ],
@@ -217,6 +238,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -231,7 +259,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune",
         "region"
@@ -259,6 +287,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -273,7 +308,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune",
         "region"
@@ -315,6 +350,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -329,7 +371,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune",
         "national",
@@ -366,6 +408,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -380,7 +429,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune"
       ],
@@ -414,6 +463,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -428,7 +484,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune",
         "national",
@@ -471,6 +527,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -485,7 +548,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune (2019)",
         "province (2019)"
@@ -527,6 +590,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -541,7 +611,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "commune (2019)",
         "national",
@@ -585,6 +655,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -599,7 +676,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "region (2019)"
@@ -641,6 +718,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -655,7 +739,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "region (historical)"
       ],
@@ -683,6 +767,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -697,7 +788,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "region",
@@ -734,6 +825,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -748,7 +846,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "national"
       ],
@@ -811,6 +909,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -825,7 +930,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "district",
         "lower local area"
@@ -889,6 +994,48 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_IRQ_BCEFF30E453824D1",
+      "iso3": "IRQ",
+      "source_id": "IRQ_IRQ_COSIT_CENSUS_2024_FINAL_GOVERNORATES",
+      "role": "census_results",
+      "title": "COSIT final results of the 2024 Population and Housing Census",
+      "publisher": "Iraq Commission of Statistics and GIS (COSIT)",
+      "url": "https://nogp.gov.iq/DatasetDetails.aspx?id=17",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate",
+        "national"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "CC BY 4.0 portal envelope; resource terms review pending",
+      "reuse_note": "New AreaData source location: Iraq COSIT 2024 final census summary in the government open-data portal. AreaData checked 18 governorate rows and five numeric columns locally. Kit must independently audit its own acquisition, adjusted versus original population definitions, code/boundary matching and resource-specific terms before adoption.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/iraq-census-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -903,7 +1050,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "district",
         "national",
@@ -960,6 +1107,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ],
       "supersedes_feedback_id": "AREADATA_LAO_3153B6937F8B9B44"
@@ -1012,7 +1166,7 @@
       "authority_type": "international_organization",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "province"
       ],
@@ -1074,6 +1228,49 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_TUR_1FBD8267510E47F4",
+      "iso3": "TUR",
+      "source_id": "TUR_TUR_TUIK_ADNKS_2025_FAVORITE_TABLES",
+      "role": "machine_readable_data",
+      "title": "TÜİK ADNKS 2025 — favorite tables",
+      "publisher": "Turkish Statistical Institute (TÜİK)",
+      "url": "https://www.tuik.gov.tr/media/announcements/2025ADNKS_FavoriTablolar.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "district (ilçe)",
+        "national",
+        "province (il)"
+      ],
+      "reference_periods": [
+        "31 December 2025"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData source location: TÜİK 2025 annual ADNKS population register, not a decennial census. AreaData locally checks province/district totals, but Kit must audit its own acquisition, source fields, 2025 geography, reuse terms and adoption independently.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/turkey-adnks-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1088,7 +1285,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "district",
         "national",
@@ -1155,6 +1352,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1169,7 +1373,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "district",
         "lower local government"
@@ -1232,6 +1436,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1246,7 +1457,7 @@
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "first_seen_at": "2026-09-24",
-      "last_verified_at": "2026-09-24",
+      "last_verified_at": "2026-09-26",
       "geographic_levels": [
         "city",
         "district",
@@ -1308,6 +1519,13 @@
         {
           "origin_commit": "ea122db498f8bf84abd0cb36ab328f4e02e5ce00",
           "exported_at": "2026-09-24T22:52:35.532Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+          "exported_at": "2026-09-26T04:29:26.818Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
