@@ -43,6 +43,13 @@
           "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -82,6 +89,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -127,6 +141,13 @@
           "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -165,6 +186,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -209,6 +237,13 @@
           "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -247,6 +282,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -372,6 +414,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -510,6 +559,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -639,6 +695,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -774,6 +837,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -890,6 +960,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1026,6 +1103,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1154,6 +1238,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1276,6 +1367,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1413,6 +1511,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1543,6 +1648,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -1681,6 +1793,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1814,6 +1933,13 @@
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -1930,6 +2056,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2058,6 +2191,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2212,6 +2352,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2370,6 +2517,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2451,6 +2605,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2545,6 +2706,13 @@
           "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2633,6 +2801,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2741,6 +2916,13 @@
           "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2821,6 +3003,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2917,6 +3106,13 @@
           "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -2952,6 +3148,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -2993,6 +3196,13 @@
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3024,6 +3234,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3061,6 +3278,13 @@
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3092,6 +3316,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3129,6 +3360,13 @@
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3161,6 +3399,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3201,6 +3446,13 @@
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3233,6 +3485,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3270,6 +3529,13 @@
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3302,6 +3568,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3355,6 +3628,13 @@
           "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3400,6 +3680,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3452,6 +3739,13 @@
           "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3497,6 +3791,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3549,6 +3850,13 @@
           "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -3597,6 +3905,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3745,6 +4060,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -3939,6 +4261,370 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_0FBDBE8ED4BA63FA",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_MOPH_ADM1_MAP",
+      "role": "administrative_codes",
+      "title": "Ministry of Public Health Administrative Zones ADM1 ArcGIS layer",
+      "publisher": "Ministry of Public Health (Lebanon)",
+      "url": "https://maps.moph.gov.lb/server/rest/services/Administrative_Zones/MapServer/2/query?where=1%3D1&outFields=NAME%2CNAME_AR%2CPCODE%2CSTATUS&returnGeometry=true&outSR=4326&f=geojson",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "nine MOPH governorate map features"
+      ],
+      "reference_periods": [
+        "map service edition/date not stated; retrieved 2026-09-26"
+      ],
+      "formats": [
+        "ArcGIS REST",
+        "GeoJSON query"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Government-hosted map service has nine ADM1 features including KSH, unlike CAS LFHLCS eight reporting governorates. The service edition, legal PCODE status and 2018 geography equivalence are unverified; no survey governorate value was mapped to these polygons.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_BB34D789125DC5E1",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_MOPH_ADM2_MAP",
+      "role": "administrative_codes",
+      "title": "Ministry of Public Health Administrative Zones ADM2 ArcGIS layer",
+      "publisher": "Ministry of Public Health (Lebanon)",
+      "url": "https://maps.moph.gov.lb/server/rest/services/Administrative_Zones/MapServer/3/query?where=1%3D1&outFields=NAME%2CNAME_AR%2CPCODE%2CSTATUS&returnGeometry=true&outSR=4326&f=geojson",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "26 MOPH caza map features"
+      ],
+      "reference_periods": [
+        "map service edition/date not stated; retrieved 2026-09-26"
+      ],
+      "formats": [
+        "ArcGIS REST",
+        "GeoJSON query"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "AreaData name-matched 26 CAS caza to MOPH reference polygons for navigation only. Provider PCODE is not a verified legal or CAS survey code; temporal boundary equivalence and redistribution terms need independent Kit review.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_2B738687C521EEA3",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_CAS_LFHLCS_2018_19_HL5",
+      "role": "machine_readable_data",
+      "title": "CAS Labour Force and Household Living Conditions Survey 2018-19, Demography XLS Table HL5",
+      "publisher": "Central Administration of Statistics (Lebanon)",
+      "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "26 caza",
+        "eight LFHLCS reporting governorates",
+        "national"
+      ],
+      "reference_periods": [
+        "April 2018–March 2019 fieldwork; midyear 2018 population estimate"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "AreaData acquired CAS Demography XLS and adopted only three HL5 count columns for 2018 sample-survey estimates. This is not a census; residents outside residential dwellings are excluded. Kit must independently acquire, audit all fields, boundaries and reuse terms before adoption.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_54C5B640EEF56940",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_DGLAC_ADMINISTRATIVE_STRUCTURES",
+      "role": "planning_guidance",
+      "title": "DGLAC administrative structures",
+      "publisher": "Directorate General of Local Administrations and Councils (Lebanon)",
+      "url": "https://dglac.gov.lb/en/administrative-structures",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "districts",
+        "governorates",
+        "municipal unions",
+        "municipalities"
+      ],
+      "reference_periods": [
+        "current page checked 2026-09-26; legal effective dates to verify"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Institutional overview location only. AreaData has not audited current legal duties or effective dates; it did not infer that CAS survey districts are statutory local planning units.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_088A27E929F16E8E",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_DGU_MASTER_PLAN",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Directorate General of Urban Planning master plan page",
+      "publisher": "Directorate General of Urban Planning (Lebanon)",
+      "url": "https://dgu.gov.lb/MasterPlan.html",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "spatial master-plan areas, precise coverage to inspect"
+      ],
+      "reference_periods": [
+        "plan catalogue page checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "plan originals to acquire"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official master-plan discovery page only. No specific plan body, approval status, municipal applicability, implementation, budget or evaluation was acquired or adopted by AreaData.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_639AD33C4667D945",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_CAS_LFS_DISTRICT_PROFILES_2018_19",
+      "role": "table_catalog",
+      "title": "CAS/UNDP 26 district statistical profiles catalogue",
+      "publisher": "Central Administration of Statistics (Lebanon)",
+      "url": "https://www.cas.gov.lb/Publications/district-statistical-profiles-2018-2019-%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%82%D8%B6%D9%8A%D8%A9-2018-2019/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "26 caza in source reporting geography"
+      ],
+      "reference_periods": [
+        "2018–19 survey; 2020 publication"
+      ],
+      "formats": [
+        "26 Arabic PDF alternatives",
+        "26 English PDF links",
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "AreaData acquired all 26 English profile PDFs and inventoried Arabic alternatives, but adopted no additional field. Kit should inspect profile contents, metadata, geography and terms; these are survey profiles, not census profiles.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_D14D494808CD726A",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_CAS_LFHLCS_2018_19_SURVEY_PAGE",
+      "role": "table_catalog",
+      "title": "CAS LFHLCS 2018–19 survey catalogue",
+      "publisher": "Central Administration of Statistics (Lebanon)",
+      "url": "https://www.cas.gov.lb/surveys-censuses/labour-force-and-household-living-conditions-survey-2018-2019-lebanon/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "district",
+        "governorate",
+        "national"
+      ],
+      "reference_periods": [
+        "April 2018–March 2019 survey"
+      ],
+      "formats": [
+        "HTML",
+        "linked workbooks and report"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "CAS survey catalogue located. The acquired LFHLCS subset is a 2018-19 household sample survey, not a population census; the full linked product inventory and other thematic workbooks remain to be assessed.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_1FC7F8D337EB2114",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_CAS_SUBNATIONAL_MICS_2023",
+      "role": "table_catalog",
+      "title": "CAS Sub-national Lebanon MICS 2023 catalogue",
+      "publisher": "Central Administration of Statistics (Lebanon)",
+      "url": "https://www.cas.gov.lb/surveys-censuses/sub-national-lebanon-multiple-indicator-cluster-survey-2023/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "five of eight governorates",
+        "specified displaced settlements and camps"
+      ],
+      "reference_periods": [
+        "2023 survey"
+      ],
+      "formats": [
+        "HTML",
+        "PDF report"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official MICS 2023 location only. Security limited governorate field coverage; three unreported governorates are not zero. AreaData adopted no MICS value. Kit must inspect coverage, tables, universe and terms independently.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_3B60850160450829",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_CAS_LFHLCS_2018_19_FULL_REPORT",
+      "role": "table_catalog",
+      "title": "CAS LFHLCS 2018-19 full report",
+      "publisher": "Central Administration of Statistics (Lebanon)",
+      "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "26 caza",
+        "eight LFHLCS reporting governorates",
+        "national"
+      ],
+      "reference_periods": [
+        "2018–19 survey"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "AreaData inspected only methodology and Table 1.1 on PDF pages 19-21. The source gives a midyear-2018 survey reference and residential-dwelling universe; the rest of the report and its annexes require independent Kit audit.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_LBN_C94D6B2FFDF5F5D3",
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_DGLAC_MUNICIPALITIES",
+      "role": "table_catalog",
+      "title": "DGLAC municipality directory",
+      "publisher": "Directorate General of Local Administrations and Councils (Lebanon)",
+      "url": "https://www.dglac.gov.lb/en/municipalities",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-26",
+      "last_verified_at": "2026-09-26",
+      "geographic_levels": [
+        "municipalities"
+      ],
+      "reference_periods": [
+        "directory checked 2026-09-26; edition to verify"
+      ],
+      "formats": [
+        "HTML directory"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official municipality directory location only, not a downloaded dated legal code table. No local plan or finance record was linked by a verified municipality identifier.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4001,6 +4687,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/saudi-gastat-tableau-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/saudi-gastat-tableau-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4102,6 +4795,13 @@
           "evidence_path": "docs/evidence/saudi-gastat-tableau-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/saudi-gastat-tableau-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4158,6 +4858,13 @@
           "evidence_path": "docs/evidence/syria-budget-iom-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/syria-budget-iom-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4210,6 +4917,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/syria-budget-iom-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/syria-budget-iom-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4316,6 +5030,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/turkey-adnks-source-location-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/turkey-adnks-source-location-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4477,6 +5198,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4628,6 +5356,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4787,6 +5522,13 @@
           "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -4875,6 +5617,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -4969,6 +5718,13 @@
           "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5035,6 +5791,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5114,6 +5877,13 @@
           "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5189,6 +5959,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
@@ -5283,6 +6060,13 @@
           "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
+          "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
         }
       ]
     },
@@ -5358,6 +6142,13 @@
         {
           "origin_commit": "7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7",
           "exported_at": "2026-09-26T10:09:34.153Z",
+          "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        },
+        {
+          "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+          "exported_at": "2026-09-26T10:41:40.598Z",
           "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
