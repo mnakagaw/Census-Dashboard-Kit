@@ -3344,6 +3344,46 @@
       ]
     },
     {
+      "feedback_id": "AREADATA_PHL_42C127A0A4A26D80",
+      "iso3": "PHL",
+      "source_id": "PHL_PSA_OPENSTAT_POPCEN_LOCAL_2024",
+      "role": "census_results",
+      "title": "PSA OpenSTAT 2024 POPCEN regional household tables",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://openstat.psa.gov.ph/PXWeb/pxweb/en/DB/DB__1A__PO_2024/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-29",
+      "last_verified_at": "2026-09-29",
+      "geographic_levels": [
+        "barangay source rows",
+        "city",
+        "municipality",
+        "national",
+        "province",
+        "region"
+      ],
+      "reference_periods": [
+        "1 July 2024"
+      ],
+      "formats": [
+        "HTML",
+        "JSON API"
+      ],
+      "license_or_terms": "CC BY 4.0 unless otherwise stated (PSA site footer)",
+      "reuse_note": "New AreaData lead: official PSA 2024 POPCEN catalogue with 24 archived tables. Eighteen regional tables include household population and household counts for 1,742 matched subnational targets; barangay rows remain source only. Kit must reacquire originals, validate code edition and rights, and must not treat this as an independent country acceptance.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "e2269120591324eba0b19f7cc91cdb2bdb97171f",
+          "exported_at": "2026-09-29T06:37:11.981Z",
+          "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
       "feedback_id": "AREADATA_PHL_3B17C9BAE717E0AF",
       "iso3": "PHL",
       "source_id": "PHL_PSA_POPCEN_2024_NATIONAL",
@@ -3686,6 +3726,120 @@
         {
           "origin_commit": "587b570f266a475ebc478f0a05a725e54f542e86",
           "exported_at": "2026-09-29T05:13:39.712Z",
+          "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_PHL_537E634535FD2E02",
+      "iso3": "PHL",
+      "source_id": "PHL_PSA_OPENSTAT_POPCEN_GROWTH_2024",
+      "role": "table_catalog",
+      "title": "PSA OpenSTAT 2024 POPCEN Population and annual growth rate",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO_2024/0211A6DAPG0.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-29",
+      "last_verified_at": "2026-09-29",
+      "geographic_levels": [
+        "city",
+        "municipality",
+        "national",
+        "province",
+        "region"
+      ],
+      "reference_periods": [
+        "1 July 2024"
+      ],
+      "formats": [
+        "JSON API"
+      ],
+      "license_or_terms": "CC BY 4.0 unless otherwise stated (PSA site footer)",
+      "reuse_note": "New AreaData lead: official POPCEN Table 021 reports census counts and annual population growth. Keep 2020-2024 interval and 2024 end date explicit; rates cannot be averaged across territories. Isabela City uses a source-code crosswalk.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "e2269120591324eba0b19f7cc91cdb2bdb97171f",
+          "exported_at": "2026-09-29T06:37:11.981Z",
+          "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_PHL_9EB77FCDD6B1B80E",
+      "iso3": "PHL",
+      "source_id": "PHL_PSA_OPENSTAT_POPCEN_DENSITY_2024",
+      "role": "table_catalog",
+      "title": "PSA OpenSTAT 2024 POPCEN Population, land area and density",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO_2024/0221A6DLPD0.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-29",
+      "last_verified_at": "2026-09-29",
+      "geographic_levels": [
+        "city",
+        "municipality",
+        "national",
+        "province",
+        "region"
+      ],
+      "reference_periods": [
+        "1 July 2024"
+      ],
+      "formats": [
+        "JSON API"
+      ],
+      "license_or_terms": "CC BY 4.0 unless otherwise stated (PSA site footer)",
+      "reuse_note": "New AreaData lead: official POPCEN Table 022 reports population, land area and density. Published land area refers mainly to a 2019 LMB masterlist and later certifications; it is not a verified current legal polygon area. Recheck method, rounding and geography before use.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "e2269120591324eba0b19f7cc91cdb2bdb97171f",
+          "exported_at": "2026-09-29T06:37:11.981Z",
+          "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
+      "feedback_id": "AREADATA_PHL_209E711D6BD5319B",
+      "iso3": "PHL",
+      "source_id": "PHL_PSA_OPENSTAT_POPCEN_URBAN_2024",
+      "role": "table_catalog",
+      "title": "PSA OpenSTAT 2024 POPCEN Urban population and percentage",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO_2024/0241A6DPUP1.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-29",
+      "last_verified_at": "2026-09-29",
+      "geographic_levels": [
+        "city",
+        "municipality",
+        "national",
+        "province",
+        "region"
+      ],
+      "reference_periods": [
+        "1 July 2024"
+      ],
+      "formats": [
+        "JSON API"
+      ],
+      "license_or_terms": "CC BY 4.0 unless otherwise stated (PSA site footer)",
+      "reuse_note": "New AreaData lead: official POPCEN Table 024 reports urban population and percent urban. Urban classification differs from administrative city status; Isabela City source code 0990100000 requires an explicit PSGC crosswalk.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "e2269120591324eba0b19f7cc91cdb2bdb97171f",
+          "exported_at": "2026-09-29T06:37:11.981Z",
           "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
           "evidence_stage": "official_location_identified",
           "artifact_sha256": null
