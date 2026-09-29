@@ -3134,6 +3134,40 @@
       ]
     },
     {
+      "feedback_id": "AREADATA_PHL_934B8011AA091AA6",
+      "iso3": "PHL",
+      "source_id": "PHL_PSA_PSGC_2026_PROVINCES",
+      "role": "administrative_codes",
+      "title": "PSA PSGC provinces and 2024 POPCEN",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://psa.gov.ph/classification/psgc/provinces",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-29",
+      "last_verified_at": "2026-09-29",
+      "geographic_levels": [
+        "82 provinces"
+      ],
+      "reference_periods": [
+        "PSGC provinces page checked 29 September 2026; POPCEN 1 July 2024"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "CC BY 4.0 unless otherwise stated (PSA site footer)",
+      "reuse_note": "Official PSGC provinces page supplied 82 ten-digit province codes and 2024 POPCEN values in a rendered-text capture checked 29 September 2026. Exact page edition and original masterlist are unacquired. Provinces omit separately coded independent HUCs, so province sums are not regional totals or complete planning-unit cover.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "f5719d793381dc983d1ee7b829ae9e121ddcbbc5",
+          "exported_at": "2026-09-29T04:07:25.909Z",
+          "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
       "feedback_id": "AREADATA_PHL_C456E870550EACEE",
       "iso3": "PHL",
       "source_id": "PHL_PSA_PSGC_2025_REGIONS",
