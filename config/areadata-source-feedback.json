@@ -3100,6 +3100,44 @@
       ]
     },
     {
+      "feedback_id": "AREADATA_PHL_DCAE0818690E497A",
+      "iso3": "PHL",
+      "source_id": "PHL_PSGC_Q2_2025_API",
+      "role": "administrative_codes",
+      "title": "PSA PSGC Q2 2025 official classification API",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://classification.psa.gov.ph/psgc/Q2_2025/?format=json",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "first_seen_at": "2026-09-29",
+      "last_verified_at": "2026-09-29",
+      "geographic_levels": [
+        "barangay",
+        "city",
+        "municipality",
+        "province",
+        "region"
+      ],
+      "reference_periods": [
+        "Q2 2025"
+      ],
+      "formats": [
+        "JSON API"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "New AreaData location: the public version index responds, but unauthenticated regions, provinces, municipalities and city_class endpoints return HTTP 400 Token is required. No code rows were acquired or adopted from this API. Obtain authorized access and verify names, parents and effective edition before use; do not transfer a token.",
+      "current_project_evidence_status": "not_acquired_by_kit_preflight",
+      "origin_events": [
+        {
+          "origin_commit": "33d9c5edd4e3fffaf36e807ddfd3acdb625f2645",
+          "exported_at": "2026-09-29T06:50:37.440Z",
+          "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+          "evidence_stage": "official_location_identified",
+          "artifact_sha256": null
+        }
+      ]
+    },
+    {
       "feedback_id": "AREADATA_PHL_1CF8407E912391AB",
       "iso3": "PHL",
       "source_id": "PHL_PSA_PSGC_2025_ILOILO_CITY",
